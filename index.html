@@ -180,6 +180,55 @@ div[style*="text-align:center"]>h2::after{left:50%;transform:translateX(-50%)}
 .marq .track{display:inline-flex;gap:52px;white-space:nowrap;animation:marquee 30s linear infinite;font-family:'Space Grotesk',Arial,sans-serif;letter-spacing:.16em;font-size:13px;color:#9fb0c8;text-transform:uppercase}
 .marq b{color:var(--gold);font-weight:400}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+/* ===== v1.6 optimizare mobil ===== */
+.burger{display:none;background:none;border:none;cursor:pointer;padding:10px 6px}
+.burger span{display:block;width:24px;height:2px;background:var(--off);margin:5px 0;transition:.3s;border-radius:1px}
+.burger.x span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.x span:nth-child(2){opacity:0}
+.burger.x span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mmenu{display:none}
+@media(max-width:860px){
+  .burger{display:block}
+  .mmenu{display:block;max-height:0;overflow:hidden;transition:max-height .35s ease;background:rgba(10,26,47,.98)}
+  .mmenu.open{max-height:440px;border-top:1px solid var(--line)}
+  .mmenu a{display:block;padding:15px 24px;color:#c6cedd;text-decoration:none;font-size:16px;border-bottom:1px solid var(--line)}
+  .mmenu a.mcta{color:#fff;background:var(--blue);font-weight:600;border-bottom:none}
+  .wrap{padding:0 18px}
+  section{padding:60px 0}
+  .hero{padding:76px 0 56px}
+  .hero p{font-size:17px;margin:20px 0 26px}
+  .hero .btn{display:block;text-align:center;margin:12px 0 0!important}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+  .stat b{font-size:26px}
+  .stat span{font-size:13px}
+  .blob{filter:blur(60px);opacity:.4}
+  .b1{width:320px;height:320px}
+  .b2{width:240px;height:240px}
+  .fdelta{display:none}
+  .marq{margin-top:54px}
+  .marq .track{gap:34px}
+  .tab{padding:9px 15px;font-size:14px}
+  .pcard{padding:24px;gap:24px}
+  .pcard h3{font-size:22px}
+  .proof{padding:22px}
+  .proof .num{font-size:32px}
+  .card{padding:24px}
+  .quizbox{padding:28px 18px;border-radius:16px}
+  .opt{padding:13px 14px;font-size:14.5px}
+  .scorewrap{width:150px;height:150px}
+  .scorewrap .score{font-size:40px}
+  .gauge{width:150px;height:150px}
+  .calc{gap:22px}
+  .cbox{padding:20px 16px}
+  .crow{flex-wrap:wrap;row-gap:4px}
+  .crow .pr{width:100%;padding-left:32px;order:3}
+  .switch{padding:13px;font-size:14px}
+  .total{position:static;padding:24px}
+  .total .sum{font-size:36px}
+  .tstep{padding:20px}
+  .form{padding:28px 18px;border-radius:16px}
+  footer .wrap{flex-direction:column;gap:16px}
+}
 </style>
 </head>
 <body>
@@ -198,6 +247,15 @@ div[style*="text-align:center"]>h2::after{left:50%;transform:translateX(-50%)}
       <li><a href="#proces">Proces</a></li>
       <li><a href="#contact" class="navcta">Cere auditul gratuit</a></li>
     </ul>
+    <button class="burger" id="burger" aria-label="Deschide meniul" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mmenu" id="mmenu">
+    <a href="#nise" onclick="toggleMenu()">Pentru afacerea ta</a>
+    <a href="#servicii" onclick="toggleMenu()">Servicii</a>
+    <a href="#scor" onclick="toggleMenu()">Scor AI</a>
+    <a href="#pret" onclick="toggleMenu()">Calculator de preț</a>
+    <a href="#proces" onclick="toggleMenu()">Proces</a>
+    <a href="#contact" class="mcta" onclick="toggleMenu()">Cere auditul gratuit →</a>
   </div>
 </nav>
 
@@ -466,7 +524,12 @@ window.addEventListener('scroll',()=>{document.querySelector('nav').classList.to
 const mitems=["Performance Ads","SEO + GEO","Social Media","Email & CRM","CRO","CMO Extern","E-commerce","Clinici medicale","Servicii B2B","HoReCa","Export UE","Imobiliare"];
 const mhtml=mitems.map(x=>`<span>${x}</span><b>◆</b>`).join('');
 document.getElementById('mtrack').innerHTML=mhtml+mhtml;
+
+/* ===== MENIU MOBIL ===== */
+function toggleMenu(){
+ document.getElementById('mmenu').classList.toggle('open');
+ document.getElementById('burger').classList.toggle('x');
+}
 </script>
 </body>
 </html>
-                                                                                                                                                                                                                                               
