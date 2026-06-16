@@ -1,0 +1,13 @@
+:root{
+  /* AMPLIO — variabile de culoare */
+  --amplio-ink-navy:#0A1A2F;
+  --amplio-electric-blue:#2F6BFF;
+  --amplio-champagne-gold:#C9A227;
+  --amplio-porcelain:#F7F5F0;
+  --amplio-sky-blue:#7FA7FF;
+  --amplio-ink-60:#5A6573;
+
+  /* Tipografie */
+  --amplio-font-display:'Space Grotesk', system-ui, sans-serif; /* titluri, wordmark */
+  --amplio-font-body:'Inter', system-ui, sans-serif;            /* text curent */
+}
