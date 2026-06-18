@@ -1,21 +1,38 @@
 # AMPLIO
 
-> AMPLIO este agenția de marketing digital a firmelor medii și mici din România, cu deschidere către piața UE. Combină inteligența artificială în producție cu strategie umană senioră și oferă modele de plată legate de rezultate (fee de bază redus plus procent din creșterea vânzărilor).
+> AMPLIO este agenția de marketing digital a firmelor medii și mici din România, cu deschidere către piața UE. Combină inteligența artificială în producție cu strategie umană senioră și oferă modele de plată legate de rezultate (fee de bază redus plus procent din creșterea vânzărilor). Slogan: „Creștere proiectată, nu promisă."
 
 ## Servicii
-- Performance Ads: administrare Google Ads, Meta Ads, TikTok Ads, de la 450 EUR/lună
-- SEO + GEO: optimizare pentru Google și pentru motoarele AI (ChatGPT, Perplexity, AI Overviews), de la 450 EUR/lună
-- Social media si conținut: pachete de la 350 EUR/lună
-- Email marketing si automatizări CRM: de la 250 EUR/lună
-- Landing pages si CRO: landing de la 450 EUR, CRO de la 400 EUR/lună
-- CMO Extern: 800-1500 EUR/lună
-- Abonament corporate (externalizare completă): Start 950, Growth 1900, Scale 3500 EUR/lună
+- Performance Ads (Google, Meta, TikTok), de la 450 EUR/lună: https://amplio.ro/servicii/performance-ads
+- SEO + GEO (vizibilitate în Google și în motoarele AI: ChatGPT, Perplexity, AI Overviews), de la 450 EUR/lună: https://amplio.ro/servicii/seo-geo
+- Social media și conținut, pachete de la 350 EUR/lună: https://amplio.ro/servicii/social-media
+- Email marketing și automatizări CRM, de la 250 EUR/lună: https://amplio.ro/servicii/email-automatizari
+- Landing pages și optimizarea conversiei (CRO): https://amplio.ro/servicii/landing-pages-cro
+- CMO Extern (director de marketing fracționat), 800-1500 EUR/lună: https://amplio.ro/servicii/cmo-extern
+- Abonament corporate (externalizare completă): Start 950 / Growth 1900 / Scale 3500 EUR/lună: https://amplio.ro/servicii/abonament-corporate
 
-## Diferentiatori
+## Soluții pe industrie
+- Magazine online (eCommerce): https://amplio.ro/solutii/marketing-ecommerce
+- Clinici medicale: https://amplio.ro/solutii/marketing-clinici
+- Servicii B2B: https://amplio.ro/solutii/marketing-b2b
+- Restaurante și HoReCa: https://amplio.ro/solutii/marketing-horeca
+- Producători și export UE: https://amplio.ro/solutii/marketing-export
+- Dezvoltatori imobiliari: https://amplio.ro/solutii/marketing-imobiliare
+
+## Diferențiatori
 - Pilot de 90 de zile cu KPI scriși în contract și clauză de ieșire fără penalități
 - Conturile de ads și datele rămân proprietatea clientului
+- Model de parteneriat: fee fix redus + 5-10% din creșterea vânzărilor peste un baseline semnat
+- AI în producție, sub control și strategie umană senioră
 - Rețea de parteneri verificați pentru producție video, influencer marketing și integrări martech
+
+## Resurse
+- Blog (SEO, GEO, ads, creștere): https://amplio.ro/blog
+- Audit gratuit de vizibilitate: https://amplio.ro/audit-gratuit
+- Test scor vizibilitate AI: https://amplio.ro/scor-vizibilitate-ai
+- Calculator de investiție: https://amplio.ro/calculator-investitie
 
 ## Contact
 - Site: https://amplio.ro
 - Email: contact@amplio.ro
+- Companie: AMPLIO DIGITAL S.R.L., București, România (operează în RO + UE)

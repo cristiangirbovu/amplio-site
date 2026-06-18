@@ -1,0 +1,7 @@
+# GitHub Pages (Jekyll) — exclude fișierele de dezvoltare din site-ul publicat.
+# Astfel build.ps1 / serve.ps1 / README nu sunt descărcabile public pe amplio.ro.
+exclude:
+  - build.ps1
+  - serve.ps1
+  - README.md
+  - _config.yml

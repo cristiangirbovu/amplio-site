@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Calculator de investiție în marketing | AMPLIO</title>
+<meta name="description" content="Calculează-ți pe loc investiția lunară în marketing. Bifează serviciile de care ai nevoie și vezi intervalul de preț, inclusiv modelul de parteneriat. Fără „cere ofertă”.">
+<link rel="canonical" href="https://amplio.ro/calculator-investitie">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://amplio.ro/calculator-investitie">
+<meta property="og:title" content="Calculator de investiție în marketing | AMPLIO">
+<meta property="og:description" content="Bifează ce ai nevoie și vezi pe loc intervalul de investiție lunară. Fără „cere ofertă”.">
+<meta property="og:image" content="https://amplio.ro/assets/og-amplio.png">
+<meta property="og:locale" content="ro_RO">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+.calc{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;margin-top:30px}
+.cbox{background:linear-gradient(165deg,rgba(255,255,255,.045),rgba(255,255,255,.015));border:1px solid var(--line2);border-radius:20px;padding:32px}
+.crow{display:flex;align-items:center;gap:13px;padding:14px 0;border-bottom:1px solid var(--line)}
+.crow:last-of-type{border-bottom:none}
+.crow input[type=checkbox]{width:20px;height:20px;accent-color:var(--blue);cursor:pointer;flex:none}
+.crow label{font-size:15px;flex:1;cursor:pointer;color:var(--txt)}
+.crow label b{color:var(--off);font-weight:600}
+.crow .pr{font-size:13px;color:var(--txt-dim);white-space:nowrap}
+.switch{display:flex;align-items:flex-start;gap:13px;margin-top:18px;padding:17px;background:rgba(201,162,39,.08);border-radius:13px;border:1px solid rgba(201,162,39,.30)}
+.switch input{width:20px;height:20px;accent-color:var(--gold);cursor:pointer;flex:none;margin-top:1px}
+.switch label{font-size:14px;cursor:pointer;color:var(--txt);line-height:1.5}
+.switch label b{color:var(--gold2)}
+.total{background:linear-gradient(165deg,var(--navy3),var(--navy));border:1px solid var(--line2);border-radius:20px;padding:34px;position:sticky;top:92px}
+.total .sum{font-family:var(--display);font-weight:700;font-size:46px;color:var(--gold);line-height:1}
+.total .sum small{font-size:18px;color:var(--txt-dim);font-weight:500}
+.total ul{list-style:none;margin:18px 0;font-size:14.5px}
+.total ul li{padding:7px 0;border-bottom:1px solid var(--line);color:var(--txt-dim)}
+@media(max-width:860px){.calc{grid-template-columns:1fr;gap:22px}.total{position:static}}
+</style>
+</head>
+<body id="top">
+<nav id="nav">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="AMPLIO, Acasă">
+      <svg viewBox="0 0 192 192" aria-hidden="true"><rect width="192" height="192" rx="40" fill="#0E2240" stroke="#C9A227" stroke-width="5"/><polygon points="56,138 96,48 136,138" fill="none" stroke="#F7F5F0" stroke-width="13" stroke-linejoin="round"/><polygon points="80,138 96,102 112,138" fill="#C9A227"/></svg>
+      <span class="wm">AMPLIO</span>
+    </a>
+    <ul class="navlinks">
+      <li><a href="/servicii">Servicii</a></li>
+      <li><a href="/solutii">Soluții</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/despre">Despre</a></li>
+      <li><a href="/audit-gratuit" class="navcta">Audit gratuit</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Deschide meniul" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mmenu" id="mmenu">
+    <a href="/servicii" onclick="toggleMenu()">Servicii</a>
+    <a href="/solutii" onclick="toggleMenu()">Soluții</a>
+    <a href="/blog" onclick="toggleMenu()">Blog</a>
+    <a href="/despre" onclick="toggleMenu()">Despre</a>
+    <a href="/audit-gratuit" class="mcta" onclick="toggleMenu()">Cere auditul gratuit →</a>
+  </div>
+</nav>
+
+<section class="subhero">
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="breadcrumb"><a href="/">Acasă</a><span class="sep">›</span><span aria-current="page">Calculator investiție</span></nav>
+    <span class="eyebrow">Transparență totală</span>
+    <h1>Calculator de investiție. <span class="g">Fără „cere ofertă”.</span></h1>
+    <p class="lead">Bifează ce are nevoie afacerea ta și vezi pe loc intervalul de investiție. Activează modelul de parteneriat ca să vezi cum scade fee-ul fix când ne legăm de rezultatele tale.</p>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap rev">
+    <div class="calc">
+      <div class="cbox">
+        <div class="crow"><input type="checkbox" id="c1" data-min="450" data-max="900" onchange="calc()"><label for="c1"><b>Performance Ads</b>: Google / Meta / TikTok</label><span class="pr">450-900 €</span></div>
+        <div class="crow"><input type="checkbox" id="c2" data-min="450" data-max="900" onchange="calc()"><label for="c2"><b>SEO + GEO</b>: vizibilitate Google și AI</label><span class="pr">450-900 €</span></div>
+        <div class="crow"><input type="checkbox" id="c3" data-min="350" data-max="950" onchange="calc()"><label for="c3"><b>Social Media</b>: pachete S/M/L</label><span class="pr">350-950 €</span></div>
+        <div class="crow"><input type="checkbox" id="c4" data-min="250" data-max="500" onchange="calc()"><label for="c4"><b>Email &amp; Automatizări</b></label><span class="pr">250-500 €</span></div>
+        <div class="crow"><input type="checkbox" id="c5" data-min="400" data-max="600" onchange="calc()"><label for="c5"><b>CRO</b>: optimizarea conversiei</label><span class="pr">400-600 €</span></div>
+        <div class="crow"><input type="checkbox" id="c6" data-min="800" data-max="1500" onchange="calc()"><label for="c6"><b>CMO Extern</b>: strategie senioră</label><span class="pr">800-1.500 €</span></div>
+        <div class="switch">
+          <input type="checkbox" id="hibrid" onchange="calc()">
+          <label for="hibrid"><b>Model de parteneriat:</b> fee fix redus cu ~35% + 5-10% din creșterea vânzărilor peste nivelul actual. Câștigăm doar dacă tu câștigi.</label>
+        </div>
+      </div>
+      <div class="total">
+        <p class="eyebrow" style="color:var(--sky)">Investiția lunară estimată</p>
+        <div class="sum"><span id="tmin">0</span>-<span id="tmax">0</span> €<small>/lună</small></div>
+        <ul id="tlist"><li>Bifează serviciile relevante pentru tine.</li></ul>
+        <p class="note" id="hibnote"></p>
+        <p class="note">💡 Dacă selectezi 3+ servicii, abonamentul corporate (de la 950 €) e aproape sigur mai eficient. Îți spunem onest în call.</p>
+        <a class="btn btn-gold" href="/audit-gratuit" style="margin-top:16px;width:100%;justify-content:center">Discută cifrele cu noi <span class="ar">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="logo" href="/" aria-label="AMPLIO">
+          <svg viewBox="0 0 192 192" aria-hidden="true"><rect width="192" height="192" rx="40" fill="#0E2240" stroke="#C9A227" stroke-width="5"/><polygon points="56,138 96,48 136,138" fill="none" stroke="#F7F5F0" stroke-width="13" stroke-linejoin="round"/><polygon points="80,138 96,102 112,138" fill="#C9A227"/></svg>
+          <span class="wm">AMPLIO</span>
+        </a>
+        <p>Creștere proiectată, nu promisă.<br>București, România · operăm în RO + UE</p>
+      </div>
+      <div class="foot-col">
+        <h4>Servicii</h4>
+        <a href="/servicii/performance-ads">Performance Ads</a>
+        <a href="/servicii/seo-geo">SEO + GEO</a>
+        <a href="/servicii/social-media">Social Media</a>
+        <a href="/servicii/email-automatizari">Email &amp; Automatizări</a>
+        <a href="/servicii/abonament-corporate">Abonament Corporate</a>
+      </div>
+      <div class="foot-col">
+        <h4>Soluții</h4>
+        <a href="/solutii/marketing-ecommerce">eCommerce</a>
+        <a href="/solutii/marketing-clinici">Clinici</a>
+        <a href="/solutii/marketing-b2b">Servicii B2B</a>
+        <a href="/solutii/marketing-horeca">HoReCa</a>
+        <a href="/solutii/marketing-imobiliare">Imobiliare</a>
+      </div>
+      <div class="foot-col">
+        <h4>Resurse &amp; Companie</h4>
+        <a href="/blog">Blog</a>
+        <a href="/scor-vizibilitate-ai">Scor vizibilitate AI</a>
+        <a href="/calculator-investitie">Calculator investiție</a>
+        <a href="/despre">Despre</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span id="yr">2026</span> AMPLIO DIGITAL S.R.L.</span>
+      <span><a href="/termeni">Termeni</a> · <a href="/confidentialitate">Confidențialitate</a> · <a href="/cookies">Cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/app.js"></script>
+<script>
+function calc(){
+ let min=0,max=0;const list=[];
+ document.querySelectorAll('.crow input[type=checkbox]').forEach(cb=>{
+  if(cb.checked&&cb.dataset.min){min+=+cb.dataset.min;max+=+cb.dataset.max;list.push(cb.parentElement.querySelector('label b').textContent)}
+ });
+ const hib=document.getElementById('hibrid').checked;
+ let nmin=min,nmax=max;
+ if(hib){nmin=Math.round(min*0.65/10)*10;nmax=Math.round(max*0.65/10)*10}
+ document.getElementById('tmin').textContent=nmin.toLocaleString('ro-RO');
+ document.getElementById('tmax').textContent=nmax.toLocaleString('ro-RO');
+ document.getElementById('tlist').innerHTML=list.length?list.map(x=>`<li>✓ ${x}</li>`).join(''):'<li>Bifează serviciile relevante pentru tine.</li>';
+ document.getElementById('hibnote').innerHTML=hib&&min?`★ Model de parteneriat activ: fee fix redus de la ${min.toLocaleString('ro-RO')}-${max.toLocaleString('ro-RO')} € + 5-10% aplicat <u>doar</u> creșterii vânzărilor peste nivelul tău actual (baseline semnat la start, plafon contractual).`:'';
+}
+calc();
+</script>
+</body>
+</html>
