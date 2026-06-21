@@ -16,46 +16,46 @@ $NAV = @'
       <span class="wm">AMPLIO</span>
     </a>
     <ul class="navlinks">
-      <li class="has-drop"><a href="/servicii">Servicii</a>
+      <li class="has-drop"><a href="/servicii/">Servicii</a>
         <div class="drop">
-          <a href="/servicii/performance-ads"><b>Performance Ads</b><small>Google, Meta, TikTok</small></a>
-          <a href="/servicii/seo-geo"><b>SEO + GEO</b><small>Vizibilitate Google și AI</small></a>
-          <a href="/servicii/social-media"><b>Social Media</b><small>Conținut și calendar</small></a>
-          <a href="/servicii/email-automatizari"><b>Email &amp; Automatizări</b><small>Fluxuri care vând</small></a>
-          <a href="/servicii/landing-pages-cro"><b>Landing &amp; CRO</b><small>Pagini care convertesc</small></a>
-          <a href="/servicii/cmo-extern"><b>CMO Extern</b><small>Strategie senioră</small></a>
-          <a href="/servicii/abonament-corporate"><b>Abonament Corporate</b><small>Externalizare completă</small></a>
-          <a class="all" href="/servicii">Vezi toate serviciile &rarr;</a>
+          <a href="/servicii/performance-ads/"><b>Performance Ads</b><small>Google, Meta, TikTok</small></a>
+          <a href="/servicii/seo-geo/"><b>SEO + GEO</b><small>Vizibilitate Google și AI</small></a>
+          <a href="/servicii/social-media/"><b>Social Media</b><small>Conținut și calendar</small></a>
+          <a href="/servicii/email-automatizari/"><b>Email &amp; Automatizări</b><small>Fluxuri care vând</small></a>
+          <a href="/servicii/landing-pages-cro/"><b>Landing &amp; CRO</b><small>Pagini care convertesc</small></a>
+          <a href="/servicii/cmo-extern/"><b>CMO Extern</b><small>Strategie senioră</small></a>
+          <a href="/servicii/abonament-corporate/"><b>Abonament Corporate</b><small>Externalizare completă</small></a>
+          <a class="all" href="/servicii/">Vezi toate serviciile &rarr;</a>
         </div>
       </li>
-      <li class="has-drop"><a href="/solutii">Soluții</a>
+      <li class="has-drop"><a href="/solutii/">Soluții</a>
         <div class="drop">
-          <a href="/solutii/marketing-ecommerce"><b>eCommerce</b><small>Magazine online</small></a>
-          <a href="/solutii/marketing-clinici"><b>Clinici medicale</b><small>Pacienți, nu like-uri</small></a>
-          <a href="/solutii/marketing-b2b"><b>Servicii B2B</b><small>Pipeline previzibil</small></a>
-          <a href="/solutii/marketing-horeca"><b>HoReCa</b><small>Restaurante, ospitalitate</small></a>
-          <a href="/solutii/marketing-export"><b>Producători &amp; Export</b><small>Piețe UE</small></a>
-          <a href="/solutii/marketing-imobiliare"><b>Imobiliare</b><small>Dezvoltatori</small></a>
-          <a class="all" href="/solutii">Vezi toate soluțiile &rarr;</a>
+          <a href="/solutii/marketing-ecommerce/"><b>eCommerce</b><small>Magazine online</small></a>
+          <a href="/solutii/marketing-clinici/"><b>Clinici medicale</b><small>Pacienți, nu like-uri</small></a>
+          <a href="/solutii/marketing-b2b/"><b>Servicii B2B</b><small>Pipeline previzibil</small></a>
+          <a href="/solutii/marketing-horeca/"><b>HoReCa</b><small>Restaurante, ospitalitate</small></a>
+          <a href="/solutii/marketing-export/"><b>Producători &amp; Export</b><small>Piețe UE</small></a>
+          <a href="/solutii/marketing-imobiliare/"><b>Imobiliare</b><small>Dezvoltatori</small></a>
+          <a class="all" href="/solutii/">Vezi toate soluțiile &rarr;</a>
         </div>
       </li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/despre">Despre</a></li>
-      <li><a href="/audit-gratuit" class="navcta">Audit gratuit</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/despre/">Despre</a></li>
+      <li><a href="/audit-gratuit/" class="navcta">Audit gratuit</a></li>
     </ul>
     <button class="burger" id="burger" aria-label="Deschide meniul" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </div>
   <div class="mmenu" id="mmenu">
-    <a href="/servicii" onclick="toggleMenu()">Servicii</a>
-    <a class="sub" href="/servicii/performance-ads" onclick="toggleMenu()">Performance Ads</a>
-    <a class="sub" href="/servicii/seo-geo" onclick="toggleMenu()">SEO + GEO</a>
-    <a class="sub" href="/servicii/social-media" onclick="toggleMenu()">Social Media</a>
-    <a href="/solutii" onclick="toggleMenu()">Soluții</a>
-    <a class="sub" href="/solutii/marketing-ecommerce" onclick="toggleMenu()">eCommerce</a>
-    <a class="sub" href="/solutii/marketing-clinici" onclick="toggleMenu()">Clinici</a>
-    <a href="/blog" onclick="toggleMenu()">Blog</a>
-    <a href="/despre" onclick="toggleMenu()">Despre</a>
-    <a href="/audit-gratuit" class="mcta" onclick="toggleMenu()">Cere auditul gratuit &rarr;</a>
+    <a href="/servicii/" onclick="toggleMenu()">Servicii</a>
+    <a class="sub" href="/servicii/performance-ads/" onclick="toggleMenu()">Performance Ads</a>
+    <a class="sub" href="/servicii/seo-geo/" onclick="toggleMenu()">SEO + GEO</a>
+    <a class="sub" href="/servicii/social-media/" onclick="toggleMenu()">Social Media</a>
+    <a href="/solutii/" onclick="toggleMenu()">Soluții</a>
+    <a class="sub" href="/solutii/marketing-ecommerce/" onclick="toggleMenu()">eCommerce</a>
+    <a class="sub" href="/solutii/marketing-clinici/" onclick="toggleMenu()">Clinici</a>
+    <a href="/blog/" onclick="toggleMenu()">Blog</a>
+    <a href="/despre/" onclick="toggleMenu()">Despre</a>
+    <a href="/audit-gratuit/" class="mcta" onclick="toggleMenu()">Cere auditul gratuit &rarr;</a>
   </div>
 </nav>
 '@
@@ -74,32 +74,32 @@ $FOOTER = @'
       </div>
       <div class="foot-col">
         <h4>Servicii</h4>
-        <a href="/servicii/performance-ads">Performance Ads</a>
-        <a href="/servicii/seo-geo">SEO + GEO</a>
-        <a href="/servicii/social-media">Social Media</a>
-        <a href="/servicii/email-automatizari">Email &amp; Automatizări</a>
-        <a href="/servicii/abonament-corporate">Abonament Corporate</a>
+        <a href="/servicii/performance-ads/">Performance Ads</a>
+        <a href="/servicii/seo-geo/">SEO + GEO</a>
+        <a href="/servicii/social-media/">Social Media</a>
+        <a href="/servicii/email-automatizari/">Email &amp; Automatizări</a>
+        <a href="/servicii/abonament-corporate/">Abonament Corporate</a>
       </div>
       <div class="foot-col">
         <h4>Soluții</h4>
-        <a href="/solutii/marketing-ecommerce">eCommerce</a>
-        <a href="/solutii/marketing-clinici">Clinici</a>
-        <a href="/solutii/marketing-b2b">Servicii B2B</a>
-        <a href="/solutii/marketing-horeca">HoReCa</a>
-        <a href="/solutii/marketing-imobiliare">Imobiliare</a>
+        <a href="/solutii/marketing-ecommerce/">eCommerce</a>
+        <a href="/solutii/marketing-clinici/">Clinici</a>
+        <a href="/solutii/marketing-b2b/">Servicii B2B</a>
+        <a href="/solutii/marketing-horeca/">HoReCa</a>
+        <a href="/solutii/marketing-imobiliare/">Imobiliare</a>
       </div>
       <div class="foot-col">
         <h4>Resurse &amp; Companie</h4>
-        <a href="/blog">Blog</a>
-        <a href="/scor-vizibilitate-ai">Scor vizibilitate AI</a>
-        <a href="/calculator-investitie">Calculator investiție</a>
-        <a href="/despre">Despre</a>
-        <a href="/contact">Contact</a>
+        <a href="/blog/">Blog</a>
+        <a href="/scor-vizibilitate-ai/">Scor vizibilitate AI</a>
+        <a href="/calculator-investitie/">Calculator investiție</a>
+        <a href="/despre/">Despre</a>
+        <a href="/contact/">Contact</a>
       </div>
     </div>
     <div class="foot-bot">
       <span>&copy; <span id="yr">2026</span> AMPLIO DIGITAL S.R.L.</span>
-      <span><a href="/termeni">Termeni</a> &middot; <a href="/confidentialitate">Confidențialitate</a> &middot; <a href="/cookies">Cookies</a></span>
+      <span><a href="/termeni/">Termeni</a> &middot; <a href="/confidentialitate/">Confidențialitate</a> &middot; <a href="/cookies/">Cookies</a></span>
     </div>
   </div>
 </footer>
@@ -107,7 +107,7 @@ $FOOTER = @'
 
 # ---------- Wrapper HTML ----------
 function Build-Page($p) {
-  $canonical = "https://amplio.ro/$($p.path)"
+  $canonical = "https://amplio.ro/$($p.path)/"
   $jsonld = ""
   if ($p.jsonld) { $jsonld = "<script type=""application/ld+json"">$($p.jsonld)</script>" }
   $html = @"
@@ -154,7 +154,8 @@ $FOOTER
 function Crumbs($trail) {
   $items = @()
   for ($i=0; $i -lt $trail.Count; $i++) {
-    $items += "{""@type"":""ListItem"",""position"":$($i+1),""name"":""$($trail[$i][0])"",""item"":""https://amplio.ro$($trail[$i][1])""}"
+    $u = $trail[$i][1]; if ($u -ne '/') { $u = $u.TrimEnd('/') + '/' }
+    $items += "{""@type"":""ListItem"",""position"":$($i+1),""name"":""$($trail[$i][0])"",""item"":""https://amplio.ro$u""}"
   }
   return "{""@context"":""https://schema.org"",""@type"":""BreadcrumbList"",""itemListElement"":[$($items -join ',')]}"
 }
@@ -162,7 +163,7 @@ function CrumbsHtml($trail) {
   $parts = @()
   for ($i=0; $i -lt $trail.Count; $i++) {
     if ($i -eq $trail.Count-1) { $parts += "<span aria-current=""page"">$($trail[$i][0])</span>" }
-    else { $parts += "<a href=""$($trail[$i][1])"">$($trail[$i][0])</a>" }
+    else { $cu = $trail[$i][1]; if ($cu -ne '/') { $cu = $cu.TrimEnd('/') + '/' }; $parts += "<a href=""$cu"">$($trail[$i][0])</a>" }
   }
   return '<nav class="crumbs" aria-label="breadcrumb">' + ($parts -join '<span class="sep">&rsaquo;</span>') + '</nav>'
 }
@@ -179,8 +180,8 @@ function SvcBody($eyebrow,$h1a,$h1b,$lead,$crumbsHtml,$introHtml,$listItems,$pri
     <h1>$h1a <span class="g">$h1b</span></h1>
     <p class="lead">$lead</p>
     <div class="hero-cta" style="margin-top:30px">
-      <a class="btn btn-primary" href="/audit-gratuit">Cere auditul gratuit <span class="ar">&rarr;</span></a>
-      <a class="btn btn-ghost" href="/servicii">Toate serviciile</a>
+      <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+      <a class="btn btn-ghost" href="/servicii/">Toate serviciile</a>
     </div>
   </div>
 </section>
@@ -205,7 +206,7 @@ function SvcBody($eyebrow,$h1a,$h1b,$lead,$crumbsHtml,$introHtml,$listItems,$pri
     <div class="ctaband">
       <h2>Nu ești sigur ce ți se potrivește?</h2>
       <p class="lead center">Cere auditul gratuit. În 48 de ore primești o analiză personalizată și primii 3 pași, fără obligații.</p>
-      <a class="btn btn-primary" href="/audit-gratuit">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+      <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
     </div>
     $relatedHtml
   </div>
@@ -240,7 +241,7 @@ function SolBody($eyebrow,$h1a,$h1b,$lead,$crumbsHtml,$pain,$listItems,$proofNum
         <div style="font-family:var(--display);font-weight:700;font-size:42px;color:var(--gold);line-height:1">$proofNum</div>
         <p style="margin:10px 0 18px;font-size:14.5px">$proofText</p>
         <div style="border-top:1px solid var(--line);padding-top:15px;font-size:14px;color:var(--txt);line-height:1.9">&#10003; KPI scriși în contract<br>&#10003; Clauză de ieșire la 90 de zile<br>&#10003; Conturile rămân ale tale</div>
-        <a class="btn btn-primary" href="/audit-gratuit" style="margin-top:20px;width:100%;justify-content:center">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+        <a class="btn btn-primary" href="/audit-gratuit/" style="margin-top:20px;width:100%;justify-content:center">Cere auditul gratuit <span class="ar">&rarr;</span></a>
       </div>
     </div>
   </div>
@@ -255,7 +256,7 @@ function SolBody($eyebrow,$h1a,$h1b,$lead,$crumbsHtml,$pain,$listItems,$proofNum
 
 # Mic helper pentru blocul "servicii relevante"
 function Related($title,$links) {
-  $a = ($links | ForEach-Object { "<a class=""svc"" href=""$($_[1])""><h3>$($_[0])</h3><span class=""more"">Vezi &rarr;</span></a>" }) -join "`n      "
+  $a = ($links | ForEach-Object { "<a class=""svc"" href=""$($_[1].TrimEnd('/'))/""><h3>$($_[0])</h3><span class=""more"">Vezi &rarr;</span></a>" }) -join "`n      "
   return @"
 <h2 style="font-size:clamp(22px,2.6vw,28px);margin-bottom:4px">$title</h2>
     <div class="svc-grid">
@@ -339,12 +340,12 @@ $pages += @{
 <section>
   <div class="wrap rev">
     <div class="svc-grid">
-      <a class="svc" href="/solutii/marketing-ecommerce"><div class="ic">E</div><h3>Magazine online</h3><p>ROAS și venit, nu afișări. Ads + email + CRO pe paginile de produs, cu model de parteneriat.</p><span class="more">Soluția eCommerce &rarr;</span></a>
-      <a class="svc" href="/solutii/marketing-clinici"><div class="ic">C</div><h3>Clinici medicale</h3><p>Calendar plin cu pacienții potriviți: ads local, Google Business și SEO/GEO, raport în programări.</p><span class="more">Soluția pentru clinici &rarr;</span></a>
-      <a class="svc" href="/solutii/marketing-b2b"><div class="ic">B</div><h3>Servicii B2B</h3><p>Pipeline previzibil: LinkedIn ABM + SEO/GEO + nurture, cu lead calificat semnat în contract.</p><span class="more">Soluția B2B &rarr;</span></a>
-      <a class="svc" href="/solutii/marketing-horeca"><div class="ic">H</div><h3>HoReCa</h3><p>Social apetisant, ads local și micro-influenceri. Pachete fixe de la 350 &euro;/lună.</p><span class="more">Soluția HoReCa &rarr;</span></a>
-      <a class="svc" href="/solutii/marketing-export"><div class="ic">P</div><h3>Producători &amp; Export</h3><p>Site multilingv, SEO/GEO internațional și ABM pe 2-3 piețe UE selectate strategic.</p><span class="more">Soluția pentru export &rarr;</span></a>
-      <a class="svc" href="/solutii/marketing-imobiliare"><div class="ic">I</div><h3>Imobiliare</h3><p>Landing de proiect, CRM/nurture și bonus per unitate vândută peste ritmul planificat.</p><span class="more">Soluția imobiliare &rarr;</span></a>
+      <a class="svc" href="/solutii/marketing-ecommerce/"><div class="ic">E</div><h3>Magazine online</h3><p>ROAS și venit, nu afișări. Ads + email + CRO pe paginile de produs, cu model de parteneriat.</p><span class="more">Soluția eCommerce &rarr;</span></a>
+      <a class="svc" href="/solutii/marketing-clinici/"><div class="ic">C</div><h3>Clinici medicale</h3><p>Calendar plin cu pacienții potriviți: ads local, Google Business și SEO/GEO, raport în programări.</p><span class="more">Soluția pentru clinici &rarr;</span></a>
+      <a class="svc" href="/solutii/marketing-b2b/"><div class="ic">B</div><h3>Servicii B2B</h3><p>Pipeline previzibil: LinkedIn ABM + SEO/GEO + nurture, cu lead calificat semnat în contract.</p><span class="more">Soluția B2B &rarr;</span></a>
+      <a class="svc" href="/solutii/marketing-horeca/"><div class="ic">H</div><h3>HoReCa</h3><p>Social apetisant, ads local și micro-influenceri. Pachete fixe de la 350 &euro;/lună.</p><span class="more">Soluția HoReCa &rarr;</span></a>
+      <a class="svc" href="/solutii/marketing-export/"><div class="ic">P</div><h3>Producători &amp; Export</h3><p>Site multilingv, SEO/GEO internațional și ABM pe 2-3 piețe UE selectate strategic.</p><span class="more">Soluția pentru export &rarr;</span></a>
+      <a class="svc" href="/solutii/marketing-imobiliare/"><div class="ic">I</div><h3>Imobiliare</h3><p>Landing de proiect, CRM/nurture și bonus per unitate vândută peste ritmul planificat.</p><span class="more">Soluția imobiliare &rarr;</span></a>
     </div>
   </div>
 </section>
@@ -439,7 +440,7 @@ $pages += @{
     <div class="ctaband" style="margin-top:40px">
       <h2>Vrei să vezi cum ar arăta pentru tine?</h2>
       <p class="lead center">Cere auditul gratuit de vizibilitate. În 48 de ore, fără obligații.</p>
-      <a class="btn btn-primary" href="/audit-gratuit">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+      <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
     </div>
   </div>
 </section>
@@ -541,21 +542,21 @@ $pages += @{
   <p class="lead">Articole practice despre SEO, GEO, ads și creștere, scrise pentru fondatori și firme medii și mici din România. Fără teorie goală.</p>
 </div></section>
 <section><div class="wrap rev"><div class="bloglist">
-  <a class="bcard" href="/blog/verifica-daca-apari-in-ai"><div class="cat">Ghid · GEO</div><h3>Cum verifici dacă firma ta apare în ChatGPT și AI</h3><p>Tutorial pas cu pas: află în 10 minute dacă apari în ChatGPT, Perplexity și Google AI Overviews, și ce faci dacă ești invizibil. Fără cont, fără cost.</p><span class="more">Citește tutorialul &rarr;</span></a>
-  <a class="bcard" href="/blog/ghid-geo"><div class="cat">Ghid · GEO</div><h3>Ce este GEO și cum te optimizezi pentru motoarele AI</h3><p>Ghidul complet despre Generative Engine Optimization: cum ajungi să fii citat de ChatGPT, Perplexity și AI Overviews, nu doar listat în Google.</p><span class="more">Citește ghidul &rarr;</span></a>
-  <a class="bcard" href="/blog/geo-vs-seo"><div class="cat">GEO</div><h3>GEO vs SEO: care e diferența și de ce ai nevoie de ambele</h3><p>Nu sunt în competiție, sunt două straturi ale aceleiași strategii. Explicăm clar diferența și de unde începi.</p><span class="more">Citește articolul &rarr;</span></a>
-  <a class="bcard" href="/blog/cum-aparii-in-chatgpt"><div class="cat">GEO</div><h3>Cum apari în ChatGPT cu firma ta</h3><p>Pași concreți ca afacerea ta să fie recomandată când cineva întreabă un asistent AI „cea mai bună firmă din…”.</p><span class="more">Citește articolul &rarr;</span></a>
-  <a class="bcard" href="/blog/cost-google-ads-romania"><div class="cat">Performance Ads</div><h3>Cât costă Google Ads în România în 2026</h3><p>Bugete reale, cost-pe-click pe industrii și cum să nu arzi banii în primele luni de campanii.</p><span class="more">Citește articolul &rarr;</span></a>
-  <a class="bcard" href="/blog/greseli-buget-google-ads"><div class="cat">Performance Ads</div><h3>7 greșeli care îți ard bugetul de Google Ads</h3><p>Cele mai frecvente moduri în care firmele pierd bani pe ads, și cum le eviți pe fiecare.</p><span class="more">Citește articolul &rarr;</span></a>
-  <a class="bcard" href="/blog/cum-alegi-agentie-marketing"><div class="cat">Ghid</div><h3>Cum alegi o agenție de marketing (și ce întrebări să pui)</h3><p>Lista de întrebări care separă o agenție care livrează de una care doar raportează afișări. Plus semnalele de alarmă.</p><span class="more">Citește ghidul &rarr;</span></a>
-  <a class="bcard" href="/blog/ce-este-llms-txt"><div class="cat">GEO</div><h3>Ce este llms.txt și cum îl folosești</h3><p>Fișierul simplu care le spune modelelor AI ce ești și ce oferi. Ce conține și cum îl pui pe site.</p><span class="more">Citește articolul &rarr;</span></a>
-  <a class="bcard" href="/blog/google-business-profil-local"><div class="cat">SEO local</div><h3>Cum apari pe Google Maps cu profilul de business</h3><p>Pași concreți să apari când localnicii caută „lângă mine”, pentru clinici, restaurante și afaceri locale.</p><span class="more">Citește articolul &rarr;</span></a>
-  <a class="bcard" href="/blog/cuvinte-cheie-de-la-zero"><div class="cat">SEO</div><h3>Cum alegi cuvintele cheie când pornești de la zero</h3><p>De ce să nu țintești termenii mari de la început și cum găsești long-tail-ul care îți aduce primii clienți.</p><span class="more">Citește articolul &rarr;</span></a>
-  <a class="bcard" href="/blog/google-ads-vs-meta-ads"><div class="cat">Performance Ads</div><h3>Google Ads vs Meta Ads: cu care începi?</h3><p>Cele două canale rezolvă probleme diferite. Cum alegi în funcție de afacerea și obiectivul tău.</p><span class="more">Citește articolul &rarr;</span></a>
-  <a class="bcard" href="/blog/marketing-magazin-online"><div class="cat">eCommerce</div><h3>Marketing pentru magazin online: ghid de creștere a vânzărilor</h3><p>Cele trei pârghii care cresc vânzările unui magazin online, și în ce ordine le activezi.</p><span class="more">Citește articolul &rarr;</span></a>
-  <a class="bcard" href="/blog/marketing-clinica-pacienti"><div class="cat">Clinici</div><h3>Cum își umple o clinică agenda cu pacienții potriviți</h3><p>Marketing pentru clinici la standardul actului medical: pacienți din zonă, fără reclame agresive.</p><span class="more">Citește articolul &rarr;</span></a>
-  <a class="bcard" href="/blog/marketing-b2b-pipeline"><div class="cat">B2B</div><h3>Cum construiești un pipeline B2B previzibil</h3><p>Dincolo de rețeaua personală de contacte: motorul de lead-uri calificate pentru firme de servicii.</p><span class="more">Citește articolul &rarr;</span></a>
-  <a class="bcard" href="/blog/conturi-ads-proprietate"><div class="cat">POV</div><h3>De ce conturile de ads trebuie să rămână ale tale</h3><p>Cel mai important lucru pe care mulți antreprenori îl descoperă prea târziu, când vor să schimbe agenția.</p><span class="more">Citește articolul &rarr;</span></a>
+  <a class="bcard" href="/blog/verifica-daca-apari-in-ai/"><div class="cat">Ghid · GEO</div><h3>Cum verifici dacă firma ta apare în ChatGPT și AI</h3><p>Tutorial pas cu pas: află în 10 minute dacă apari în ChatGPT, Perplexity și Google AI Overviews, și ce faci dacă ești invizibil. Fără cont, fără cost.</p><span class="more">Citește tutorialul &rarr;</span></a>
+  <a class="bcard" href="/blog/ghid-geo/"><div class="cat">Ghid · GEO</div><h3>Ce este GEO și cum te optimizezi pentru motoarele AI</h3><p>Ghidul complet despre Generative Engine Optimization: cum ajungi să fii citat de ChatGPT, Perplexity și AI Overviews, nu doar listat în Google.</p><span class="more">Citește ghidul &rarr;</span></a>
+  <a class="bcard" href="/blog/geo-vs-seo/"><div class="cat">GEO</div><h3>GEO vs SEO: care e diferența și de ce ai nevoie de ambele</h3><p>Nu sunt în competiție, sunt două straturi ale aceleiași strategii. Explicăm clar diferența și de unde începi.</p><span class="more">Citește articolul &rarr;</span></a>
+  <a class="bcard" href="/blog/cum-aparii-in-chatgpt/"><div class="cat">GEO</div><h3>Cum apari în ChatGPT cu firma ta</h3><p>Pași concreți ca afacerea ta să fie recomandată când cineva întreabă un asistent AI „cea mai bună firmă din…”.</p><span class="more">Citește articolul &rarr;</span></a>
+  <a class="bcard" href="/blog/cost-google-ads-romania/"><div class="cat">Performance Ads</div><h3>Cât costă Google Ads în România în 2026</h3><p>Bugete reale, cost-pe-click pe industrii și cum să nu arzi banii în primele luni de campanii.</p><span class="more">Citește articolul &rarr;</span></a>
+  <a class="bcard" href="/blog/greseli-buget-google-ads/"><div class="cat">Performance Ads</div><h3>7 greșeli care îți ard bugetul de Google Ads</h3><p>Cele mai frecvente moduri în care firmele pierd bani pe ads, și cum le eviți pe fiecare.</p><span class="more">Citește articolul &rarr;</span></a>
+  <a class="bcard" href="/blog/cum-alegi-agentie-marketing/"><div class="cat">Ghid</div><h3>Cum alegi o agenție de marketing (și ce întrebări să pui)</h3><p>Lista de întrebări care separă o agenție care livrează de una care doar raportează afișări. Plus semnalele de alarmă.</p><span class="more">Citește ghidul &rarr;</span></a>
+  <a class="bcard" href="/blog/ce-este-llms-txt/"><div class="cat">GEO</div><h3>Ce este llms.txt și cum îl folosești</h3><p>Fișierul simplu care le spune modelelor AI ce ești și ce oferi. Ce conține și cum îl pui pe site.</p><span class="more">Citește articolul &rarr;</span></a>
+  <a class="bcard" href="/blog/google-business-profil-local/"><div class="cat">SEO local</div><h3>Cum apari pe Google Maps cu profilul de business</h3><p>Pași concreți să apari când localnicii caută „lângă mine”, pentru clinici, restaurante și afaceri locale.</p><span class="more">Citește articolul &rarr;</span></a>
+  <a class="bcard" href="/blog/cuvinte-cheie-de-la-zero/"><div class="cat">SEO</div><h3>Cum alegi cuvintele cheie când pornești de la zero</h3><p>De ce să nu țintești termenii mari de la început și cum găsești long-tail-ul care îți aduce primii clienți.</p><span class="more">Citește articolul &rarr;</span></a>
+  <a class="bcard" href="/blog/google-ads-vs-meta-ads/"><div class="cat">Performance Ads</div><h3>Google Ads vs Meta Ads: cu care începi?</h3><p>Cele două canale rezolvă probleme diferite. Cum alegi în funcție de afacerea și obiectivul tău.</p><span class="more">Citește articolul &rarr;</span></a>
+  <a class="bcard" href="/blog/marketing-magazin-online/"><div class="cat">eCommerce</div><h3>Marketing pentru magazin online: ghid de creștere a vânzărilor</h3><p>Cele trei pârghii care cresc vânzările unui magazin online, și în ce ordine le activezi.</p><span class="more">Citește articolul &rarr;</span></a>
+  <a class="bcard" href="/blog/marketing-clinica-pacienti/"><div class="cat">Clinici</div><h3>Cum își umple o clinică agenda cu pacienții potriviți</h3><p>Marketing pentru clinici la standardul actului medical: pacienți din zonă, fără reclame agresive.</p><span class="more">Citește articolul &rarr;</span></a>
+  <a class="bcard" href="/blog/marketing-b2b-pipeline/"><div class="cat">B2B</div><h3>Cum construiești un pipeline B2B previzibil</h3><p>Dincolo de rețeaua personală de contacte: motorul de lead-uri calificate pentru firme de servicii.</p><span class="more">Citește articolul &rarr;</span></a>
+  <a class="bcard" href="/blog/conturi-ads-proprietate/"><div class="cat">POV</div><h3>De ce conturile de ads trebuie să rămână ale tale</h3><p>Cel mai important lucru pe care mulți antreprenori îl descoperă prea târziu, când vor să schimbe agenția.</p><span class="more">Citește articolul &rarr;</span></a>
 </div></div></section>
 "@
 }
@@ -590,15 +591,15 @@ $pages += @{
     <li><b>llms.txt și conținut agent-readable:</b> un fișier care spune modelelor AI ce ești și ce oferi.</li>
   </ul>
   <h2>Primul pas practic</h2>
-  <p>Înainte de orice optimizare, măsoară unde ești acum: întreabă ChatGPT și Perplexity despre domeniul tău și vezi dacă apari. Apoi compară-te cu 2-3 competitori. Exact asta facem noi în <a href="/audit-gratuit">auditul gratuit de vizibilitate</a>.</p>
+  <p>Înainte de orice optimizare, măsoară unde ești acum: întreabă ChatGPT și Perplexity despre domeniul tău și vezi dacă apari. Apoi compară-te cu 2-3 competitori. Exact asta facem noi în <a href="/audit-gratuit/">auditul gratuit de vizibilitate</a>.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Vrei să afli cum apari azi în Google și în AI?</strong> Cere <a href="/audit-gratuit">auditul gratuit</a> sau vezi serviciul nostru de <a href="/servicii/seo-geo">SEO + GEO</a>.</p>
+    <p style="margin:0"><strong>Vrei să afli cum apari azi în Google și în AI?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a> sau vezi serviciul nostru de <a href="/servicii/seo-geo/">SEO + GEO</a>.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
     <h2>Fii citat de AI, nu invizibil.</h2>
     <p class="lead center">Auditul gratuit îți arată exact unde stai și primii 3 pași.</p>
-    <a class="btn btn-primary" href="/audit-gratuit">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
   </div>
 </div></section>
 "@
@@ -628,8 +629,8 @@ $pages += @{
   <p>Recenzii reale, studii de caz, date concrete și o identitate clară (cine ești, unde ești) cresc probabilitatea să fii recomandat. AI-ul evită să recomande surse pe care nu le poate „verifica”.</p>
   <h2>4. Adaugă date structurate</h2>
   <p>Schema markup (date structurate) ajută atât Google, cât și modelele AI să înțeleagă ce reprezintă firma și paginile tale. E un semnal tehnic care merită implementat.</p>
-  <p>Vrei tot tabloul? Citește <a href="/blog/ghid-geo">ghidul complet despre GEO</a> sau vezi serviciul de <a href="/servicii/seo-geo">SEO + GEO</a>.</p>
-  <div class="key" style="margin-top:30px"><p style="margin:0"><strong>Curios cum apari acum?</strong> Cere <a href="/audit-gratuit">auditul gratuit</a>, îți arătăm cum te văd Google și ChatGPT față de 3 competitori.</p></div>
+  <p>Vrei tot tabloul? Citește <a href="/blog/ghid-geo/">ghidul complet despre GEO</a> sau vezi serviciul de <a href="/servicii/seo-geo/">SEO + GEO</a>.</p>
+  <div class="key" style="margin-top:30px"><p style="margin:0"><strong>Curios cum apari acum?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a>, îți arătăm cum te văd Google și ChatGPT față de 3 competitori.</p></div>
 </article></div></section>
 "@
 }
@@ -660,11 +661,11 @@ $pages += @{
   <ul class="flist" style="margin-top:14px">
     <li><b>Tracking corect întâi:</b> nu cheltui un euro până nu măsori conversiile corect.</li>
     <li><b>Pornește focalizat:</b> 1-2 campanii pe intențiile cele mai profitabile, nu „peste tot”.</li>
-    <li><b>Pagina de destinație contează:</b> ads bun + landing slab = bani pierduți. Vezi <a href="/servicii/landing-pages-cro">CRO</a>.</li>
+    <li><b>Pagina de destinație contează:</b> ads bun + landing slab = bani pierduți. Vezi <a href="/servicii/landing-pages-cro/">CRO</a>.</li>
     <li><b>Optimizare săptămânală:</b> campaniile lăsate „pe pilot automat” se degradează.</li>
   </ul>
-  <p>Așa administrăm noi <a href="/servicii/performance-ads">Performance Ads</a>: tracking, focus, optimizare săptămânală și raport pe venit.</p>
-  <div class="key" style="margin-top:30px"><p style="margin:0"><strong>Vrei o estimare pe cazul tău?</strong> Cere <a href="/audit-gratuit">auditul gratuit</a> sau folosește <a href="/calculator-investitie">calculatorul de investiție</a>.</p></div>
+  <p>Așa administrăm noi <a href="/servicii/performance-ads/">Performance Ads</a>: tracking, focus, optimizare săptămânală și raport pe venit.</p>
+  <div class="key" style="margin-top:30px"><p style="margin:0"><strong>Vrei o estimare pe cazul tău?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a> sau folosește <a href="/calculator-investitie/">calculatorul de investiție</a>.</p></div>
 </article></div></section>
 "@
 }
@@ -720,15 +721,15 @@ $pages += @{
   </ul>
 
   <h2>Ce faci mai departe</h2>
-  <p>Verificarea îți arată <em>unde</em> ești. Pasul următor e <em>de ce</em> și <em>ce repari întâi</em>. Despre asta e <a href="/blog/ghid-geo">ghidul nostru complet de GEO</a>, iar dacă vrei direct răspunsul pe cazul tău, îl primești prin <a href="/servicii/seo-geo">serviciul de SEO + GEO</a>.</p>
+  <p>Verificarea îți arată <em>unde</em> ești. Pasul următor e <em>de ce</em> și <em>ce repari întâi</em>. Despre asta e <a href="/blog/ghid-geo/">ghidul nostru complet de GEO</a>, iar dacă vrei direct răspunsul pe cazul tău, îl primești prin <a href="/servicii/seo-geo/">serviciul de SEO + GEO</a>.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Vrei să sărim peste verificarea manuală?</strong> În <a href="/audit-gratuit">auditul gratuit</a> facem noi analiza: cum apari azi în Google și în AI, față de 3 competitori, plus primii 3 pași. În 48 de ore, fără obligații.</p>
+    <p style="margin:0"><strong>Vrei să sărim peste verificarea manuală?</strong> În <a href="/audit-gratuit/">auditul gratuit</a> facem noi analiza: cum apari azi în Google și în AI, față de 3 competitori, plus primii 3 pași. În 48 de ore, fără obligații.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
     <h2>Află cum te vede AI-ul, gratuit.</h2>
     <p class="lead center">Îți trimitem analiza de vizibilitate în Google și în motoarele AI, comparativ cu concurența.</p>
-    <a class="btn btn-primary" href="/audit-gratuit">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
   </div>
 </div></section>
 "@
@@ -770,15 +771,15 @@ $pages += @{
   <blockquote>Vestea bună: SEO și GEO împart aceeași fundație, conținut clar, structurat și demn de încredere. O strategie bună le hrănește pe amândouă în paralel.</blockquote>
 
   <h2>De unde începi dacă pornești de la zero</h2>
-  <p>Întâi măsoară unde ești în ambele lumi (vezi tutorialul: <a href="/blog/verifica-daca-apari-in-ai">cum verifici dacă apari în AI</a>). Apoi repară fundația tehnică SEO și, în paralel, structurează conținutul ca să fie citabil de AI. Tot tabloul e în <a href="/blog/ghid-geo">ghidul complet de GEO</a>.</p>
+  <p>Întâi măsoară unde ești în ambele lumi (vezi tutorialul: <a href="/blog/verifica-daca-apari-in-ai/">cum verifici dacă apari în AI</a>). Apoi repară fundația tehnică SEO și, în paralel, structurează conținutul ca să fie citabil de AI. Tot tabloul e în <a href="/blog/ghid-geo/">ghidul complet de GEO</a>.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Le facem pe amândouă, împreună.</strong> Vezi serviciul de <a href="/servicii/seo-geo">SEO + GEO</a> sau cere <a href="/audit-gratuit">auditul gratuit</a> ca să afli unde stai acum în Google și în AI.</p>
+    <p style="margin:0"><strong>Le facem pe amândouă, împreună.</strong> Vezi serviciul de <a href="/servicii/seo-geo/">SEO + GEO</a> sau cere <a href="/audit-gratuit/">auditul gratuit</a> ca să afli unde stai acum în Google și în AI.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
     <h2>Acoperă ambele canale, nu doar unul.</h2>
     <p class="lead center">Auditul gratuit îți arată cum apari azi în Google și în motoarele AI.</p>
-    <a class="btn btn-primary" href="/audit-gratuit">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
   </div>
 </div></section>
 "@
@@ -805,7 +806,7 @@ $pages += @{
   <p>Fără tracking corect al conversiilor, nu știi ce campanie aduce clienți și ce campanie doar arde bani. Regula noastră: niciun euro pe media până nu e verificat tracking-ul cu teste reale.</p>
 
   <h2>2. Trimiți traficul pe o pagină slabă</h2>
-  <p>Un ad bun care duce spre o pagină care nu convertește e bani pierduți. Pagina de destinație face jumătate din rezultat. Vezi <a href="/servicii/landing-pages-cro">landing pages și CRO</a>.</p>
+  <p>Un ad bun care duce spre o pagină care nu convertește e bani pierduți. Pagina de destinație face jumătate din rezultat. Vezi <a href="/servicii/landing-pages-cro/">landing pages și CRO</a>.</p>
 
   <h2>3. Targetezi prea larg</h2>
   <p>&bdquo;Toată România, toți, 18-65" pare că maximizează reach-ul, dar risipește bugetul pe oameni care nu cumpără. Mai bine focusat și profitabil decât larg și inutil.</p>
@@ -823,15 +824,15 @@ $pages += @{
   <p>O singură variantă de ad înseamnă că nu vei ști niciodată dacă altceva mergea mai bine. Cu AI poți produce rapid mai multe variante și lași datele să decidă câștigătorul.</p>
 
   <h2>Concluzia</h2>
-  <p>Niciuna dintre aceste greșeli nu cere buget în plus, doar disciplină și atenție săptămânală. Despre asta e <a href="/servicii/performance-ads">serviciul nostru de Performance Ads</a>: tracking, focus, optimizare săptămânală, raport pe venit.</p>
+  <p>Niciuna dintre aceste greșeli nu cere buget în plus, doar disciplină și atenție săptămânală. Despre asta e <a href="/servicii/performance-ads/">serviciul nostru de Performance Ads</a>: tracking, focus, optimizare săptămânală, raport pe venit.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Suspectezi că arzi bani pe ads?</strong> Cere <a href="/audit-gratuit">auditul gratuit</a>, ne uităm la contul tău și îți spunem unde pierzi, fără obligații.</p>
+    <p style="margin:0"><strong>Suspectezi că arzi bani pe ads?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a>, ne uităm la contul tău și îți spunem unde pierzi, fără obligații.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
     <h2>Oprește risipa din contul tău de ads.</h2>
     <p class="lead center">Analizăm gratuit unde se duc banii și ce ai repara primul.</p>
-    <a class="btn btn-primary" href="/audit-gratuit">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
   </div>
 </div></section>
 "@
@@ -878,13 +879,13 @@ $pages += @{
   <h2>Un singur partener sau mai mulți furnizori?</h2>
   <p>Poți coordona singur 4-5 freelanceri, sau poți avea un singur partener care acoperă tot și răspunde de rezultat. Pentru o firmă fără departament de marketing intern, al doilea model economisește cel mai prețios lucru: timpul tău de coordonare.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Așa lucrăm noi:</strong> KPI scriși în contract, clauză de ieșire la 90 de zile, conturile rămân ale tale și, unde are sens, plată legată de rezultate. Vezi <a href="/despre">cum gândim</a> sau cere <a href="/audit-gratuit">auditul gratuit</a>.</p>
+    <p style="margin:0"><strong>Așa lucrăm noi:</strong> KPI scriși în contract, clauză de ieșire la 90 de zile, conturile rămân ale tale și, unde are sens, plată legată de rezultate. Vezi <a href="/despre/">cum gândim</a> sau cere <a href="/audit-gratuit/">auditul gratuit</a>.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
     <h2>Testează-ne cu o întrebare reală.</h2>
     <p class="lead center">Cere auditul gratuit și vezi cum gândim, înainte de orice contract.</p>
-    <a class="btn btn-primary" href="/audit-gratuit">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
   </div>
 </div></section>
 "@
@@ -917,15 +918,15 @@ $pages += @{
   </ul>
   <h2>Cum îl adaugi</h2>
   <p>Creezi un fișier numit <code>llms.txt</code>, îl completezi cu informația de mai sus în text simplu și îl urci la rădăcina site-ului (adică accesibil la adresa ta/llms.txt). Atât. E un câștig mic ca efort, dar parte dintr-o strategie GEO coerentă.</p>
-  <p>Important: llms.txt singur nu te face vizibil, e o piesă dintr-un puzzle mai mare. Vezi <a href="/blog/ghid-geo">ghidul complet de GEO</a> pentru tabloul întreg.</p>
+  <p>Important: llms.txt singur nu te face vizibil, e o piesă dintr-un puzzle mai mare. Vezi <a href="/blog/ghid-geo/">ghidul complet de GEO</a> pentru tabloul întreg.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Vrei vizibilitate AI completă, nu doar un fișier?</strong> Vezi serviciul de <a href="/servicii/seo-geo">SEO + GEO</a> sau cere <a href="/audit-gratuit">auditul gratuit</a>.</p>
+    <p style="margin:0"><strong>Vrei vizibilitate AI completă, nu doar un fișier?</strong> Vezi serviciul de <a href="/servicii/seo-geo/">SEO + GEO</a> sau cere <a href="/audit-gratuit/">auditul gratuit</a>.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
     <h2>Construiește-ți vizibilitatea în AI.</h2>
     <p class="lead center">Auditul gratuit îți arată unde stai și ce repari întâi.</p>
-    <a class="btn btn-primary" href="/audit-gratuit">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
   </div>
 </div></section>
 "@
@@ -955,15 +956,15 @@ $pages += @{
   <p>Recenziile sunt al doilea cel mai puternic factor local. Cere-le sistematic clienților mulțumiți și răspunde la toate, și la cele bune, și la cele critice. Asta arată Google (și clienților) că ești activ și serios.</p>
   <h2>Folosește postările și întrebările</h2>
   <p>Profilul îți permite postări (oferte, noutăți) și o secțiune de întrebări și răspunsuri. Sunt subutilizate de majoritatea concurenței, deci o oportunitate ușoară de diferențiere.</p>
-  <p>Profilul local lucrează cel mai bine împreună cu ads local și cu vizibilitate în AI. Vezi cum facem asta pentru <a href="/solutii/marketing-clinici">clinici</a> și <a href="/solutii/marketing-horeca">HoReCa</a>.</p>
+  <p>Profilul local lucrează cel mai bine împreună cu ads local și cu vizibilitate în AI. Vezi cum facem asta pentru <a href="/solutii/marketing-clinici/">clinici</a> și <a href="/solutii/marketing-horeca/">HoReCa</a>.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Vrei mai mulți clienți din zona ta?</strong> Cere <a href="/audit-gratuit">auditul gratuit</a>, îți spunem cât de vizibil ești local și ce repari întâi.</p>
+    <p style="margin:0"><strong>Vrei mai mulți clienți din zona ta?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a>, îți spunem cât de vizibil ești local și ce repari întâi.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
     <h2>Fii găsit de clienții din zona ta.</h2>
     <p class="lead center">Analizăm gratuit vizibilitatea ta locală și în AI.</p>
-    <a class="btn btn-primary" href="/audit-gratuit">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
   </div>
 </div></section>
 "@
@@ -993,15 +994,15 @@ $pages += @{
   <p>Nu încerca să rankezi o singură pagină pentru tot. Fiecare pagină țintește un cuvânt principal, clar, reflectat în titlu, H1 și URL. Așa eviți să concurezi cu tine însuți.</p>
   <h2>Folosește întrebările reale ale clienților</h2>
   <p>Cele mai bune cuvinte cheie vin din întrebările pe care ți le pun clienții. &bdquo;Cât costă…", &bdquo;cum aleg…", &bdquo;cea mai bună…" sunt aur curat, mai ales pentru conținut de blog.</p>
-  <p>Vrei să vezi cum arată în practică? Strategia noastră de conținut pleacă fix de aici. Cere <a href="/audit-gratuit">auditul gratuit</a> și îți arătăm pe ce cuvinte ai șanse reale.</p>
+  <p>Vrei să vezi cum arată în practică? Strategia noastră de conținut pleacă fix de aici. Cere <a href="/audit-gratuit/">auditul gratuit</a> și îți arătăm pe ce cuvinte ai șanse reale.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>De la zero la primele poziții.</strong> Vezi serviciul de <a href="/servicii/seo-geo">SEO + GEO</a> sau cere <a href="/audit-gratuit">auditul gratuit</a>.</p>
+    <p style="margin:0"><strong>De la zero la primele poziții.</strong> Vezi serviciul de <a href="/servicii/seo-geo/">SEO + GEO</a> sau cere <a href="/audit-gratuit/">auditul gratuit</a>.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
     <h2>Pornește pe cuvintele corecte.</h2>
     <p class="lead center">Îți arătăm gratuit pe ce termeni ai șanse reale din poziția zero.</p>
-    <a class="btn btn-primary" href="/audit-gratuit">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
   </div>
 </div></section>
 "@
@@ -1033,15 +1034,15 @@ $pages += @{
     <li><b>Produs vizual sau cerere de creat?</b> (modă, food, lifestyle, lansări) &rarr; începe cu Meta.</li>
     <li><b>Buget mic la început?</b> &rarr; un singur canal, bine făcut, bate două canale făcute pe jumătate.</li>
   </ul>
-  <p>Pe termen lung, cele două se completează: Meta creează cererea, Google o culege. Așa le combinăm în <a href="/servicii/performance-ads">Performance Ads</a>. Înainte de a porni, evită <a href="/blog/greseli-buget-google-ads">cele 7 greșeli care ard bugetul</a>.</p>
+  <p>Pe termen lung, cele două se completează: Meta creează cererea, Google o culege. Așa le combinăm în <a href="/servicii/performance-ads/">Performance Ads</a>. Înainte de a porni, evită <a href="/blog/greseli-buget-google-ads/">cele 7 greșeli care ard bugetul</a>.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Nu știi cu care să începi?</strong> Cere <a href="/audit-gratuit">auditul gratuit</a>, îți recomandăm canalul potrivit pentru afacerea ta.</p>
+    <p style="margin:0"><strong>Nu știi cu care să începi?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a>, îți recomandăm canalul potrivit pentru afacerea ta.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
     <h2>Pune bugetul unde aduce vânzări.</h2>
     <p class="lead center">Îți spunem gratuit ce canal ți se potrivește și de ce.</p>
-    <a class="btn btn-primary" href="/audit-gratuit">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
   </div>
 </div></section>
 "@
@@ -1066,20 +1067,20 @@ $pages += @{
   <h2>Pârghia 1, Mai mult trafic relevant</h2>
   <p>Mai mulți vizitatori potriviți: prin Google și Meta Ads, prin SEO/GEO și prin social. &bdquo;Relevant" e cuvântul cheie, trafic ieftin dar nepotrivit nu aduce comenzi, doar costuri.</p>
   <h2>Pârghia 2, Conversie mai bună</h2>
-  <p>Din vizitatorii pe care îi ai deja, mai mulți să cumpere. Aici intră paginile de produs clare, viteza site-ului, recenziile, checkout simplu și testarea continuă. Aceeași vizitatori, mai multe comenzi, fără buget de ads în plus. Vezi <a href="/servicii/landing-pages-cro">CRO</a>.</p>
+  <p>Din vizitatorii pe care îi ai deja, mai mulți să cumpere. Aici intră paginile de produs clare, viteza site-ului, recenziile, checkout simplu și testarea continuă. Aceeași vizitatori, mai multe comenzi, fără buget de ads în plus. Vezi <a href="/servicii/landing-pages-cro/">CRO</a>.</p>
   <h2>Pârghia 3, Valoare mai mare per client</h2>
   <p>Fiecare client să cumpere mai mult și mai des: prin email și automatizări (coș abandonat, recomandări, reactivare), upsell și programe de fidelitate. În e-commerce, emailul aduce tipic 20-30% din venit, e pârghia cel mai des ignorată.</p>
   <h2>În ce ordine</h2>
   <p>Contraintuitiv, nu începe cu mai mult trafic. Întâi repară conversia și activează emailul (pârghiile 2 și 3), altfel torni apă într-o găleată găurită. Apoi scalezi traficul, când fiecare vizitator valorează mai mult.</p>
-  <p>Așa abordăm noi <a href="/solutii/marketing-ecommerce">marketingul pentru magazine online</a>, cu raport pe ROAS și venit, nu pe afișări.</p>
+  <p>Așa abordăm noi <a href="/solutii/marketing-ecommerce/">marketingul pentru magazine online</a>, cu raport pe ROAS și venit, nu pe afișări.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Vrei să știi care pârghie îți aduce cel mai repede vânzări?</strong> Cere <a href="/audit-gratuit">auditul gratuit</a> al magazinului tău.</p>
+    <p style="margin:0"><strong>Vrei să știi care pârghie îți aduce cel mai repede vânzări?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a> al magazinului tău.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
     <h2>Scoate mai multe comenzi din același magazin.</h2>
     <p class="lead center">Analizăm gratuit unde pierzi vânzări și ce activezi întâi.</p>
-    <a class="btn btn-primary" href="/audit-gratuit">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
   </div>
 </div></section>
 "@
@@ -1102,22 +1103,22 @@ $pages += @{
   <p class="meta">Actualizat: iunie 2026 &middot; ~5 min de citit</p>
   <p>Provocarea unei clinici nu e doar &bdquo;mai mulți pacienți", e pacienții potriviți, din zonă, fără ca marketingul să pară agresiv sau nepotrivit pentru un act medical. Se poate, și nu e complicat. Iată canalele care contează.</p>
   <h2>Profilul Google Business + ads local</h2>
-  <p>Când cineva caută &bdquo;dentist" sau &bdquo;dermatolog" în zona ta, trebuie să apari. Un profil Google Business complet plus Google Ads local te pune în fața pacienților exact când au nevoie. Vezi cum <a href="/blog/google-business-profil-local">optimizezi profilul local</a>.</p>
+  <p>Când cineva caută &bdquo;dentist" sau &bdquo;dermatolog" în zona ta, trebuie să apari. Un profil Google Business complet plus Google Ads local te pune în fața pacienților exact când au nevoie. Vezi cum <a href="/blog/google-business-profil-local/">optimizezi profilul local</a>.</p>
   <h2>SEO + GEO: să apari și în răspunsurile AI</h2>
-  <p>Tot mai mulți pacienți întreabă ChatGPT &bdquo;cea mai bună clinică din...". Dacă nu apari acolo, pierzi pacienți pe care nici nu îi vezi. <a href="/servicii/seo-geo">SEO + GEO</a> rezolvă exact asta.</p>
+  <p>Tot mai mulți pacienți întreabă ChatGPT &bdquo;cea mai bună clinică din...". Dacă nu apari acolo, pierzi pacienți pe care nici nu îi vezi. <a href="/servicii/seo-geo/">SEO + GEO</a> rezolvă exact asta.</p>
   <h2>Raportare în programări, nu în like-uri</h2>
   <p>Pentru o clinică, singura metrică ce contează e numărul de programări confirmate și costul per pacient nou. Nu afișări, nu urmăritori. Tot ce facem se măsoară în pacienți.</p>
   <h2>Ton la standardul actului tău medical</h2>
   <p>Marketingul medical bine făcut e sobru, profesionist, discret. Construiește încredere, nu zgomot. Pacienții aleg o clinică în care au încredere, iar tonul comunicării e parte din acea încredere.</p>
-  <p>Așa construim <a href="/solutii/marketing-clinici">marketingul pentru clinici</a>: pacienți din zonă, raport în programări, ton pe măsura profesiei.</p>
+  <p>Așa construim <a href="/solutii/marketing-clinici/">marketingul pentru clinici</a>: pacienți din zonă, raport în programări, ton pe măsura profesiei.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Vrei agenda mai plină cu pacienții potriviți?</strong> Cere <a href="/audit-gratuit">auditul gratuit</a>, îți arătăm cum apari acum față de 3 clinici concurente.</p>
+    <p style="margin:0"><strong>Vrei agenda mai plină cu pacienții potriviți?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a>, îți arătăm cum apari acum față de 3 clinici concurente.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
     <h2>Umple-ți agenda cu pacienții potriviți.</h2>
     <p class="lead center">Analizăm gratuit vizibilitatea clinicii tale, comparativ cu concurența.</p>
-    <a class="btn btn-primary" href="/audit-gratuit">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
   </div>
 </div></section>
 "@
@@ -1146,16 +1147,16 @@ $pages += @{
   <h2>SEO + GEO: să te găsească cei care caută soluții</h2>
   <p>Decidenții B2B caută răspunsuri înainte să caute furnizori. Conținut care răspunde la întrebările lor, vizibil în Google și în AI, te aduce în discuție devreme, ca autoritate.</p>
   <h2>Nurture pe email: ciclul B2B e lung</h2>
-  <p>Rar cineva cumpără din prima. O secvență de email care educă și construiește încredere ține firma ta în minte până când prospectul e gata. Vezi <a href="/servicii/email-automatizari">email și automatizări</a>.</p>
-  <p>Zero &bdquo;postări de dragul postărilor". Doar canalele care aduc contracte. Așa construim <a href="/solutii/marketing-b2b">marketingul B2B</a>, cu lead calificat definit și semnat în contract.</p>
+  <p>Rar cineva cumpără din prima. O secvență de email care educă și construiește încredere ține firma ta în minte până când prospectul e gata. Vezi <a href="/servicii/email-automatizari/">email și automatizări</a>.</p>
+  <p>Zero &bdquo;postări de dragul postărilor". Doar canalele care aduc contracte. Așa construim <a href="/solutii/marketing-b2b/">marketingul B2B</a>, cu lead calificat definit și semnat în contract.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Vrei un pipeline care nu depinde de rețeaua ta personală?</strong> Cere <a href="/audit-gratuit">auditul gratuit</a> sau un diagnostic de pipeline.</p>
+    <p style="margin:0"><strong>Vrei un pipeline care nu depinde de rețeaua ta personală?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a> sau un diagnostic de pipeline.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
     <h2>Construiește un pipeline previzibil.</h2>
     <p class="lead center">Îți arătăm gratuit de unde pot veni primele lead-uri calificate.</p>
-    <a class="btn btn-primary" href="/audit-gratuit">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
   </div>
 </div></section>
 "@
@@ -1187,17 +1188,147 @@ $pages += @{
   <h2>Ce riști când nu le deții</h2>
   <p>Pierzi tot istoricul de optimizare (care valorează luni de muncă), nu poți schimba agenția fără să o iei de la zero și rămâi ostatic. Unele agenții se bazează exact pe asta ca să te țină captiv.</p>
   <h2>Întrebarea de pus din prima</h2>
-  <p>Înainte să semnezi cu orice agenție, întreabă: &bdquo;Conturile și datele rămân ale mele?". Dacă răspunsul nu e un &bdquo;da" clar și în scris, e un semnal de alarmă. Vezi și <a href="/blog/cum-alegi-agentie-marketing">cum alegi o agenție de marketing</a>.</p>
-  <p>La noi e simplu: conturile și datele rămân ale tale, mereu. Transparență 100%, fără ostatici. Așa <a href="/despre">gândim</a>.</p>
+  <p>Înainte să semnezi cu orice agenție, întreabă: &bdquo;Conturile și datele rămân ale mele?". Dacă răspunsul nu e un &bdquo;da" clar și în scris, e un semnal de alarmă. Vezi și <a href="/blog/cum-alegi-agentie-marketing/">cum alegi o agenție de marketing</a>.</p>
+  <p>La noi e simplu: conturile și datele rămân ale tale, mereu. Transparență 100%, fără ostatici. Așa <a href="/despre/">gândim</a>.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Lucrezi cu o agenție și nu ești sigur ce deții?</strong> Cere <a href="/audit-gratuit">auditul gratuit</a>, te ajutăm să verifici, fără obligații.</p>
+    <p style="margin:0"><strong>Lucrezi cu o agenție și nu ești sigur ce deții?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a>, te ajutăm să verifici, fără obligații.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
     <h2>Marketingul tău, pe proprietatea ta.</h2>
     <p class="lead center">Transparență totală: conturile și datele rămân mereu ale tale.</p>
-    <a class="btn btn-primary" href="/audit-gratuit">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
   </div>
+</div></section>
+"@
+}
+
+# ---- COMPARAȚII (pagini vs) ----
+$pages += @{
+  path='comparatii/amplio-vs-doads'
+  title='AMPLIO vs DoAds: ce agenție ți se potrivește? | AMPLIO'
+  desc='Comparație onestă AMPLIO vs DoAds: servicii, model de plată, GEO/AI, preț și pentru cine e fiecare. Te ajutăm să alegi agenția potrivită pentru afacerea ta.'
+  crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Comparații','/comparatii/amplio-vs-doads'); ,@('AMPLIO vs DoAds','/comparatii/amplio-vs-doads') ))
+  jsonld='{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Care e o alternativă la DoAds pentru IMM?","acceptedAnswer":{"@type":"Answer","text":"AMPLIO este o alternativă pentru firmele care vor un departament de marketing complet (ads, SEO, GEO, email, strategie) sub un singur partener, cu preț transparent și plată legată de rezultate, nu doar administrare de ads."}},{"@type":"Question","name":"Prin ce diferă AMPLIO de DoAds?","acceptedAnswer":{"@type":"Answer","text":"DoAds este axată pe paid ads, cu portofoliu mare și brand consacrat. AMPLIO acoperă tot marketingul, inclusiv SEO și vizibilitate în motoarele AI (GEO), cu preț transparent și model de parteneriat pe rezultate."}}]}'
+  body=@"
+<section class="subhero"><div class="grid-bg"></div><div class="wrap">
+  $(CrumbsHtml @( ,@('Acasă','/'); ,@('Comparații','/comparatii/amplio-vs-doads'); ,@('AMPLIO vs DoAds','/comparatii/amplio-vs-doads') ))
+  <span class="eyebrow">Comparație onestă</span>
+  <h1>AMPLIO vs DoAds: <span class="g">ce agenție ți se potrivește?</span></h1>
+  <p class="lead">Pe scurt: DoAds e o agenție consacrată de paid ads, cu portofoliu mare și brand puternic. AMPLIO e departamentul tău de marketing complet (ads, SEO, GEO, email, strategie), cu preț transparent și plată legată de rezultate. Mai jos, comparația corectă, ca să alegi în cunoștință de cauză.</p>
+</div></section>
+<section><div class="wrap rev">
+  <table class="cmp">
+    <thead><tr><th>Dimensiune</th><th class="you">AMPLIO</th><th>DoAds</th></tr></thead>
+    <tbody>
+      <tr><td>Focus</td><td class="you">Departament de marketing complet, pentru IMM</td><td>Performance / paid ads</td></tr>
+      <tr><td>Servicii</td><td class="you">Ads, SEO + GEO, social, email, CRO, CMO extern</td><td>Meta/Google/TikTok ads, email, web, design</td></tr>
+      <tr><td>Vizibilitate în AI (GEO)</td><td class="you">Da, central</td><td>Nu</td></tr>
+      <tr><td>SEO organic</td><td class="you">Da</td><td>Nu</td></tr>
+      <tr><td>Model de plată</td><td class="you">Abonament transparent 350-3500 € sau parteneriat: fee redus + 5-10% din creșterea vânzărilor</td><td>Administrare ads pe fee (bugete de la ~300-1.000 €/lună)</td></tr>
+      <tr><td>Transparență preț</td><td class="you">Calculator public pe site</td><td>Praguri de buget publice</td></tr>
+      <tr><td>Dovadă / garanție</td><td class="you">Garanție contractuală: KPI scriși + clauză de ieșire la 90 de zile</td><td>Portofoliu mare: 600+ clienți, 250M€ vânzări generate</td></tr>
+      <tr><td>Conturile rămân ale tale</td><td class="you">Da, explicit</td><td>Nespecificat public</td></tr>
+    </tbody>
+  </table>
+  <div class="cols2" style="margin-top:44px">
+    <div class="panelcard">
+      <h3>Alege DoAds dacă…</h3>
+      <ul class="flist" style="margin-top:8px">
+        <li>Vrei în principal <b>paid ads</b> administrate de o echipă consacrată</li>
+        <li>Cauți o agenție cu <b>portofoliu mare și dovezi</b> publice</li>
+        <li>Brandul „ex-Facebook" și recunoașterea contează pentru tine</li>
+      </ul>
+    </div>
+    <div class="panelcard">
+      <h3>Alege AMPLIO dacă…</h3>
+      <ul class="flist" style="margin-top:8px">
+        <li>Vrei <b>tot marketingul sub un partener</b>, nu doar ads</li>
+        <li>Vrei să fii găsit în Google <b>și în motoarele AI</b> (GEO)</li>
+        <li>Vrei <b>preț transparent</b> + model pe rezultate + clauză de ieșire la 90 de zile</li>
+        <li>Ești IMM și vrei să începi <b>accesibil</b> (de la 350 €)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="prose" style="margin-top:46px">
+    <h2>Diferența esențială</h2>
+    <p>DoAds excelează la un lucru: paid ads la scară, cu dovezi solide. Dacă atât îți trebuie, e o alegere foarte bună. AMPLIO rezolvă o problemă diferită, a firmei care nu vrea să jongleze cu mai mulți furnizori: <strong>un singur partener pentru ads, SEO, GEO, email și strategie</strong>, cu plata legată de rezultatele tale și cu libertatea de a pleca după 90 de zile dacă nu livrăm.</p>
+    <h2>Întrebări frecvente</h2>
+    <h3>Care e o alternativă la DoAds pentru IMM?</h3>
+    <p>AMPLIO, pentru firmele care vor un departament de marketing complet (ads, SEO, GEO, email, strategie) sub un singur partener, cu preț transparent și plată legată de rezultate, nu doar administrare de ads.</p>
+    <h3>Prin ce diferă AMPLIO de DoAds?</h3>
+    <p>DoAds e axată pe paid ads, cu portofoliu mare. AMPLIO acoperă tot marketingul, inclusiv SEO și vizibilitate în motoarele AI (GEO), cu preț transparent și model de parteneriat pe rezultate.</p>
+  </div>
+  <div class="ctaband" style="margin-top:44px;max-width:760px;margin-inline:auto">
+    <h2>Nu ești sigur ce ți se potrivește?</h2>
+    <p class="lead center">Cere auditul gratuit. Îți spunem onest dacă ai nevoie de un partener complet sau doar de ads, fără obligații.</p>
+    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+  </div>
+  <p class="center" style="margin-top:24px"><a href="/comparatii/amplio-vs-maximize/" style="color:var(--sky)">Vezi și: AMPLIO vs Maximize &rarr;</a> &middot; <a href="/blog/cum-alegi-agentie-marketing/" style="color:var(--sky)">Cum alegi o agenție de marketing</a></p>
+</div></section>
+"@
+}
+$pages += @{
+  path='comparatii/amplio-vs-maximize'
+  title='AMPLIO vs Maximize: ce agenție ți se potrivește? | AMPLIO'
+  desc='Comparație onestă AMPLIO vs Maximize: model de plată pe rezultate, servicii, GEO/AI, preț și pentru cine e fiecare. Alege agenția potrivită afacerii tale.'
+  crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Comparații','/comparatii/amplio-vs-maximize'); ,@('AMPLIO vs Maximize','/comparatii/amplio-vs-maximize') ))
+  jsonld='{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"AMPLIO are plata pe rezultate ca Maximize?","acceptedAnswer":{"@type":"Answer","text":"Da, AMPLIO oferă un model de parteneriat: fee fix redus plus 5-10% din creșterea vânzărilor peste un baseline semnat, cu KPI scriși în contract și clauză de ieșire la 90 de zile."}},{"@type":"Question","name":"Prin ce diferă AMPLIO de Maximize?","acceptedAnswer":{"@type":"Answer","text":"Maximize e centrată pe eCommerce și PPC, cu istoric de 8+ ani. AMPLIO e un departament de marketing complet, cu SEO și GEO (vizibilitate în AI) și preț transparent, plus un model de plată pe rezultate structurat contractual."}}]}'
+  body=@"
+<section class="subhero"><div class="grid-bg"></div><div class="wrap">
+  $(CrumbsHtml @( ,@('Acasă','/'); ,@('Comparații','/comparatii/amplio-vs-maximize'); ,@('AMPLIO vs Maximize','/comparatii/amplio-vs-maximize') ))
+  <span class="eyebrow">Comparație onestă</span>
+  <h1>AMPLIO vs Maximize: <span class="g">ce agenție ți se potrivește?</span></h1>
+  <p class="lead">Pe scurt: Maximize e o agenție consacrată (8+ ani) cu „plata pe rezultate", centrată pe eCommerce și PPC, cu studii de caz. AMPLIO oferă același principiu de plată pe rezultate, dar structurat contractual, și ca departament de marketing complet, cu SEO și GEO, nu doar ads.</p>
+</div></section>
+<section><div class="wrap rev">
+  <table class="cmp">
+    <thead><tr><th>Dimensiune</th><th class="you">AMPLIO</th><th>Maximize</th></tr></thead>
+    <tbody>
+      <tr><td>Focus</td><td class="you">Departament de marketing complet, pentru IMM</td><td>eCommerce / PPC</td></tr>
+      <tr><td>Servicii</td><td class="you">Ads, SEO + GEO, social, email, CRO, CMO extern</td><td>Ads/PPC, eCom, email, social</td></tr>
+      <tr><td>Vizibilitate în AI (GEO)</td><td class="you">Da, central</td><td>Nu</td></tr>
+      <tr><td>SEO organic</td><td class="you">Da</td><td>Limitat</td></tr>
+      <tr><td>Plata pe rezultate</td><td class="you">Da, structurat: fee redus + 5-10% din creșterea peste baseline, KPI scriși + clauză de ieșire</td><td>Da, „plata pe rezultate" (structură nepublică)</td></tr>
+      <tr><td>Transparență preț</td><td class="you">Calculator public, 350-3500 €</td><td>La cerere</td></tr>
+      <tr><td>Dovadă / garanție</td><td class="you">Garanție contractuală: KPI + clauză de ieșire la 90 de zile</td><td>8+ ani, studii de caz cu procente</td></tr>
+      <tr><td>Conturile rămân ale tale</td><td class="you">Da, explicit</td><td>Nespecificat public</td></tr>
+    </tbody>
+  </table>
+  <div class="cols2" style="margin-top:44px">
+    <div class="panelcard">
+      <h3>Alege Maximize dacă…</h3>
+      <ul class="flist" style="margin-top:8px">
+        <li>Ești <b>eCommerce</b> și vrei focus pe ads/PPC și ROAS</li>
+        <li>Cauți o agenție cu <b>istoric și studii de caz</b> cu procente</li>
+        <li>Ești ok cu prețul oferit „la cerere"</li>
+      </ul>
+    </div>
+    <div class="panelcard">
+      <h3>Alege AMPLIO dacă…</h3>
+      <ul class="flist" style="margin-top:8px">
+        <li>Vrei <b>marketing complet</b> (ads + SEO + GEO + email + strategie), nu doar ads</li>
+        <li>Vrei vizibilitate și în <b>motoarele AI</b> (GEO)</li>
+        <li>Vrei plata pe rezultate <b>structurată</b> (baseline, KPI scriși, clauză de ieșire)</li>
+        <li>Vrei <b>preț transparent</b> de la început</li>
+      </ul>
+    </div>
+  </div>
+  <div class="prose" style="margin-top:46px">
+    <h2>Diferența esențială</h2>
+    <p>Amândouă agențiile cred în plata legată de rezultate, ceea ce e rar și bun. Diferența e în <strong>amploare și structură</strong>: Maximize e specializată pe eCommerce și ads, cu un istoric solid. AMPLIO acoperă tot marketingul (inclusiv SEO și GEO), pune prețul transparent pe masă și scrie rezultatele așteptate în contract, cu o clauză de ieșire la 90 de zile.</p>
+    <h2>Întrebări frecvente</h2>
+    <h3>AMPLIO are plata pe rezultate ca Maximize?</h3>
+    <p>Da. Model de parteneriat: fee fix redus + 5-10% din creșterea vânzărilor peste un baseline semnat, cu KPI scriși și clauză de ieșire la 90 de zile.</p>
+    <h3>Prin ce diferă AMPLIO de Maximize?</h3>
+    <p>Maximize e centrată pe eCommerce și PPC, cu 8+ ani istoric. AMPLIO e un departament de marketing complet, cu SEO și GEO și preț transparent, plus plata pe rezultate structurată contractual.</p>
+  </div>
+  <div class="ctaband" style="margin-top:44px;max-width:760px;margin-inline:auto">
+    <h2>Vrei plata legată de rezultatele tale?</h2>
+    <p class="lead center">Cere auditul gratuit și discutăm dacă modelul de parteneriat ți se potrivește, fără obligații.</p>
+    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+  </div>
+  <p class="center" style="margin-top:24px"><a href="/comparatii/amplio-vs-doads/" style="color:var(--sky)">Vezi și: AMPLIO vs DoAds &rarr;</a> &middot; <a href="/blog/cum-alegi-agentie-marketing/" style="color:var(--sky)">Cum alegi o agenție de marketing</a></p>
 </div></section>
 "@
 }

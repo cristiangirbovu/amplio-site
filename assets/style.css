@@ -200,6 +200,17 @@ nav.scrolled .wrap{height:62px}
 .panelcard{background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--line2);border-radius:20px;padding:32px}
 .panelcard h3{font-family:var(--display);font-weight:700;color:var(--off);font-size:20px;margin-bottom:14px}
 
+/* ===== Comparison table (pagini vs) ===== */
+.cmp{width:100%;border-collapse:collapse;margin-top:28px;font-size:14.5px;overflow:hidden}
+.cmp th,.cmp td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp thead th{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.03em;color:var(--txt-dim)}
+.cmp thead th.you{color:var(--gold)}
+.cmp td:first-child{color:var(--txt-dim);font-weight:500;width:30%}
+.cmp td.you{color:var(--off);background:rgba(201,162,39,.06)}
+.cmp tbody tr:hover td{background:rgba(255,255,255,.02)}
+.cmp td.you:hover{background:rgba(201,162,39,.10)}
+@media(max-width:640px){.cmp,.cmp thead,.cmp tbody,.cmp th,.cmp td,.cmp tr{display:block}.cmp thead{display:none}.cmp td{border:none;padding:6px 0}.cmp tr{border-bottom:1px solid var(--line);padding:14px 0}.cmp td:first-child{width:auto;color:var(--gold);font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;margin-top:6px}}
+
 /* ===== Timeline ===== */
 .tl{margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .tstep{background:linear-gradient(165deg,rgba(255,255,255,.045),rgba(255,255,255,.015));border:1px solid var(--line2);
