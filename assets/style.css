@@ -333,3 +333,13 @@ footer{background:var(--navy);border-top:1px solid var(--line);padding:64px 0 40
 @keyframes fabpulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
 @media(max-width:600px){.fab{right:14px;bottom:14px;gap:11px}.fab a{width:52px;height:52px}.fab a::after{display:none}}
 @media (prefers-reduced-motion:reduce){.fab .fab-wa::before{animation:none}}
+
+/* ===== Footer: retele sociale ===== */
+.socials{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.socials a{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
+  background:rgba(255,255,255,.05);border:1px solid var(--line2);color:var(--txt-dim);
+  transition:transform .15s var(--ease),color .2s,border-color .2s,background .2s}
+.socials a:hover{transform:translateY(-2px);color:var(--off);border-color:rgba(201,162,39,.5);background:rgba(201,162,39,.1)}
+.socials a svg{width:19px;height:19px;fill:currentColor;display:block}
+.socials a.soc-soon{opacity:.4;cursor:default}
+.socials a.soc-soon:hover{transform:none;color:var(--txt-dim);border-color:var(--line2);background:rgba(255,255,255,.05)}
