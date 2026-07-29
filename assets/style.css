@@ -302,3 +302,34 @@ footer{background:var(--navy);border-top:1px solid var(--line);padding:64px 0 40
 @media(max-width:520px){.tl{grid-template-columns:1fr}.hero h1{font-size:clamp(30px,9vw,40px)}.hero p.lead{font-size:16px}}
 @media (hover:none){.btn:hover,.navcta:hover,.svc:hover,.tstep:hover,.bcard:hover,.svc:hover .ic{transform:none}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rev,.hero-inner>*{opacity:1!important;transform:none!important}}
+
+/* ===== Contact: butoane rapide (Email / Suna / WhatsApp) ===== */
+.contact-actions{display:flex;flex-direction:column;gap:12px;margin-bottom:18px}
+.cbtn{display:flex;align-items:center;gap:13px;padding:15px 18px;border-radius:14px;border:1px solid var(--line2);
+  background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.015));color:var(--off);
+  font-weight:600;font-size:15.5px;transition:transform .15s var(--ease),border-color .2s,background .2s}
+.cbtn:hover{transform:translateY(-2px);border-color:rgba(201,162,39,.5)}
+.cbtn .ci{width:44px;height:44px;border-radius:11px;display:grid;place-items:center;flex:none}
+.cbtn .ci svg{width:23px;height:23px;display:block}
+.cbtn small{display:block;font-weight:400;font-size:12.5px;color:var(--txt-dim);margin-top:2px}
+.cbtn-email .ci{background:rgba(47,107,255,.16)}.cbtn-email .ci svg{fill:var(--sky)}
+.cbtn-call .ci{background:rgba(201,162,39,.16)}.cbtn-call .ci svg{fill:var(--gold2)}
+.cbtn-wa .ci{background:rgba(37,211,102,.16)}.cbtn-wa .ci svg{fill:#25D366}
+
+/* ===== Widget flotant Suna + WhatsApp ===== */
+.fab{position:fixed;right:20px;bottom:20px;z-index:70;display:flex;flex-direction:column;gap:13px}
+.fab a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
+  box-shadow:0 10px 26px rgba(0,0,0,.4);transition:transform .16s var(--ease),box-shadow .16s;position:relative}
+.fab a:hover{transform:translateY(-3px) scale(1.06);box-shadow:0 14px 30px rgba(0,0,0,.5)}
+.fab a svg{width:29px;height:29px;display:block}
+.fab .fab-wa{background:#25D366}.fab .fab-wa svg{fill:#fff}
+.fab .fab-call{background:linear-gradient(135deg,var(--gold),var(--gold2))}.fab .fab-call svg{fill:#0A1A2F}
+.fab a::after{content:attr(data-tip);position:absolute;right:68px;top:50%;transform:translateY(-50%);
+  white-space:nowrap;background:rgba(10,26,47,.96);color:var(--off);font-size:13px;font-weight:600;
+  padding:7px 12px;border-radius:9px;border:1px solid var(--line2);opacity:0;pointer-events:none;transition:opacity .18s}
+.fab a:hover::after{opacity:1}
+.fab .fab-wa::before{content:"";position:absolute;inset:0;border-radius:50%;
+  box-shadow:0 0 0 0 rgba(37,211,102,.55);animation:fabpulse 2.4s infinite}
+@keyframes fabpulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+@media(max-width:600px){.fab{right:14px;bottom:14px;gap:11px}.fab a{width:52px;height:52px}.fab a::after{display:none}}
+@media (prefers-reduced-motion:reduce){.fab .fab-wa::before{animation:none}}

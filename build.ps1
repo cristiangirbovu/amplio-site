@@ -98,7 +98,7 @@ $FOOTER = @'
       </div>
     </div>
     <div class="foot-bot">
-      <span>&copy; <span id="yr">2026</span> AMPLIO DIGITAL S.R.L.</span>
+      <span>&copy; <span id="yr">2026</span> AMPLIO CREATIVE S.R.L.</span>
       <span><a href="/termeni/">Termeni</a> &middot; <a href="/confidentialitate/">Confidențialitate</a> &middot; <a href="/cookies/">Cookies</a></span>
     </div>
   </div>
@@ -434,7 +434,7 @@ $pages += @{
       <h2>AI + oameni</h2>
       <p>Folosim inteligența artificială în producție ca să mergem mai repede și să testăm mai mult. Dar strategia, judecata și controlul calității rămân umane și seniore. AI-ul scrie schițe; oamenii decid direcția.</p>
       <div class="key" style="margin-top:30px">
-        <p style="margin:0"><strong>AMPLIO DIGITAL S.R.L.</strong> · București, România · operăm în RO + UE · <a href="mailto:contact@amplio.ro">contact@amplio.ro</a></p>
+        <p style="margin:0"><strong>AMPLIO CREATIVE S.R.L.</strong> · București, România · operăm în RO + UE · <a href="mailto:contact@amplio.ro">contact@amplio.ro</a></p>
       </div>
     </div>
     <div class="ctaband" style="margin-top:40px">
@@ -451,7 +451,7 @@ $pages += @{
 $pages += @{
   path='termeni'
   title='Termeni și condiții | AMPLIO'
-  desc='Termenii și condițiile de utilizare a site-ului amplio.ro și a serviciilor AMPLIO DIGITAL S.R.L.'
+  desc='Termenii și condițiile de utilizare a site-ului amplio.ro și a serviciilor AMPLIO CREATIVE S.R.L.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Termeni și condiții','/termeni') ))
   jsonld=$null
   body=@"
@@ -460,11 +460,11 @@ $pages += @{
   <span class="eyebrow">Legal</span><h1>Termeni și condiții</h1></div></section>
 <section><div class="wrap rev"><div class="prose">
   <p class="meta">Ultima actualizare: iunie 2026</p>
-  <p>Acest site, amplio.ro, este operat de AMPLIO DIGITAL S.R.L. Prin utilizarea site-ului ești de acord cu termenii de mai jos. Dacă nu ești de acord, te rugăm să nu folosești site-ul.</p>
+  <p>Acest site, amplio.ro, este operat de AMPLIO CREATIVE S.R.L. Prin utilizarea site-ului ești de acord cu termenii de mai jos. Dacă nu ești de acord, te rugăm să nu folosești site-ul.</p>
   <h2>1. Despre serviciile noastre</h2>
   <p>AMPLIO oferă servicii de marketing digital pentru firme. Prețurile și pachetele afișate pe site sunt orientative; condițiile finale se stabilesc prin contract individual. Modelele de plată legate de rezultate (fee redus + procent din creșterea vânzărilor) se aplică doar acolo unde sunt agreate în scris, pe baza unui baseline documentat.</p>
   <h2>2. Conținutul site-ului</h2>
-  <p>Conținutul (texte, logo, design) aparține AMPLIO DIGITAL S.R.L. și nu poate fi reprodus fără acord. Informațiile au caracter informativ și pot fi modificate fără notificare prealabilă.</p>
+  <p>Conținutul (texte, logo, design) aparține AMPLIO CREATIVE S.R.L. și nu poate fi reprodus fără acord. Informațiile au caracter informativ și pot fi modificate fără notificare prealabilă.</p>
   <h2>3. Auditul gratuit</h2>
   <p>Auditul gratuit de vizibilitate este oferit fără obligații de cumpărare. Ne rezervăm dreptul de a stabili eligibilitatea și termenul de livrare (orientativ, 48 de ore lucrătoare).</p>
   <h2>4. Limitarea răspunderii</h2>
@@ -487,7 +487,7 @@ $pages += @{
   <span class="eyebrow">Legal &middot; GDPR</span><h1>Politică de confidențialitate</h1></div></section>
 <section><div class="wrap rev"><div class="prose">
   <p class="meta">Ultima actualizare: iunie 2026</p>
-  <p>Operatorul datelor este AMPLIO DIGITAL S.R.L. Respectăm Regulamentul (UE) 2016/679 (GDPR). Datele tale sunt folosite exclusiv în scopurile descrise mai jos, fără liste de spam.</p>
+  <p>Operatorul datelor este AMPLIO CREATIVE S.R.L. Respectăm Regulamentul (UE) 2016/679 (GDPR). Datele tale sunt folosite exclusiv în scopurile descrise mai jos, fără liste de spam.</p>
   <h2>Ce date colectăm</h2>
   <p>Când completezi formularul de audit sau ne scrii pe email, colectăm: nume, adresă de email, numele firmei și site-ul, tipul afacerii și mesajul tău. Atât.</p>
   <h2>De ce le folosim</h2>
