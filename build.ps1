@@ -125,7 +125,7 @@ function Build-Page($p) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; media-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.clarity.ms; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; base-uri 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>$($p.title)</title>
 <meta name="description" content="$($p.desc)">
@@ -495,10 +495,12 @@ $pages += @{
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Confidențialitate','/confidentialitate') ))
   <span class="eyebrow">Legal &middot; GDPR</span><h1>Politică de confidențialitate</h1></div></section>
 <section><div class="wrap rev"><div class="prose">
-  <p class="meta">Ultima actualizare: iunie 2026</p>
+  <p class="meta">Ultima actualizare: octombrie 2026</p>
   <p>Operatorul datelor este AMPLIO CREATIVE S.R.L. Respectăm Regulamentul (UE) 2016/679 (GDPR). Datele tale sunt folosite exclusiv în scopurile descrise mai jos, fără liste de spam.</p>
   <h2>Ce date colectăm</h2>
-  <p>Când completezi formularul de audit sau ne scrii pe email, colectăm: nume, adresă de email, numele firmei și site-ul, tipul afacerii și mesajul tău. Atât.</p>
+  <p>Când completezi formularul de audit sau ne scrii pe email, colectăm: nume, adresă de email, numele firmei și site-ul, tipul afacerii și mesajul tău. Formularul ajunge la noi prin serviciul FormSubmit (formsubmit.co), care îl transmite pe adresa noastră de email.</p>
+  <h2>Statistici de trafic</h2>
+  <p>Dacă accepți cookies de analiză, folosim Google Analytics 4 și Microsoft Clarity ca să înțelegem cum este folosit site-ul. Temeiul este consimțământul tău, pe care îl poți retrage oricând din <a href="/cookies/">politica de cookies</a>.</p>
   <h2>De ce le folosim</h2>
   <p>Pentru a-ți pregăti și trimite auditul de vizibilitate solicitat și pentru a comunica cu tine despre serviciile noastre. Nu vindem și nu cedăm datele tale unor terți în scopuri de marketing.</p>
   <h2>Cât le păstrăm</h2>
@@ -520,18 +522,22 @@ $pages += @{
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Cookies','/cookies') ))
   <span class="eyebrow">Legal</span><h1>Politică de cookies</h1></div></section>
 <section><div class="wrap rev"><div class="prose">
-  <p class="meta">Ultima actualizare: iunie 2026</p>
-  <p>Cookies sunt fișiere mici stocate de browser. Site-ul amplio.ro folosește un minim de cookies, strict pentru funcționare și, eventual, pentru statistici anonime de trafic.</p>
-  <h2>Ce tipuri folosim</h2>
+  <p class="meta">Ultima actualizare: octombrie 2026</p>
+  <p>Cookies sunt fișiere mici stocate de browser. Site-ul amplio.ro funcționează integral fără cookies de urmărire. Cele de analiză se încarcă doar dacă le accepți în bannerul afișat la prima vizită.</p>
+  <h2>Ce folosim</h2>
   <ul class="flist" style="margin-top:14px">
-    <li><b>Esențiale:</b> necesare pentru funcționarea de bază a site-ului.</li>
-    <li><b>De analiză (dacă sunt activate):</b> ne ajută să înțelegem cum este folosit site-ul, în formă agregată și anonimă (ex. Google Analytics).</li>
+    <li><b>Preferința ta (stocare locală în browser):</b> reține dacă ai acceptat sau ai refuzat cookies de analiză, ca să nu îți afișăm bannerul la fiecare vizită.</li>
+    <li><b>Google Analytics 4 (_ga, _ga_*), doar după „Accept”:</b> statistici agregate despre vizite, paginile consultate și acțiunile importante, de exemplu trimiterea formularului de audit. Datele se păstrează 14 luni.</li>
+    <li><b>Microsoft Clarity (_clck, _clsk), doar după „Accept”:</b> hărți de clicuri și de derulare și înregistrări ale interacțiunii cu pagina, ca să vedem unde se blochează vizitatorii. Textul introdus în formulare nu este înregistrat.</li>
+    <li><b>Google Fonts:</b> încarcă fonturile site-ului. Nu setează cookies, dar transmite adresa IP către serverele Google.</li>
   </ul>
-  <h2>Cum le controlezi</h2>
-  <p>Poți bloca sau șterge cookies din setările browserului tău. Reține că dezactivarea unora poate afecta funcționarea site-ului.</p>
+  <p>Nu folosim pixeli de publicitate și nu facem remarketing.</p>
+  <h2>Cum îți schimbi opțiunea</h2>
+  <p>Poți reveni oricând asupra alegerii. Butonul de mai jos șterge cookies de analiză și afișează din nou bannerul.</p>
+  <p><button type="button" class="btn btn-ghost" data-cookie-reset>Schimbă opțiunea</button></p>
+  <p>Poți bloca oricând cookies și din setările browserului. Site-ul rămâne complet funcțional fără ele.</p>
   <h2>Contact</h2>
   <p>Întrebări legate de cookies: <a href="mailto:contact@amplio.ro">contact@amplio.ro</a>.</p>
-  <p style="margin-top:24px"><em>Actualizează această politică în funcție de instrumentele de analiză pe care le instalezi efectiv pe site.</em></p>
 </div></div></section>
 "@
 }

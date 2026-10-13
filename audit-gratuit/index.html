@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; media-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.clarity.ms; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; base-uri 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Audit gratuit de marketing și vizibilitate | AMPLIO</title>
 <meta name="description" content="Cere auditul gratuit de vizibilitate AMPLIO. În 48 de ore primești o analiză personalizată: cum te văd Google și motoarele AI, unde pierzi bani și primii 3 pași. Fără obligații.">
@@ -101,15 +101,20 @@
           <p>Pentru că, în cele mai multe cazuri, după ce vezi negru pe alb unde pierzi bani, vrei să lucrăm împreună. Dacă nu, păstrezi analiza și o aplici singur. Fără obligații.</p>
         </div>
       </div>
-      <form class="form" id="auditForm" onsubmit="return sendForm(event)">
+      <form class="form" id="auditForm" action="https://formsubmit.co/contact@amplio.ro" method="POST" data-clarity-mask="true">
+        <input type="hidden" name="_subject" value="Cerere audit gratuit de pe amplio.ro">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://amplio.ro/multumim/">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label for="fnume">Numele tău</label>
-        <input id="fnume" required placeholder="Ex: Andreea Popescu">
+        <input id="fnume" name="nume" required autocomplete="name" placeholder="Ex: Andreea Popescu">
         <label for="ffirma">Firma și site-ul</label>
-        <input id="ffirma" required placeholder="Ex: Atelier Rosa, atelierrosa.ro">
+        <input id="ffirma" name="firma_si_site" required autocomplete="organization" placeholder="Ex: Atelier Rosa, atelierrosa.ro">
         <label for="femail">Email</label>
-        <input id="femail" type="email" required placeholder="andreea@firma.ro">
+        <input id="femail" name="email" type="email" required autocomplete="email" placeholder="andreea@firma.ro">
         <label for="ftip">Tipul afacerii</label>
-        <select id="ftip">
+        <select id="ftip" name="tip_afacere">
           <option>Magazin online (e-commerce)</option>
           <option>Clinică / servicii medicale</option>
           <option>Servicii profesionale B2B</option>
@@ -119,7 +124,7 @@
           <option>Altceva</option>
         </select>
         <label for="fmsg">Ce te doare cel mai tare acum? (opțional)</label>
-        <textarea id="fmsg" rows="3" placeholder="Ex: costurile de ads cresc și nu știu dacă agenția actuală face treabă bună..."></textarea>
+        <textarea id="fmsg" name="mesaj" rows="3" placeholder="Ex: costurile de ads cresc și nu știu dacă agenția actuală face treabă bună..."></textarea>
         <button class="btn btn-primary" type="submit" style="margin-top:24px;width:100%;justify-content:center">Trimite cererea de audit gratuit <span class="ar">→</span></button>
         <p class="note center" style="margin-top:14px">Datele tale sunt folosite exclusiv pentru audit. GDPR-friendly, fără liste de spam.</p>
       </form>
@@ -178,14 +183,8 @@
 
 <script src="/assets/app.js"></script>
 <script>
-function sendForm(e){
- e.preventDefault();
- var n=document.getElementById('fnume').value,f=document.getElementById('ffirma').value,em=document.getElementById('femail').value,t=document.getElementById('ftip').value,m=document.getElementById('fmsg').value;
- var body=encodeURIComponent('Nume: '+n+'\nFirma/site: '+f+'\nEmail: '+em+'\nTip afacere: '+t+'\nMesaj: '+m);
- window.location.href='mailto:contact@amplio.ro?subject='+encodeURIComponent('Cerere audit gratuit: '+f)+'&body='+body;
- alert('Mulțumim, '+n.split(' ')[0]+'! Cererea ta se deschide în clientul de email. Apasă Send și primești auditul în 48h.');
- return false;
-}
+// Marchează trimiterea reală, ca pagina de mulțumire să numere cererea o singură dată
+document.getElementById('auditForm').addEventListener('submit',function(){try{sessionStorage.setItem('amplio_lead','audit')}catch(e){}});
 </script>
 </body>
 </html>
