@@ -248,6 +248,8 @@ nav.scrolled .wrap{height:62px}
   padding:54px;text-align:center;margin-top:20px}
 .ctaband h2{margin-bottom:14px}
 .ctaband .lead{margin:0 auto 26px}
+.subhero .lead strong,.hero .lead strong{color:var(--off);font-weight:600}
+.sec-head .lead a{color:var(--sky);text-decoration:underline;text-underline-offset:3px}
 
 /* ===== Footer ===== */
 footer{background:var(--navy);border-top:1px solid var(--line);padding:64px 0 40px}
