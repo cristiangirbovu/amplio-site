@@ -6,3 +6,6 @@
 /comparatii/amplio-vs-doads       /blog/cum-alegi-agentie-marketing/  301
 /comparatii/amplio-vs-maximize/   /blog/cum-alegi-agentie-marketing/  301
 /comparatii/amplio-vs-maximize    /blog/cum-alegi-agentie-marketing/  301
+
+# Fisierul de verificare Search Console: servit direct, fara redirectionarea automata .html -> fara extensie
+/googlef993ef3c2812b465.html  /googlef993ef3c2812b465  200
