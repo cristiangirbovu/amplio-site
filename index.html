@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; media-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.clarity.ms; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; base-uri 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; media-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.clarity.ms; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; base-uri 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Agenție de marketing digital pentru IMM | AMPLIO</title>
-<meta name="description" content="Agenție de marketing digital pentru IMM: SEO, Google Ads, Meta, social media și email. Audit gratuit în 48 de ore, plată legată de rezultate.">
+<meta name="description" content="Agenție de marketing digital pentru IMM: SEO, Google Ads, Meta, social media și email. Audit gratuit în 24 de ore, plată legată de rezultate.">
 <link rel="canonical" href="https://amplio.ro/">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://amplio.ro/">
@@ -19,34 +20,109 @@
 <meta name="twitter:title" content="Agenție de marketing digital pentru IMM | AMPLIO">
 <meta name="twitter:description" content="Creștere proiectată, nu promisă. AI + strategie senioră + plată legată de rezultate.">
 <meta name="twitter:image" content="https://amplio.ro/assets/og-amplio.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://amplio.ro/#organization",
   "name": "AMPLIO",
   "alternateName": "AMPLIO CREATIVE S.R.L.",
   "url": "https://amplio.ro/",
+  "logo": "https://amplio.ro/assets/amplio-logo-512.png",
+  "image": "https://amplio.ro/assets/og-amplio.png",
+  "telephone": "+40728151558",
   "email": "contact@amplio.ro",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "București",
+    "addressCountry": "RO"
+  },
   "slogan": "Creștere proiectată, nu promisă.",
   "description": "Agenție de marketing digital pentru firme medii și mici din România și UE: performance ads, SEO și GEO, social media, email marketing, CRO și abonamente de externalizare completă a marketingului, cu modele de plată legate de rezultate.",
-  "areaServed": [{"@type":"Country","name":"România"},{"@type":"Place","name":"Uniunea Europeană"}],
-  "knowsLanguage": ["ro","en"],
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "România"
+    },
+    {
+      "@type": "Place",
+      "name": "Uniunea Europeană"
+    }
+  ],
+  "knowsLanguage": [
+    "ro",
+    "en"
+  ],
   "priceRange": "350-3500 EUR/lună",
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61591035806830",
+    "https://www.instagram.com/amplio.ro/",
+    "https://www.linkedin.com/company/amplio-agen%C8%9Bie-de-marketing/",
+    "https://www.google.com/maps?cid=16340050891654115703"
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Servicii de marketing digital",
     "itemListElement": [
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Performance Ads (Google, Meta, TikTok)","url":"https://amplio.ro/servicii/performance-ads"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO + GEO","url":"https://amplio.ro/servicii/seo-geo"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Social Media și conținut","url":"https://amplio.ro/servicii/social-media"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Email marketing și automatizări CRM","url":"https://amplio.ro/servicii/email-automatizari"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Landing pages și CRO","url":"https://amplio.ro/servicii/landing-pages-cro"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"CMO Extern","url":"https://amplio.ro/servicii/cmo-extern"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Abonament corporate","url":"https://amplio.ro/servicii/abonament-corporate"}}
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Ads (Google, Meta, TikTok)",
+          "url": "https://amplio.ro/servicii/performance-ads/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SEO + GEO",
+          "url": "https://amplio.ro/servicii/seo-geo/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Social Media și conținut",
+          "url": "https://amplio.ro/servicii/social-media/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Email marketing și automatizări CRM",
+          "url": "https://amplio.ro/servicii/email-automatizari/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Landing pages și CRO",
+          "url": "https://amplio.ro/servicii/landing-pages-cro/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "CMO Extern",
+          "url": "https://amplio.ro/servicii/cmo-extern/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Abonament corporate",
+          "url": "https://amplio.ro/servicii/abonament-corporate/"
+        }
+      }
     ]
   }
 }
@@ -109,9 +185,7 @@
 <header class="hero">
   <div class="hero-media">
     <div class="hero-fallback"></div>
-    <video id="herovid" autoplay muted loop playsinline preload="metadata" poster="/assets/hero-poster.jpg">
-      <source id="herosrc" src="/assets/hero.mp4" type="video/mp4">
-    </video>
+    <video id="herovid" muted loop playsinline preload="none" poster="/assets/hero-poster.jpg" data-src="/assets/hero.mp4"></video>
   </div>
   <div class="hero-grid"></div>
   <div class="hero-scrim"></div>
@@ -212,12 +286,30 @@
   </div>
 </section>
 
+<!-- RECENZII -->
+<section id="recenzii" class="bg-3">
+  <div class="wrap rev">
+  <div class="rv-block">
+    <div class="sec-head">
+      <h2>Recenzii pe Google</h2>
+      <p class="lead">Ce spun firmele care lucrează cu noi, cu cuvintele lor.</p>
+    </div>
+    <div class="rv-grid">
+      <figure class="rv"><div class="rv-st" aria-label="5 din 5 stele">★★★★★</div><blockquote>„Colaborez cu amplio pentru partea de reclame in google si meta. Mi-a fost usor sa inteleg cum trebuie abordata aceasta investitie in publicitate (…)”</blockquote><figcaption><b>Sogirdea Mihaela</b>Recenzie pe Google</figcaption></figure>
+      <figure class="rv"><div class="rv-st" aria-label="5 din 5 stele">★★★★★</div><blockquote>„O echipă profesionistă și implicată, care pune accent pe calitate și pe rezultate. Apreciez seriozitatea și modul în care își tratează clienții. Recomand cu încredere!”</blockquote><figcaption><b>Alin Ene</b>Recenzie pe Google</figcaption></figure>
+      <figure class="rv"><div class="rv-st" aria-label="5 din 5 stele">★★★★★</div><blockquote>„As da 6 stele daca as putea. Am avut o experiență foarte frumoasă cu echipa Amplio. Au înțeles rapid ce îmi doream, au venit cu idei creative (…)”</blockquote><figcaption><b>Florin Drumesi</b>Recenzie pe Google</figcaption></figure>
+    </div>
+    <p class="rv-note">Citate exacte, fără corecturi, din recenziile publice de pe <a href="https://www.google.com/maps?cid=16340050891654115703" target="_blank" rel="noopener">profilul AMPLIO de pe Google</a>, unde nota este 5,0 (octombrie 2026). Acolo le găsești pe toate.</p>
+  </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section id="contact-cta">
   <div class="wrap rev">
     <div class="ctaband">
       <h2>Cere auditul gratuit de vizibilitate.</h2>
-      <p class="lead center">Primești în 48 de ore o analiză personalizată: cum te văd Google și motoarele AI, unde pierzi bani acum și care ar fi primii 3 pași. Fără obligații.</p>
+      <p class="lead center">Primești în 24 de ore o analiză personalizată: cum te văd Google și motoarele AI, unde pierzi bani acum și care ar fi primii 3 pași. Fără obligații.</p>
       <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">→</span></a>
     </div>
   </div>

@@ -118,18 +118,24 @@ $FOOTER = @'
 function Build-Page($p) {
   $canonical = "https://amplio.ro/$($p.path)/"
   $jsonld = ""
-  if ($p.jsonld) { $jsonld = "<script type=""application/ld+json"">$($p.jsonld)</script>" }
+  if ($p.jsonld) {
+    $ld = $p.jsonld
+    if ($ld -like '*"@type":"Service",*' -and $ld -notlike '*"url":"https://amplio.ro/s*') { $ld = $ld.Replace('"@type":"Service",', '"@type":"Service","url":"' + $canonical + '",') }
+    if ($ld -like '*"@type":"Article",*' -and $ld -notlike '*"mainEntityOfPage"*') { $ld = $ld.Replace('"@type":"Article",', '"@type":"Article","mainEntityOfPage":"' + $canonical + '","image":"https://amplio.ro/assets/og-amplio.png",') }
+    $jsonld = "<script type=""application/ld+json"">$ld</script>"
+  }
   $html = @"
 <!DOCTYPE html>
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; media-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.clarity.ms; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; base-uri 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; media-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.clarity.ms; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; base-uri 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>$($p.title)</title>
 <meta name="description" content="$($p.desc)">
 <link rel="canonical" href="$canonical">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="$canonical">
@@ -137,9 +143,8 @@ function Build-Page($p) {
 <meta property="og:description" content="$($p.desc)">
 <meta property="og:image" content="https://amplio.ro/assets/og-amplio.png">
 <meta property="og:locale" content="ro_RO">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.css">
 <script type="application/ld+json">$($p.crumbsJson)</script>
 $jsonld
@@ -147,6 +152,7 @@ $jsonld
 <body id="top">
 $NAV
 $($p.body)
+$($p.extra)
 $FOOTER
 <script src="/assets/app.js"></script>
 </body>
@@ -214,7 +220,7 @@ function SvcBody($eyebrow,$h1a,$h1b,$lead,$crumbsHtml,$introHtml,$listItems,$pri
   <div class="wrap rev">
     <div class="ctaband">
       <h2>Nu ești sigur ce ți se potrivește?</h2>
-      <p class="lead center">Cere auditul gratuit. În 48 de ore primești o analiză personalizată și primii 3 pași, fără obligații.</p>
+      <p class="lead center">Cere auditul gratuit. În 24 de ore primești o analiză personalizată și primii 3 pași, fără obligații.</p>
       <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
     </div>
     $relatedHtml
@@ -263,6 +269,21 @@ function SolBody($eyebrow,$h1a,$h1b,$lead,$crumbsHtml,$pain,$listItems,$proofNum
 "@
 }
 
+# Helper pentru blocul "Articole utile" de sub serviciu
+function Articole($links) {
+  $a = ($links | ForEach-Object { "<a class=""svc"" href=""$($_[1])""><h3>$($_[0])</h3><span class=""more"">Citește &rarr;</span></a>" }) -join "`n      "
+  return @"
+<section>
+  <div class="wrap rev">
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-bottom:4px">Articole utile</h2>
+    <div class="svc-grid">
+      $a
+    </div>
+  </div>
+</section>
+"@
+}
+
 # Mic helper pentru blocul "servicii relevante"
 function Related($title,$links) {
   $a = ($links | ForEach-Object { "<a class=""svc"" href=""$($_[1].TrimEnd('/'))/""><h3>$($_[0])</h3><span class=""more"">Vezi &rarr;</span></a>" }) -join "`n      "
@@ -285,7 +306,8 @@ $pages += @{
   title='Agenție Google Ads și Meta Ads | AMPLIO'
   desc='Agenție Google Ads și Meta Ads pentru firme din România: campanii administrate complet, optimizare săptămânală și raport pe venit. De la 450 EUR/lună.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Performance Ads','/servicii/performance-ads') ))
-  jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Administrare campanii publicitare (PPC)","provider":{"@type":"Organization","name":"AMPLIO"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"450"}}'
+  jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Administrare campanii publicitare (PPC)","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"450"}}'
+  extra=(Articole @( ,@('Cât costă Google Ads în România în 2026','/blog/cost-google-ads-romania/'); ,@('7 greșeli care îți ard bugetul de Google Ads','/blog/greseli-buget-google-ads/'); ,@('Google Ads vs Meta Ads: cu care începi?','/blog/google-ads-vs-meta-ads/') ))
   body=(SvcBody 'Serviciu &middot; Performance Ads' 'Administrare Google Ads,' 'Meta și TikTok Ads.' '<strong>Reclame care aduc vânzări, nu doar afișări.</strong> Administrăm complet Google Ads, Meta și TikTok: strategie, creație asistată de AI, optimizare săptămânală și raport pe venit real, nu pe impresii. Conturile rămân mereu ale tale.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Performance Ads','/servicii/performance-ads') )) '<h2>Bugetul tău de ads, condus de cifre</h2><p class="lead" style="margin-bottom:18px">Cele mai multe firme cheltuie pe ads fără să știe ce canal aduce vânzări. Noi pornim de la tracking corect și baseline semnat, apoi optimizăm săptămânal pe metrica ce contează: costul pe client nou și venitul generat.</p><p>Creația o producem rapid cu AI, sub control uman, ca să testăm mai multe variante decât o agenție clasică. Iar dacă are sens pentru tine, intrăm pe modelul de parteneriat: fee fix redus + procent doar din creșterea vânzărilor.</p>' @('<b>Strategie de canal:</b> unde merită bugetul tău (Google, Meta, TikTok)','<b>Creație AI</b> cu control uman: mai multe variante, testate constant','<b>Optimizare săptămânală</b> pe cost/client și ROAS','<b>Tracking corect</b> verificat cu teste reale înainte de spend','<b>Raport lunar pe venit</b>, nu pe afișări','<b>Conturile rămân ale tale</b>, transparență 100%') 'De la <strong style="color:var(--off)">450 &euro;/lună</strong> sau % din ad spend' (Related 'Merge mână în mână cu' @( ,@('Landing Pages &amp; CRO','/servicii/landing-pages-cro'); ,@('SEO + GEO','/servicii/seo-geo'); ,@('Email &amp; Automatizări','/servicii/email-automatizari') )))
 }
 $pages += @{
@@ -293,7 +315,8 @@ $pages += @{
   title='Agenție social media: administrare pagini | AMPLIO'
   desc='Administrare social media pentru firme din România: calendar lunar, creație AI cu control uman, programare și raport. Pachete de la 350 EUR/lună.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Social Media','/servicii/social-media') ))
-  jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Administrare social media","provider":{"@type":"Organization","name":"AMPLIO"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"350"}}'
+  jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Administrare social media","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"350"}}'
+  extra=(Articole @( ,@('Google Ads vs Meta Ads: cu care începi?','/blog/google-ads-vs-meta-ads/'); ,@('Cum alegi o agenție de marketing (și ce întrebări să pui)','/blog/cum-alegi-agentie-marketing/'); ,@('De ce conturile de ads trebuie să rămână ale tale','/blog/conturi-ads-proprietate/') ))
   body=(SvcBody 'Serviciu &middot; Social Media' 'Administrare social media' 'pentru firme.' '<strong>Vocea brandului tău, fără efortul tău.</strong> Calendar lunar, creație cu AI sub control uman, programare și raport. Păstrăm tonul brandului tău și publicăm constant, ca să nu mai depindă totul de inspirația de moment.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Social Media','/servicii/social-media') )) '<h2>Constanța bate inspirația</h2><p class="lead" style="margin-bottom:18px">Problema social media nu e ideea de azi, e ritmul de fiecare săptămână. Noi construim un calendar editorial, producem conținutul și îl programăm, ca prezența ta să fie constantă și coerentă.</p><p>Creația o accelerăm cu AI, dar fiecare postare trece prin control uman și prin vocea brandului tău. Tu aprobi, noi publicăm și măsurăm.</p>' @('<b>Calendar editorial lunar</b> aliniat cu obiectivele tale','<b>Creație AI + control uman:</b> text și vizual','<b>Programare</b> pe toate platformele relevante','<b>Raport lunar</b> pe creștere și engagement','<b>Micro-influenceri &amp; UGC</b> prin rețeaua de parteneri (opțional)') 'Pachete <strong style="color:var(--off)">350 / 600 / 950 &euro;</strong>/lună' (Related 'Merge mână în mână cu' @( ,@('Performance Ads','/servicii/performance-ads'); ,@('SEO + GEO','/servicii/seo-geo') )))
 }
 $pages += @{
@@ -301,7 +324,8 @@ $pages += @{
   title='Agenție email marketing și automatizări | AMPLIO'
   desc='Email marketing și automatizări pentru firme din România: fluxuri de bun venit, coș abandonat și reactivare, legate de CRM. De la 250 EUR/lună.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Email & Automatizări','/servicii/email-automatizari') ))
-  jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Email marketing si automatizari","provider":{"@type":"Organization","name":"AMPLIO"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"250"}}'
+  jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Email marketing si automatizari","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"250"}}'
+  extra=(Articole @( ,@('Marketing pentru magazin online: ghid de creștere a vânzărilor','/blog/marketing-magazin-online/'); ,@('Cum construiești un pipeline B2B previzibil','/blog/marketing-b2b-pipeline/') ))
   body=(SvcBody 'Serviciu &middot; Email &amp; Automatizări' 'Email marketing' 'și automatizări.' '<strong>Fluxuri care vând în timp ce dormi.</strong> Bun venit, coș abandonat, reactivare: secvențe automate care aduc venit fără efort recurent. În e-commerce, emailul generează tipic 20-30% din venitul total.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Email & Automatizări','/servicii/email-automatizari') )) '<h2>Cel mai profitabil canal, neglijat de toată lumea</h2><p class="lead" style="margin-bottom:18px">Emailul nu are cost pe click și vorbește cu oameni care deja te cunosc. Bine făcut, e cel mai mare ROI din marketing. Noi construim fluxurile o dată și lucrează luni întregi.</p><p>Conectăm tot la CRM-ul tău, segmentăm și testăm subiecte și oferte, cu raport pe venitul generat de email.</p>' @('<b>Fluxuri automate:</b> bun venit, coș abandonat, reactivare, post-cumpărare','<b>Segmentare</b> și personalizare pe comportament','<b>Integrare CRM</b> (HubSpot, Klaviyo, Mailchimp etc.)','<b>Teste A/B</b> pe subiecte și oferte','<b>Raport pe venitul email</b>, nu pe rata de deschidere') 'De la <strong style="color:var(--off)">250 &euro;/lună</strong> sau % din venitul email' (Related 'Merge mână în mână cu' @( ,@('Performance Ads','/servicii/performance-ads'); ,@('Landing Pages &amp; CRO','/servicii/landing-pages-cro') )))
 }
 $pages += @{
@@ -309,7 +333,8 @@ $pages += @{
   title='Creare landing page și optimizarea conversiei | AMPLIO'
   desc='Creare landing page și optimizarea conversiei (CRO) pe date reale: heatmaps, înregistrări, teste A/B. Landing de la 450 EUR, CRO de la 400 EUR/lună.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Landing & CRO','/servicii/landing-pages-cro') ))
-  jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Landing pages si optimizarea conversiei","provider":{"@type":"Organization","name":"AMPLIO"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"400"}}'
+  jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Landing pages si optimizarea conversiei","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"400"}}'
+  extra=(Articole @( ,@('7 greșeli care îți ard bugetul de Google Ads','/blog/greseli-buget-google-ads/'); ,@('Marketing pentru magazin online: ghid de creștere a vânzărilor','/blog/marketing-magazin-online/'); ,@('Cât costă Google Ads în România în 2026','/blog/cost-google-ads-romania/') ))
   body=(SvcBody 'Serviciu &middot; Landing &amp; CRO' 'Landing pages și optimizarea' 'conversiei (CRO).' '<strong>Același trafic, mai multe conversii.</strong> Construim pagini făcute să convertească și le optimizăm continuu pe date reale: heatmaps, înregistrări de sesiune și teste A/B. Nu ghicim, măsurăm.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Landing & CRO','/servicii/landing-pages-cro') )) '<h2>Traficul costă. Risipa lui costă și mai mult</h2><p class="lead" style="margin-bottom:18px">Dacă aduci vizitatori pe o pagină care nu convertește, plătești de două ori. CRO scoate mai multe vânzări din același trafic, fără buget suplimentar de ads.</p><p>Pornim de la date: unde se opresc oamenii, unde dau scroll, unde abandonează. Apoi testăm ipoteze și păstrăm ce câștigă.</p>' @('<b>Landing pages</b> construite pe principii de conversie','<b>Heatmaps &amp; înregistrări</b> de sesiune','<b>Teste A/B</b> pe titluri, oferte, formulare','<b>Optimizarea formularelor</b> și a fluxului de checkout','<b>Raport pe rata de conversie</b> și impact în venit') 'Landing de la <strong style="color:var(--off)">450 &euro;</strong> &middot; CRO de la <strong style="color:var(--off)">400 &euro;</strong>/lună' (Related 'Merge mână în mână cu' @( ,@('Performance Ads','/servicii/performance-ads'); ,@('Email &amp; Automatizări','/servicii/email-automatizari') )))
 }
 $pages += @{
@@ -317,7 +342,8 @@ $pages += @{
   title='CMO extern și consultanță de marketing | AMPLIO'
   desc='CMO extern pentru firme din România: director de marketing senior, fracționat. Strategie, coordonarea furnizorilor și raport de board. 800-1.500 EUR/lună.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('CMO Extern','/servicii/cmo-extern') ))
-  jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Director de marketing fractionat (CMO extern)","provider":{"@type":"Organization","name":"AMPLIO"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"800"}}'
+  jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Director de marketing fractionat (CMO extern)","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"800"}}'
+  extra=(Articole @( ,@('Cum alegi o agenție de marketing (și ce întrebări să pui)','/blog/cum-alegi-agentie-marketing/'); ,@('Cum construiești un pipeline B2B previzibil','/blog/marketing-b2b-pipeline/'); ,@('De ce conturile de ads trebuie să rămână ale tale','/blog/conturi-ads-proprietate/') ))
   body=(SvcBody 'Serviciu &middot; CMO Extern' 'CMO extern:' 'director de marketing fracționat.' '<strong>Strategie de director, fără salariu de director.</strong> Un director de marketing senior, fracționat: pune strategia, coordonează furnizorii și livrează raport de board lunar. Maxim 5 clienți simultan, ca să primești atenție reală.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('CMO Extern','/servicii/cmo-extern') )) '<h2>Ai nevoie de strategie, nu de încă un executant</h2><p class="lead" style="margin-bottom:18px">Multe firme au oameni care fac marketing, dar nimeni care să decidă direcția. Un CMO full-time bun costă enorm. CMO-ul extern îți dă exact creierul strategic, fracționat.</p><p>Stabilim obiective, priorități și bugete, coordonăm echipa și furnizorii și raportăm lunar la nivel de board. Tu rămâi cu deciziile, noi ducem greul de coordonare.</p>' @('<b>Strategie de marketing</b> și plan pe trimestre','<b>Coordonarea furnizorilor</b> și a echipei interne','<b>Bugetare</b> și alocare pe canale','<b>Raport de board lunar</b> pe obiective și rezultate','<b>Maxim 5 clienți simultan</b>, atenție reală') '<strong style="color:var(--off)">800-1.500 &euro;</strong>/lună' (Related 'Merge mână în mână cu' @( ,@('Abonament Corporate','/servicii/abonament-corporate'); ,@('Performance Ads','/servicii/performance-ads') )))
 }
 $pages += @{
@@ -325,7 +351,8 @@ $pages += @{
   title='Externalizare marketing: abonament corporate | AMPLIO'
   desc='Externalizare completă a marketingului: toate canalele, un singur contact, un singur raport. Start 950, Growth 1.900, Scale 3.500 EUR/lună.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Abonament Corporate','/servicii/abonament-corporate') ))
-  jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Externalizare completa marketing","provider":{"@type":"Organization","name":"AMPLIO"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"950"}}'
+  jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Externalizare completa marketing","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"950"}}'
+  extra=(Articole @( ,@('Cum alegi o agenție de marketing (și ce întrebări să pui)','/blog/cum-alegi-agentie-marketing/'); ,@('AMPLIO vs DoAds: ce agenție ți se potrivește?','/comparatii/amplio-vs-doads/'); ,@('AMPLIO vs Maximize: ce agenție ți se potrivește?','/comparatii/amplio-vs-maximize/') ))
   body=(SvcBody 'Serviciu &middot; Abonament Corporate' 'Externalizare completă' 'a marketingului.' '<strong>Departamentul tău de marketing, fără angajări.</strong> Externalizare completă: toate canalele, un singur contact, un singur raport. Strategie, producție și execuție sub un singur contract. Trei niveluri, în funcție de ambiția ta.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Abonament Corporate','/servicii/abonament-corporate') )) '<h2>Tot marketingul, un singur partener</h2><p class="lead" style="margin-bottom:18px">În loc să angajezi 4 oameni și să coordonezi 3 freelanceri, ai o singură echipă care acoperă totul: ads, SEO/GEO, social, email, conținut și strategie. Un contract, un raport, un număr de telefon.</p><p>Pentru orice nu facem intern, producție video, foto, influenceri, integrări, folosim rețeaua noastră de parteneri verificați, pe care o coordonăm noi.</p>' @('<b>Start, 950 &euro;/lună:</b> canalele esențiale + strategie','<b>Growth, 1.900 &euro;/lună:</b> mix complet + ritm accelerat','<b>Scale, 3.500 &euro;/lună:</b> tot, plus producție și CMO extern inclus','<b>Un singur contact</b> și un raport unificat lunar','<b>Rețeaua de parteneri</b> pentru orice producție specială') '<strong style="color:var(--off)">Start 950 &euro; &middot; Growth 1.900 &euro; &middot; Scale 3.500 &euro;</strong>/lună' (Related 'Vezi și' @( ,@('CMO Extern','/servicii/cmo-extern'); ,@('Toate serviciile','/servicii') )))
 }
 
@@ -367,7 +394,7 @@ $pages += @{
   title='Marketing pentru magazine online (eCommerce) | AMPLIO'
   desc='Agenție de marketing pentru eCommerce în România: administrare ads pe ROAS și venit, fluxuri de email care aduc 20-30% din venit și CRO pe paginile de produs. Model de parteneriat disponibil.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('eCommerce','/solutii/marketing-ecommerce') ))
-  jsonld=$null
+  jsonld='{"@context":"https://schema.org","@type":"Service","name":"Marketing pentru magazine online (eCommerce)","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}}'
   body=(SolBody 'Soluție &middot; eCommerce' 'Marketing pentru' 'magazine online.' 'Costurile de ads cresc, ROAS-ul scade și nimeni nu-și asumă cifra. Noi raportăm pe venit, construim fluxuri de email care vând singure și optimizăm paginile de produs.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('eCommerce','/solutii/marketing-ecommerce') )) '&bdquo;Costurile de ads cresc, ROAS-ul scade și nimeni nu-și asumă cifra de vânzări.&rdquo;' @('Administrare Google, Meta și TikTok cu raport pe ROAS și venit, nu pe afișări','Email &amp; automatizări care aduc 20-30% din venit (coș abandonat, reactivare)','CRO pe paginile de produs: același trafic, mai multe comenzi','Modelul de parteneriat: fee redus + procent doar din creșterea peste nivelul tău actual') '5-10%' 'din creșterea vânzărilor. Atât luăm peste fee-ul redus. Dacă nu crești, nu plătești procentul.' (Related 'Servicii folosite' @( ,@('Performance Ads','/servicii/performance-ads'); ,@('Email &amp; Automatizări','/servicii/email-automatizari'); ,@('Landing &amp; CRO','/servicii/landing-pages-cro') )))
 }
 $pages += @{
@@ -375,7 +402,7 @@ $pages += @{
   title='Marketing pentru clinici și cabinete medicale | AMPLIO'
   desc='Marketing pentru clinici medicale în România: Google Ads local, profil Google Business optimizat și SEO/GEO. Raport în programări confirmate și cost per pacient nou, ton sobru și profesionist.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('Clinici','/solutii/marketing-clinici') ))
-  jsonld=$null
+  jsonld='{"@context":"https://schema.org","@type":"Service","name":"Marketing pentru clinici și cabinete medicale","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}}'
   body=(SolBody 'Soluție &middot; Clinici medicale' 'Marketing pentru' 'clinici medicale.' 'Vrei calendarul plin cu pacienții potriviți, fără să pari o clinică cu reclame agresive. Ads local, Google Business și SEO/GEO, cu raport în programări confirmate.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('Clinici','/solutii/marketing-clinici') )) '&bdquo;Vreau calendarul plin cu pacienții potriviți, fără să par o clinică cu reclame agresive.&rdquo;' @('Google Ads local + profil Google Business optimizat: pacienți din zona ta, când caută','SEO + GEO: când cineva întreabă ChatGPT cea mai bună clinică din zonă, să apari tu','Raportare în programări confirmate și cost per pacient nou, nu în like-uri','Marketing la standardul actului tău medical: sobru, profesionist, discret') '50%' 'dintre pacienți încep să caute prin AI și Google. Îți arătăm gratuit cum apari acum față de 3 competitori.' (Related 'Servicii folosite' @( ,@('SEO + GEO','/servicii/seo-geo'); ,@('Performance Ads','/servicii/performance-ads'); ,@('Landing &amp; CRO','/servicii/landing-pages-cro') )))
 }
 $pages += @{
@@ -383,7 +410,7 @@ $pages += @{
   title='Marketing pentru servicii B2B | AMPLIO'
   desc='Marketing B2B pentru firme de servicii din România: motor de lead-uri calificate prin LinkedIn ABM, SEO/GEO și nurture pe email, plus CMO extern. Definim lead calificat în contract și îl livrăm.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('Servicii B2B','/solutii/marketing-b2b') ))
-  jsonld=$null
+  jsonld='{"@context":"https://schema.org","@type":"Service","name":"Marketing pentru servicii B2B","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}}'
   body=(SolBody 'Soluție &middot; Servicii B2B' 'Marketing pentru' 'firme de servicii B2B.' 'Firma crește doar cât rețeaua ta personală de contacte, și asta te sperie. Construim un motor de lead-uri calificate: LinkedIn ABM + SEO/GEO + nurture pe email.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('Servicii B2B','/solutii/marketing-b2b') )) '&bdquo;Firma crește doar cât rețeaua mea personală de contacte. Și asta mă sperie.&rdquo;' @('Motor de lead-uri calificate: LinkedIn ABM + SEO/GEO + nurture pe email','Definim împreună lead calificat și îl semnăm în contract. Apoi îl livrăm','CMO Extern: strategie senioră și raport de board lunar, fără costul unui director','Zero postări de dragul postărilor: doar canale care aduc contracte în B2B') '2-3' 'lead-uri calificate pe lună schimbă complet matematica unei firme de servicii. Asta construim.' (Related 'Servicii folosite' @( ,@('SEO + GEO','/servicii/seo-geo'); ,@('CMO Extern','/servicii/cmo-extern'); ,@('Email &amp; Automatizări','/servicii/email-automatizari') )))
 }
 $pages += @{
@@ -391,7 +418,7 @@ $pages += @{
   title='Marketing pentru restaurante și HoReCa | AMPLIO'
   desc='Marketing pentru restaurante și branduri de ospitalitate în România: social media apetisant, Google Business și ads local, micro-influenceri și UGC. Pachete fixe de la 350 EUR/lună.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('HoReCa','/solutii/marketing-horeca') ))
-  jsonld=$null
+  jsonld='{"@context":"https://schema.org","@type":"Service","name":"Marketing pentru restaurante și HoReCa","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}}'
   body=(SolBody 'Soluție &middot; HoReCa' 'Marketing pentru' 'restaurante și ospitalitate.' 'Produsul tău e excelent, dar marțea și miercurea mesele stau goale. Social apetisant, ads local și micro-influenceri care aduc rezultate, nu mese gratis.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('HoReCa','/solutii/marketing-horeca') )) '&bdquo;Produsul meu e excelent, dar marțea și miercurea mesele stau goale.&rdquo;' @('Social media care arată ca produsul tău: apetisant, autentic, constant','Google Business + ads local: apari când localnicii și turiștii caută unde mâncăm','Micro-influenceri și UGC prin rețeaua noastră de parteneri, cu rezultate, nu mese gratis','Pachete fixe de la 350 &euro;/lună: știi exact cât investești') '350 &euro;' 'pe lună. De aici pornește pachetul care îți umple agenda de rezervări și feed-ul de conținut.' (Related 'Servicii folosite' @( ,@('Social Media','/servicii/social-media'); ,@('Performance Ads','/servicii/performance-ads') )))
 }
 $pages += @{
@@ -399,7 +426,7 @@ $pages += @{
   title='Marketing pentru producători și export UE | AMPLIO'
   desc='Marketing pentru producători cu ambiții europene: site multilingv la standard occidental, SEO/GEO internațional, LinkedIn ABM pe piețele țintă și campanii pe 2-3 piețe UE selectate strategic.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('Producători & Export','/solutii/marketing-export') ))
-  jsonld=$null
+  jsonld='{"@context":"https://schema.org","@type":"Service","name":"Marketing pentru producători și export UE","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}}'
   body=(SolBody 'Soluție &middot; Producători &amp; Export' 'Marketing pentru' 'producători cu ambiții UE.' 'Produci la nivel european, dar în afara României ești invizibil. Site multilingv, SEO/GEO internațional și campanii pe 2-3 piețe UE selectate strategic, nu peste tot și nicăieri.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('Producători & Export','/solutii/marketing-export') )) '&bdquo;Produc la nivel european, dar în afara României sunt invizibil.&rdquo;' @('Site multilingv și materiale de prezentare la standard occidental','SEO/GEO internațional + LinkedIn ABM pe piețele tale țintă','Campanii pe 2-3 piețe UE selectate strategic, nu peste tot și nicăieri','Plan în etape pe 6-12 luni, cu praguri clare: prima cerere de ofertă, primul contract') '6-12' 'luni de la fundație la primele cereri de ofertă externe, cu plan scris și praguri măsurabile.' (Related 'Servicii folosite' @( ,@('SEO + GEO','/servicii/seo-geo'); ,@('CMO Extern','/servicii/cmo-extern'); ,@('Landing &amp; CRO','/servicii/landing-pages-cro') )))
 }
 $pages += @{
@@ -407,7 +434,7 @@ $pages += @{
   title='Marketing pentru dezvoltatori imobiliari | AMPLIO'
   desc='Marketing pentru dezvoltatori rezidențiali din România: landing de proiect și campanii proprii, CRM și nurture pe ciclul lung de decizie, raport săptămânal pe lead-uri și viteza de absorbție.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('Imobiliare','/solutii/marketing-imobiliare') ))
-  jsonld=$null
+  jsonld='{"@context":"https://schema.org","@type":"Service","name":"Marketing pentru dezvoltatori imobiliari","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}}'
   body=(SolBody 'Soluție &middot; Imobiliare' 'Marketing pentru' 'dezvoltatori imobiliari.' 'Fiecare lună cu apartamente nevândute te costă dobândă. Portalurile îți trimit curioși, nu cumpărători. Landing de proiect, campanii proprii și CRM pe ciclul lung de decizie.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('Imobiliare','/solutii/marketing-imobiliare') )) '&bdquo;Portalurile îmi trimit curioși, nu cumpărători.&rdquo;' @('Landing de proiect + campanii proprii: lead-uri calificate la cost controlat, nu chirie pe portaluri','CRM + nurture automat pe ciclul lung de decizie al cumpărătorului','Raport săptămânal: lead-uri, vizionări programate, viteza de absorbție','Bonus per unitate vândută peste ritmul planificat: suntem motivați de viteza ta') '1 lună' 'de vânzare accelerată față de planul tău de absorbție îți plătește tot marketingul proiectului.' (Related 'Servicii folosite' @( ,@('Performance Ads','/servicii/performance-ads'); ,@('Landing &amp; CRO','/servicii/landing-pages-cro'); ,@('Email &amp; Automatizări','/servicii/email-automatizari') )))
 }
 
@@ -442,13 +469,26 @@ $pages += @{
       </ul>
       <h2>AI + oameni</h2>
       <p>Folosim inteligența artificială în producție ca să mergem mai repede și să testăm mai mult. Dar strategia, judecata și controlul calității rămân umane și seniore. AI-ul scrie schițe; oamenii decid direcția.</p>
+      <p>Vrei să ne compari cu alte agenții? Vezi <a href="/comparatii/amplio-vs-doads/">AMPLIO vs DoAds</a> și <a href="/comparatii/amplio-vs-maximize/">AMPLIO vs Maximize</a>.</p>
       <div class="key" style="margin-top:30px">
         <p style="margin:0"><strong>AMPLIO CREATIVE S.R.L.</strong> · București, România · operăm în RO + UE · <a href="mailto:contact@amplio.ro">contact@amplio.ro</a></p>
       </div>
     </div>
+    <div class="rv-block" style="margin-top:56px">
+    <div class="sec-head">
+      <h2>Recenzii pe Google</h2>
+      <p class="lead">Ce spun cei care au lucrat cu echipa AMPLIO.</p>
+    </div>
+    <div class="rv-grid">
+      <figure class="rv"><div class="rv-st" aria-label="5 din 5 stele">★★★★★</div><blockquote>„Multumesc Cristi pentru implicare! Super profesionist si o colaborare foarte buna. Recomand cu incredere!”</blockquote><figcaption><b>Claudiu Vacarus</b>Recenzie pe Google</figcaption></figure>
+      <figure class="rv"><div class="rv-st" aria-label="5 din 5 stele">★★★★★</div><blockquote>„A fost o alegerea foarte bună să colaborez cu Amplio, o echipă serioasă bine pregătită cu servicii de excepție.”</blockquote><figcaption><b>Marian Iordache</b>Recenzie pe Google</figcaption></figure>
+      <figure class="rv"><div class="rv-st" aria-label="5 din 5 stele">★★★★★</div><blockquote>„Recomand cu încredere, profesionalism și eficiență”</blockquote><figcaption><b>Razvan Nicolae Dumitrescu</b>Recenzie pe Google</figcaption></figure>
+    </div>
+    <p class="rv-note">Citate exacte, fără corecturi, din recenziile publice de pe <a href="https://www.google.com/maps?cid=16340050891654115703" target="_blank" rel="noopener">profilul AMPLIO de pe Google</a>, unde nota este 5,0 (octombrie 2026). Acolo le găsești pe toate.</p>
+  </div>
     <div class="ctaband" style="margin-top:40px">
       <h2>Vrei să vezi cum ar arăta pentru tine?</h2>
-      <p class="lead center">Cere auditul gratuit de vizibilitate. În 48 de ore, fără obligații.</p>
+      <p class="lead center">Cere auditul gratuit de vizibilitate. În 24 de ore, fără obligații.</p>
       <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
     </div>
   </div>
@@ -468,14 +508,14 @@ $pages += @{
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Termeni și condiții','/termeni') ))
   <span class="eyebrow">Legal</span><h1>Termeni și condiții</h1></div></section>
 <section><div class="wrap rev"><div class="prose">
-  <p class="meta">Ultima actualizare: iunie 2026</p>
+  <p class="meta">Ultima actualizare: octombrie 2026</p>
   <p>Acest site, amplio.ro, este operat de AMPLIO CREATIVE S.R.L. Prin utilizarea site-ului ești de acord cu termenii de mai jos. Dacă nu ești de acord, te rugăm să nu folosești site-ul.</p>
   <h2>1. Despre serviciile noastre</h2>
   <p>AMPLIO oferă servicii de marketing digital pentru firme. Prețurile și pachetele afișate pe site sunt orientative; condițiile finale se stabilesc prin contract individual. Modelele de plată legate de rezultate (fee redus + procent din creșterea vânzărilor) se aplică doar acolo unde sunt agreate în scris, pe baza unui baseline documentat.</p>
   <h2>2. Conținutul site-ului</h2>
   <p>Conținutul (texte, logo, design) aparține AMPLIO CREATIVE S.R.L. și nu poate fi reprodus fără acord. Informațiile au caracter informativ și pot fi modificate fără notificare prealabilă.</p>
   <h2>3. Auditul gratuit</h2>
-  <p>Auditul gratuit de vizibilitate este oferit fără obligații de cumpărare. Ne rezervăm dreptul de a stabili eligibilitatea și termenul de livrare (orientativ, 48 de ore lucrătoare).</p>
+  <p>Auditul gratuit de vizibilitate este oferit fără obligații de cumpărare. Ne rezervăm dreptul de a stabili eligibilitatea și termenul de livrare (orientativ, 24 de ore lucrătoare).</p>
   <h2>4. Limitarea răspunderii</h2>
   <p>Rezultatele de marketing depind de mulți factori externi. Estimările și exemplele de pe site nu constituie o garanție de rezultat în afara a ceea ce este prevăzut explicit în contract.</p>
   <h2>5. Contact</h2>
@@ -529,7 +569,6 @@ $pages += @{
     <li><b>Preferința ta (stocare locală în browser):</b> reține dacă ai acceptat sau ai refuzat cookies de analiză, ca să nu îți afișăm bannerul la fiecare vizită.</li>
     <li><b>Google Analytics 4 (_ga, _ga_*), doar după „Accept”:</b> statistici agregate despre vizite, paginile consultate și acțiunile importante, de exemplu trimiterea formularului de audit. Datele se păstrează 14 luni.</li>
     <li><b>Microsoft Clarity (_clck, _clsk), doar după „Accept”:</b> hărți de clicuri și de derulare și înregistrări ale interacțiunii cu pagina, ca să vedem unde se blochează vizitatorii. Textul introdus în formulare nu este înregistrat.</li>
-    <li><b>Google Fonts:</b> încarcă fonturile site-ului. Nu setează cookies, dar transmite adresa IP către serverele Google.</li>
   </ul>
   <p>Nu folosim pixeli de publicitate și nu facem remarketing.</p>
   <h2>Cum îți schimbi opțiunea</h2>
@@ -582,7 +621,7 @@ $pages += @{
   title='Ghid GEO: optimizare pentru motoarele AI (2026) | AMPLIO'
   desc='Ghid complet despre GEO (Generative Engine Optimization): ce este, cum diferă de SEO și cum îți optimizezi site-ul ca să fii citat de ChatGPT, Perplexity și Google AI Overviews.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Ghid GEO','/blog/ghid-geo') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Ce este GEO? Ghid de optimizare pentru motoarele AI","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","name":"AMPLIO"},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Ce este GEO? Ghid de optimizare pentru motoarele AI","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Ghid GEO','/blog/ghid-geo') ))
@@ -626,7 +665,7 @@ $pages += @{
   title='Cum apari în ChatGPT cu firma ta (ghid 2026) | AMPLIO'
   desc='Pași concreți ca afacerea ta să fie recomandată de ChatGPT și alte asistente AI: conținut citabil, autoritate, recenzii și prezență în sursele pe care AI le citează.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cum apari în ChatGPT','/blog/cum-aparii-in-chatgpt') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum apari în ChatGPT cu firma ta","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","name":"AMPLIO"},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum apari în ChatGPT cu firma ta","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cum apari în ChatGPT','/blog/cum-aparii-in-chatgpt') ))
@@ -656,7 +695,7 @@ $pages += @{
   title='Cât costă Google Ads în România în 2026? | AMPLIO'
   desc='Bugete reale pentru Google Ads în România: cost-pe-click pe industrii, buget minim recomandat și cum să nu arzi banii în primele luni. Ghid practic pentru firme.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cost Google Ads România','/blog/cost-google-ads-romania') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cât costă Google Ads în România în 2026","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","name":"AMPLIO"},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cât costă Google Ads în România în 2026","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cost Google Ads România','/blog/cost-google-ads-romania') ))
@@ -691,7 +730,7 @@ $pages += @{
   title='Cum verifici dacă firma ta apare în ChatGPT și AI (10 min) | AMPLIO'
   desc='Tutorial pas cu pas: verifică în 10 minute dacă afacerea ta apare în ChatGPT, Perplexity și Google AI Overviews, și ce să faci dacă ești invizibil. Fără cont, fără cost.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Verifică vizibilitatea AI','/blog/verifica-daca-apari-in-ai') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum verifici dacă firma ta apare în ChatGPT și în căutarea AI","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","name":"AMPLIO"},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum verifici dacă firma ta apare în ChatGPT și în căutarea AI","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Verifică vizibilitatea AI','/blog/verifica-daca-apari-in-ai') ))
@@ -738,7 +777,7 @@ $pages += @{
   <h2>Ce faci mai departe</h2>
   <p>Verificarea îți arată <em>unde</em> ești. Pasul următor e <em>de ce</em> și <em>ce repari întâi</em>. Despre asta e <a href="/blog/ghid-geo/">ghidul nostru complet de GEO</a>, iar dacă vrei direct răspunsul pe cazul tău, îl primești prin <a href="/servicii/seo-geo/">serviciul de SEO + GEO</a>.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Vrei să sărim peste verificarea manuală?</strong> În <a href="/audit-gratuit/">auditul gratuit</a> facem noi analiza: cum apari azi în Google și în AI, față de 3 competitori, plus primii 3 pași. În 48 de ore, fără obligații.</p>
+    <p style="margin:0"><strong>Vrei să sărim peste verificarea manuală?</strong> În <a href="/audit-gratuit/">auditul gratuit</a> facem noi analiza: cum apari azi în Google și în AI, față de 3 competitori, plus primii 3 pași. În 24 de ore, fără obligații.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
@@ -756,7 +795,7 @@ $pages += @{
   title='GEO vs SEO: care e diferența și de ce ai nevoie de ambele | AMPLIO'
   desc='GEO vs SEO explicat simplu: ce face fiecare, prin ce diferă și de ce ai nevoie de amândouă în 2026. Plus de unde începi dacă pornești de la zero.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('GEO vs SEO','/blog/geo-vs-seo') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"GEO vs SEO: care e diferența și de ce ai nevoie de ambele","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","name":"AMPLIO"},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"GEO vs SEO: care e diferența și de ce ai nevoie de ambele","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('GEO vs SEO','/blog/geo-vs-seo') ))
@@ -806,7 +845,7 @@ $pages += @{
   title='7 greșeli care îți ard bugetul de Google Ads | AMPLIO'
   desc='Cele mai frecvente 7 greșeli prin care firmele pierd bani pe Google Ads și Meta Ads, și cum le eviți pe fiecare. Ghid practic pentru firme din România.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Greșeli buget ads','/blog/greseli-buget-google-ads') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"7 greșeli care îți ard bugetul de Google Ads","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","name":"AMPLIO"},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"7 greșeli care îți ard bugetul de Google Ads","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Greșeli buget ads','/blog/greseli-buget-google-ads') ))
@@ -859,7 +898,7 @@ $pages += @{
   title='Cum alegi o agenție de marketing (și ce întrebări să pui) | AMPLIO'
   desc='Ghid practic pentru a alege o agenție de marketing în România: întrebările pe care să le pui, semnalele de alarmă și cum recunoști o agenție care își asumă rezultatele.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cum alegi o agenție','/blog/cum-alegi-agentie-marketing') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum alegi o agenție de marketing","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","name":"AMPLIO"},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum alegi o agenție de marketing","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cum alegi o agenție','/blog/cum-alegi-agentie-marketing') ))
@@ -894,7 +933,7 @@ $pages += @{
   <h2>Un singur partener sau mai mulți furnizori?</h2>
   <p>Poți coordona singur 4-5 freelanceri, sau poți avea un singur partener care acoperă tot și răspunde de rezultat. Pentru o firmă fără departament de marketing intern, al doilea model economisește cel mai prețios lucru: timpul tău de coordonare.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Așa lucrăm noi:</strong> KPI scriși în contract, clauză de ieșire la 90 de zile, conturile rămân ale tale și, unde are sens, plată legată de rezultate. Vezi <a href="/despre/">cum gândim</a> sau cere <a href="/audit-gratuit/">auditul gratuit</a>.</p>
+    <p style="margin:0"><strong>Așa lucrăm noi:</strong> KPI scriși în contract, clauză de ieșire la 90 de zile, conturile rămân ale tale și, unde are sens, plată legată de rezultate. Vezi <a href="/despre/">cum gândim</a>, <a href="/servicii/">serviciile noastre</a> și comparațiile cu <a href="/comparatii/amplio-vs-doads/">DoAds</a> și <a href="/comparatii/amplio-vs-maximize/">Maximize</a>, sau cere <a href="/audit-gratuit/">auditul gratuit</a>.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
@@ -912,7 +951,7 @@ $pages += @{
   title='Ce este llms.txt și cum îl folosești | AMPLIO'
   desc='Ghid simplu despre llms.txt: ce este fișierul care le spune modelelor AI ce oferă site-ul tău, ce conține și cum îl adaugi. Parte din strategia ta de GEO.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Ce este llms.txt','/blog/ce-este-llms-txt') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Ce este llms.txt și cum îl folosești","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","name":"AMPLIO"},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Ce este llms.txt și cum îl folosești","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Ce este llms.txt','/blog/ce-este-llms-txt') ))
@@ -953,7 +992,7 @@ $pages += @{
   title='Cum apari pe Google Maps cu profilul de business | AMPLIO'
   desc='Ghid practic pentru afaceri locale: cum îți optimizezi profilul Google Business ca să apari pe Google Maps când localnicii caută „lângă mine”. Pentru clinici, HoReCa și servicii.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Google Business local','/blog/google-business-profil-local') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum apari pe Google Maps cu profilul de business","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","name":"AMPLIO"},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum apari pe Google Maps cu profilul de business","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Google Business local','/blog/google-business-profil-local') ))
@@ -973,7 +1012,7 @@ $pages += @{
   <p>Profilul îți permite postări (oferte, noutăți) și o secțiune de întrebări și răspunsuri. Sunt subutilizate de majoritatea concurenței, deci o oportunitate ușoară de diferențiere.</p>
   <p>Profilul local lucrează cel mai bine împreună cu ads local și cu vizibilitate în AI. Vezi cum facem asta pentru <a href="/solutii/marketing-clinici/">clinici</a> și <a href="/solutii/marketing-horeca/">HoReCa</a>.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Vrei mai mulți clienți din zona ta?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a>, îți spunem cât de vizibil ești local și ce repari întâi.</p>
+    <p style="margin:0"><strong>Vrei mai mulți clienți din zona ta?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a>, îți spunem cât de vizibil ești local și ce repari întâi. Vizibilitatea în căutările locale ține și de <a href="/servicii/seo-geo/">SEO și GEO</a>.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
@@ -991,7 +1030,7 @@ $pages += @{
   title='Cum alegi cuvintele cheie când pornești de la zero | AMPLIO'
   desc='Ghid de cuvinte cheie pentru site-uri noi: de ce să eviți termenii mari la început, cum găsești long-tail-ul cu competiție mică și cum îl mapezi pe pagini.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cuvinte cheie de la zero','/blog/cuvinte-cheie-de-la-zero') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum alegi cuvintele cheie când pornești de la zero","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","name":"AMPLIO"},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum alegi cuvintele cheie când pornești de la zero","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cuvinte cheie de la zero','/blog/cuvinte-cheie-de-la-zero') ))
@@ -1029,7 +1068,7 @@ $pages += @{
   title='Google Ads vs Meta Ads: cu care începi? | AMPLIO'
   desc='Google Ads vs Meta Ads explicat pentru firme: ce problemă rezolvă fiecare, când funcționează mai bine și cum alegi în funcție de afacerea și obiectivul tău.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Google Ads vs Meta Ads','/blog/google-ads-vs-meta-ads') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Google Ads vs Meta Ads: cu care începi","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","name":"AMPLIO"},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Google Ads vs Meta Ads: cu care începi","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Google Ads vs Meta Ads','/blog/google-ads-vs-meta-ads') ))
@@ -1069,7 +1108,7 @@ $pages += @{
   title='Marketing pentru magazin online: ghid de creștere a vânzărilor | AMPLIO'
   desc='Cum crești vânzările unui magazin online: cele trei pârghii (mai mult trafic, conversie mai bună, valoare mai mare per client) și în ce ordine le activezi.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Marketing magazin online','/blog/marketing-magazin-online') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Marketing pentru magazin online: ghid de creștere a vânzărilor","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","name":"AMPLIO"},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Marketing pentru magazin online: ghid de creștere a vânzărilor","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Marketing magazin online','/blog/marketing-magazin-online') ))
@@ -1107,7 +1146,7 @@ $pages += @{
   title='Cum își umple o clinică agenda cu pacienții potriviți | AMPLIO'
   desc='Marketing pentru clinici medicale la standardul actului medical: cum atragi pacienți din zona ta prin Google Business, ads local și SEO/GEO, fără reclame agresive.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Marketing clinică','/blog/marketing-clinica-pacienti') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum își umple o clinică agenda cu pacienții potriviți","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","name":"AMPLIO"},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum își umple o clinică agenda cu pacienții potriviți","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Marketing clinică','/blog/marketing-clinica-pacienti') ))
@@ -1145,7 +1184,7 @@ $pages += @{
   title='Cum construiești un pipeline B2B previzibil | AMPLIO'
   desc='Marketing B2B pentru firme de servicii: cum treci dincolo de rețeaua personală de contacte și construiești un motor de lead-uri calificate prin LinkedIn ABM, SEO/GEO și nurture.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Pipeline B2B','/blog/marketing-b2b-pipeline') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum construiești un pipeline B2B previzibil","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","name":"AMPLIO"},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum construiești un pipeline B2B previzibil","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Pipeline B2B','/blog/marketing-b2b-pipeline') ))
@@ -1183,7 +1222,7 @@ $pages += @{
   title='De ce conturile de ads trebuie să rămână ale tale | AMPLIO'
   desc='De ce e esențial ca firma ta să dețină conturile de Google Ads, Meta și analytics, și ce riști când le ține agenția. Ghid pentru antreprenori.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Conturile rămân ale tale','/blog/conturi-ads-proprietate') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"De ce conturile de ads trebuie să rămână ale tale","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","name":"AMPLIO"},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"De ce conturile de ads trebuie să rămână ale tale","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Conturile rămân ale tale','/blog/conturi-ads-proprietate') ))
@@ -1206,7 +1245,7 @@ $pages += @{
   <p>Înainte să semnezi cu orice agenție, întreabă: &bdquo;Conturile și datele rămân ale mele?". Dacă răspunsul nu e un &bdquo;da" clar și în scris, e un semnal de alarmă. Vezi și <a href="/blog/cum-alegi-agentie-marketing/">cum alegi o agenție de marketing</a>.</p>
   <p>La noi e simplu: conturile și datele rămân ale tale, mereu. Transparență 100%, fără ostatici. Așa <a href="/despre/">gândim</a>.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Lucrezi cu o agenție și nu ești sigur ce deții?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a>, te ajutăm să verifici, fără obligații.</p>
+    <p style="margin:0"><strong>Lucrezi cu o agenție și nu ești sigur ce deții?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a>, te ajutăm să verifici, fără obligații. La <a href="/servicii/performance-ads/">administrarea Google Ads și Meta Ads</a>, conturile sunt ale tale din prima zi.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">

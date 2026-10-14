@@ -19,9 +19,15 @@
     document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in')});
   }
 
-  // Reduced motion: pause hero video
-  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches){
-    var v=document.getElementById('herovid');if(v){v.removeAttribute('autoplay');v.pause&&v.pause()}
+  // Video hero: doar pe ecrane late (>= 768px), fara „economisire date” si fara „miscare redusa”.
+  // Pe telefon ramane imaginea (poster), ca pagina sa nu mai descarce 3 MB.
+  var v=document.getElementById('herovid');
+  if(v&&v.getAttribute('data-src')){
+    var cn=navigator.connection||{};
+    if(window.matchMedia('(min-width:768px)').matches&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches&&!cn.saveData){
+      var s=document.createElement('source');s.src=v.getAttribute('data-src');s.type='video/mp4';v.appendChild(s);
+      v.autoplay=true;v.load();var pr=v.play&&v.play();if(pr&&pr.catch)pr.catch(function(){});
+    }
   }
 
   // Current year in footer
