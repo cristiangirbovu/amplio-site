@@ -30,6 +30,12 @@
     }
   }
 
+  // Tabelele .cmp pe telefon: capul de tabel e ascuns sub 640 px, asa ca fiecare celula primeste numele coloanei
+  document.querySelectorAll('table.cmp').forEach(function(t){
+    var h=[].map.call(t.querySelectorAll('thead th'),function(th){return th.textContent.trim()});
+    t.querySelectorAll('tbody tr').forEach(function(tr){[].forEach.call(tr.children,function(td,i){if(h[i])td.setAttribute('data-label',h[i])})});
+  });
+
   // Current year in footer
   var y=document.getElementById('yr');if(y)y.textContent=new Date().getFullYear();
 })();

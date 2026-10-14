@@ -800,7 +800,7 @@ $pages += @{
 $pages += @{
   path='solutii'
   title='Soluții de marketing pe industrie | AMPLIO'
-  desc='Soluții de marketing digital adaptate pe industrie: eCommerce, clinici medicale, servicii B2B, HoReCa, producători și export, imobiliare. Alege-ți domeniul și vezi ce facem pentru tine.'
+  desc='Soluții de marketing digital pe industrie: magazine online, clinici, servicii B2B, HoReCa, producători și export, imobiliare. Vezi ce facem pentru tine.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Soluții','/solutii') ))
   jsonld=$null
   body=@"
@@ -832,49 +832,349 @@ $pages += @{
 $pages += @{
   path='solutii/marketing-ecommerce'
   title='Marketing pentru magazine online (eCommerce) | AMPLIO'
-  desc='Agenție de marketing pentru eCommerce în România: administrare ads pe ROAS și venit, fluxuri de email care aduc 20-30% din venit și CRO pe paginile de produs. Model de parteneriat disponibil.'
+  desc='Marketing pentru magazine online: Google Shopping, Meta Ads, email automat și pagini de produs care convertesc, cu raport pe venit și marjă, nu pe clicuri.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('eCommerce','/solutii/marketing-ecommerce') ))
-  jsonld='{"@context":"https://schema.org","@type":"Service","name":"Marketing pentru magazine online (eCommerce)","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Marketing pentru magazine online (eCommerce)","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Lucrați cu Shopify, WooCommerce sau GoMag?","acceptedAnswer":{"@type":"Answer","text":"Da, cu platformele folosite de magazinele din România. Pentru tracking și feeduri verificăm întâi ce permite platforma ta."}},{"@type":"Question","name":"Cât din venit poate veni din email?","acceptedAnswer":{"@type":"Answer","text":"În e-commerce, emailul aduce tipic 20-30% din venit, când fluxurile automate sunt construite corect. Cifra ta depinde de lista de clienți și de cât de des se cumpără."}},{"@type":"Question","name":"Ce înseamnă modelul de parteneriat pentru un magazin?","acceptedAnswer":{"@type":"Answer","text":"O taxă fixă redusă și un procent doar din creșterea vânzărilor peste nivelul de pornire semnat. Plătești mai mult doar dacă vinzi mai mult."}}]}]}'
+  extra=@"
+<section>
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>De ce e diferit marketingul pentru un magazin online</h2>
+      <p class="lead">La un magazin online, fiecare leu de reclamă se vede în comenzi. Problema nu e lipsa datelor, ci faptul că sunt împrăștiate: Google Ads raportează un ROAS, Meta altul, iar contabilitatea vede altă cifră. Pornim de la venitul real și de la marja pe produs, apoi decidem unde merită pus bugetul.</p>
+    </div>
+    <div class="cols2" style="margin-top:40px">
+      <div>
+        <h3 style="font-family:var(--display);font-weight:700;color:var(--off);font-size:22px">Problemele tipice</h3>
+        <ul class="flist" style="margin-top:16px">
+          <li><b>ROAS în scădere:</b> costurile de reclamă cresc mai repede decât vânzările, iar nimeni nu își asumă cifra.</li>
+          <li><b>Coșuri abandonate fără urmă:</b> fără fluxuri de email, clienții care au pus produse în coș nu mai sunt contactați.</li>
+          <li><b>Pagini de produs care nu convertesc:</b> trafic plătit trimis pe pagini lente, fără recenzii sau fără informațiile care decid cumpărarea.</li>
+          <li><b>Dependență de un singur canal:</b> tot venitul vine din reclame, iar SEO și emailul lipsesc.</li>
+        </ul>
+      </div>
+      <div class="panelcard" style="align-self:start">
+        <h3>Ce măsurăm</h3>
+        <ul class="flist">
+          <li>Venitul și marja din fiecare canal</li>
+          <li>ROAS-ul și costul pe comandă</li>
+          <li>Venitul adus de email</li>
+          <li>Rata de conversie a paginilor de produs</li>
+        </ul>
+        <p style="margin-top:16px;font-size:14.5px">KPI-urile intră în contract, cu clauză de ieșire la 90 de zile.</p>
+      </div>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px">Primele 90 de zile</h2>
+    <div class="tl" style="margin-top:28px">
+      <div class="tstep"><span class="n">01</span><div class="day">ZILELE 1-14</div><h3>Fundația</h3><p>Accese, tracking de comenzi verificat cu teste reale, feedul de produse și cifrele de pornire: venit, marjă, ROAS.</p></div>
+      <div class="tstep"><span class="n">02</span><div class="day">ZILELE 15-30</div><h3>Primul câștig</h3><p>Shopping și remarketing pe produsele cu marjă bună, plus fluxul pentru coșurile abandonate.</p></div>
+      <div class="tstep"><span class="n">03</span><div class="day">ZILELE 31-60</div><h3>Ritmul</h3><p>Optimizare săptămânală pe ROAS, creație nouă pe Meta și teste pe paginile de produs care vând cel mai mult.</p></div>
+      <div class="tstep"><span class="n">04</span><div class="day">ZILELE 61-90</div><h3>Verdictul</h3><p>Comparăm venitul și marja cu KPI-urile din contract și decidem unde crește bugetul.</p></div>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px;margin-bottom:4px">Canalele potrivite</h2>
+    <div class="svc-grid">
+      <a class="svc" href="/servicii/google-ads/"><h3>Google Ads</h3><p>Shopping și Performance Max pe feedul magazinului, pentru cei care caută deja produsul.</p><span class="more">Vezi serviciul &rarr;</span></a>
+      <a class="svc" href="/servicii/facebook-ads/"><h3>Facebook Ads</h3><p>Catalog, reclame dinamice și remarketing pentru cei care au văzut un produs.</p><span class="more">Vezi serviciul &rarr;</span></a>
+      <a class="svc" href="/servicii/email-automatizari/"><h3>Email și automatizări</h3><p>Bun venit, coș abandonat, reactivare: venit fără cost pe clic.</p><span class="more">Vezi serviciul &rarr;</span></a>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px">Întrebări frecvente</h2>
+    <div class="faq">
+      <details><summary>Lucrați cu Shopify, WooCommerce sau GoMag?</summary><p>Da, cu platformele folosite de magazinele din România. Pentru tracking și feeduri verificăm întâi ce permite platforma ta.</p></details>
+      <details><summary>Cât din venit poate veni din email?</summary><p>În e-commerce, emailul aduce tipic 20-30% din venit, când fluxurile automate sunt construite corect. Cifra ta depinde de lista de clienți și de cât de des se cumpără.</p></details>
+      <details><summary>Ce înseamnă modelul de parteneriat pentru un magazin?</summary><p>O taxă fixă redusă și un procent doar din creșterea vânzărilor peste nivelul de pornire semnat. Plătești mai mult doar dacă vinzi mai mult.</p></details>
+    </div>
+  </div>
+</section>
+"@
   body=(SolBody 'Soluție &middot; eCommerce' 'Marketing pentru' 'magazine online.' 'Costurile de ads cresc, ROAS-ul scade și nimeni nu-și asumă cifra. Noi raportăm pe venit, construim fluxuri de email care vând singure și optimizăm paginile de produs.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('eCommerce','/solutii/marketing-ecommerce') )) '&bdquo;Costurile de ads cresc, ROAS-ul scade și nimeni nu-și asumă cifra de vânzări.&rdquo;' @('Administrare Google, Meta și TikTok cu raport pe ROAS și venit, nu pe afișări','Email &amp; automatizări care aduc 20-30% din venit (coș abandonat, reactivare)','CRO pe paginile de produs: același trafic, mai multe comenzi','Modelul de parteneriat: fee redus + procent doar din creșterea peste nivelul tău actual') '5-10%' 'din creșterea vânzărilor. Atât luăm peste fee-ul redus. Dacă nu crești, nu plătești procentul.' (Related 'Servicii folosite' @( ,@('Performance Ads','/servicii/performance-ads'); ,@('Email &amp; Automatizări','/servicii/email-automatizari'); ,@('Landing &amp; CRO','/servicii/landing-pages-cro') )))
 }
 $pages += @{
   path='solutii/marketing-clinici'
   title='Marketing pentru clinici și cabinete medicale | AMPLIO'
-  desc='Marketing pentru clinici medicale în România: Google Ads local, profil Google Business optimizat și SEO/GEO. Raport în programări confirmate și cost per pacient nou, ton sobru și profesionist.'
+  desc='Marketing pentru clinici și cabinete medicale: Google Ads local, fișa Google, recenzii și SEO pe proceduri, cu raport pe programări confirmate.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('Clinici','/solutii/marketing-clinici') ))
-  jsonld='{"@context":"https://schema.org","@type":"Service","name":"Marketing pentru clinici și cabinete medicale","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Marketing pentru clinici și cabinete medicale","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Țineți cont de regulile pentru publicitatea medicală?","acceptedAnswer":{"@type":"Answer","text":"Da. Nu promitem rezultate medicale și nu folosim mesaje alarmiste, iar orice text medical îl aprobă clinica înainte de publicare."}},{"@type":"Question","name":"Cum creșteți numărul de recenzii?","acceptedAnswer":{"@type":"Answer","text":"Cu o cerere scurtă, trimisă după vizită, cu linkul direct spre fișa Google. Fără recenzii cumpărate sau scrise de noi."}},{"@type":"Question","name":"Lucrați și cu cabinete mici?","acceptedAnswer":{"@type":"Answer","text":"Da, inclusiv cu cabinete cu un singur medic. Pentru ele pornim de obicei cu fișa Google, recenziile și câteva pagini pe proceduri."}}]}]}'
+  extra=@"
+<section>
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>De ce e diferit marketingul pentru o clinică</h2>
+      <p class="lead">Pacienții aleg o clinică pe încredere: recenzii, medici, cât de ușor faci o programare. Reclamele agresive fac mai mult rău decât bine. Lucrăm pe tonul sobru pe care îl cere domeniul medical și măsurăm în programări confirmate, nu în clicuri.</p>
+    </div>
+    <div class="cols2" style="margin-top:40px">
+      <div>
+        <h3 style="font-family:var(--display);font-weight:700;color:var(--off);font-size:22px">Problemele tipice</h3>
+        <ul class="flist" style="margin-top:16px">
+          <li><b>Puține recenzii față de concurenți:</b> chiar cu cea mai bună notă, clinica apare după cele cu mai multe recenzii.</li>
+          <li><b>Invizibilă în ChatGPT:</b> pacienții întreabă un asistent AI ce clinică să aleagă și primesc alte nume.</li>
+          <li><b>Programări pierdute pe drum:</b> telefoane la care nu răspunde nimeni, formulare fără confirmare.</li>
+          <li><b>Pagini prea generale:</b> o singură pagină de servicii în loc de pagini pe proceduri, acolo unde un pacient valorează mult.</li>
+        </ul>
+      </div>
+      <div class="panelcard" style="align-self:start">
+        <h3>Ce măsurăm</h3>
+        <ul class="flist">
+          <li>Programările confirmate, nu doar cererile</li>
+          <li>Costul pe pacient nou</li>
+          <li>Recenziile noi pe lună</li>
+          <li>Pozițiile pe procedurile importante</li>
+        </ul>
+        <p style="margin-top:16px;font-size:14.5px">KPI-urile intră în contract, cu clauză de ieșire la 90 de zile.</p>
+      </div>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px">Primele 90 de zile</h2>
+    <div class="tl" style="margin-top:28px">
+      <div class="tstep"><span class="n">01</span><div class="day">ZILELE 1-14</div><h3>Fundația</h3><p>Fișa Google pusă la punct, tracking pe programări și apeluri, cifrele de pornire documentate.</p></div>
+      <div class="tstep"><span class="n">02</span><div class="day">ZILELE 15-30</div><h3>Primul câștig</h3><p>Campanii locale pe 2-3 proceduri importante și primele cereri de recenzie după vizită.</p></div>
+      <div class="tstep"><span class="n">03</span><div class="day">ZILELE 31-60</div><h3>Ritmul</h3><p>Pagini noi pe proceduri și optimizare săptămânală pe costul pe programare.</p></div>
+      <div class="tstep"><span class="n">04</span><div class="day">ZILELE 61-90</div><h3>Verdictul</h3><p>Comparăm programările confirmate și costul pe pacient nou cu KPI-urile din contract.</p></div>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px;margin-bottom:4px">Canalele potrivite</h2>
+    <div class="svc-grid">
+      <a class="svc" href="/servicii/google-ads/"><h3>Google Ads</h3><p>Căutări cu oraș și procedură, anunțuri cu apel direct și programare.</p><span class="more">Vezi serviciul &rarr;</span></a>
+      <a class="svc" href="/servicii/seo-geo/"><h3>SEO și GEO</h3><p>Pagini pe proceduri, SEO local și prezența în recomandările AI.</p><span class="more">Vezi serviciul &rarr;</span></a>
+      <a class="svc" href="/servicii/landing-pages-cro/"><h3>Landing pages și CRO</h3><p>Pagini de programare simple, care funcționează pe telefon.</p><span class="more">Vezi serviciul &rarr;</span></a>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px">Întrebări frecvente</h2>
+    <div class="faq">
+      <details><summary>Țineți cont de regulile pentru publicitatea medicală?</summary><p>Da. Nu promitem rezultate medicale și nu folosim mesaje alarmiste, iar orice text medical îl aprobă clinica înainte de publicare.</p></details>
+      <details><summary>Cum creșteți numărul de recenzii?</summary><p>Cu o cerere scurtă, trimisă după vizită, cu linkul direct spre fișa Google. Fără recenzii cumpărate sau scrise de noi.</p></details>
+      <details><summary>Lucrați și cu cabinete mici?</summary><p>Da, inclusiv cu cabinete cu un singur medic. Pentru ele pornim de obicei cu fișa Google, recenziile și câteva pagini pe proceduri.</p></details>
+    </div>
+  </div>
+</section>
+"@
   body=(SolBody 'Soluție &middot; Clinici medicale' 'Marketing pentru' 'clinici medicale.' 'Vrei calendarul plin cu pacienții potriviți, fără să pari o clinică cu reclame agresive. Ads local, Google Business și SEO/GEO, cu raport în programări confirmate.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('Clinici','/solutii/marketing-clinici') )) '&bdquo;Vreau calendarul plin cu pacienții potriviți, fără să par o clinică cu reclame agresive.&rdquo;' @('Google Ads local + profil Google Business optimizat: pacienți din zona ta, când caută','SEO + GEO: când cineva întreabă ChatGPT cea mai bună clinică din zonă, să apari tu','Raportare în programări confirmate și cost per pacient nou, nu în like-uri','Marketing la standardul actului tău medical: sobru, profesionist, discret') '50%' 'dintre pacienți încep să caute prin AI și Google. Îți arătăm gratuit cum apari acum față de 3 competitori.' (Related 'Servicii folosite' @( ,@('SEO + GEO','/servicii/seo-geo'); ,@('Performance Ads','/servicii/performance-ads'); ,@('Landing &amp; CRO','/servicii/landing-pages-cro') )))
 }
 $pages += @{
   path='solutii/marketing-b2b'
   title='Marketing pentru servicii B2B | AMPLIO'
-  desc='Marketing B2B pentru firme de servicii din România: motor de lead-uri calificate prin LinkedIn ABM, SEO/GEO și nurture pe email, plus CMO extern. Definim lead calificat în contract și îl livrăm.'
+  desc='Marketing pentru firme de servicii B2B: lead-uri calificate după o definiție semnată în contract, SEO pe nișă, Google Ads și strategie de CMO extern.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('Servicii B2B','/solutii/marketing-b2b') ))
-  jsonld='{"@context":"https://schema.org","@type":"Service","name":"Marketing pentru servicii B2B","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Marketing pentru servicii B2B","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ce este un lead calificat?","acceptedAnswer":{"@type":"Answer","text":"Unul care îndeplinește criteriile stabilite împreună la început: tipul de firmă, mărimea, nevoia, bugetul. Definiția intră în contract, ca să măsurăm același lucru."}},{"@type":"Question","name":"Cât durează până apar primele cereri?","acceptedAnswer":{"@type":"Answer","text":"Din Google Ads, de obicei în primele săptămâni; din SEO și conținut, după câteva luni. Planul le combină pe amândouă."}},{"@type":"Question","name":"Lucrați și pentru piețe externe?","acceptedAnswer":{"@type":"Answer","text":"Da. Pentru producători și firmele care vând în alte țări din UE avem o soluție separată, pe 2-3 piețe alese pe date."}}]}]}'
+  extra=@"
+<section>
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>De ce e diferit marketingul B2B</h2>
+      <p class="lead">În B2B, o singură vânzare poate valora cât un an de marketing, dar decizia durează luni și o iau mai mulți oameni. Contează mai puțin volumul de lead-uri și mai mult calitatea lor. De aceea definim împreună ce înseamnă un lead calificat și scriem definiția în contract.</p>
+    </div>
+    <div class="cols2" style="margin-top:40px">
+      <div>
+        <h3 style="font-family:var(--display);font-weight:700;color:var(--off);font-size:22px">Problemele tipice</h3>
+        <ul class="flist" style="margin-top:16px">
+          <li><b>Creșterea depinde de rețeaua fondatorului:</b> fără un canal care aduce cereri noi, firma crește cât îi cunoaște proprietarul.</li>
+          <li><b>Site-ul nu răspunde decidenților:</b> pagini generale, fără industrii, fără exemple, fără prețuri orientative.</li>
+          <li><b>Cereri nelucrate:</b> lead-urile vin, dar nu există un sistem care să le urmărească până la ofertă.</li>
+          <li><b>Invizibil în căutările de nișă:</b> exact frazele rare și scumpe pe care le caută cumpărătorii serioși.</li>
+        </ul>
+      </div>
+      <div class="panelcard" style="align-self:start">
+        <h3>Ce măsurăm</h3>
+        <ul class="flist">
+          <li>Lead-urile calificate, după definiția din contract</li>
+          <li>Costul pe lead calificat</li>
+          <li>Ofertele trimise și valoarea lor</li>
+          <li>Durata de la cerere la contract</li>
+        </ul>
+        <p style="margin-top:16px;font-size:14.5px">KPI-urile intră în contract, cu clauză de ieșire la 90 de zile.</p>
+      </div>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px">Primele 90 de zile</h2>
+    <div class="tl" style="margin-top:28px">
+      <div class="tstep"><span class="n">01</span><div class="day">ZILELE 1-14</div><h3>Fundația</h3><p>Definiția lead-ului calificat, semnată; tracking pe cereri și cifrele de pornire.</p></div>
+      <div class="tstep"><span class="n">02</span><div class="day">ZILELE 15-30</div><h3>Primul câștig</h3><p>Google Ads pe frazele de nișă și primele pagini pe servicii și industrii.</p></div>
+      <div class="tstep"><span class="n">03</span><div class="day">ZILELE 31-60</div><h3>Ritmul</h3><p>Articole pentru decidenți, optimizare pe costul pe lead calificat, cererile urmărite până la ofertă.</p></div>
+      <div class="tstep"><span class="n">04</span><div class="day">ZILELE 61-90</div><h3>Verdictul</h3><p>Comparăm lead-urile calificate și ofertele trimise cu KPI-urile din contract.</p></div>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px;margin-bottom:4px">Canalele potrivite</h2>
+    <div class="svc-grid">
+      <a class="svc" href="/servicii/seo-geo/"><h3>SEO și GEO</h3><p>Pagini pe servicii și industrii, articole pentru decidenți și prezență în recomandările AI.</p><span class="more">Vezi serviciul &rarr;</span></a>
+      <a class="svc" href="/servicii/google-ads/"><h3>Google Ads</h3><p>Fraze de nișă, scumpe, cu intenție clară: plătim doar pentru căutările relevante.</p><span class="more">Vezi serviciul &rarr;</span></a>
+      <a class="svc" href="/servicii/cmo-extern/"><h3>CMO extern</h3><p>Strategie și coordonare: clientul ideal, mesajul, canalele și bugetul.</p><span class="more">Vezi serviciul &rarr;</span></a>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px">Întrebări frecvente</h2>
+    <div class="faq">
+      <details><summary>Ce este un lead calificat?</summary><p>Unul care îndeplinește criteriile stabilite împreună la început: tipul de firmă, mărimea, nevoia, bugetul. Definiția intră în contract, ca să măsurăm același lucru.</p></details>
+      <details><summary>Cât durează până apar primele cereri?</summary><p>Din Google Ads, de obicei în primele săptămâni; din SEO și conținut, după câteva luni. Planul le combină pe amândouă.</p></details>
+      <details><summary>Lucrați și pentru piețe externe?</summary><p>Da. Pentru producători și firmele care vând în alte țări din UE avem o soluție separată, pe 2-3 piețe alese pe date.</p></details>
+    </div>
+  </div>
+</section>
+"@
   body=(SolBody 'Soluție &middot; Servicii B2B' 'Marketing pentru' 'firme de servicii B2B.' 'Firma crește doar cât rețeaua ta personală de contacte, și asta te sperie. Construim un motor de lead-uri calificate: LinkedIn ABM + SEO/GEO + nurture pe email.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('Servicii B2B','/solutii/marketing-b2b') )) '&bdquo;Firma crește doar cât rețeaua mea personală de contacte. Și asta mă sperie.&rdquo;' @('Motor de lead-uri calificate: LinkedIn ABM + SEO/GEO + nurture pe email','Definim împreună lead calificat și îl semnăm în contract. Apoi îl livrăm','CMO Extern: strategie senioră și raport de board lunar, fără costul unui director','Zero postări de dragul postărilor: doar canale care aduc contracte în B2B') '2-3' 'lead-uri calificate pe lună schimbă complet matematica unei firme de servicii. Asta construim.' (Related 'Servicii folosite' @( ,@('SEO + GEO','/servicii/seo-geo'); ,@('CMO Extern','/servicii/cmo-extern'); ,@('Email &amp; Automatizări','/servicii/email-automatizari') )))
 }
 $pages += @{
   path='solutii/marketing-horeca'
   title='Marketing pentru restaurante și HoReCa | AMPLIO'
-  desc='Marketing pentru restaurante și branduri de ospitalitate în România: social media apetisant, Google Business și ads local, micro-influenceri și UGC. Pachete fixe de la 350 EUR/lună.'
+  desc='Marketing pentru restaurante și HoReCa: social media care face poftă, reclame locale pentru zilele slabe, fișa Google și rezervări directe.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('HoReCa','/solutii/marketing-horeca') ))
-  jsonld='{"@context":"https://schema.org","@type":"Service","name":"Marketing pentru restaurante și HoReCa","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Marketing pentru restaurante și HoReCa","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cât costă pentru un restaurant?","acceptedAnswer":{"@type":"Answer","text":"Pachetele de social media pornesc de la 350 € pe lună; bugetul pentru reclamele locale se stabilește după zonă și obiectiv."}},{"@type":"Question","name":"Lucrați cu influenceri?","acceptedAnswer":{"@type":"Answer","text":"Da, cu micro-influenceri locali și conținut făcut de clienți (UGC), prin rețeaua noastră de parteneri."}},{"@type":"Question","name":"Faceți și fotografiile?","acceptedAnswer":{"@type":"Answer","text":"Pentru ședințe foto și filmări coordonăm partenerii noștri; restul conținutului îl producem noi, iar tu aprobi fiecare postare."}}]}]}'
+  extra=@"
+<section>
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>De ce e diferit marketingul pentru un restaurant</h2>
+      <p class="lead">Un restaurant trăiește din ocupare: mesele pline de vineri nu compensează marțea goală. Marketingul bun pentru HoReCa e local, vizual și constant: oamenii din zonă trebuie să te vadă des, cu ceva care le face poftă.</p>
+    </div>
+    <div class="cols2" style="margin-top:40px">
+      <div>
+        <h3 style="font-family:var(--display);font-weight:700;color:var(--off);font-size:22px">Problemele tipice</h3>
+        <ul class="flist" style="margin-top:16px">
+          <li><b>Zilele slabe:</b> marți și miercuri mesele stau goale, deși produsul e bun.</li>
+          <li><b>Fișa Google neîngrijită:</b> program greșit, poze vechi, meniul lipsă, recenzii fără răspuns.</li>
+          <li><b>Postări fără ritm:</b> câteva postări bune, apoi luni de pauză.</li>
+          <li><b>Dependență de platformele de livrare:</b> comisioane mari și clienți care nu ajung niciodată la tine direct.</li>
+        </ul>
+      </div>
+      <div class="panelcard" style="align-self:start">
+        <h3>Ce măsurăm</h3>
+        <ul class="flist">
+          <li>Rezervările și comenzile directe</li>
+          <li>Ocuparea în zilele slabe</li>
+          <li>Costul pe rezervare din reclame</li>
+          <li>Recenziile și nota de pe Google</li>
+        </ul>
+        <p style="margin-top:16px;font-size:14.5px">KPI-urile intră în contract, cu clauză de ieșire la 90 de zile.</p>
+      </div>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px">Primele 90 de zile</h2>
+    <div class="tl" style="margin-top:28px">
+      <div class="tstep"><span class="n">01</span><div class="day">ZILELE 1-14</div><h3>Fundația</h3><p>Fișa Google la zi, meniul pe site, tracking pe rezervări și ocuparea de pornire.</p></div>
+      <div class="tstep"><span class="n">02</span><div class="day">ZILELE 15-30</div><h3>Primul câștig</h3><p>Calendar de postări și primele reclame locale pentru zilele slabe.</p></div>
+      <div class="tstep"><span class="n">03</span><div class="day">ZILELE 31-60</div><h3>Ritmul</h3><p>Conținut constant, colaborări cu micro-influenceri locali și oferte testate.</p></div>
+      <div class="tstep"><span class="n">04</span><div class="day">ZILELE 61-90</div><h3>Verdictul</h3><p>Comparăm rezervările și ocuparea din zilele slabe cu KPI-urile din contract.</p></div>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px;margin-bottom:4px">Canalele potrivite</h2>
+    <div class="svc-grid">
+      <a class="svc" href="/servicii/social-media/"><h3>Social media</h3><p>Conținut care face poftă, cu ritm constant, pe Instagram și Facebook.</p><span class="more">Vezi serviciul &rarr;</span></a>
+      <a class="svc" href="/servicii/facebook-ads/"><h3>Facebook Ads</h3><p>Notorietate locală și oferte pentru zilele slabe, oamenilor din zona ta.</p><span class="more">Vezi serviciul &rarr;</span></a>
+      <a class="svc" href="/servicii/seo-geo/"><h3>SEO și GEO</h3><p>Fișa Google, meniul pe site și căutările de tipul „restaurant în…”.</p><span class="more">Vezi serviciul &rarr;</span></a>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px">Întrebări frecvente</h2>
+    <div class="faq">
+      <details><summary>Cât costă pentru un restaurant?</summary><p>Pachetele de social media pornesc de la 350 € pe lună; bugetul pentru reclamele locale se stabilește după zonă și obiectiv.</p></details>
+      <details><summary>Lucrați cu influenceri?</summary><p>Da, cu micro-influenceri locali și conținut făcut de clienți (UGC), prin rețeaua noastră de parteneri.</p></details>
+      <details><summary>Faceți și fotografiile?</summary><p>Pentru ședințe foto și filmări coordonăm partenerii noștri; restul conținutului îl producem noi, iar tu aprobi fiecare postare.</p></details>
+    </div>
+  </div>
+</section>
+"@
   body=(SolBody 'Soluție &middot; HoReCa' 'Marketing pentru' 'restaurante și ospitalitate.' 'Produsul tău e excelent, dar marțea și miercurea mesele stau goale. Social apetisant, ads local și micro-influenceri care aduc rezultate, nu mese gratis.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('HoReCa','/solutii/marketing-horeca') )) '&bdquo;Produsul meu e excelent, dar marțea și miercurea mesele stau goale.&rdquo;' @('Social media care arată ca produsul tău: apetisant, autentic, constant','Google Business + ads local: apari când localnicii și turiștii caută unde mâncăm','Micro-influenceri și UGC prin rețeaua noastră de parteneri, cu rezultate, nu mese gratis','Pachete fixe de la 350 &euro;/lună: știi exact cât investești') '350 &euro;' 'pe lună. De aici pornește pachetul care îți umple agenda de rezervări și feed-ul de conținut.' (Related 'Servicii folosite' @( ,@('Social Media','/servicii/social-media'); ,@('Performance Ads','/servicii/performance-ads') )))
 }
 $pages += @{
   path='solutii/marketing-export'
   title='Marketing pentru producători și export UE | AMPLIO'
-  desc='Marketing pentru producători cu ambiții europene: site multilingv la standard occidental, SEO/GEO internațional, LinkedIn ABM pe piețele țintă și campanii pe 2-3 piețe UE selectate strategic.'
+  desc='Marketing pentru producători și export în UE: site multilingv, SEO și GEO internațional, campanii pe 2-3 piețe alese pe date, plan în etape.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('Producători & Export','/solutii/marketing-export') ))
-  jsonld='{"@context":"https://schema.org","@type":"Service","name":"Marketing pentru producători și export UE","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Marketing pentru producători și export UE","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"În ce limbi lucrați?","acceptedAnswer":{"@type":"Answer","text":"În limbile piețelor alese. Conținutul pentru fiecare piață e scris sau verificat de vorbitori nativi, nu tradus automat."}},{"@type":"Question","name":"Câte piețe recomandați la început?","acceptedAnswer":{"@type":"Answer","text":"Două sau trei, alese după cerere, concurență și potrivirea cu produsul tău. Extindem după primele contracte."}},{"@type":"Question","name":"Cât durează?","acceptedAnswer":{"@type":"Answer","text":"Planul are de obicei 6-12 luni de la fundație la primele cereri de ofertă externe, cu praguri clare pe drum."}}]}]}'
+  extra=@"
+<section>
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>De ce e diferit marketingul pentru export</h2>
+      <p class="lead">Un cumpărător din Germania sau din Franța te caută în limba lui, pe Google-ul lui, și te compară cu furnizori locali. Un site doar în română sau o traducere automată te scot din discuție din primul minut. Pornim cu 2-3 piețe alese pe date și construim prezența acolo, în etape.</p>
+    </div>
+    <div class="cols2" style="margin-top:40px">
+      <div>
+        <h3 style="font-family:var(--display);font-weight:700;color:var(--off);font-size:22px">Problemele tipice</h3>
+        <ul class="flist" style="margin-top:16px">
+          <li><b>Site doar în română sau tradus automat:</b> cumpărătorul străin nu are încredere și pleacă.</li>
+          <li><b>Invizibil în piețele țintă:</b> nicio pagină care să răspundă la ce caută distribuitorii și importatorii.</li>
+          <li><b>Prea multe piețe deodată:</b> bugetul se împrăștie și nu apare niciun contract.</li>
+          <li><b>Materiale sub nivelul produsului:</b> cataloage și prezentări care nu arată calitatea reală.</li>
+        </ul>
+      </div>
+      <div class="panelcard" style="align-self:start">
+        <h3>Ce măsurăm</h3>
+        <ul class="flist">
+          <li>Cererile de ofertă din fiecare piață</li>
+          <li>Vizitele și pozițiile în țările țintă</li>
+          <li>Contactele cu distribuitori și importatori</li>
+          <li>Pragurile din plan: prima cerere, primul contract</li>
+        </ul>
+        <p style="margin-top:16px;font-size:14.5px">KPI-urile intră în contract, cu clauză de ieșire la 90 de zile.</p>
+      </div>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px">Primele 90 de zile</h2>
+    <div class="tl" style="margin-top:28px">
+      <div class="tstep"><span class="n">01</span><div class="day">ZILELE 1-14</div><h3>Fundația</h3><p>Alegem 2-3 piețe pe date: cerere, concurență și potrivirea cu produsul tău.</p></div>
+      <div class="tstep"><span class="n">02</span><div class="day">ZILELE 15-30</div><h3>Primul câștig</h3><p>Paginile în limba primei piețe și primele campanii pe frazele distribuitorilor.</p></div>
+      <div class="tstep"><span class="n">03</span><div class="day">ZILELE 31-60</div><h3>Ritmul</h3><p>Conținut pentru piețele alese și primele contacte cu distribuitori și importatori.</p></div>
+      <div class="tstep"><span class="n">04</span><div class="day">ZILELE 61-90</div><h3>Verdictul</h3><p>Verificăm pragurile din plan și decidem ritmul pentru următoarele luni.</p></div>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px;margin-bottom:4px">Canalele potrivite</h2>
+    <div class="svc-grid">
+      <a class="svc" href="/servicii/seo-geo/"><h3>SEO și GEO internațional</h3><p>Site în limbile piețelor, pagini pe piețe și semnalele corecte pentru fiecare țară.</p><span class="more">Vezi serviciul &rarr;</span></a>
+      <a class="svc" href="/servicii/google-ads/"><h3>Google Ads</h3><p>Campanii pe țări, în limba cumpărătorului, pe frazele distribuitorilor.</p><span class="more">Vezi serviciul &rarr;</span></a>
+      <a class="svc" href="/servicii/cmo-extern/"><h3>CMO extern</h3><p>Alegerea piețelor și planul în etape, cu praguri măsurabile.</p><span class="more">Vezi serviciul &rarr;</span></a>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px">Întrebări frecvente</h2>
+    <div class="faq">
+      <details><summary>În ce limbi lucrați?</summary><p>În limbile piețelor alese. Conținutul pentru fiecare piață e scris sau verificat de vorbitori nativi, nu tradus automat.</p></details>
+      <details><summary>Câte piețe recomandați la început?</summary><p>Două sau trei, alese după cerere, concurență și potrivirea cu produsul tău. Extindem după primele contracte.</p></details>
+      <details><summary>Cât durează?</summary><p>Planul are de obicei 6-12 luni de la fundație la primele cereri de ofertă externe, cu praguri clare pe drum.</p></details>
+    </div>
+  </div>
+</section>
+"@
   body=(SolBody 'Soluție &middot; Producători &amp; Export' 'Marketing pentru' 'producători cu ambiții UE.' 'Produci la nivel european, dar în afara României ești invizibil. Site multilingv, SEO/GEO internațional și campanii pe 2-3 piețe UE selectate strategic, nu peste tot și nicăieri.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('Producători & Export','/solutii/marketing-export') )) '&bdquo;Produc la nivel european, dar în afara României sunt invizibil.&rdquo;' @('Site multilingv și materiale de prezentare la standard occidental','SEO/GEO internațional + LinkedIn ABM pe piețele tale țintă','Campanii pe 2-3 piețe UE selectate strategic, nu peste tot și nicăieri','Plan în etape pe 6-12 luni, cu praguri clare: prima cerere de ofertă, primul contract') '6-12' 'luni de la fundație la primele cereri de ofertă externe, cu plan scris și praguri măsurabile.' (Related 'Servicii folosite' @( ,@('SEO + GEO','/servicii/seo-geo'); ,@('CMO Extern','/servicii/cmo-extern'); ,@('Landing &amp; CRO','/servicii/landing-pages-cro') )))
 }
 $pages += @{
   path='solutii/marketing-imobiliare'
   title='Marketing pentru dezvoltatori imobiliari | AMPLIO'
-  desc='Marketing pentru dezvoltatori rezidențiali din România: landing de proiect și campanii proprii, CRM și nurture pe ciclul lung de decizie, raport săptămânal pe lead-uri și viteza de absorbție.'
+  desc='Marketing imobiliar pentru dezvoltatori și agenții: pagini de proiect, campanii proprii, urmărirea cumpărătorilor și raport săptămânal pe vânzări.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('Imobiliare','/solutii/marketing-imobiliare') ))
-  jsonld='{"@context":"https://schema.org","@type":"Service","name":"Marketing pentru dezvoltatori imobiliari","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Marketing pentru dezvoltatori imobiliari","serviceType":"Marketing digital","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Lucrați și pentru agenții imobiliare, nu doar pentru dezvoltatori?","acceptedAnswer":{"@type":"Answer","text":"Da. Pentru agenții, accentul cade pe paginile de proprietăți, pe căutările locale și pe încrederea în agenție."}},{"@type":"Question","name":"Cât de des raportați?","acceptedAnswer":{"@type":"Answer","text":"Săptămânal: lead-uri, vizionări și ritmul vânzărilor, pentru că deciziile în imobiliare nu pot aștepta o lună."}},{"@type":"Question","name":"Cum lucrați cu portalurile?","acceptedAnswer":{"@type":"Answer","text":"Nu le înlocuim peste noapte: construim în paralel canalul propriu și mutăm treptat bugetul pe ce aduce cumpărători."}}]}]}'
+  extra=@"
+<section>
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>De ce e diferit marketingul imobiliar</h2>
+      <p class="lead">Un apartament nevândut costă în fiecare lună. Portalurile aduc mult trafic, dar și mulți curioși, iar decizia de cumpărare durează luni. Construim un canal propriu: pagina proiectului, campanii care aduc oameni cu buget și intenție, și un sistem care îi ține aproape până la vizionare.</p>
+    </div>
+    <div class="cols2" style="margin-top:40px">
+      <div>
+        <h3 style="font-family:var(--display);font-weight:700;color:var(--off);font-size:22px">Problemele tipice</h3>
+        <ul class="flist" style="margin-top:16px">
+          <li><b>Dependență de portaluri:</b> plătești pentru o vizibilitate pe care o împarți cu toți concurenții.</li>
+          <li><b>Lead-uri reci:</b> mulți cer prețul și dispar; fără urmărire, se pierd.</li>
+          <li><b>Pagina proiectului nu vinde:</b> lipsesc planurile, prețurile orientative, zona și stadiul construcției.</li>
+          <li><b>Raport lunar, decizii lente:</b> ritmul vânzărilor se schimbă de la o săptămână la alta.</li>
+        </ul>
+      </div>
+      <div class="panelcard" style="align-self:start">
+        <h3>Ce măsurăm</h3>
+        <ul class="flist">
+          <li>Lead-urile calificate și costul lor</li>
+          <li>Vizionările programate</li>
+          <li>Viteza de absorbție: unități vândute pe lună</li>
+          <li>Costul de marketing pe unitate vândută</li>
+        </ul>
+        <p style="margin-top:16px;font-size:14.5px">KPI-urile intră în contract, cu clauză de ieșire la 90 de zile.</p>
+      </div>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px">Primele 90 de zile</h2>
+    <div class="tl" style="margin-top:28px">
+      <div class="tstep"><span class="n">01</span><div class="day">ZILELE 1-14</div><h3>Fundația</h3><p>Pagina proiectului, tracking pe cereri și vizionări, cifrele de pornire documentate.</p></div>
+      <div class="tstep"><span class="n">02</span><div class="day">ZILELE 15-30</div><h3>Primul câștig</h3><p>Campanii pe zonă și tip de locuință și primul flux de urmărire pentru cumpărători.</p></div>
+      <div class="tstep"><span class="n">03</span><div class="day">ZILELE 31-60</div><h3>Ritmul</h3><p>Raport săptămânal, buget mutat pe ce aduce vizionări, remarketing pe ciclul lung de decizie.</p></div>
+      <div class="tstep"><span class="n">04</span><div class="day">ZILELE 61-90</div><h3>Verdictul</h3><p>Comparăm vizionările și unitățile vândute cu KPI-urile din contract.</p></div>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px;margin-bottom:4px">Canalele potrivite</h2>
+    <div class="svc-grid">
+      <a class="svc" href="/servicii/google-ads/"><h3>Google Ads</h3><p>Căutări pe zonă și tip de locuință, campanii pe fiecare proiect.</p><span class="more">Vezi serviciul &rarr;</span></a>
+      <a class="svc" href="/servicii/landing-pages-cro/"><h3>Landing pages și CRO</h3><p>Pagina proiectului: planuri, prețuri orientative, zonă, programare la vizionare.</p><span class="more">Vezi serviciul &rarr;</span></a>
+      <a class="svc" href="/servicii/email-automatizari/"><h3>Email și automatizări</h3><p>Urmărirea cumpărătorilor pe ciclul lung de decizie, cu mesaje la momentul potrivit.</p><span class="more">Vezi serviciul &rarr;</span></a>
+    </div>
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-top:56px">Întrebări frecvente</h2>
+    <div class="faq">
+      <details><summary>Lucrați și pentru agenții imobiliare, nu doar pentru dezvoltatori?</summary><p>Da. Pentru agenții, accentul cade pe paginile de proprietăți, pe căutările locale și pe încrederea în agenție.</p></details>
+      <details><summary>Cât de des raportați?</summary><p>Săptămânal: lead-uri, vizionări și ritmul vânzărilor, pentru că deciziile în imobiliare nu pot aștepta o lună.</p></details>
+      <details><summary>Cum lucrați cu portalurile?</summary><p>Nu le înlocuim peste noapte: construim în paralel canalul propriu și mutăm treptat bugetul pe ce aduce cumpărători.</p></details>
+    </div>
+  </div>
+</section>
+"@
   body=(SolBody 'Soluție &middot; Imobiliare' 'Marketing pentru' 'dezvoltatori imobiliari.' 'Fiecare lună cu apartamente nevândute te costă dobândă. Portalurile îți trimit curioși, nu cumpărători. Landing de proiect, campanii proprii și CRM pe ciclul lung de decizie.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Soluții','/solutii'); ,@('Imobiliare','/solutii/marketing-imobiliare') )) '&bdquo;Portalurile îmi trimit curioși, nu cumpărători.&rdquo;' @('Landing de proiect + campanii proprii: lead-uri calificate la cost controlat, nu chirie pe portaluri','CRM + nurture automat pe ciclul lung de decizie al cumpărătorului','Raport săptămânal: lead-uri, vizionări programate, viteza de absorbție','Bonus per unitate vândută peste ritmul planificat: suntem motivați de viteza ta') '1 lună' 'de vânzare accelerată față de planul tău de absorbție îți plătește tot marketingul proiectului.' (Related 'Servicii folosite' @( ,@('Performance Ads','/servicii/performance-ads'); ,@('Landing &amp; CRO','/servicii/landing-pages-cro'); ,@('Email &amp; Automatizări','/servicii/email-automatizari') )))
 }
 
@@ -1060,7 +1360,7 @@ $pages += @{
   title='Ghid GEO: optimizare pentru motoarele AI (2026) | AMPLIO'
   desc='Ghid complet despre GEO (Generative Engine Optimization): ce este, cum diferă de SEO și cum îți optimizezi site-ul ca să fii citat de ChatGPT, Perplexity și Google AI Overviews.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Ghid GEO','/blog/ghid-geo') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Ce este GEO? Ghid de optimizare pentru motoarele AI","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Ce este GEO? Ghid de optimizare pentru motoarele AI","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18","dateModified":"2026-10-14"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cât durează până apare un efect?","acceptedAnswer":{"@type":"Answer","text":"De obicei câteva luni. Motoarele AI preiau schimbările cu întârziere, iar sursele externe care te confirmă, recenzii, directoare, articole, se construiesc în timp."}},{"@type":"Question","name":"GEO înlocuiește SEO?","acceptedAnswer":{"@type":"Answer","text":"Nu. Rezumatele AI și asistenții care caută pe internet se bazează pe pagini pe care le găsesc deja. Un SEO bun e fundația, iar GEO se construiește peste el."}},{"@type":"Question","name":"Merge GEO și pentru o firmă mică, locală?","acceptedAnswer":{"@type":"Answer","text":"Da, uneori chiar mai repede: pentru întrebările locale concurența e mai mică, iar o fișă Google completă, recenziile și câteva pagini clare pot face diferența."}}]}]}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Ghid GEO','/blog/ghid-geo') ))
@@ -1068,13 +1368,16 @@ $pages += @{
   <h1>Ce este GEO și cum te optimizezi <span class="g">pentru motoarele AI</span></h1>
 </div></section>
 <section><div class="wrap rev"><article class="prose">
-  <p class="meta">Actualizat: iunie 2026 &middot; ~6 min de citit</p>
+  <p class="meta">Actualizat: octombrie 2026 &middot; ~10 min de citit</p>
   <p>Timp de 20 de ani, „a fi găsit online” a însemnat un singur lucru: să apari în Google. Asta se schimbă acum. Tot mai mulți oameni pun întrebări direct unui asistent AI, ChatGPT, Perplexity, Google AI Overviews, și primesc un singur răspuns, nu o listă de 10 linkuri. <strong>GEO (Generative Engine Optimization)</strong> este disciplina de a te face vizibil exact în acel răspuns.</p>
   <h2>SEO vs. GEO: care e diferența</h2>
   <p>SEO te ajută să urci în lista de rezultate Google. GEO te ajută să fii <em>citat și recomandat</em> de un model AI atunci când construiește un răspuns. Sunt înrudite, împart aceeași fundație de conținut clar și demn de încredere, dar optimizezi pentru doi „cititori” diferiți: un algoritm de ranking și un model de limbaj.</p>
   <blockquote>Când un client întreabă „care e cea mai bună clinică / agenție / firmă din zona mea?”, AI-ul numește câteva. Dacă nu ești tu acolo, nici nu exiști în acea conversație.</blockquote>
   <h2>De ce contează acum, nu peste 2 ani</h2>
   <p>Aproximativ jumătate dintre căutări încep deja să implice un strat de AI. Cei care își construiesc vizibilitatea AI acum prind un avantaj greu de recuperat mai târziu, exact ca firmele care au prins SEO la început. E mult spațiu liber: foarte puține firme din România lucrează intenționat pe GEO.</p>
+  <h2>Cum aleg motoarele AI ce firme recomandă</h2>
+  <p>Un asistent AI îmbină ce a învățat la antrenare cu ce găsește pe internet în momentul întrebării. Când recomandă firme, alege numele care apar <strong>clar și consecvent în mai multe surse de încredere</strong>: site-ul firmei, fișa Google, directoare, recenzii, articole și liste de tip „cele mai bune firme de…”.</p>
+  <p>Contează la fel de mult și ce nu găsește. Dacă informațiile despre tine lipsesc sau se contrazic, modelul te omite sau te confundă. Am văzut asta recent într-un audit: rezumatul AI al Google amesteca o firmă de curățenie din București cu o curățătorie cu nume asemănător din alt oraș. Pentru un client care întreabă, cele două deveniseră aceeași firmă.</p>
   <h2>Cum te optimizezi pentru GEO: 5 piloni</h2>
   <ul class="flist" style="margin-top:14px">
     <li><b>Conținut structurat și citabil:</b> răspunsuri clare la întrebări reale, în formate pe care AI-ul le poate extrage ușor (definiții, liste, FAQ).</li>
@@ -1083,10 +1386,42 @@ $pages += @{
     <li><b>Prezență în surse pe care AI le citează:</b> directoare, recenzii, mențiuni, de acolo își ia AI-ul „părerea”.</li>
     <li><b>llms.txt și conținut agent-readable:</b> un fișier care spune modelelor AI ce ești și ce oferi.</li>
   </ul>
+  <h3>Ce faci concret, pe fiecare pilon</h3>
+  <p><strong>Conținut citabil.</strong> Scrie pagini care răspund direct la întrebările clienților: ce include serviciul, cât costă, cât durează, pentru cine e potrivit. Pune răspunsul în prima frază, apoi detaliile.</p>
+  <p><strong>Încredere.</strong> Arată cine e firma, de când lucrează, unde și pentru cine. Recenziile reale și exemplele de lucrări cântăresc mai mult decât orice adjectiv.</p>
+  <p><strong>Date structurate.</strong> Marchează firma, serviciile, articolele și întrebările frecvente, ca mașinile să înțeleagă fără să ghicească ce reprezintă fiecare pagină.</p>
+  <p><strong>Surse externe.</strong> Aceleași date (nume, adresă, telefon, servicii) pe fișa Google, în directoare, pe rețele și pe site-urile partenerilor. Fiecare sursă care te confirmă contează.</p>
+  <p><strong>llms.txt.</strong> Un rezumat curat al firmei, la rădăcina site-ului. E un pas mic, nu o scurtătură; detalii în ghidul <a href="/blog/ce-este-llms-txt/">ce este llms.txt</a>.</p>
+  <h2>Cum măsori vizibilitatea în AI</h2>
+  <p>Nu există încă un „Search Console” pentru ChatGPT, așa că măsurarea se face manual, dar sistematic:</p>
+  <ol>
+    <li>Scrie 10 întrebări pe care le-ar pune clienții tăi: „ce firmă de… îmi recomanzi în…”, „cât costă…”, „cum aleg…”.</li>
+    <li>Pune-le lunar în ChatGPT, Perplexity, Gemini și în Google, cu aceleași formulări.</li>
+    <li>Notează dacă apari, pe ce loc și ce surse citează răspunsul.</li>
+    <li>Compară-te cu 2-3 concurenți și urmărește evoluția de la o lună la alta.</li>
+  </ol>
+  <p>Pașii detaliați sunt în ghidul <a href="/blog/verifica-daca-apari-in-ai/">cum verifici dacă firma ta apare în ChatGPT</a>.</p>
+
+  <h2>Primii pași pentru o firmă mică</h2>
+  <ul>
+    <li>Completează fișa Google: categoria corectă, servicii, program, fotografii reale.</li>
+    <li>Cere recenzii clienților mulțumiți, constant, nu o dată pe an.</li>
+    <li>Fă câte o pagină pentru fiecare serviciu important, cu prețuri orientative și întrebări frecvente.</li>
+    <li>Folosește aceleași date de contact peste tot.</li>
+    <li>Adaugă datele structurate și fișierul llms.txt.</li>
+  </ul>
+
+  <h2>Întrebări frecvente</h2>
+  <div class="faq" style="margin-top:10px">
+    <details><summary>Cât durează până apare un efect?</summary><p>De obicei câteva luni. Motoarele AI preiau schimbările cu întârziere, iar sursele externe care te confirmă, recenzii, directoare, articole, se construiesc în timp.</p></details>
+    <details><summary>GEO înlocuiește SEO?</summary><p>Nu. Rezumatele AI și asistenții care caută pe internet se bazează pe pagini pe care le găsesc deja. Un SEO bun e fundația, iar GEO se construiește peste el.</p></details>
+    <details><summary>Merge GEO și pentru o firmă mică, locală?</summary><p>Da, uneori chiar mai repede: pentru întrebările locale concurența e mai mică, iar o fișă Google completă, recenziile și câteva pagini clare pot face diferența.</p></details>
+  </div>
+
   <h2>Primul pas practic</h2>
   <p>Înainte de orice optimizare, măsoară unde ești acum: întreabă ChatGPT și Perplexity despre domeniul tău și vezi dacă apari. Apoi compară-te cu 2-3 competitori. Exact asta facem noi în <a href="/audit-gratuit/">auditul gratuit de vizibilitate</a>.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Vrei să afli cum apari azi în Google și în AI?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a> sau vezi serviciul nostru de <a href="/servicii/seo-geo/">SEO + GEO</a>.</p>
+    <p style="margin:0"><strong>Vrei să afli cum apari azi în Google și în AI?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a> sau vezi serviciul de <a href="/servicii/geo/">optimizare GEO</a>.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
@@ -1131,10 +1466,10 @@ $pages += @{
 # ---- BLOG: post 2 ----
 $pages += @{
   path='blog/cost-google-ads-romania'
-  title='Cât costă Google Ads în România în 2026? | AMPLIO'
-  desc='Bugete reale pentru Google Ads în România: cost-pe-click pe industrii, buget minim recomandat și cum să nu arzi banii în primele luni. Ghid practic pentru firme.'
+  title='Cât costă Google Ads în România în 2026 | AMPLIO'
+  desc='Cât costă Google Ads în România în 2026: costul pe clic pe domenii, din Keyword Planner, cum calculezi bugetul și cât costă administrarea.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cost Google Ads România','/blog/cost-google-ads-romania') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cât costă Google Ads în România în 2026","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Cât costă Google Ads în România în 2026","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18","dateModified":"2026-10-14"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Care e bugetul minim pentru Google Ads?","acceptedAnswer":{"@type":"Answer","text":"Nu există un minim fix. Bugetul trebuie să aducă destule clicuri și cereri ca să poți vedea ce funcționează; îl calculezi din costul pe clic din domeniul tău și din rata de conversie a site-ului."}},{"@type":"Question","name":"E mai ieftin Facebook Ads?","acceptedAnswer":{"@type":"Answer","text":"Clicul e de obicei mai ieftin pe Facebook și Instagram, dar oamenii nu caută activ ce vinzi, așa că se transformă mai greu în clienți. Contează costul pe client, nu costul pe clic."}},{"@type":"Question","name":"Pot face singur campaniile?","acceptedAnswer":{"@type":"Answer","text":"Da, dacă ai timp să le verifici săptămânal. Cele mai multe bugete se pierd în primele luni din câteva greșeli simple: fraze prea largi, conversii nemăsurate, anunțuri care trimit pe prima pagină."}}]}]}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cost Google Ads România','/blog/cost-google-ads-romania') ))
@@ -1142,23 +1477,79 @@ $pages += @{
   <h1>Cât costă Google Ads <span class="g">în România în 2026</span></h1>
 </div></section>
 <section><div class="wrap rev"><article class="prose">
-  <p class="meta">Actualizat: iunie 2026 &middot; ~5 min de citit</p>
-  <p>„Cât trebuie să investesc în Google Ads?” e prima întrebare a oricărui antreprenor. Răspunsul scurt: depinde de industrie și de competiție. Răspunsul util e mai jos.</p>
+  <p class="meta">Actualizat: octombrie 2026 &middot; ~8 min de citit</p>
+  <p>„Cât trebuie să investesc în Google Ads?” e prima întrebare a oricărui antreprenor. Răspunsul scurt: depinde de domeniu și de concurență. Răspunsul util e mai jos, cu costuri reale pe clic din Google Keyword Planner și cu un calcul de buget pe care îl poți face singur.</p>
+
   <h2>Două costuri, nu unul</h2>
-  <p>Bugetul tău se împarte în: <strong>cheltuiala cu media</strong> (banii care merg la Google) și <strong>managementul</strong> (cine construiește și optimizează campaniile). Mulți uită de al doilea și se întreabă apoi de ce „ads-ul nu merge”.</p>
-  <h2>Cost-pe-click orientativ pe industrii</h2>
-  <p>În România, CPC-ul variază mult: de la câțiva cenți pentru nișe puțin competitive, până la 1-3 € (sau mai mult) în domenii ca servicii medicale, juridice, imobiliare sau B2B. Cu cât valoarea unui client e mai mare, cu atât e mai scump clickul.</p>
-  <h2>Buget minim ca să ai date relevante</h2>
-  <p>Sub un anumit prag, campaniile nu adună destule date ca să poată fi optimizate. Pentru cele mai multe firme mici, un punct de plecare rezonabil e un buget de media care să genereze cel puțin câteva zeci de conversii pe lună, altfel optimizezi „în ceață”.</p>
-  <h2>Cum să nu arzi banii în prima lună</h2>
-  <ul class="flist" style="margin-top:14px">
-    <li><b>Tracking corect întâi:</b> nu cheltui un euro până nu măsori conversiile corect.</li>
-    <li><b>Pornește focalizat:</b> 1-2 campanii pe intențiile cele mai profitabile, nu „peste tot”.</li>
-    <li><b>Pagina de destinație contează:</b> ads bun + landing slab = bani pierduți. Vezi <a href="/servicii/landing-pages-cro/">CRO</a>.</li>
-    <li><b>Optimizare săptămânală:</b> campaniile lăsate „pe pilot automat” se degradează.</li>
+  <p>Bugetul pentru Google Ads se împarte în două: <strong>banii pentru reclame</strong>, plătiți direct către Google pentru fiecare clic, și <strong>administrarea</strong>, adică munca celui care construiește și optimizează campaniile. Mulți îl uită pe al doilea și se întreabă apoi de ce reclamele nu merg.</p>
+  <p>Există și un al treilea cost, mai puțin vizibil: pagina pe care ajung oamenii după clic și măsurarea corectă a cererilor. Un anunț bun care trimite pe o pagină slabă sau o campanie fără conversii măsurate înseamnă bani pierduți, oricât de mic ar fi costul pe clic.</p>
+
+  <h2>Cât costă un clic în România: exemple reale</h2>
+  <p>Tabelul de mai jos arată fraze reale din trei domenii, cu volumul lunar de căutări și cât licitează firmele ca să apară în partea de sus a paginii.</p>
+  <table class="cmp">
+    <thead><tr><th>Fraza căutată</th><th>Domeniu</th><th>Căutări pe lună</th><th>Licitare pentru primele poziții</th></tr></thead>
+    <tbody>
+      <tr><td>firmă curățenie București</td><td>Curățenie</td><td>1.000-10.000</td><td>3,69-11,39 lei</td></tr>
+      <tr><td>curățenie după constructor</td><td>Curățenie</td><td>100-1.000</td><td>3,01-10,04 lei</td></tr>
+      <tr><td>curățenie birouri București</td><td>Curățenie</td><td>100-1.000</td><td>4,52-23,30 lei</td></tr>
+      <tr><td>firmă curățenie birouri</td><td>Curățenie</td><td>10-100</td><td>6,99-31,62 lei</td></tr>
+      <tr><td>contabil București</td><td>Contabilitate</td><td>100-1.000</td><td>3,82-19,48 lei</td></tr>
+      <tr><td>firmă contabilitate</td><td>Contabilitate</td><td>100-1.000</td><td>3,28-13,93 lei</td></tr>
+      <tr><td>contabilitate online</td><td>Contabilitate</td><td>100-1.000</td><td>4,24-24,84 lei</td></tr>
+      <tr><td>promovare magazin online</td><td>Marketing</td><td>10-100</td><td>6,17-25,08 lei</td></tr>
+      <tr><td>agenție Google Ads</td><td>Marketing</td><td>100-1.000</td><td>8,37-47,72 lei</td></tr>
+      <tr><td>promovare site Google</td><td>Marketing</td><td>100-1.000</td><td>15,66-157,26 lei</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:14px;color:var(--txt-dim)">Sursa: Google Keyword Planner, România, septembrie 2025 - august 2026. Costul real pe clic depinde și de calitatea anunțului și a paginii, de oră și de zonă.</p>
+  <p>Trei lucruri se văd din tabel:</p>
+  <ul>
+    <li><strong>În aceeași nișă, prețurile diferă mult.</strong> „Firmă curățenie birouri” se licitează de aproape trei ori mai scump decât „firmă curățenie București”, pentru că cine o caută vrea, de obicei, un contract.</li>
+    <li><strong>Frazele generale sunt mai ieftine pe clic,</strong> dar aduc și mulți curioși. Frazele precise costă mai mult, dar convertesc mai bine.</li>
+    <li><strong>În servicii pentru firme, un clic poate depăși 100 de lei.</strong> Acolo, fiecare clic irosit doare, iar cuvintele negative și pagina de destinație contează enorm.</li>
   </ul>
-  <p>Așa administrăm noi <a href="/servicii/google-ads/">Google Ads</a>: tracking, focus, optimizare săptămânală și raport pe venit.</p>
-  <div class="key" style="margin-top:30px"><p style="margin:0"><strong>Vrei o estimare pe cazul tău?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a> sau folosește <a href="/calculator-investitie/">calculatorul de investiție</a>.</p></div>
+
+  <h2>De ce depinde costul pe clic</h2>
+  <ul>
+    <li><strong>Câte firme licitează pe aceeași frază.</strong> Mai mulți concurenți înseamnă licitări mai mari.</li>
+    <li><strong>Calitatea anunțului și a paginii.</strong> Google dă poziții mai bune, la cost mai mic, anunțurilor relevante care trimit pe pagini bune.</li>
+    <li><strong>Zona și ora.</strong> Bucureștiul e de obicei mai scump decât alte orașe, iar unele ore sunt mai disputate decât altele.</li>
+    <li><strong>Cum sunt setate frazele.</strong> Fără cuvinte negative, plătești și clicuri de la oameni care caută altceva.</li>
+  </ul>
+
+  <h2>Cum calculezi bugetul</h2>
+  <p>Nu porni de la o sumă rotundă, ci de la cât te costă o cerere. Calculul are trei pași:</p>
+  <ol>
+    <li><strong>Costul pe clic</strong> pentru frazele tale, din Keyword Planner sau din primele săptămâni de campanie.</li>
+    <li><strong>Rata de conversie</strong> a paginii: din 100 de vizitatori, câți cer o ofertă sau cumpără.</li>
+    <li><strong>Costul pe cerere</strong> = costul pe clic împărțit la rata de conversie.</li>
+  </ol>
+  <p>Un exemplu, cu cifre rotunjite: dacă un clic pe „curățenie birouri București” costă în jur de 15 lei și 5 din 100 de vizitatori cer o ofertă, o cerere costă în jur de 300 de lei. Dacă una din cinci cereri devine contract, un client nou te costă în jur de 1.500 de lei în reclame. Apoi te întrebi: cât valorează un client în primul an?</p>
+  <p>Ca să poată fi optimizată, o campanie are nevoie de date: un buget care să aducă cel puțin câteva zeci de cereri pe lună. Sub acest prag, optimizezi „în ceață”.</p>
+
+  <h2>Cât costă administrarea</h2>
+  <p>Pe piață întâlnești trei modele: o taxă fixă lunară, un procent din bugetul de reclame sau un model legat de rezultate. La AMPLIO, <a href="/servicii/google-ads/">administrarea Google Ads</a> pornește de la 450 € pe lună sau un procent din bugetul de reclame, iar acolo unde are sens propunem modelul de parteneriat: taxă fixă redusă și un procent doar din creșterea vânzărilor peste nivelul de pornire semnat.</p>
+  <p>Orice model ai alege, cere două lucruri: contul de reclame pe numele firmei tale și un raport pe cereri și vânzări, nu pe afișări.</p>
+
+  <h2>Cum să nu arzi banii în primele luni</h2>
+  <ul>
+    <li><strong>Tracking corect întâi:</strong> nu cheltui un leu până nu măsori corect cererile și vânzările.</li>
+    <li><strong>Pornește focalizat:</strong> 1-2 campanii pe intențiile cele mai profitabile, nu „peste tot”.</li>
+    <li><strong>Cuvinte negative din prima săptămână:</strong> verifică ce au căutat cei care au dat clic.</li>
+    <li><strong>Pagina de destinație contează:</strong> anunț bun plus pagină slabă înseamnă bani pierduți. Vezi <a href="/servicii/landing-pages-cro/">CRO</a>.</li>
+    <li><strong>Program și zonă:</strong> rulează reclamele doar unde și când poți prelua clienți.</li>
+    <li><strong>Optimizare săptămânală:</strong> campaniile lăsate pe pilot automat se degradează.</li>
+  </ul>
+  <p>Pe larg, în articolul despre <a href="/blog/greseli-buget-google-ads/">cele 7 greșeli care îți ard bugetul</a>.</p>
+
+  <h2>Întrebări frecvente</h2>
+  <div class="faq" style="margin-top:10px">
+    <details><summary>Care e bugetul minim pentru Google Ads?</summary><p>Nu există un minim fix. Bugetul trebuie să aducă destule clicuri și cereri ca să poți vedea ce funcționează; îl calculezi din costul pe clic din domeniul tău și din rata de conversie a site-ului.</p></details>
+    <details><summary>E mai ieftin Facebook Ads?</summary><p>Clicul e de obicei mai ieftin pe Facebook și Instagram, dar oamenii nu caută activ ce vinzi, așa că se transformă mai greu în clienți. Contează costul pe client, nu costul pe clic.</p></details>
+    <details><summary>Pot face singur campaniile?</summary><p>Da, dacă ai timp să le verifici săptămânal. Cele mai multe bugete se pierd în primele luni din câteva greșeli simple: fraze prea largi, conversii nemăsurate, anunțuri care trimit pe prima pagină.</p></details>
+  </div>
+
+  <div class="key" style="margin-top:30px"><p style="margin:0"><strong>Vrei o estimare pe cazul tău?</strong> Folosește <a href="/calculator-investitie/">calculatorul de investiție</a> sau cere <a href="/audit-gratuit/">auditul gratuit</a>.</p></div>
 </article></div></section>
 "@
 }
@@ -1337,7 +1728,7 @@ $pages += @{
   title='Cum alegi o agenție de marketing (și ce întrebări să pui) | AMPLIO'
   desc='Ghid practic pentru a alege o agenție de marketing în România: întrebările pe care să le pui, semnalele de alarmă și cum recunoști o agenție care își asumă rezultatele.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cum alegi o agenție','/blog/cum-alegi-agentie-marketing') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum alegi o agenție de marketing","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Cum alegi o agenție de marketing","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18","dateModified":"2026-10-14"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cât costă o agenție de marketing?","acceptedAnswer":{"@type":"Answer","text":"Depinde de canale și de volumul de muncă. Ca reper, la AMPLIO serviciile pornesc de la 250-450 € pe lună pe canal, iar externalizarea completă de la 950 € pe lună. Bugetul de reclame se plătește separat, direct către Google sau Meta."}},{"@type":"Question","name":"În cât timp ar trebui să văd rezultate?","acceptedAnswer":{"@type":"Answer","text":"Din reclame, primele cereri apar de obicei în primele săptămâni; din SEO și conținut, după câteva luni. Un pilot de 90 de zile, cu KPI scriși, îți arată dacă direcția e bună."}},{"@type":"Question","name":"E mai bună o agenție mare sau una mică?","acceptedAnswer":{"@type":"Answer","text":"Contează mai puțin mărimea și mai mult cine lucrează efectiv pe contul tău, cât de des vorbiți și dacă își asumă cifre în contract."}}]}]}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cum alegi o agenție','/blog/cum-alegi-agentie-marketing') ))
@@ -1345,8 +1736,12 @@ $pages += @{
   <h1>Cum alegi o agenție de marketing <span class="g">(și ce întrebări să pui)</span></h1>
 </div></section>
 <section><div class="wrap rev"><article class="prose">
-  <p class="meta">Actualizat: iunie 2026 &middot; ~6 min de citit</p>
+  <p class="meta">Actualizat: octombrie 2026 &middot; ~9 min de citit</p>
   <p>Mulți antreprenori au o poveste cu o agenție care a promis mult și a livrat rapoarte cu afișări. Diferența dintre o agenție care îți crește afacerea și una care doar îți consumă bugetul se vede din primele întrebări. Iată ce să întrebi și la ce să fii atent.</p>
+
+  <h2>Întâi: ce vrei de la agenție?</h2>
+  <p>Înainte să compari agenții, scrie pe o pagină trei lucruri: <strong>ce vrei să crească</strong> (cereri de ofertă, vânzări online, programări), <strong>cât poți investi lunar</strong>, separat pentru reclame și pentru administrare, și <strong>ce poți face intern</strong> (aprobări, poze, răspuns la cereri).</p>
+  <p>Răspunsurile îți spun ce fel de partener cauți: unul care execută un canal (reclame, SEO), unul care pune strategia și coordonează, sau unul care preia tot marketingul.</p>
 
   <h2>Întrebările care contează</h2>
   <ul class="flist" style="margin-top:14px">
@@ -1371,6 +1766,44 @@ $pages += @{
 
   <h2>Un singur partener sau mai mulți furnizori?</h2>
   <p>Poți coordona singur 4-5 freelanceri, sau poți avea un singur partener care acoperă tot și răspunde de rezultat. Pentru o firmă fără departament de marketing intern, al doilea model economisește cel mai prețios lucru: timpul tău de coordonare.</p>
+
+  <h2>Agenție, freelancer sau angajat?</h2>
+  <table class="cmp">
+    <thead><tr><th></th><th>Freelancer</th><th>Agenție</th><th>Angajat intern</th></tr></thead>
+    <tbody>
+      <tr><td>Cost</td><td>Cel mai mic</td><td>Mediu</td><td>Cel mai mare: salariu, taxe, unelte</td></tr>
+      <tr><td>Acoperire</td><td>De obicei un singur canal</td><td>Mai multe canale, o echipă</td><td>Un om, rar expert pe toate</td></tr>
+      <tr><td>Coordonare</td><td>O faci tu</td><td>O face agenția</td><td>O faci tu</td></tr>
+      <tr><td>Dacă pleacă</td><td>Rămâi descoperit</td><td>Continuitate prin echipă</td><td>Recrutare și instruire de la zero</td></tr>
+      <tr><td>Potrivit când</td><td>Ai o sarcină clară și limitată</td><td>Nu ai departament de marketing</td><td>Marketingul e zilnic și ai volum mare</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Cum compari ofertele</h2>
+  <p>Două oferte cu același preț pot conține lucruri foarte diferite. Pune-le una lângă alta și verifică:</p>
+  <ul>
+    <li><strong>Ce intră concret:</strong> câte campanii, câte articole, cine face grafica și paginile de destinație.</li>
+    <li><strong>Bugetul de reclame e separat?</strong> Unele oferte îl includ, altele nu; compară administrarea cu administrarea.</li>
+    <li><strong>Pe ce raportează:</strong> cereri, vânzări și cost pe client, sau afișări și urmăritori.</li>
+    <li><strong>Planul pentru primele 90 de zile:</strong> ce se face întâi și când vezi primele cifre.</li>
+    <li><strong>Durata contractului și ieșirea:</strong> poți pleca dacă nu se livrează?</li>
+  </ul>
+
+  <h2>Ce să ceri în contract</h2>
+  <ul>
+    <li>KPI-urile și felul în care se măsoară.</li>
+    <li>Nivelul de pornire documentat, ca să știți amândoi de unde plecați.</li>
+    <li>O clauză de ieșire fără penalități, dacă obiectivele nu sunt atinse.</li>
+    <li>Conturile de reclame, Analytics și Search Console pe numele firmei tale.</li>
+    <li>Ritmul și conținutul raportului: ce primești, cât de des.</li>
+  </ul>
+
+  <h2>Întrebări frecvente</h2>
+  <div class="faq" style="margin-top:10px">
+    <details><summary>Cât costă o agenție de marketing?</summary><p>Depinde de canale și de volumul de muncă. Ca reper, la AMPLIO serviciile pornesc de la 250-450 € pe lună pe canal, iar externalizarea completă de la 950 € pe lună. Bugetul de reclame se plătește separat, direct către Google sau Meta.</p></details>
+    <details><summary>În cât timp ar trebui să văd rezultate?</summary><p>Din reclame, primele cereri apar de obicei în primele săptămâni; din SEO și conținut, după câteva luni. Un pilot de 90 de zile, cu KPI scriși, îți arată dacă direcția e bună.</p></details>
+    <details><summary>E mai bună o agenție mare sau una mică?</summary><p>Contează mai puțin mărimea și mai mult cine lucrează efectiv pe contul tău, cât de des vorbiți și dacă își asumă cifre în contract.</p></details>
+  </div>
   <div class="key" style="margin-top:30px">
     <p style="margin:0"><strong>Așa lucrăm noi:</strong> KPI scriși în contract, clauză de ieșire la 90 de zile, conturile rămân ale tale și, unde are sens, plată legată de rezultate. Vezi <a href="/despre/">cum gândim</a>, <a href="/servicii/">serviciile noastre</a> sau cere <a href="/audit-gratuit/">auditul gratuit</a>.</p>
   </div>
@@ -1387,33 +1820,110 @@ $pages += @{
 # ---- BLOG: llms.txt ----
 $pages += @{
   path='blog/ce-este-llms-txt'
-  title='Ce este llms.txt și cum îl folosești | AMPLIO'
-  desc='Ghid simplu despre llms.txt: ce este fișierul care le spune modelelor AI ce oferă site-ul tău, ce conține și cum îl adaugi. Parte din strategia ta de GEO.'
+  title='llms.txt: ce este, exemplu și cum îl creezi | AMPLIO'
+  desc='Ce este llms.txt, ce conține, un exemplu complet și pașii prin care îl creezi pentru site-ul firmei. Ce face și ce nu face pentru vizibilitatea în AI.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Ce este llms.txt','/blog/ce-este-llms-txt') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Ce este llms.txt și cum îl folosești","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"llms.txt: ce este, exemplu și cum îl creezi","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18","dateModified":"2026-10-14"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Trebuie să am un fișier llms.txt?","acceptedAnswer":{"@type":"Answer","text":"Nu e obligatoriu și nu e un factor de clasare în Google. E un pas mic, de jumătate de oră, care ajută modelele și uneltele AI care îl caută să înțeleagă repede cine ești."}},{"@type":"Question","name":"Îl citește ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"Nu toate companiile AI au confirmat public că îl folosesc. De aceea nu ne bazăm doar pe el: vizibilitatea în AI vine în primul rând din conținutul site-ului și din sursele care te confirmă."}},{"@type":"Question","name":"Pot opri motoarele AI să-mi folosească site-ul?","acceptedAnswer":{"@type":"Answer","text":"Da, din robots.txt: fiecare companie AI are roboții ei, de exemplu GPTBot la OpenAI sau Google-Extended la Google. Atenție însă: dacă blochezi roboții care alimentează căutarea AI, scad și șansele să fii recomandat."}},{"@type":"Question","name":"Unde văd un fișier real?","acceptedAnswer":{"@type":"Answer","text":"Multe firme de software publică llms.txt pentru documentație. Al nostru e la amplio.ro/llms.txt, în formatul descris mai sus."}}]}]}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Ce este llms.txt','/blog/ce-este-llms-txt') ))
   <span class="eyebrow">Ghid &middot; GEO</span>
-  <h1>Ce este llms.txt <span class="g">și cum îl folosești</span></h1>
+  <h1>llms.txt: ce este, <span class="g">exemplu și cum îl creezi</span></h1>
 </div></section>
 <section><div class="wrap rev"><article class="prose">
-  <p class="meta">Actualizat: iunie 2026 &middot; ~4 min de citit</p>
-  <p>Pe măsură ce tot mai mulți clienți întreabă asistenții AI în loc să caute pe Google, a apărut o întrebare practică: cum le spui clar acestor modele cine ești și ce oferi? Un răspuns simplu este <strong>llms.txt</strong>, un fișier text mic, pus la rădăcina site-ului tău.</p>
-  <h2>Ce este, pe scurt</h2>
-  <p>llms.txt este un fișier (similar ca idee cu robots.txt) care oferă modelelor de limbaj un rezumat clar, structurat, despre afacerea ta: ce faci, ce servicii oferi, cum te contactează cineva. În loc să lași AI-ul să ghicească din tot site-ul, îi dai un &bdquo;ghid de citire" curat.</p>
-  <h2>Ce conține de obicei</h2>
-  <ul class="flist" style="margin-top:14px">
-    <li>O descriere scurtă a firmei și a propunerii de valoare</li>
-    <li>Lista serviciilor sau produselor, cu linkuri</li>
-    <li>Diferențiatorii cheie (ce te face diferit)</li>
-    <li>Date de contact</li>
+  <p class="meta">Actualizat: octombrie 2026 &middot; ~8 min de citit</p>
+  <p>Tot mai mulți clienți întreabă un asistent AI în loc să caute pe Google. Pentru o firmă apare o întrebare practică: cum îi spui clar unui model de limbaj cine ești și ce oferi, fără să-l lași să ghicească din meniuri, bannere și pagini vechi? Un răspuns simplu este <strong>llms.txt</strong>, un fișier text mic, pus la rădăcina site-ului.</p>
+  <p>Mai jos găsești ce este, ce face și ce nu face, un exemplu complet și pașii prin care îl creezi în jumătate de oră.</p>
+
+  <h2>Ce este llms.txt, pe scurt</h2>
+  <p>llms.txt este un fișier în format Markdown, publicat la adresa <code>site-ul-tău.ro/llms.txt</code>. A fost propus în 2024 de Jeremy Howard (Answer.AI), pe <a href="https://llmstxt.org" target="_blank" rel="noopener">llmstxt.org</a>, ca o hartă scurtă și curată a celor mai importante informații de pe un site, scrisă pentru modelele de limbaj.</p>
+  <p>Seamănă ca idee cu două fișiere pe care probabil le ai deja, dar are alt rol:</p>
+  <ul>
+    <li><strong>robots.txt</strong> spune roboților ce au voie să acceseze.</li>
+    <li><strong>sitemap.xml</strong> listează toate paginile, pentru motoarele de căutare.</li>
+    <li><strong>llms.txt</strong> rezumă ce contează: cine ești, ce oferi, unde găsești detaliile.</li>
   </ul>
-  <h2>Cum îl adaugi</h2>
-  <p>Creezi un fișier numit <code>llms.txt</code>, îl completezi cu informația de mai sus în text simplu și îl urci la rădăcina site-ului (adică accesibil la adresa ta/llms.txt). Atât. E un câștig mic ca efort, dar parte dintr-o strategie GEO coerentă.</p>
-  <p>Important: llms.txt singur nu te face vizibil, e o piesă dintr-un puzzle mai mare. Vezi <a href="/blog/ghid-geo/">ghidul complet de GEO</a> pentru tabloul întreg.</p>
+
+  <h2>Ce face și ce nu face</h2>
+  <p>Să fim corecți de la început: llms.txt este o propunere a comunității, nu un standard oficial. Nu toate motoarele AI au confirmat public că îl citesc, iar Google a spus că nu îl folosește în căutare; un reprezentant Google l-a comparat chiar cu vechea etichetă meta keywords.</p>
+  <p>De ce merită totuși făcut? Pentru că e ieftin, iar efortul te obligă la un lucru util oricum: să scrii clar, în câteva fraze, cine ești și ce oferi. Unele unelte și agenți AI îl caută anume, iar un text limpede ajută și oamenii care îl citesc.</p>
+  <p>Ce <strong>nu</strong> face: nu te urcă singur în recomandările ChatGPT, nu înlocuiește conținutul bun de pe site, datele structurate, informațiile consecvente pe fișa Google și în directoare sau recenziile. E o piesă mică dintr-o strategie de <a href="/blog/ghid-geo/">GEO</a>, nu o scurtătură.</p>
+
+  <h2>Ce conține: formatul propus</h2>
+  <p>Propunerea de pe llmstxt.org descrie o structură simplă, în această ordine:</p>
+  <ul>
+    <li><strong>Titlul</strong>, cu numele firmei sau al site-ului (<code># Nume</code>). Este singurul element obligatoriu.</li>
+    <li><strong>Un rezumat scurt</strong>, scris ca citat (<code>&gt; ...</code>): cine ești, ce faci, pentru cine, unde.</li>
+    <li><strong>Câteva detalii importante</strong>, opțional, în paragrafe obișnuite.</li>
+    <li><strong>Secțiuni cu liste de linkuri</strong> (<code>## Servicii</code>, <code>## Contact</code>), fiecare cu o frază de context: <code>[Nume](adresa): ce găsești acolo</code>.</li>
+    <li><strong>O secțiune „Optional”</strong>, pentru informațiile secundare, pe care un model le poate sări când are puțin spațiu.</li>
+  </ul>
+  <p>Unele site-uri publică și o variantă extinsă, <code>llms-full.txt</code>, cu tot textul important într-un singur fișier. Pentru un site de prezentare al unei firme nu e necesară.</p>
+
+  <h2>Un exemplu complet</h2>
+  <p>Așa ar arăta fișierul pentru un atelier de mobilier (firma și adresele sunt inventate, pentru exemplu):</p>
+  <pre><code># Atelier Exemplu
+
+&gt; Atelier de mobilier la comandă din București: bucătării, dressinguri și mobilier de birou, proiectate și montate în 4-6 săptămâni. Lucrăm pentru apartamente, case și birouri din București și Ilfov.
+
+Măsurătorile și proiectul 3D sunt gratuite. Garanție 5 ani pentru mobilier.
+
+## Servicii
+- [Bucătării la comandă](https://exemplu.ro/bucatarii/): proiect 3D, materiale, prețuri orientative
+- [Dressinguri](https://exemplu.ro/dressinguri/): soluții pentru spații mici și mansarde
+- [Mobilier de birou](https://exemplu.ro/birouri/): pentru firme, cu montaj în weekend
+
+## Contact
+- [Cere o ofertă](https://exemplu.ro/contact/): telefon, email, program luni-vineri 9-18
+
+## Optional
+- [Proiecte realizate](https://exemplu.ro/proiecte/): galerie cu lucrări montate</code></pre>
+  <p>Observă trei lucruri: rezumatul spune în două fraze ce, pentru cine, unde și în cât timp; fiecare link are o frază care explică ce găsești acolo; informațiile mai puțin importante stau la final, în „Optional”.</p>
+
+  <h2>Cum îl creezi, pas cu pas</h2>
+  <ol>
+    <li><strong>Scrie rezumatul.</strong> Două sau trei fraze: ce faci, pentru cine, în ce zonă și ce te diferențiază. Fără superlative și fără liste de cuvinte cheie.</li>
+    <li><strong>Alege paginile importante.</strong> Între 5 și 15: serviciile principale, prețurile, contactul, eventual câteva articole bune. Nu tot site-ul.</li>
+    <li><strong>Adaugă contextul.</strong> La fiecare link, o frază scurtă: ce conține pagina și pentru cine e utilă.</li>
+    <li><strong>Salvează corect.</strong> Fișierul se numește <code>llms.txt</code> și se salvează cu codarea UTF-8, ca diacriticele să apară corect.</li>
+    <li><strong>Publică-l la rădăcină.</strong> Trebuie să se deschidă la <code>site-ul-tău.ro/llms.txt</code>. Pe site-urile statice îl urci ca pe orice fișier; pe WordPress există module care îl generează, dar verifică ce scriu.</li>
+    <li><strong>Verifică.</strong> Deschide adresa în browser: textul e lizibil, diacriticele sunt corecte, linkurile funcționează.</li>
+    <li><strong>Ține-l la zi.</strong> Când se schimbă serviciile, prețurile sau programul, actualizează și fișierul.</li>
+  </ol>
+
+  <h2>Greșeli frecvente</h2>
+  <ul>
+    <li><strong>Fișierul devine o listă de cuvinte cheie.</strong> Modelele au nevoie de fapte clare, nu de fraze repetate.</li>
+    <li><strong>Informațiile se contrazic.</strong> Alte prețuri, alt program sau altă adresă decât pe site și pe fișa Google. Contradicțiile sunt exact ce te scoate din răspunsurile AI.</li>
+    <li><strong>Linkuri spre pagini care nu mai există.</strong></li>
+    <li><strong>Diacritice stricate,</strong> pentru că fișierul a fost salvat cu altă codare decât UTF-8.</li>
+    <li><strong>Te oprești aici.</strong> Fără conținut bun și fără surse care te confirmă, fișierul singur nu schimbă nimic.</li>
+  </ul>
+
+  <h2>llms.txt, robots.txt, sitemap și datele structurate</h2>
+  <p>Toate patru ajută roboții să înțeleagă un site, dar fiecare are rolul lui:</p>
+  <table class="cmp">
+    <thead><tr><th>Fișier</th><th>Pentru cine</th><th>Ce spune</th></tr></thead>
+    <tbody>
+      <tr><td>robots.txt</td><td>Toți roboții</td><td>Ce pagini au voie să acceseze</td></tr>
+      <tr><td>sitemap.xml</td><td>Motoarele de căutare</td><td>Lista completă a paginilor și când s-au schimbat</td></tr>
+      <tr><td>Date structurate</td><td>Google și motoarele AI</td><td>Ce reprezintă fiecare pagină: firmă, serviciu, articol, întrebări</td></tr>
+      <tr><td>llms.txt</td><td>Modelele și uneltele AI</td><td>Rezumatul firmei și paginile care contează</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Întrebări frecvente</h2>
+  <div class="faq" style="margin-top:10px">
+    <details><summary>Trebuie să am un fișier llms.txt?</summary><p>Nu e obligatoriu și nu e un factor de clasare în Google. E un pas mic, de jumătate de oră, care ajută modelele și uneltele AI care îl caută să înțeleagă repede cine ești.</p></details>
+    <details><summary>Îl citește ChatGPT?</summary><p>Nu toate companiile AI au confirmat public că îl folosesc. De aceea nu ne bazăm doar pe el: vizibilitatea în AI vine în primul rând din conținutul site-ului și din sursele care te confirmă.</p></details>
+    <details><summary>Pot opri motoarele AI să-mi folosească site-ul?</summary><p>Da, din robots.txt: fiecare companie AI are roboții ei, de exemplu GPTBot la OpenAI sau Google-Extended la Google. Atenție însă: dacă blochezi roboții care alimentează căutarea AI, scad și șansele să fii recomandat.</p></details>
+    <details><summary>Unde văd un fișier real?</summary><p>Multe firme de software publică llms.txt pentru documentație. Al nostru e la <a href="/llms.txt">amplio.ro/llms.txt</a>, în formatul descris mai sus.</p></details>
+  </div>
+
+  <h2>Unde se încadrează în strategia de GEO</h2>
+  <p>llms.txt e unul dintre pașii de bază, alături de paginile care răspund direct la întrebările clienților, datele structurate și aceleași informații despre firmă peste tot pe internet. Tabloul complet e în <a href="/blog/ghid-geo/">ghidul GEO</a>, iar ca să vezi unde ești acum, citește <a href="/blog/verifica-daca-apari-in-ai/">cum verifici dacă firma ta apare în ChatGPT</a>.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Vrei vizibilitate AI completă, nu doar un fișier?</strong> Vezi serviciul de <a href="/servicii/seo-geo/">SEO + GEO</a> sau cere <a href="/audit-gratuit/">auditul gratuit</a>.</p>
+    <p style="margin:0"><strong>Vrei vizibilitate în AI completă, nu doar un fișier?</strong> Vezi serviciul de <a href="/servicii/geo/">optimizare GEO</a> sau cere <a href="/audit-gratuit/">auditul gratuit</a>.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
