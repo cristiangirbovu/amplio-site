@@ -19,6 +19,8 @@ $NAV = @'
       <li class="has-drop"><a href="/servicii/">Servicii</a>
         <div class="drop">
           <a href="/servicii/performance-ads/"><b>Performance Ads</b><small>Google, Meta, TikTok</small></a>
+          <a href="/servicii/google-ads/"><b>Google Ads</b><small>Reclame pe căutări</small></a>
+          <a href="/servicii/facebook-ads/"><b>Facebook Ads</b><small>Facebook și Instagram</small></a>
           <a href="/servicii/seo-geo/"><b>SEO + GEO</b><small>Vizibilitate Google și AI</small></a>
           <a href="/servicii/social-media/"><b>Social Media</b><small>Conținut și calendar</small></a>
           <a href="/servicii/email-automatizari/"><b>Email &amp; Automatizări</b><small>Fluxuri care vând</small></a>
@@ -84,6 +86,8 @@ $FOOTER = @'
       <div class="foot-col">
         <h4>Servicii</h4>
         <a href="/servicii/performance-ads/">Performance Ads</a>
+        <a href="/servicii/google-ads/">Google Ads</a>
+        <a href="/servicii/facebook-ads/">Facebook Ads</a>
         <a href="/servicii/seo-geo/">SEO + GEO</a>
         <a href="/servicii/social-media/">Social Media</a>
         <a href="/servicii/email-automatizari/">Email &amp; Automatizări</a>
@@ -303,12 +307,12 @@ $pages = @()
 # ---- SERVICII ----
 $pages += @{
   path='servicii/performance-ads'
-  title='Agenție Google Ads și Meta Ads | AMPLIO'
-  desc='Agenție Google Ads și Meta Ads pentru firme din România: campanii administrate complet, optimizare săptămânală și raport pe venit. De la 450 EUR/lună.'
+  title='Agenție performance marketing: Google, Meta, TikTok | AMPLIO'
+  desc='Agenție de performance marketing: Google Ads, Facebook, Instagram și TikTok Ads administrate complet, cu raport pe venit. De la 450 EUR/lună.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Performance Ads','/servicii/performance-ads') ))
   jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Administrare campanii publicitare (PPC)","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"450"}}'
   extra=(Articole @( ,@('Cât costă Google Ads în România în 2026','/blog/cost-google-ads-romania/'); ,@('7 greșeli care îți ard bugetul de Google Ads','/blog/greseli-buget-google-ads/'); ,@('Google Ads vs Meta Ads: cu care începi?','/blog/google-ads-vs-meta-ads/') ))
-  body=(SvcBody 'Serviciu &middot; Performance Ads' 'Administrare Google Ads,' 'Meta și TikTok Ads.' '<strong>Reclame care aduc vânzări, nu doar afișări.</strong> Administrăm complet Google Ads, Meta și TikTok: strategie, creație asistată de AI, optimizare săptămânală și raport pe venit real, nu pe impresii. Conturile rămân mereu ale tale.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Performance Ads','/servicii/performance-ads') )) '<h2>Bugetul tău de ads, condus de cifre</h2><p class="lead" style="margin-bottom:18px">Cele mai multe firme cheltuie pe ads fără să știe ce canal aduce vânzări. Noi pornim de la tracking corect și baseline semnat, apoi optimizăm săptămânal pe metrica ce contează: costul pe client nou și venitul generat.</p><p>Creația o producem rapid cu AI, sub control uman, ca să testăm mai multe variante decât o agenție clasică. Iar dacă are sens pentru tine, intrăm pe modelul de parteneriat: fee fix redus + procent doar din creșterea vânzărilor.</p>' @('<b>Strategie de canal:</b> unde merită bugetul tău (Google, Meta, TikTok)','<b>Creație AI</b> cu control uman: mai multe variante, testate constant','<b>Optimizare săptămânală</b> pe cost/client și ROAS','<b>Tracking corect</b> verificat cu teste reale înainte de spend','<b>Raport lunar pe venit</b>, nu pe afișări','<b>Conturile rămân ale tale</b>, transparență 100%') 'De la <strong style="color:var(--off)">450 &euro;/lună</strong> sau % din ad spend' (Related 'Merge mână în mână cu' @( ,@('Landing Pages &amp; CRO','/servicii/landing-pages-cro'); ,@('SEO + GEO','/servicii/seo-geo'); ,@('Email &amp; Automatizări','/servicii/email-automatizari') )))
+  body=(SvcBody 'Serviciu &middot; Performance Ads' 'Administrare Google Ads,' 'Meta și TikTok Ads.' '<strong>Reclame care aduc vânzări, nu doar afișări.</strong> Administrăm complet Google Ads, Meta și TikTok: strategie, creație asistată de AI, optimizare săptămânală și raport pe venit real, nu pe impresii. Conturile rămân mereu ale tale.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Performance Ads','/servicii/performance-ads') )) '<h2>Bugetul tău de ads, condus de cifre</h2><p class="lead" style="margin-bottom:18px">Cele mai multe firme cheltuie pe ads fără să știe ce canal aduce vânzări. Noi pornim de la tracking corect și baseline semnat, apoi optimizăm săptămânal pe metrica ce contează: costul pe client nou și venitul generat.</p><p>Creația o producem rapid cu AI, sub control uman, ca să testăm mai multe variante decât o agenție clasică. Iar dacă are sens pentru tine, intrăm pe modelul de parteneriat: fee fix redus + procent doar din creșterea vânzărilor.</p><p style="margin-top:18px">Pentru fiecare canal avem o pagină dedicată: <a href="/servicii/google-ads/" style="color:var(--sky)">Google Ads</a> și <a href="/servicii/facebook-ads/" style="color:var(--sky)">Facebook și Instagram Ads</a>.</p>' @('<b>Strategie de canal:</b> unde merită bugetul tău (Google, Meta, TikTok)','<b>Creație AI</b> cu control uman: mai multe variante, testate constant','<b>Optimizare săptămânală</b> pe cost/client și ROAS','<b>Tracking corect</b> verificat cu teste reale înainte de spend','<b>Raport lunar pe venit</b>, nu pe afișări','<b>Conturile rămân ale tale</b>, transparență 100%') 'De la <strong style="color:var(--off)">450 &euro;/lună</strong> sau % din ad spend' (Related 'Merge mână în mână cu' @( ,@('Landing Pages &amp; CRO','/servicii/landing-pages-cro'); ,@('SEO + GEO','/servicii/seo-geo'); ,@('Email &amp; Automatizări','/servicii/email-automatizari') )))
 }
 $pages += @{
   path='servicii/social-media'
@@ -354,6 +358,442 @@ $pages += @{
   jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Externalizare completa marketing","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"950"}}'
   extra=(Articole @( ,@('Cum alegi o agenție de marketing (și ce întrebări să pui)','/blog/cum-alegi-agentie-marketing/'); ,@('De ce conturile de ads trebuie să rămână ale tale','/blog/conturi-ads-proprietate/') ))
   body=(SvcBody 'Serviciu &middot; Abonament Corporate' 'Externalizare completă' 'a marketingului.' '<strong>Departamentul tău de marketing, fără angajări.</strong> Externalizare completă: toate canalele, un singur contact, un singur raport. Strategie, producție și execuție sub un singur contract. Trei niveluri, în funcție de ambiția ta.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Abonament Corporate','/servicii/abonament-corporate') )) '<h2>Tot marketingul, un singur partener</h2><p class="lead" style="margin-bottom:18px">În loc să angajezi 4 oameni și să coordonezi 3 freelanceri, ai o singură echipă care acoperă totul: ads, SEO/GEO, social, email, conținut și strategie. Un contract, un raport, un număr de telefon.</p><p>Pentru orice nu facem intern, producție video, foto, influenceri, integrări, folosim rețeaua noastră de parteneri verificați, pe care o coordonăm noi.</p>' @('<b>Start, 950 &euro;/lună:</b> canalele esențiale + strategie','<b>Growth, 1.900 &euro;/lună:</b> mix complet + ritm accelerat','<b>Scale, 3.500 &euro;/lună:</b> tot, plus producție și CMO extern inclus','<b>Un singur contact</b> și un raport unificat lunar','<b>Rețeaua de parteneri</b> pentru orice producție specială') '<strong style="color:var(--off)">Start 950 &euro; &middot; Growth 1.900 &euro; &middot; Scale 3.500 &euro;</strong>/lună' (Related 'Vezi și' @( ,@('CMO Extern','/servicii/cmo-extern'); ,@('Toate serviciile','/servicii') )))
+}
+
+# ---- SERVICII PE CANALE (Google Ads, Facebook Ads) ----
+$pages += @{
+  path='servicii/google-ads'
+  title='Agenție Google Ads: administrare campanii | AMPLIO'
+  desc='Agenție Google Ads pentru firme din România: campanii pe căutări cu intenție de cumpărare, tracking verificat și raport pe cereri. De la 450 EUR/lună.'
+  crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Google Ads','/servicii/google-ads') ))
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Administrare Google Ads","serviceType":"Administrare campanii Google Ads","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"450"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cât buget minim îmi trebuie pentru Google Ads?","acceptedAnswer":{"@type":"Answer","text":"Nu există o sumă fixă: depinde de cât costă un clic în domeniul tău și de câte cereri vrei. Bugetul trebuie să aducă destule clicuri ca să ai date de optimizat; îl calculăm împreună din costul pe clic și din rata de conversie a site-ului."}},{"@type":"Question","name":"În cât timp apar primele cereri?","acceptedAnswer":{"@type":"Answer","text":"De obicei în primele săptămâni după lansare, dacă există cerere pe frazele tale și pagina de destinație e bună. Prima lună servește și ca să aflăm ce funcționează."}},{"@type":"Question","name":"Contul de Google Ads e al meu?","acceptedAnswer":{"@type":"Answer","text":"Da. Contul e pe firma ta, iar bugetul de reclame se plătește din el, direct către Google. Dacă pleci, contul și tot istoricul rămân la tine."}},{"@type":"Question","name":"Preluați și un cont care rulează deja?","acceptedAnswer":{"@type":"Answer","text":"Da. Îl auditam întâi și păstrăm ce funcționează. Nu reconstruim totul de la zero doar ca să avem ce raporta."}},{"@type":"Question","name":"Faceți și paginile de destinație?","acceptedAnswer":{"@type":"Answer","text":"Da, prin serviciul de landing pages și optimizarea conversiei. Un anunț bun care trimite pe o pagină slabă înseamnă bani pierduți."}},{"@type":"Question","name":"Google Ads sau Facebook Ads?","acceptedAnswer":{"@type":"Answer","text":"Google Ads prinde cererea existentă: oameni care caută deja. Facebook și Instagram creează cerere: oameni care încă nu caută. Dacă clienții te caută deja, începem cu Google Ads."}}]}]}'
+  extra=(Articole @( ,@('Cât costă Google Ads în România în 2026','/blog/cost-google-ads-romania/'); ,@('7 greșeli care îți ard bugetul de Google Ads','/blog/greseli-buget-google-ads/'); ,@('Google Ads vs Meta Ads: cu care începi?','/blog/google-ads-vs-meta-ads/') ))
+  body=@"
+<section class="subhero">
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    $(CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Google Ads','/servicii/google-ads') ))
+    <span class="eyebrow">Serviciu &middot; Google Ads</span>
+    <h1>Agenție Google Ads: <span class="g">campanii care aduc cereri, nu doar clicuri.</span></h1>
+    <p class="lead">Administrăm campanii de Google Ads pentru firme din România: pe căutările cu intenție de cumpărare, cu tracking verificat înainte de primul leu cheltuit și cu raport pe cereri și vânzări. Contul rămâne al tău.</p>
+    <div class="hero-cta" style="margin-top:30px">
+      <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+      <a class="btn btn-ghost" href="/calculator-investitie/">Calculează investiția</a>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="cols2">
+      <div>
+        <h2>Când are sens Google Ads</h2>
+        <p class="lead" style="margin-bottom:18px">Google Ads te pune în fața oamenilor exact când caută ce vinzi: „firmă de curățenie birouri”, „contabil București”, „implant dentar preț”. Cererea există deja; trebuie doar să fii tu cel pe care îl aleg.</p>
+        <p style="margin-bottom:18px">Spre deosebire de SEO, aduce cereri din primele săptămâni. În schimb, plătești fiecare clic, așa că rezultatul depinde de trei lucruri: pe ce fraze apari, ce promite anunțul și ce găsește omul după clic.</p>
+        <p>Merge cel mai bine pentru servicii căutate activ, pentru magazine online cu produse căutate după nume sau categorie și pentru firmele B2B care vând contracte de valoare. Dacă produsul tău trebuie mai întâi arătat, începem de obicei cu <a href="/servicii/facebook-ads/" style="color:var(--sky)">Facebook și Instagram Ads</a>.</p>
+      </div>
+      <div class="panelcard">
+        <h3>Ce primești</h3>
+        <ul class="flist">
+          <li><b>Audit al contului</b> existent sau structură nouă, pe intenții de căutare</li>
+          <li><b>Tracking de conversii</b> verificat cu teste reale, în GA4 și Google Ads</li>
+          <li><b>Cuvinte cheie și cuvinte negative</b> gestionate săptămânal</li>
+          <li><b>Anunțuri testate constant</b>, scrise cu AI și verificate de oameni</li>
+          <li><b>Pagina de destinație</b> verificată sau construită pentru campanie</li>
+          <li><b>Raport lunar</b> pe cereri, cost pe client și venit</li>
+          <li><b>Contul rămâne al tău</b>, cu acces complet</li>
+        </ul>
+        <p class="price" style="margin-top:22px;font-size:15px">De la <strong style="color:var(--off)">450 &euro;/lună</strong> sau % din bugetul de reclame</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-2">
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Ce campanii facem</h2>
+      <p class="lead">Alegem tipul de campanie după obiectiv și după datele pe care le ai, nu după ce e la modă.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><h3>Căutare</h3><p>Anunțuri text la frazele cu intenție de cumpărare. Baza oricărui cont și locul unde controlezi cel mai bine pe ce plătești.</p></div>
+      <div class="svc"><h3>Performance Max</h3><p>Campanii automate pe toate rețelele Google: căutare, YouTube, Display, Gmail și Maps. Le pornim când contul are destule conversii din care să învețe.</p></div>
+      <div class="svc"><h3>Shopping</h3><p>Pentru magazine online: produsele, cu poză și preț, direct în rezultatele Google, din feedul magazinului.</p></div>
+      <div class="svc"><h3>Campanii locale</h3><p>Pentru firmele cu clienți din zonă: anunțuri cu adresă, apel direct și indicații spre locație.</p></div>
+      <div class="svc"><h3>Remarketing</h3><p>Readucem vizitatorii care n-au cerut încă o ofertă, cu un mesaj potrivit pasului la care au rămas.</p></div>
+      <div class="svc"><h3>YouTube</h3><p>Când ai clipuri bune, le folosim pentru remarketing și notorietate. Filmările le coordonăm prin rețeaua noastră de parteneri.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Cât costă Google Ads</h2>
+      <p class="lead">Sunt două costuri: bugetul de reclame, plătit direct către Google din contul tău, și administrarea. Bugetul depinde de cât costă un clic în domeniul tău, așa că pornim de la date reale, nu de la o sumă fixă.</p>
+    </div>
+    <h3 style="font-family:var(--display);font-weight:700;color:var(--off);font-size:22px;margin-top:40px">Cât costă un clic: exemple reale</h3>
+    <table class="cmp">
+      <thead><tr><th>Fraza căutată</th><th>Căutări pe lună</th><th>Licitare pentru primele poziții</th></tr></thead>
+      <tbody>
+        <tr><td>firmă curățenie București</td><td>1.000-10.000</td><td>3,69-11,39 lei</td></tr>
+        <tr><td>curățenie birouri București</td><td>100-1.000</td><td>4,52-23,30 lei</td></tr>
+        <tr><td>contabilitate București</td><td>100-1.000</td><td>5,15-20,25 lei</td></tr>
+        <tr><td>contabilitate online</td><td>100-1.000</td><td>4,24-24,84 lei</td></tr>
+        <tr><td>agenție Google Ads</td><td>100-1.000</td><td>8,37-47,72 lei</td></tr>
+        <tr><td>promovare site Google</td><td>100-1.000</td><td>15,66-157,26 lei</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:14px;font-size:13.5px;color:var(--txt-dim)">Sursa: Google Keyword Planner, România, septembrie 2025 - august 2026. Intervalul arată cât licitează firmele ca să apară în partea de sus a paginii; costul real pe clic depinde și de calitatea anunțului și a paginii.</p>
+    <div class="cols2" style="margin-top:40px">
+      <div>
+        <h3 style="font-family:var(--display);font-weight:700;color:var(--off);font-size:22px">Cât buget îți trebuie</h3>
+        <p style="margin-top:12px">Pornim de la costul unei cereri. Un exemplu: dacă un clic costă în jur de 10 lei și unul din 20 de vizitatori cere o ofertă, o cerere costă în jur de 200 de lei. Pentru 20 de cereri pe lună ai nevoie de aproximativ 4.000 de lei buget. Apoi lucrăm să scadă costul pe cerere: anunțuri mai bune, cuvinte negative, o pagină care convertește mai bine.</p>
+      </div>
+      <div>
+        <h3 style="font-family:var(--display);font-weight:700;color:var(--off);font-size:22px">Cât costă administrarea</h3>
+        <p style="margin-top:12px">Administrarea pornește de la 450 € pe lună sau un procent din bugetul de reclame. Acolo unde are sens, propunem modelul de parteneriat: o taxă fixă redusă și un procent doar din creșterea vânzărilor peste nivelul de pornire semnat. Poți estima totul în <a href="/calculator-investitie/" style="color:var(--sky)">calculatorul de investiție</a> sau citi ghidul <a href="/blog/cost-google-ads-romania/" style="color:var(--sky)">Cât costă Google Ads în România</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-2">
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Primele 90 de zile</h2>
+      <p class="lead">KPI scriși în contract și clauză de ieșire la 90 de zile. Riscul e al nostru, nu al tău.</p>
+    </div>
+    <div class="tl">
+      <div class="tstep"><span class="n">01</span><div class="day">ZILELE 1-14</div><h3>Fundația</h3><p>Accese, auditul contului, tracking de conversii verificat cu teste reale și cifrele de pornire documentate.</p></div>
+      <div class="tstep"><span class="n">02</span><div class="day">ZILELE 15-30</div><h3>Lansarea</h3><p>Pornim focalizat, pe 1-2 campanii cu intenția cea mai profitabilă, și urmărim primele cereri.</p></div>
+      <div class="tstep"><span class="n">03</span><div class="day">ZILELE 31-60</div><h3>Optimizarea</h3><p>Săptămânal: termeni de căutare, cuvinte negative, licitări, anunțuri și pagina de destinație.</p></div>
+      <div class="tstep"><span class="n">04</span><div class="day">ZILELE 61-90</div><h3>Verdictul</h3><p>Comparăm cifrele cu KPI-urile din contract. Le-am atins: extindem. Nu le-am atins: pleci fără penalități.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap rev">
+    <div class="cols2">
+      <div>
+        <h2>Ce vezi în raportul lunar</h2>
+        <ul class="flist" style="margin-top:18px">
+          <li>Cât ai cheltuit și pe ce campanii</li>
+          <li>Câte cereri și vânzări au venit și cât a costat fiecare</li>
+          <li>Ce fraze aduc clienți și ce fraze am oprit</li>
+          <li>Ce am schimbat luna aceasta și ce testăm luna viitoare</li>
+        </ul>
+        <p style="margin-top:18px">Contul e al tău, cu acces complet: vezi aceleași cifre ca noi, oricând.</p>
+      </div>
+      <div class="panelcard" style="align-self:start">
+        <h3>Google Ads și SEO, împreună</h3>
+        <p style="margin-top:10px">Google Ads aduce cereri din prima lună; SEO scade, în timp, costul pe client, pentru că apari și fără să plătești clicul. Frazele care convertesc în Ads ne arată ce pagini merită construite pentru SEO.</p>
+        <a class="btn btn-ghost" href="/servicii/seo-geo/" style="margin-top:20px">Vezi serviciile SEO</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-2">
+  <div class="wrap rev">
+    <div class="cols2">
+      <div>
+        <h2>Greșelile care ard cel mai des bugetul</h2>
+        <ul class="flist" style="margin-top:18px">
+          <li><b>Fraze largi fără cuvinte negative:</b> plătești clicuri de la oameni care caută altceva.</li>
+          <li><b>Conversii nemăsurate sau numărate greșit:</b> Google optimizează pe date false.</li>
+          <li><b>Toate anunțurile trimit pe prima pagină,</b> nu pe pagina serviciului căutat.</li>
+          <li><b>Un singur grup de anunțuri pentru toate serviciile,</b> cu același mesaj pentru toată lumea.</li>
+          <li><b>Performance Max pornit fără date de conversie:</b> bugetul se duce unde e mai ieftin, nu unde sunt clienții.</li>
+        </ul>
+        <p style="margin-top:18px">Pe larg, în articolul <a href="/blog/greseli-buget-google-ads/" style="color:var(--sky)">7 greșeli care îți ard bugetul de Google Ads</a>.</p>
+      </div>
+      <div>
+        <h2>Pentru cine lucrăm</h2>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px">
+          <a class="svc" href="/solutii/marketing-ecommerce/" style="padding:20px 22px"><h3>Magazine online</h3><p>Shopping și Performance Max pe feedul magazinului, cu raport pe ROAS și venit.</p><span class="more">Vezi soluția &rarr;</span></a>
+          <a class="svc" href="/solutii/marketing-clinici/" style="padding:20px 22px"><h3>Clinici și servicii locale</h3><p>Căutări cu oraș și urgență, campanii locale și apel direct din anunț.</p><span class="more">Vezi soluția &rarr;</span></a>
+          <a class="svc" href="/solutii/marketing-b2b/" style="padding:20px 22px"><h3>Servicii B2B</h3><p>Fraze de nișă, scumpe, cu decizie lungă: măsurăm cererile calificate, nu clicurile.</p><span class="more">Vezi soluția &rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap rev">
+    <div class="sec-head"><h2>Întrebări frecvente despre Google Ads</h2></div>
+    <div class="faq">
+      <details><summary>Cât buget minim îmi trebuie pentru Google Ads?</summary><p>Nu există o sumă fixă: depinde de cât costă un clic în domeniul tău și de câte cereri vrei. Bugetul trebuie să aducă destule clicuri ca să ai date de optimizat; îl calculăm împreună din costul pe clic și din rata de conversie a site-ului.</p></details>
+      <details><summary>În cât timp apar primele cereri?</summary><p>De obicei în primele săptămâni după lansare, dacă există cerere pe frazele tale și pagina de destinație e bună. Prima lună servește și ca să aflăm ce funcționează.</p></details>
+      <details><summary>Contul de Google Ads e al meu?</summary><p>Da. Contul e pe firma ta, iar bugetul de reclame se plătește din el, direct către Google. Dacă pleci, contul și tot istoricul rămân la tine.</p></details>
+      <details><summary>Preluați și un cont care rulează deja?</summary><p>Da. Îl auditam întâi și păstrăm ce funcționează. Nu reconstruim totul de la zero doar ca să avem ce raporta.</p></details>
+      <details><summary>Faceți și paginile de destinație?</summary><p>Da, prin serviciul de landing pages și optimizarea conversiei. Un anunț bun care trimite pe o pagină slabă înseamnă bani pierduți. Vezi <a href="/servicii/landing-pages-cro/">Landing pages și CRO</a>.</p></details>
+      <details><summary>Google Ads sau Facebook Ads?</summary><p>Google Ads prinde cererea existentă: oameni care caută deja. Facebook și Instagram creează cerere: oameni care încă nu caută. Dacă clienții te caută deja, începem cu Google Ads. Pe larg, în <a href="/blog/google-ads-vs-meta-ads/">Google Ads vs Meta Ads</a>.</p></details>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap rev">
+    <div class="ctaband">
+      <h2>Vrei să vezi ce poate aduce Google Ads pentru firma ta?</h2>
+      <p class="lead center">Cere auditul gratuit: în 24 de ore primești o analiză a vizibilității tale și primii 3 pași, fără obligații.</p>
+      <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+"@
+}
+$pages += @{
+  path='servicii/facebook-ads'
+  title='Agenție Facebook Ads: reclame Facebook și Instagram | AMPLIO'
+  desc='Agenție Facebook Ads pentru firme din România: reclame pe Facebook și Instagram, creație testată constant și raport pe cereri. De la 450 EUR/lună.'
+  crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Facebook Ads','/servicii/facebook-ads') ))
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Administrare Facebook Ads","serviceType":"Administrare reclame Facebook și Instagram (Meta Ads)","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"450"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cât buget îmi trebuie pentru Facebook Ads?","acceptedAnswer":{"@type":"Answer","text":"Cât să aducă, în primele săptămâni, destule cereri ca să vezi ce funcționează. Pornim cu un buget de test, aflăm cât costă o cerere în cazul tău și creștem doar pe ce merge."}},{"@type":"Question","name":"Facebook sau Instagram?","acceptedAnswer":{"@type":"Answer","text":"De obicei amândouă: aceeași campanie rulează pe ambele, iar Meta mută bugetul acolo unde o cerere costă mai puțin. Le separăm doar când publicul sau formatul o cer."}},{"@type":"Question","name":"Faceți voi reclamele, adică pozele și video-urile?","acceptedAnswer":{"@type":"Answer","text":"Da. Textele și grafica le producem noi, cu AI și control uman; pentru filmări și ședințe foto coordonăm partenerii noștri. Tu aprobi fiecare variantă."}},{"@type":"Question","name":"Contul de reclame e al meu?","acceptedAnswer":{"@type":"Answer","text":"Da. Business Manager-ul și contul de reclame sunt pe firma ta, iar bugetul se plătește direct către Meta. Noi lucrăm cu acces de partener."}},{"@type":"Question","name":"Postările obișnuite de pe pagină intră aici?","acceptedAnswer":{"@type":"Answer","text":"Nu. Postările țin de serviciul de social media; aici e vorba de reclame plătite, cu buget și obiectiv de vânzare."}},{"@type":"Question","name":"Faceți și TikTok Ads?","acceptedAnswer":{"@type":"Answer","text":"Da, în cadrul serviciului Performance Ads, când publicul tău e acolo. De obicei pornim însă cu Meta sau Google, unde datele de conversie sunt mai sigure."}}]}]}'
+  extra=(Articole @( ,@('Google Ads vs Meta Ads: cu care începi?','/blog/google-ads-vs-meta-ads/'); ,@('De ce conturile de ads trebuie să rămână ale tale','/blog/conturi-ads-proprietate/'); ,@('Marketing pentru magazin online: ghid de creștere a vânzărilor','/blog/marketing-magazin-online/') ))
+  body=@"
+<section class="subhero">
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    $(CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Facebook Ads','/servicii/facebook-ads') ))
+    <span class="eyebrow">Serviciu &middot; Facebook Ads</span>
+    <h1>Agenție Facebook Ads: <span class="g">reclame pe Facebook și Instagram, măsurate în vânzări.</span></h1>
+    <p class="lead">Administrăm reclamele pe Facebook și Instagram (Meta Ads) pentru firme din România: publicul ales pe date, creație testată constant și tracking corect, cu raport pe cereri și vânzări, nu pe like-uri.</p>
+    <div class="hero-cta" style="margin-top:30px">
+      <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+      <a class="btn btn-ghost" href="/calculator-investitie/">Calculează investiția</a>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="cols2">
+      <div>
+        <h2>Când are sens Facebook Ads</h2>
+        <p class="lead" style="margin-bottom:18px">Pe Facebook și Instagram oamenii nu caută ce vinzi. Îi găsești tu: după interese, după comportament și după asemănarea cu clienții pe care îi ai deja.</p>
+        <p style="margin-bottom:18px">Funcționează cel mai bine când produsul se înțelege dintr-o imagine sau dintr-un video scurt: magazine online, restaurante, imobiliare, clinici, servicii pentru persoane, evenimente. Tot aici readuci oamenii care ți-au vizitat site-ul și n-au decis încă.</p>
+        <p>Dacă clienții te caută deja pe Google, începem de obicei cu <a href="/servicii/google-ads/" style="color:var(--sky)">Google Ads</a> și folosim Meta pentru remarketing și notorietate.</p>
+      </div>
+      <div class="panelcard">
+        <h3>Ce primești</h3>
+        <ul class="flist">
+          <li><b>Strategie de public</b>: clienți actuali, vizitatori, publicuri asemănătoare</li>
+          <li><b>Creație pentru feed, Stories și Reels</b>, în mai multe variante, testate constant</li>
+          <li><b>Meta Pixel verificat</b> cu teste reale și evenimentele corecte</li>
+          <li><b>Campanii pe obiectivul corect</b>: vânzări, cereri sau mesaje</li>
+          <li><b>Optimizare săptămânală</b> pe costul pe cerere și pe vânzare</li>
+          <li><b>Raport lunar</b> pe cereri, vânzări și cost, nu pe like-uri</li>
+          <li><b>Contul de reclame rămâne al tău</b></li>
+        </ul>
+        <p class="price" style="margin-top:22px;font-size:15px">De la <strong style="color:var(--off)">450 &euro;/lună</strong> sau % din bugetul de reclame</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-2">
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Ce campanii facem</h2>
+      <p class="lead">Obiectivul campaniei îi spune lui Meta pe cine să caute. De aceea îl alegem după ce vrei să obții, nu după ce aduce cele mai multe like-uri.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><h3>Vânzări pe site</h3><p>Pentru magazine online: campanii optimizate pe comenzi, cu catalogul de produse și reclame dinamice pentru cei care au văzut deja un produs.</p></div>
+      <div class="svc"><h3>Formulare de cerere</h3><p>Omul își lasă datele direct în Facebook sau Instagram, fără să iasă din aplicație. Potrivit pentru servicii și imobiliare.</p></div>
+      <div class="svc"><h3>Mesaje</h3><p>Reclame care deschid o conversație pe WhatsApp, Messenger sau Instagram, pentru firmele care vând prin discuție.</p></div>
+      <div class="svc"><h3>Remarketing</h3><p>Readucem oamenii care au vizitat site-ul sau au interacționat cu pagina, cu mesajul potrivit pasului la care au rămas.</p></div>
+      <div class="svc"><h3>Notorietate locală</h3><p>Pentru restaurante, clinici și magazine fizice: reclama ajunge de mai multe ori la oamenii din zona ta.</p></div>
+      <div class="svc"><h3>Reels și video scurt</h3><p>Format vertical, gândit pentru telefon. Primele două secunde decid dacă reclama e văzută sau sărită.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap rev">
+    <div class="cols2">
+      <div>
+        <h2>Creația face diferența</h2>
+        <p class="lead" style="margin-bottom:18px">Pe Meta, algoritmul alege publicul tot mai bine singur. Diferența dintre o campanie scumpă și una profitabilă o face reclama: imaginea, primele secunde din video, oferta.</p>
+        <p>De aceea producem mai multe variante (imagini, video scurt, texte) și le testăm constant, păstrând ce aduce cereri. Creația o accelerăm cu AI, dar fiecare variantă trece prin control uman și prin vocea brandului tău. Tu aprobi, noi publicăm. Pentru filmări și ședințe foto coordonăm rețeaua noastră de parteneri.</p>
+      </div>
+      <div>
+        <h2>Tracking corect, înainte de buget</h2>
+        <p class="lead" style="margin-bottom:18px">Meta optimizează după ce îi raportezi. Dacă Pixelul numără greșit, algoritmul caută oamenii greșiți.</p>
+        <p>Verificăm cu teste reale că fiecare cerere și fiecare comandă ajung în contul de reclame, iar unde platforma site-ului permite, adăugăm și Conversions API, ca datele să fie complete.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-2">
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Cât costă Facebook Ads</h2>
+      <p class="lead">Și aici sunt două costuri: bugetul de reclame, plătit direct către Meta din contul tău, și administrarea.</p>
+    </div>
+    <div class="cols2" style="margin-top:30px">
+      <div>
+        <h3 style="font-family:var(--display);font-weight:700;color:var(--off);font-size:22px">Bugetul de reclame</h3>
+        <p style="margin-top:12px">Costul reclamelor variază cu publicul, sezonul și calitatea reclamei, așa că nu există un preț pe clic valabil pentru toți. De aceea pornim cu un buget de test, aflăm cât costă o cerere sau o comandă în cazul tău și creștem doar pe ce funcționează.</p>
+      </div>
+      <div>
+        <h3 style="font-family:var(--display);font-weight:700;color:var(--off);font-size:22px">Administrarea</h3>
+        <p style="margin-top:12px">Pornește de la 450 € pe lună sau un procent din bugetul de reclame. Acolo unde are sens, propunem modelul de parteneriat: taxă fixă redusă și un procent doar din creșterea vânzărilor peste nivelul de pornire semnat. Poți estima investiția în <a href="/calculator-investitie/" style="color:var(--sky)">calculator</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Primele 90 de zile</h2>
+      <p class="lead">KPI scriși în contract și clauză de ieșire la 90 de zile.</p>
+    </div>
+    <div class="tl">
+      <div class="tstep"><span class="n">01</span><div class="day">ZILELE 1-14</div><h3>Fundația</h3><p>Accese în Business Manager, Pixelul verificat cu teste reale, publicul și cifrele de pornire documentate.</p></div>
+      <div class="tstep"><span class="n">02</span><div class="day">ZILELE 15-30</div><h3>Testarea</h3><p>Pornim cu 3-5 variante de reclamă pe 1-2 publicuri și aflăm cât costă o cerere.</p></div>
+      <div class="tstep"><span class="n">03</span><div class="day">ZILELE 31-60</div><h3>Ritmul</h3><p>Creație nouă constant, bugetul mutat pe ce aduce cereri, remarketing pentru cei care n-au decis încă.</p></div>
+      <div class="tstep"><span class="n">04</span><div class="day">ZILELE 61-90</div><h3>Verdictul</h3><p>Comparăm cifrele cu KPI-urile din contract. Le-am atins: creștem. Nu le-am atins: pleci fără penalități.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-2">
+  <div class="wrap rev">
+    <div class="cols2">
+      <div>
+        <h2>Greșelile care ard cel mai des bugetul</h2>
+        <ul class="flist" style="margin-top:18px">
+          <li><b>Butonul „Promovează postarea”</b> în loc de campanii cu obiectiv de vânzare.</li>
+          <li><b>Obiectiv de interacțiune când vrei cereri:</b> Meta îți aduce like-uri, nu clienți.</li>
+          <li><b>Aceeași reclamă luni la rând:</b> costul crește pe măsură ce publicul o vede iar și iar.</li>
+          <li><b>Pixel lipsă sau greșit:</b> algoritmul nu știe cine cumpără.</li>
+          <li><b>Public prea îngust, ales manual:</b> azi algoritmul găsește mai bine oamenii, dacă îi dai date corecte.</li>
+        </ul>
+        <p style="margin-top:18px">Vezi și <a href="/blog/google-ads-vs-meta-ads/" style="color:var(--sky)">Google Ads vs Meta Ads: cu care începi?</a></p>
+      </div>
+      <div>
+        <h2>Pentru cine lucrăm</h2>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px">
+          <a class="svc" href="/solutii/marketing-ecommerce/" style="padding:20px 22px"><h3>Magazine online</h3><p>Vânzări din catalog, reclame dinamice și remarketing pentru coșurile abandonate.</p><span class="more">Vezi soluția &rarr;</span></a>
+          <a class="svc" href="/solutii/marketing-horeca/" style="padding:20px 22px"><h3>Restaurante și HoReCa</h3><p>Notorietate locală, oferte pentru zilele slabe și rezervări prin mesaje.</p><span class="more">Vezi soluția &rarr;</span></a>
+          <a class="svc" href="/solutii/marketing-imobiliare/" style="padding:20px 22px"><h3>Imobiliare</h3><p>Formulare de cerere pe proiect și remarketing pe ciclul lung de decizie.</p><span class="more">Vezi soluția &rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap rev">
+    <div class="sec-head"><h2>Întrebări frecvente despre Facebook Ads</h2></div>
+    <div class="faq">
+      <details><summary>Cât buget îmi trebuie pentru Facebook Ads?</summary><p>Cât să aducă, în primele săptămâni, destule cereri ca să vezi ce funcționează. Pornim cu un buget de test, aflăm cât costă o cerere în cazul tău și creștem doar pe ce merge.</p></details>
+      <details><summary>Facebook sau Instagram?</summary><p>De obicei amândouă: aceeași campanie rulează pe ambele, iar Meta mută bugetul acolo unde o cerere costă mai puțin. Le separăm doar când publicul sau formatul o cer.</p></details>
+      <details><summary>Faceți voi reclamele, adică pozele și video-urile?</summary><p>Da. Textele și grafica le producem noi, cu AI și control uman; pentru filmări și ședințe foto coordonăm partenerii noștri. Tu aprobi fiecare variantă.</p></details>
+      <details><summary>Contul de reclame e al meu?</summary><p>Da. Business Manager-ul și contul de reclame sunt pe firma ta, iar bugetul se plătește direct către Meta. Noi lucrăm cu acces de partener.</p></details>
+      <details><summary>Postările obișnuite de pe pagină intră aici?</summary><p>Nu. Postările țin de serviciul de social media; aici e vorba de reclame plătite, cu buget și obiectiv de vânzare. Vezi <a href="/servicii/social-media/">Social media</a>.</p></details>
+      <details><summary>Faceți și TikTok Ads?</summary><p>Da, în cadrul serviciului Performance Ads, când publicul tău e acolo. De obicei pornim însă cu Meta sau Google, unde datele de conversie sunt mai sigure. Vezi <a href="/servicii/performance-ads/">Performance Ads</a>.</p></details>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap rev">
+    <div class="ctaband">
+      <h2>Vrei să afli cât te-ar costa o cerere din Facebook și Instagram?</h2>
+      <p class="lead center">Cere auditul gratuit: îți spunem cu ce canal să începi și primii 3 pași, în 24 de ore.</p>
+      <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+"@
+}
+
+$pages += @{
+  path='servicii/geo'
+  title='Optimizare GEO: apari în ChatGPT și în AI | AMPLIO'
+  desc='Optimizare GEO pentru firme din România: informații clare și surse de încredere, ca ChatGPT, Perplexity și Google AI să te recomande. Se adaugă la SEO.'
+  crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Optimizare GEO','/servicii/geo') ))
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Optimizare GEO","serviceType":"Generative Engine Optimization (GEO)","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"GEO înlocuiește SEO?","acceptedAnswer":{"@type":"Answer","text":"Nu. Au aceeași fundație: conținut clar și de încredere. De aceea GEO se adaugă la SEO, nu îl înlocuiește."}},{"@type":"Question","name":"Puteți garanta că ChatGPT mă recomandă?","acceptedAnswer":{"@type":"Answer","text":"Nu. Nimeni nu controlează răspunsurile unui model AI. Putem crește șansele, cu informații clare și cu surse care te confirmă, și măsurăm lunar efectul."}},{"@type":"Question","name":"Cât durează până se vede?","acceptedAnswer":{"@type":"Answer","text":"De obicei câteva luni: motoarele AI preiau schimbările cu întârziere, iar sursele externe se construiesc în timp."}},{"@type":"Question","name":"Cum aflu unde sunt acum?","acceptedAnswer":{"@type":"Answer","text":"Fă testul de vizibilitate AI de pe site sau cere auditul gratuit: îți arătăm ce răspund ChatGPT și Perplexity la întrebările clienților tăi."}}]}]}'
+  extra=(Articole @( ,@('Ce este GEO? Ghid de optimizare pentru motoarele AI','/blog/ghid-geo/'); ,@('Cum verifici dacă firma ta apare în ChatGPT și în căutarea AI','/blog/verifica-daca-apari-in-ai/'); ,@('Ce este llms.txt și cum îl folosești','/blog/ce-este-llms-txt/') ))
+  body=@"
+<section class="subhero">
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    $(CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Optimizare GEO','/servicii/geo') ))
+    <span class="eyebrow">Serviciu &middot; GEO</span>
+    <h1>Optimizare GEO: <span class="g">fii recomandat de ChatGPT și de Google AI.</span></h1>
+    <p class="lead">Tot mai mulți clienți întreabă un asistent AI în loc să caute pe Google și primesc un singur răspuns, cu câteva nume. GEO (Generative Engine Optimization) lucrează ca numele tău să fie printre ele.</p>
+    <div class="hero-cta" style="margin-top:30px">
+      <a class="btn btn-primary" href="/scor-vizibilitate-ai/">Testează-ți scorul AI <span class="ar">&rarr;</span></a>
+      <a class="btn btn-ghost" href="/audit-gratuit/">Cere auditul gratuit</a>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="cols2">
+      <div>
+        <h2>Ce este GEO, pe scurt</h2>
+        <p class="lead" style="margin-bottom:18px">SEO te aduce în lista de rezultate. GEO te face citat în răspunsul generat: în ChatGPT, Perplexity, Gemini și în rezumatele AI din Google.</p>
+        <p style="margin-bottom:18px">Modelele AI recomandă firmele despre care găsesc informații clare, consecvente și confirmate de mai multe surse: site-ul tău, directoare, recenzii, articole. Dacă informația lipsește sau se contrazice, te omit sau te confundă cu altcineva.</p>
+        <p>Am văzut asta recent într-un audit: rezumatul AI al Google amesteca o firmă de curățenie din București cu o curățătorie cu nume asemănător din alt oraș. Pentru un client care întreabă, cele două deveniseră aceeași firmă.</p>
+      </div>
+      <div class="panelcard">
+        <h3>Ce primești</h3>
+        <ul class="flist">
+          <li><b>Test de vizibilitate</b> în ChatGPT, Perplexity și Google AI, cu întrebările clienților tăi</li>
+          <li><b>Informații clare despre firmă:</b> pagini care răspund direct la întrebări, date structurate, llms.txt</li>
+          <li><b>Aceleași date peste tot:</b> site, fișa Google, directoare, rețele</li>
+          <li><b>Prezență în sursele</b> pe care AI-ul le citează: directoare, articole, recenzii</li>
+          <li><b>Raport lunar</b> cu mențiunile în AI, pe aceleași întrebări</li>
+        </ul>
+        <p class="price" style="margin-top:22px;font-size:15px">Se adaugă la <a href="/servicii/seo-geo/" style="color:var(--sky)">serviciul SEO</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-2">
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Cum lucrăm</h2>
+      <p class="lead">Pornim de la ce răspund azi motoarele AI, nu de la presupuneri.</p>
+    </div>
+    <div class="tl">
+      <div class="tstep"><span class="n">01</span><div class="day">PASUL 1</div><h3>Testul</h3><p>Punem în ChatGPT, Perplexity și Google întrebările pe care le-ar pune clienții tăi și notăm cine e recomandat.</p></div>
+      <div class="tstep"><span class="n">02</span><div class="day">PASUL 2</div><h3>Fundația</h3><p>Site-ul spune clar cine ești, ce faci și unde: pagini care răspund la întrebări, date structurate, llms.txt.</p></div>
+      <div class="tstep"><span class="n">03</span><div class="day">PASUL 3</div><h3>Sursele</h3><p>Aceleași date pe fișa Google, în directoare și pe rețele, plus prezență în articolele și listele pe care AI-ul le citește.</p></div>
+      <div class="tstep"><span class="n">04</span><div class="day">LUNAR</div><h3>Măsurarea</h3><p>Repetăm aceleași întrebări și vedem dacă și unde ești pomenit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap rev">
+    <div class="sec-head"><h2>Întrebări frecvente despre GEO</h2></div>
+    <div class="faq">
+      <details><summary>GEO înlocuiește SEO?</summary><p>Nu. Au aceeași fundație: conținut clar și de încredere. De aceea GEO se adaugă la SEO, nu îl înlocuiește.</p></details>
+      <details><summary>Puteți garanta că ChatGPT mă recomandă?</summary><p>Nu. Nimeni nu controlează răspunsurile unui model AI. Putem crește șansele, cu informații clare și cu surse care te confirmă, și măsurăm lunar efectul.</p></details>
+      <details><summary>Cât durează până se vede?</summary><p>De obicei câteva luni: motoarele AI preiau schimbările cu întârziere, iar sursele externe se construiesc în timp.</p></details>
+      <details><summary>Cum aflu unde sunt acum?</summary><p>Fă testul de vizibilitate AI de pe site sau cere auditul gratuit: îți arătăm ce răspund ChatGPT și Perplexity la întrebările clienților tăi.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="bg-2">
+  <div class="wrap rev">
+    <div class="ctaband">
+      <h2>Vezi ce răspunde azi ChatGPT despre domeniul tău.</h2>
+      <p class="lead center">Cere auditul gratuit: în 24 de ore primești capturile din motoarele AI și primii 3 pași.</p>
+      <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+"@
 }
 
 # ---- SOLUTII HUB ----
@@ -682,7 +1122,7 @@ $pages += @{
   <p>Recenzii reale, studii de caz, date concrete și o identitate clară (cine ești, unde ești) cresc probabilitatea să fii recomandat. AI-ul evită să recomande surse pe care nu le poate „verifica”.</p>
   <h2>4. Adaugă date structurate</h2>
   <p>Schema markup (date structurate) ajută atât Google, cât și modelele AI să înțeleagă ce reprezintă firma și paginile tale. E un semnal tehnic care merită implementat.</p>
-  <p>Vrei tot tabloul? Citește <a href="/blog/ghid-geo/">ghidul complet despre GEO</a> sau vezi serviciul de <a href="/servicii/seo-geo/">SEO + GEO</a>.</p>
+  <p>Vrei tot tabloul? Citește <a href="/blog/ghid-geo/">ghidul complet despre GEO</a> sau vezi serviciile de <a href="/servicii/seo-geo/">SEO</a> și <a href="/servicii/geo/">optimizare GEO</a>.</p>
   <div class="key" style="margin-top:30px"><p style="margin:0"><strong>Curios cum apari acum?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a>, îți arătăm cum te văd Google și ChatGPT față de 3 competitori.</p></div>
 </article></div></section>
 "@
@@ -717,7 +1157,7 @@ $pages += @{
     <li><b>Pagina de destinație contează:</b> ads bun + landing slab = bani pierduți. Vezi <a href="/servicii/landing-pages-cro/">CRO</a>.</li>
     <li><b>Optimizare săptămânală:</b> campaniile lăsate „pe pilot automat” se degradează.</li>
   </ul>
-  <p>Așa administrăm noi <a href="/servicii/performance-ads/">Performance Ads</a>: tracking, focus, optimizare săptămânală și raport pe venit.</p>
+  <p>Așa administrăm noi <a href="/servicii/google-ads/">Google Ads</a>: tracking, focus, optimizare săptămânală și raport pe venit.</p>
   <div class="key" style="margin-top:30px"><p style="margin:0"><strong>Vrei o estimare pe cazul tău?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a> sau folosește <a href="/calculator-investitie/">calculatorul de investiție</a>.</p></div>
 </article></div></section>
 "@
@@ -877,7 +1317,7 @@ $pages += @{
   <p>O singură variantă de ad înseamnă că nu vei ști niciodată dacă altceva mergea mai bine. Cu AI poți produce rapid mai multe variante și lași datele să decidă câștigătorul.</p>
 
   <h2>Concluzia</h2>
-  <p>Niciuna dintre aceste greșeli nu cere buget în plus, doar disciplină și atenție săptămânală. Despre asta e <a href="/servicii/performance-ads/">serviciul nostru de Performance Ads</a>: tracking, focus, optimizare săptămânală, raport pe venit.</p>
+  <p>Niciuna dintre aceste greșeli nu cere buget în plus, doar disciplină și atenție săptămânală. Despre asta e <a href="/servicii/google-ads/">serviciul nostru de Google Ads</a>: tracking, focus, optimizare săptămânală, raport pe venit.</p>
   <div class="key" style="margin-top:30px">
     <p style="margin:0"><strong>Suspectezi că arzi bani pe ads?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a>, ne uităm la contul tău și îți spunem unde pierzi, fără obligații.</p>
   </div>

@@ -1,0 +1,63 @@
+# Antete HTTP pentru Cloudflare Pages (GitHub Pages ignora fisierul: Jekyll sare peste fisierele cu „_”).
+# Sintaxa: o linie cu tiparul de adrese, apoi antetele indentate cu doua spatii.
+
+/*
+  # Aceeasi politica de continut ca in <meta> din pagini, plus frame-ancestors (care in <meta> e ignorat).
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; media-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.clarity.ms; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; base-uri 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+
+  # Site-ul nu poate fi incarcat in iframe pe alt domeniu (protectie clickjacking).
+  X-Frame-Options: DENY
+
+  # Browserul nu ghiceste tipul fisierelor, il respecta pe cel declarat.
+  X-Content-Type-Options: nosniff
+
+  # Catre alte domenii trimitem doar originea, nu adresa completa a paginii.
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Dezactivam explicit interfetele pe care site-ul nu le foloseste.
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), accelerometer=(), gyroscope=(), interest-cohort=()
+
+  # Fortam HTTPS pentru un an. Nu adaugam "preload": e greu de anulat.
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+  # Izolam fereastra de eventuale pagini deschise din site.
+  Cross-Origin-Opener-Policy: same-origin
+
+  # Filtrul XSS mostenit din browserele vechi, dezactivat intentionat; CSP il inlocuieste.
+  X-XSS-Protection: 0
+
+# CSS si JS: cache scurt, ca o actualizare sa se vada repede la vizitatorii care revin.
+/*.css
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/*.js
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Fonturile nu se schimba (la o versiune noua se schimba numele fisierului).
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Imaginile si videoul se schimba rar.
+/assets/*.png
+  Cache-Control: public, max-age=604800
+
+/assets/*.jpg
+  Cache-Control: public, max-age=604800
+
+/assets/*.webp
+  Cache-Control: public, max-age=604800
+
+/assets/*.svg
+  Cache-Control: public, max-age=604800
+
+/assets/*.mp4
+  Cache-Control: public, max-age=604800
+
+/favicon.svg
+  Cache-Control: public, max-age=604800
+
+/favicon.ico
+  Cache-Control: public, max-age=604800
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8

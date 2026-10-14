@@ -186,6 +186,22 @@ nav.scrolled .wrap{height:62px}
 .rv-note{margin-top:22px;font-size:13.5px;color:var(--txt-dim);line-height:1.6}
 .rv-note a{color:var(--sky);text-decoration:underline;text-underline-offset:3px}
 
+/* ===== Exemple de audit + întrebări frecvente ===== */
+.ex-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:18px;margin-top:40px}
+.ex{margin:0;min-width:0}
+.ex a{display:block;border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:#fff;transition:transform .28s var(--ease),border-color .28s}
+.ex a:hover{transform:translateY(-4px);border-color:rgba(47,107,255,.55)}
+.ex img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:top}
+.ex figcaption{margin-top:12px;font-size:14px;color:var(--txt-dim);line-height:1.55}
+.ex figcaption b{color:var(--off)}
+.faq{max-width:820px;margin-top:30px}
+.faq details{border-bottom:1px solid var(--line2);padding:18px 0}
+.faq summary{cursor:pointer;font-family:var(--display);font-weight:700;color:var(--off);font-size:18px;list-style:none;position:relative;padding-right:30px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:-2px;color:var(--gold);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq details p{margin-top:12px;font-size:15.5px;color:var(--txt);line-height:1.7}
+
 /* ===== Prose (articole + pagini de conținut) ===== */
 .prose{max-width:760px;margin:0 auto}
 .prose>*+*{margin-top:22px}

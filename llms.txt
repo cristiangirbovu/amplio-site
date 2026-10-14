@@ -4,7 +4,10 @@
 
 ## Servicii
 - Performance Ads (Google, Meta, TikTok), de la 450 EUR/lună: https://amplio.ro/servicii/performance-ads
+- Google Ads (administrare campanii), de la 450 EUR/lună: https://amplio.ro/servicii/google-ads/
+- Facebook și Instagram Ads (Meta Ads), de la 450 EUR/lună: https://amplio.ro/servicii/facebook-ads/
 - SEO + GEO (vizibilitate în Google și în motoarele AI: ChatGPT, Perplexity, AI Overviews), de la 450 EUR/lună: https://amplio.ro/servicii/seo-geo
+- Optimizare GEO (vizibilitate în ChatGPT, Perplexity, Google AI), se adaugă la SEO: https://amplio.ro/servicii/geo/
 - Social media și conținut, pachete de la 350 EUR/lună: https://amplio.ro/servicii/social-media
 - Email marketing și automatizări CRM, de la 250 EUR/lună: https://amplio.ro/servicii/email-automatizari
 - Landing pages și optimizarea conversiei (CRO): https://amplio.ro/servicii/landing-pages-cro

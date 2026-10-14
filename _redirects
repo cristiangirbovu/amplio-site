@@ -1,0 +1,8 @@
+# Redirectionari permanente pentru Cloudflare Pages (GitHub Pages ignora fisierul).
+# Pe GitHub, aceleasi adrese au pagini care trimit mai departe (meta refresh); pe Cloudflare regulile de aici au prioritate.
+
+# Paginile de comparatie scoase pe 14.10.2026
+/comparatii/amplio-vs-doads/      /blog/cum-alegi-agentie-marketing/  301
+/comparatii/amplio-vs-doads       /blog/cum-alegi-agentie-marketing/  301
+/comparatii/amplio-vs-maximize/   /blog/cum-alegi-agentie-marketing/  301
+/comparatii/amplio-vs-maximize    /blog/cum-alegi-agentie-marketing/  301
