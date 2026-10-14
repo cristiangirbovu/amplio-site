@@ -352,7 +352,7 @@ $pages += @{
   desc='Externalizare completă a marketingului: toate canalele, un singur contact, un singur raport. Start 950, Growth 1.900, Scale 3.500 EUR/lună.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Abonament Corporate','/servicii/abonament-corporate') ))
   jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Externalizare completa marketing","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"950"}}'
-  extra=(Articole @( ,@('Cum alegi o agenție de marketing (și ce întrebări să pui)','/blog/cum-alegi-agentie-marketing/'); ,@('AMPLIO vs DoAds: ce agenție ți se potrivește?','/comparatii/amplio-vs-doads/'); ,@('AMPLIO vs Maximize: ce agenție ți se potrivește?','/comparatii/amplio-vs-maximize/') ))
+  extra=(Articole @( ,@('Cum alegi o agenție de marketing (și ce întrebări să pui)','/blog/cum-alegi-agentie-marketing/'); ,@('De ce conturile de ads trebuie să rămână ale tale','/blog/conturi-ads-proprietate/') ))
   body=(SvcBody 'Serviciu &middot; Abonament Corporate' 'Externalizare completă' 'a marketingului.' '<strong>Departamentul tău de marketing, fără angajări.</strong> Externalizare completă: toate canalele, un singur contact, un singur raport. Strategie, producție și execuție sub un singur contract. Trei niveluri, în funcție de ambiția ta.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Abonament Corporate','/servicii/abonament-corporate') )) '<h2>Tot marketingul, un singur partener</h2><p class="lead" style="margin-bottom:18px">În loc să angajezi 4 oameni și să coordonezi 3 freelanceri, ai o singură echipă care acoperă totul: ads, SEO/GEO, social, email, conținut și strategie. Un contract, un raport, un număr de telefon.</p><p>Pentru orice nu facem intern, producție video, foto, influenceri, integrări, folosim rețeaua noastră de parteneri verificați, pe care o coordonăm noi.</p>' @('<b>Start, 950 &euro;/lună:</b> canalele esențiale + strategie','<b>Growth, 1.900 &euro;/lună:</b> mix complet + ritm accelerat','<b>Scale, 3.500 &euro;/lună:</b> tot, plus producție și CMO extern inclus','<b>Un singur contact</b> și un raport unificat lunar','<b>Rețeaua de parteneri</b> pentru orice producție specială') '<strong style="color:var(--off)">Start 950 &euro; &middot; Growth 1.900 &euro; &middot; Scale 3.500 &euro;</strong>/lună' (Related 'Vezi și' @( ,@('CMO Extern','/servicii/cmo-extern'); ,@('Toate serviciile','/servicii') )))
 }
 
@@ -469,7 +469,6 @@ $pages += @{
       </ul>
       <h2>AI + oameni</h2>
       <p>Folosim inteligența artificială în producție ca să mergem mai repede și să testăm mai mult. Dar strategia, judecata și controlul calității rămân umane și seniore. AI-ul scrie schițe; oamenii decid direcția.</p>
-      <p>Vrei să ne compari cu alte agenții? Vezi <a href="/comparatii/amplio-vs-doads/">AMPLIO vs DoAds</a> și <a href="/comparatii/amplio-vs-maximize/">AMPLIO vs Maximize</a>.</p>
       <div class="key" style="margin-top:30px">
         <p style="margin:0"><strong>AMPLIO CREATIVE S.R.L.</strong> · București, România · operăm în RO + UE · <a href="mailto:contact@amplio.ro">contact@amplio.ro</a></p>
       </div>
@@ -933,7 +932,7 @@ $pages += @{
   <h2>Un singur partener sau mai mulți furnizori?</h2>
   <p>Poți coordona singur 4-5 freelanceri, sau poți avea un singur partener care acoperă tot și răspunde de rezultat. Pentru o firmă fără departament de marketing intern, al doilea model economisește cel mai prețios lucru: timpul tău de coordonare.</p>
   <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Așa lucrăm noi:</strong> KPI scriși în contract, clauză de ieșire la 90 de zile, conturile rămân ale tale și, unde are sens, plată legată de rezultate. Vezi <a href="/despre/">cum gândim</a>, <a href="/servicii/">serviciile noastre</a> și comparațiile cu <a href="/comparatii/amplio-vs-doads/">DoAds</a> și <a href="/comparatii/amplio-vs-maximize/">Maximize</a>, sau cere <a href="/audit-gratuit/">auditul gratuit</a>.</p>
+    <p style="margin:0"><strong>Așa lucrăm noi:</strong> KPI scriși în contract, clauză de ieșire la 90 de zile, conturile rămân ale tale și, unde are sens, plată legată de rezultate. Vezi <a href="/despre/">cum gândim</a>, <a href="/servicii/">serviciile noastre</a> sau cere <a href="/audit-gratuit/">auditul gratuit</a>.</p>
   </div>
 </article>
   <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
@@ -1253,136 +1252,6 @@ $pages += @{
     <p class="lead center">Transparență totală: conturile și datele rămân mereu ale tale.</p>
     <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
   </div>
-</div></section>
-"@
-}
-
-# ---- COMPARAȚII (pagini vs) ----
-$pages += @{
-  path='comparatii/amplio-vs-doads'
-  title='AMPLIO vs DoAds: ce agenție ți se potrivește? | AMPLIO'
-  desc='Comparație onestă AMPLIO vs DoAds: servicii, model de plată, GEO/AI, preț și pentru cine e fiecare. Te ajutăm să alegi agenția potrivită pentru afacerea ta.'
-  crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Comparații','/comparatii/amplio-vs-doads'); ,@('AMPLIO vs DoAds','/comparatii/amplio-vs-doads') ))
-  jsonld='{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Care e o alternativă la DoAds pentru IMM?","acceptedAnswer":{"@type":"Answer","text":"AMPLIO este o alternativă pentru firmele care vor un departament de marketing complet (ads, SEO, GEO, email, strategie) sub un singur partener, cu preț transparent și plată legată de rezultate, nu doar administrare de ads."}},{"@type":"Question","name":"Prin ce diferă AMPLIO de DoAds?","acceptedAnswer":{"@type":"Answer","text":"DoAds este axată pe paid ads, cu portofoliu mare și brand consacrat. AMPLIO acoperă tot marketingul, inclusiv SEO și vizibilitate în motoarele AI (GEO), cu preț transparent și model de parteneriat pe rezultate."}}]}'
-  body=@"
-<section class="subhero"><div class="grid-bg"></div><div class="wrap">
-  $(CrumbsHtml @( ,@('Acasă','/'); ,@('Comparații','/comparatii/amplio-vs-doads'); ,@('AMPLIO vs DoAds','/comparatii/amplio-vs-doads') ))
-  <span class="eyebrow">Comparație onestă</span>
-  <h1>AMPLIO vs DoAds: <span class="g">ce agenție ți se potrivește?</span></h1>
-  <p class="lead">Pe scurt: DoAds e o agenție consacrată de paid ads, cu portofoliu mare și brand puternic. AMPLIO e departamentul tău de marketing complet (ads, SEO, GEO, email, strategie), cu preț transparent și plată legată de rezultate. Mai jos, comparația corectă, ca să alegi în cunoștință de cauză.</p>
-</div></section>
-<section><div class="wrap rev">
-  <table class="cmp">
-    <thead><tr><th>Dimensiune</th><th class="you">AMPLIO</th><th>DoAds</th></tr></thead>
-    <tbody>
-      <tr><td>Focus</td><td class="you">Departament de marketing complet, pentru IMM</td><td>Performance / paid ads</td></tr>
-      <tr><td>Servicii</td><td class="you">Ads, SEO + GEO, social, email, CRO, CMO extern</td><td>Meta/Google/TikTok ads, email, web, design</td></tr>
-      <tr><td>Vizibilitate în AI (GEO)</td><td class="you">Da, central</td><td>Nu</td></tr>
-      <tr><td>SEO organic</td><td class="you">Da</td><td>Nu</td></tr>
-      <tr><td>Model de plată</td><td class="you">Abonament transparent 350-3500 € sau parteneriat: fee redus + 5-10% din creșterea vânzărilor</td><td>Administrare ads pe fee (bugete de la ~300-1.000 €/lună)</td></tr>
-      <tr><td>Transparență preț</td><td class="you">Calculator public pe site</td><td>Praguri de buget publice</td></tr>
-      <tr><td>Dovadă / garanție</td><td class="you">Garanție contractuală: KPI scriși + clauză de ieșire la 90 de zile</td><td>Portofoliu mare: 600+ clienți, 250M€ vânzări generate</td></tr>
-      <tr><td>Conturile rămân ale tale</td><td class="you">Da, explicit</td><td>Nespecificat public</td></tr>
-    </tbody>
-  </table>
-  <div class="cols2" style="margin-top:44px">
-    <div class="panelcard">
-      <h3>Alege DoAds dacă…</h3>
-      <ul class="flist" style="margin-top:8px">
-        <li>Vrei în principal <b>paid ads</b> administrate de o echipă consacrată</li>
-        <li>Cauți o agenție cu <b>portofoliu mare și dovezi</b> publice</li>
-        <li>Brandul „ex-Facebook" și recunoașterea contează pentru tine</li>
-      </ul>
-    </div>
-    <div class="panelcard">
-      <h3>Alege AMPLIO dacă…</h3>
-      <ul class="flist" style="margin-top:8px">
-        <li>Vrei <b>tot marketingul sub un partener</b>, nu doar ads</li>
-        <li>Vrei să fii găsit în Google <b>și în motoarele AI</b> (GEO)</li>
-        <li>Vrei <b>preț transparent</b> + model pe rezultate + clauză de ieșire la 90 de zile</li>
-        <li>Ești IMM și vrei să începi <b>accesibil</b> (de la 350 €)</li>
-      </ul>
-    </div>
-  </div>
-  <div class="prose" style="margin-top:46px">
-    <h2>Diferența esențială</h2>
-    <p>DoAds excelează la un lucru: paid ads la scară, cu dovezi solide. Dacă atât îți trebuie, e o alegere foarte bună. AMPLIO rezolvă o problemă diferită, a firmei care nu vrea să jongleze cu mai mulți furnizori: <strong>un singur partener pentru ads, SEO, GEO, email și strategie</strong>, cu plata legată de rezultatele tale și cu libertatea de a pleca după 90 de zile dacă nu livrăm.</p>
-    <h2>Întrebări frecvente</h2>
-    <h3>Care e o alternativă la DoAds pentru IMM?</h3>
-    <p>AMPLIO, pentru firmele care vor un departament de marketing complet (ads, SEO, GEO, email, strategie) sub un singur partener, cu preț transparent și plată legată de rezultate, nu doar administrare de ads.</p>
-    <h3>Prin ce diferă AMPLIO de DoAds?</h3>
-    <p>DoAds e axată pe paid ads, cu portofoliu mare. AMPLIO acoperă tot marketingul, inclusiv SEO și vizibilitate în motoarele AI (GEO), cu preț transparent și model de parteneriat pe rezultate.</p>
-  </div>
-  <div class="ctaband" style="margin-top:44px;max-width:760px;margin-inline:auto">
-    <h2>Nu ești sigur ce ți se potrivește?</h2>
-    <p class="lead center">Cere auditul gratuit. Îți spunem onest dacă ai nevoie de un partener complet sau doar de ads, fără obligații.</p>
-    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
-  </div>
-  <p class="center" style="margin-top:24px"><a href="/comparatii/amplio-vs-maximize/" style="color:var(--sky)">Vezi și: AMPLIO vs Maximize &rarr;</a> &middot; <a href="/blog/cum-alegi-agentie-marketing/" style="color:var(--sky)">Cum alegi o agenție de marketing</a></p>
-</div></section>
-"@
-}
-$pages += @{
-  path='comparatii/amplio-vs-maximize'
-  title='AMPLIO vs Maximize: ce agenție ți se potrivește? | AMPLIO'
-  desc='Comparație onestă AMPLIO vs Maximize: model de plată pe rezultate, servicii, GEO/AI, preț și pentru cine e fiecare. Alege agenția potrivită afacerii tale.'
-  crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Comparații','/comparatii/amplio-vs-maximize'); ,@('AMPLIO vs Maximize','/comparatii/amplio-vs-maximize') ))
-  jsonld='{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"AMPLIO are plata pe rezultate ca Maximize?","acceptedAnswer":{"@type":"Answer","text":"Da, AMPLIO oferă un model de parteneriat: fee fix redus plus 5-10% din creșterea vânzărilor peste un baseline semnat, cu KPI scriși în contract și clauză de ieșire la 90 de zile."}},{"@type":"Question","name":"Prin ce diferă AMPLIO de Maximize?","acceptedAnswer":{"@type":"Answer","text":"Maximize e centrată pe eCommerce și PPC, cu istoric de 8+ ani. AMPLIO e un departament de marketing complet, cu SEO și GEO (vizibilitate în AI) și preț transparent, plus un model de plată pe rezultate structurat contractual."}}]}'
-  body=@"
-<section class="subhero"><div class="grid-bg"></div><div class="wrap">
-  $(CrumbsHtml @( ,@('Acasă','/'); ,@('Comparații','/comparatii/amplio-vs-maximize'); ,@('AMPLIO vs Maximize','/comparatii/amplio-vs-maximize') ))
-  <span class="eyebrow">Comparație onestă</span>
-  <h1>AMPLIO vs Maximize: <span class="g">ce agenție ți se potrivește?</span></h1>
-  <p class="lead">Pe scurt: Maximize e o agenție consacrată (8+ ani) cu „plata pe rezultate", centrată pe eCommerce și PPC, cu studii de caz. AMPLIO oferă același principiu de plată pe rezultate, dar structurat contractual, și ca departament de marketing complet, cu SEO și GEO, nu doar ads.</p>
-</div></section>
-<section><div class="wrap rev">
-  <table class="cmp">
-    <thead><tr><th>Dimensiune</th><th class="you">AMPLIO</th><th>Maximize</th></tr></thead>
-    <tbody>
-      <tr><td>Focus</td><td class="you">Departament de marketing complet, pentru IMM</td><td>eCommerce / PPC</td></tr>
-      <tr><td>Servicii</td><td class="you">Ads, SEO + GEO, social, email, CRO, CMO extern</td><td>Ads/PPC, eCom, email, social</td></tr>
-      <tr><td>Vizibilitate în AI (GEO)</td><td class="you">Da, central</td><td>Nu</td></tr>
-      <tr><td>SEO organic</td><td class="you">Da</td><td>Limitat</td></tr>
-      <tr><td>Plata pe rezultate</td><td class="you">Da, structurat: fee redus + 5-10% din creșterea peste baseline, KPI scriși + clauză de ieșire</td><td>Da, „plata pe rezultate" (structură nepublică)</td></tr>
-      <tr><td>Transparență preț</td><td class="you">Calculator public, 350-3500 €</td><td>La cerere</td></tr>
-      <tr><td>Dovadă / garanție</td><td class="you">Garanție contractuală: KPI + clauză de ieșire la 90 de zile</td><td>8+ ani, studii de caz cu procente</td></tr>
-      <tr><td>Conturile rămân ale tale</td><td class="you">Da, explicit</td><td>Nespecificat public</td></tr>
-    </tbody>
-  </table>
-  <div class="cols2" style="margin-top:44px">
-    <div class="panelcard">
-      <h3>Alege Maximize dacă…</h3>
-      <ul class="flist" style="margin-top:8px">
-        <li>Ești <b>eCommerce</b> și vrei focus pe ads/PPC și ROAS</li>
-        <li>Cauți o agenție cu <b>istoric și studii de caz</b> cu procente</li>
-        <li>Ești ok cu prețul oferit „la cerere"</li>
-      </ul>
-    </div>
-    <div class="panelcard">
-      <h3>Alege AMPLIO dacă…</h3>
-      <ul class="flist" style="margin-top:8px">
-        <li>Vrei <b>marketing complet</b> (ads + SEO + GEO + email + strategie), nu doar ads</li>
-        <li>Vrei vizibilitate și în <b>motoarele AI</b> (GEO)</li>
-        <li>Vrei plata pe rezultate <b>structurată</b> (baseline, KPI scriși, clauză de ieșire)</li>
-        <li>Vrei <b>preț transparent</b> de la început</li>
-      </ul>
-    </div>
-  </div>
-  <div class="prose" style="margin-top:46px">
-    <h2>Diferența esențială</h2>
-    <p>Amândouă agențiile cred în plata legată de rezultate, ceea ce e rar și bun. Diferența e în <strong>amploare și structură</strong>: Maximize e specializată pe eCommerce și ads, cu un istoric solid. AMPLIO acoperă tot marketingul (inclusiv SEO și GEO), pune prețul transparent pe masă și scrie rezultatele așteptate în contract, cu o clauză de ieșire la 90 de zile.</p>
-    <h2>Întrebări frecvente</h2>
-    <h3>AMPLIO are plata pe rezultate ca Maximize?</h3>
-    <p>Da. Model de parteneriat: fee fix redus + 5-10% din creșterea vânzărilor peste un baseline semnat, cu KPI scriși și clauză de ieșire la 90 de zile.</p>
-    <h3>Prin ce diferă AMPLIO de Maximize?</h3>
-    <p>Maximize e centrată pe eCommerce și PPC, cu 8+ ani istoric. AMPLIO e un departament de marketing complet, cu SEO și GEO și preț transparent, plus plata pe rezultate structurată contractual.</p>
-  </div>
-  <div class="ctaband" style="margin-top:44px;max-width:760px;margin-inline:auto">
-    <h2>Vrei plata legată de rezultatele tale?</h2>
-    <p class="lead center">Cere auditul gratuit și discutăm dacă modelul de parteneriat ți se potrivește, fără obligații.</p>
-    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
-  </div>
-  <p class="center" style="margin-top:24px"><a href="/comparatii/amplio-vs-doads/" style="color:var(--sky)">Vezi și: AMPLIO vs DoAds &rarr;</a> &middot; <a href="/blog/cum-alegi-agentie-marketing/" style="color:var(--sky)">Cum alegi o agenție de marketing</a></p>
 </div></section>
 "@
 }
