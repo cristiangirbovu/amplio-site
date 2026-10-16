@@ -41,49 +41,68 @@
 })();
 
 /* ============================================================
-   Măsurare: Google Analytics 4 + Microsoft Clarity
-   Se încarcă DOAR după „Accept” în bannerul de cookie-uri.
-   Fără acord (sau cu ID-urile goale) nu pleacă nimic spre Google
-   sau Microsoft și nu se pune niciun cookie.
+   Măsurare: Google Analytics 4 în modul de consimțământ Google (Consent Mode v2),
+   Microsoft Clarity și semnalele pentru Google Ads.
+   - Google Analytics se încarcă pe toate paginile. Fără acord nu salvează și nu
+     citește cookie-uri; trimite doar semnale fără identificatori.
+   - Statistică (GA4 cu cookie-uri, Microsoft Clarity): doar cu acord.
+   - Marketing (Google Ads: ad_storage, ad_user_data, ad_personalization): doar cu acord.
+   - Alegerea se păstrează 12 luni, apoi bannerul apare din nou.
    ============================================================ */
 (function(){
   var GA4_ID='G-YZSJLJ5TG2';
   var CLARITY_ID='yx5fclguw8';
+  var KEY='amplio_consent', VECHI='amplio_cookie_consent', ZILE=365;
 
-  var KEY='amplio_cookie_consent';
   function citeste(k,s){try{return (s||localStorage).getItem(k)}catch(e){return null}}
   function scrie(k,v,s){try{(s||localStorage).setItem(k,v)}catch(e){}}
   function sterge(k,s){try{(s||localStorage).removeItem(k)}catch(e){}}
 
+  // Alegerea veche acoperea doar statistica, așa că întrebăm din nou, cu ambele categorii
+  sterge(VECHI);
+  function alegereSalvata(){
+    var r=citeste(KEY);if(!r)return null;
+    try{var o=JSON.parse(r);if(!o||typeof o.t!=='number'||Date.now()-o.t>ZILE*864e5)return null;return {s:!!o.s,m:!!o.m}}catch(e){return null}
+  }
+  var ales=alegereSalvata();
+  function stare(x){
+    var s=x&&x.s?'granted':'denied',m=x&&x.m?'granted':'denied';
+    return {analytics_storage:s,ad_storage:m,ad_user_data:m,ad_personalization:m};
+  }
+
+  // Google Analytics 4: se încarcă mereu, iar cookie-urile doar cu acord
+  window.dataLayer=window.dataLayer||[];
+  window.gtag=function(){window.dataLayer.push(arguments)};
+  window.gtag('consent','default',stare(ales));
+  window.gtag('set','ads_data_redaction',!(ales&&ales.m));
+  window.gtag('js',new Date());
+  window.gtag('config',GA4_ID);
+  (function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA4_ID;document.head.appendChild(s)})();
+
+  // Microsoft Clarity: doar cu acord pentru Statistică
+  function incarcaClarity(x){
+    if(!CLARITY_ID||window.__amplioClarity)return;window.__amplioClarity=true;
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,'clarity','script',CLARITY_ID);
+    window.clarity('consentv2',{ad_Storage:x&&x.m?'granted':'denied',analytics_Storage:'granted'});
+  }
+  if(ales&&ales.s)incarcaClarity(ales);
+
   // Eveniment către GA4 și, ca etichetă pe înregistrări, către Clarity
   window.amplioTrack=function(nume,param){
-    if(window.gtag)window.gtag('event',nume,param||{});
+    window.gtag('event',nume,param||{});
     if(window.clarity)window.clarity('event',nume);
   };
 
-  // Cererea de audit se numără o singură dată și doar dacă formularul chiar a fost trimis din acest tab
-  var leadNou=null;
-  if(location.pathname==='/multumim/'){
-    try{leadNou=sessionStorage.getItem('amplio_lead');sessionStorage.removeItem('amplio_lead')}catch(e){}
-  }
-
-  function incarcaGA4(){
-    if(!GA4_ID||window.__amplioGa)return;window.__amplioGa=true;
-    window.dataLayer=window.dataLayer||[];
-    window.gtag=function(){window.dataLayer.push(arguments)};
-    window.gtag('consent','default',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
-    window.gtag('js',new Date());
-    window.gtag('config',GA4_ID);
-    var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA4_ID;document.head.appendChild(s);
-  }
-  function incarcaClarity(){
-    if(!CLARITY_ID||window.__amplioClarity)return;window.__amplioClarity=true;
-    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,'clarity','script',CLARITY_ID);
-    window.clarity('consentv2',{ad_Storage:'denied',analytics_Storage:'granted'});
-  }
-  function incarca(){
-    incarcaGA4();incarcaClarity();
-    if(leadNou){window.amplioTrack('generate_lead',{form_name:leadNou});leadNou=null}
+  // Cererea (audit sau mesaj) se numără o singură dată, pe pagina de mulțumire,
+  // și doar dacă formularul chiar a fost trimis din acest tab
+  document.addEventListener('submit',function(e){
+    var f=e.target;
+    if(f&&f.getAttribute&&f.getAttribute('data-lead')){try{sessionStorage.setItem('amplio_lead',f.getAttribute('data-lead'))}catch(x){}}
+  },true);
+  if(location.pathname.indexOf('/multumim/')===0){
+    var lead=null;
+    try{lead=sessionStorage.getItem('amplio_lead');sessionStorage.removeItem('amplio_lead')}catch(e){}
+    if(lead)window.amplioTrack('generate_lead',{form_name:lead});
   }
 
   // Unde se află linkul pe pagină
@@ -113,42 +132,69 @@
     if(e.target.closest&&e.target.closest('.crow')&&!window.__amplioCalc){window.__amplioCalc=true;window.amplioTrack('calculator_use')}
   });
 
-  // Retragerea acordului: șterge cookie-urile de analiză de pe toate variantele de domeniu
-  function stergeCookieuri(){
+  // Retragerea acordului: șterge cookie-urile categoriei, de pe toate variantele de domeniu
+  function stergeCookieuri(re){
     var d=location.hostname,dom=['',d,'.'+d,'.'+d.split('.').slice(-2).join('.')];
     document.cookie.split(';').forEach(function(c){
       var n=c.split('=')[0].trim();
-      if(/^(_ga|_gid|_clck|_clsk)/.test(n))dom.forEach(function(x){document.cookie=n+'=; Max-Age=0; path=/'+(x?'; domain='+x:'')});
+      if(re.test(n))dom.forEach(function(x){document.cookie=n+'=; Max-Age=0; path=/'+(x?'; domain='+x:'')});
     });
   }
 
-  function arataBanner(){
-    if(document.querySelector('.cookie-banner'))return;
+  function aplica(x){
+    var aveaS=!!(ales&&ales.s),aveaM=!!(ales&&ales.m);
+    scrie(KEY,JSON.stringify({s:x.s?1:0,m:x.m?1:0,t:Date.now()}));
+    window.gtag('consent','update',stare(x));
+    window.gtag('set','ads_data_redaction',!x.m);
+    if(x.s&&!window.__amplioClarity)incarcaClarity(x);
+    else if(window.clarity)window.clarity('consentv2',{ad_Storage:x.m?'granted':'denied',analytics_Storage:x.s?'granted':'denied'});
+    ales={s:!!x.s,m:!!x.m};
+    if((aveaS&&!x.s)||(aveaM&&!x.m)){
+      if(aveaS&&!x.s){if(window.clarity)window.clarity('consent',false);stergeCookieuri(/^(_ga|_gid|_clck|_clsk)/)}
+      if(aveaM&&!x.m)stergeCookieuri(/^_gcl_/);
+      location.reload();
+    }
+  }
+
+  function arataBanner(setari){
+    var vechi=document.querySelector('.cookie-banner');if(vechi)vechi.remove();
+    var x=ales||{s:false,m:false};
     var b=document.createElement('div');
-    b.className='cookie-banner';
+    b.className='cookie-banner'+(setari?' prefs':'');
     b.setAttribute('role','dialog');
     b.setAttribute('aria-label','Preferințe cookie-uri');
-    b.innerHTML='<p>Folosim cookie-uri de analiză (Google Analytics și Microsoft Clarity) ca să înțelegem cum este folosit site-ul. Sunt opționale și le poți refuza fără nicio consecință. Detalii în <a href="/cookies/">politica de cookies</a>.</p>'+
-      '<div class="cookie-actions"><button type="button" class="btn btn-primary" data-cookie="accept">Accept</button><button type="button" class="btn btn-ghost" data-cookie="refuz">Doar necesare</button></div>';
+    b.innerHTML='<p>Folosim cookie-uri de statistică (Google Analytics și Microsoft Clarity), ca să vedem cum este folosit site-ul, și, cu acordul tău, cookie-uri de marketing (Google Ads), ca să măsurăm cererile venite din reclame. Sunt opționale și le poți refuza fără nicio consecință. Detalii în <a href="/cookies/">politica de cookies</a>.</p>'+
+      '<div class="cookie-prefs">'+
+        '<label class="cookie-opt"><input type="checkbox" checked disabled><span><b>Necesare</b>Țin minte alegerea ta și protejează site-ul. Sunt mereu active.</span></label>'+
+        '<label class="cookie-opt"><input type="checkbox" data-cat="s"'+(x.s?' checked':'')+'><span><b>Statistică</b>Google Analytics și Microsoft Clarity: cum este folosit site-ul.</span></label>'+
+        '<label class="cookie-opt"><input type="checkbox" data-cat="m"'+(x.m?' checked':'')+'><span><b>Marketing</b>Google Ads: măsurarea cererilor venite din reclame și remarketing.</span></label>'+
+      '</div>'+
+      '<div class="cookie-actions">'+
+        '<button type="button" class="btn btn-primary cookie-save" data-cookie="salveaza">Salvează alegerea</button>'+
+        '<button type="button" class="btn btn-primary" data-cookie="toate">Accept toate</button>'+
+        '<button type="button" class="btn btn-ghost" data-cookie="necesare">Doar necesare</button>'+
+        '<button type="button" class="btn btn-ghost cookie-set" data-cookie="setari">Setări</button>'+
+      '</div>';
     document.body.appendChild(b);
+    document.body.classList.add('cb-open');
     b.addEventListener('click',function(e){
       var btn=e.target.closest('[data-cookie]');if(!btn)return;
-      var opt=btn.getAttribute('data-cookie');
-      scrie(KEY,opt);
-      if(opt==='accept')incarca();
-      b.remove();
+      var o=btn.getAttribute('data-cookie');
+      if(o==='setari'){b.classList.add('prefs');return}
+      var r=o==='toate'?{s:true,m:true}:o==='necesare'?{s:false,m:false}:
+        {s:!!b.querySelector('[data-cat="s"]').checked,m:!!b.querySelector('[data-cat="m"]').checked};
+      b.remove();document.body.classList.remove('cb-open');
+      aplica(r);
     });
   }
 
-  // Butonul „Schimbă opțiunea” din pagina de cookies
+  // „Setări cookie-uri” din subsol și butonul din politica de cookies
   document.addEventListener('click',function(e){
-    if(!(e.target.closest&&e.target.closest('[data-cookie-reset]')))return;
-    if(window.clarity)window.clarity('consent',false);
-    sterge(KEY);stergeCookieuri();
-    location.reload();
+    var t=e.target.closest&&e.target.closest('[data-cookie-settings],[data-cookie-reset]');
+    if(!t)return;
+    e.preventDefault();
+    arataBanner(true);
   });
 
-  var r=citeste(KEY);
-  if(r==='accept')incarca();
-  else if(r!=='refuz')arataBanner();
+  if(!ales)arataBanner(false);
 })();

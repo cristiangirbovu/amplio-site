@@ -22,6 +22,7 @@ $NAV = @'
           <a href="/servicii/google-ads/"><b>Google Ads</b><small>Reclame pe căutări</small></a>
           <a href="/servicii/facebook-ads/"><b>Facebook Ads</b><small>Facebook și Instagram</small></a>
           <a href="/servicii/seo-geo/"><b>SEO + GEO</b><small>Vizibilitate Google și AI</small></a>
+          <a href="/servicii/geo/"><b>Optimizare GEO</b><small>ChatGPT, Perplexity, AI</small></a>
           <a href="/servicii/social-media/"><b>Social Media</b><small>Conținut și calendar</small></a>
           <a href="/servicii/email-automatizari/"><b>Email &amp; Automatizări</b><small>Fluxuri care vând</small></a>
           <a href="/servicii/landing-pages-cro/"><b>Landing &amp; CRO</b><small>Pagini care convertesc</small></a>
@@ -75,12 +76,12 @@ $FOOTER = @'
           <span class="wm">AMPLIO</span>
         </a>
         <p>Creștere proiectată, nu promisă.<br>București, România &middot; operăm în RO + UE</p>
+        <p class="foot-contact"><a href="mailto:contact@amplio.ro">contact@amplio.ro</a><br><a href="tel:+40728151558">0728 151 558</a> &middot; <a href="https://wa.me/40728151558" target="_blank" rel="noopener">WhatsApp</a></p>
         <div class="socials" aria-label="AMPLIO pe rețele sociale">
           <a href="https://www.facebook.com/profile.php?id=61591035806830" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg></a>
           <a href="https://www.instagram.com/amplio.ro/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.07.05 1.8.22 2.43.47.66.25 1.22.6 1.77 1.15.55.55.9 1.11 1.15 1.77.25.63.42 1.36.47 2.43.05 1.07.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.07-.22 1.8-.47 2.43a4.9 4.9 0 01-1.15 1.77c-.55.55-1.11.9-1.77 1.15-.63.25-1.36.42-2.43.47-1.07.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.07-.05-1.8-.22-2.43-.47a4.9 4.9 0 01-1.77-1.15 4.9 4.9 0 01-1.15-1.77c-.25-.63-.42-1.36-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.07.22-1.8.47-2.43.25-.66.6-1.22 1.15-1.77.55-.55 1.11-.9 1.77-1.15.63-.25 1.36-.42 2.43-.47C8.94 2.01 9.28 2 12 2zm0 1.8c-2.67 0-2.99.01-4.04.06-.98.04-1.51.21-1.86.35-.47.18-.8.4-1.15.75-.35.35-.57.68-.75 1.15-.14.35-.31.88-.35 1.86-.05 1.05-.06 1.37-.06 4.04s.01 2.99.06 4.04c.04.98.21 1.51.35 1.86.18.47.4.8.75 1.15.35.35.68.57 1.15.75.35.14.88.31 1.86.35 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.98-.04 1.51-.21 1.86-.35.47-.18.8-.4 1.15-.75.35-.35.57-.68.75-1.15.14-.35.31-.88.35-1.86.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.04-.98-.21-1.51-.35-1.86a3.1 3.1 0 00-.75-1.15 3.1 3.1 0 00-1.15-.75c-.35-.14-.88-.31-1.86-.35-1.05-.05-1.37-.06-4.04-.06zm0 3.06a5.14 5.14 0 110 10.28 5.14 5.14 0 010-10.28zm0 1.8a3.34 3.34 0 100 6.68 3.34 3.34 0 000-6.68zm5.34-.15a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg></a>
           <a href="https://www.linkedin.com/company/amplio-agen%C8%9Bie-de-marketing/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8.34 18.34V10.4H5.67v7.94h2.67zM7 9.24a1.55 1.55 0 100-3.1 1.55 1.55 0 000 3.1zm11.34 9.1v-4.36c0-2.33-1.25-3.42-2.9-3.42-1.34 0-1.94.74-2.27 1.25v-1.07h-2.67c.03.75 0 7.94 0 7.94h2.67v-4.43c0-.24.02-.48.09-.65.19-.48.63-.97 1.36-.97.96 0 1.35.73 1.35 1.8v4.25h2.67z"/></svg></a>
           <a href="https://share.google/HBHIPUHvtvdNUqUPn" target="_blank" rel="noopener" aria-label="Profil Google Business"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.24 10.4v3.35h4.66c-.2 1.2-1.5 3.5-4.66 3.5-2.8 0-5.1-2.32-5.1-5.18s2.3-5.18 5.1-5.18c1.6 0 2.67.68 3.28 1.27l2.24-2.16C16.4 4.6 14.5 3.7 12.24 3.7c-4.6 0-8.34 3.73-8.34 8.34s3.74 8.34 8.34 8.34c4.82 0 8.02-3.39 8.02-8.16 0-.55-.06-.97-.13-1.39l-7.89-.03z"/></svg></a>
-          <a class="soc-soon" href="#" onclick="return false" aria-label="TikTok (în curând)" title="În curând"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 01-1.02-2.82h-3.1v12.6a2.53 2.53 0 01-2.53 2.5 2.53 2.53 0 01-2.53-2.53 2.53 2.53 0 012.53-2.53c.26 0 .51.04.75.11V9.98a5.7 5.7 0 00-.75-.05A5.66 5.66 0 004 15.6a5.66 5.66 0 005.68 5.65 5.66 5.66 0 005.68-5.65V9.01a7.35 7.35 0 004.3 1.38V7.3a4.28 4.28 0 01-3.04-1.48z"/></svg></a>
         </div>
       </div>
       <div class="foot-col">
@@ -89,8 +90,11 @@ $FOOTER = @'
         <a href="/servicii/google-ads/">Google Ads</a>
         <a href="/servicii/facebook-ads/">Facebook Ads</a>
         <a href="/servicii/seo-geo/">SEO + GEO</a>
+        <a href="/servicii/geo/">Optimizare GEO</a>
         <a href="/servicii/social-media/">Social Media</a>
         <a href="/servicii/email-automatizari/">Email &amp; Automatizări</a>
+        <a href="/servicii/landing-pages-cro/">Landing &amp; CRO</a>
+        <a href="/servicii/cmo-extern/">CMO Extern</a>
         <a href="/servicii/abonament-corporate/">Abonament Corporate</a>
       </div>
       <div class="foot-col">
@@ -99,6 +103,7 @@ $FOOTER = @'
         <a href="/solutii/marketing-clinici/">Clinici</a>
         <a href="/solutii/marketing-b2b/">Servicii B2B</a>
         <a href="/solutii/marketing-horeca/">HoReCa</a>
+        <a href="/solutii/marketing-export/">Producători &amp; Export</a>
         <a href="/solutii/marketing-imobiliare/">Imobiliare</a>
       </div>
       <div class="foot-col">
@@ -112,10 +117,23 @@ $FOOTER = @'
     </div>
     <div class="foot-bot">
       <span>&copy; <span id="yr">2026</span> AMPLIO CREATIVE S.R.L.</span>
-      <span><a href="/termeni/">Termeni</a> &middot; <a href="/confidentialitate/">Confidențialitate</a> &middot; <a href="/cookies/">Cookies</a></span>
+      <span><a href="/termeni/">Termeni</a> &middot; <a href="/confidentialitate/">Confidențialitate</a> &middot; <a href="/cookies/">Cookies</a> &middot; <a href="/cookies/" data-cookie-settings>Setări cookie-uri</a></span>
     </div>
+    <p class="foot-legal">AMPLIO CREATIVE S.R.L. &middot; Sediu social: Bd. Dinicu Golescu nr. 7, Sector 1, 010871 București &middot; Nr. Reg. Com. J2026044340009 &middot; CUI 55206491</p>
   </div>
 </footer>
+'@
+
+# ---------- Buton flotant Suna + WhatsApp (identic pe tot site-ul) ----------
+$FAB = @'
+<div class="fab" aria-label="Contact rapid">
+  <a class="fab-wa" href="https://wa.me/40728151558" target="_blank" rel="noopener" aria-label="Scrie-ne pe WhatsApp" data-tip="Scrie pe WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 012.89 6.99c0 5.45-4.44 9.88-9.89 9.88M20.46 3.49A11.82 11.82 0 0012.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 005.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 00-3.49-8.42"/></svg>
+  </a>
+  <a class="fab-call" href="tel:+40728151558" aria-label="Sună-ne" data-tip="Sună acum">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+  </a>
+</div>
 '@
 
 # ---------- Wrapper HTML ----------
@@ -125,7 +143,7 @@ function Build-Page($p) {
   if ($p.jsonld) {
     $ld = $p.jsonld
     if ($ld -like '*"@type":"Service",*' -and $ld -notlike '*"url":"https://amplio.ro/s*') { $ld = $ld.Replace('"@type":"Service",', '"@type":"Service","url":"' + $canonical + '",') }
-    if ($ld -like '*"@type":"Article",*' -and $ld -notlike '*"mainEntityOfPage"*') { $ld = $ld.Replace('"@type":"Article",', '"@type":"Article","mainEntityOfPage":"' + $canonical + '","image":"https://amplio.ro/assets/og-amplio.png",') }
+    if ($ld -like '*"@type":"Article",*' -and $ld -notlike '*"mainEntityOfPage"*') { $ld = $ld.Replace('"@type":"Article",', '"@type":"Article","mainEntityOfPage":"' + $canonical + '","image":"https://amplio.ro/assets/og-amplio.jpg",') }
     $jsonld = "<script type=""application/ld+json"">$ld</script>"
   }
   $html = @"
@@ -134,7 +152,6 @@ function Build-Page($p) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; media-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.clarity.ms; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; base-uri 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>$($p.title)</title>
 <meta name="description" content="$($p.desc)">
@@ -145,8 +162,16 @@ function Build-Page($p) {
 <meta property="og:url" content="$canonical">
 <meta property="og:title" content="$($p.title)">
 <meta property="og:description" content="$($p.desc)">
-<meta property="og:image" content="https://amplio.ro/assets/og-amplio.png">
+<meta property="og:image" content="https://amplio.ro/assets/og-amplio.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AMPLIO, agenție de marketing digital">
+<meta property="og:site_name" content="AMPLIO">
 <meta property="og:locale" content="ro_RO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="$($p.title)">
+<meta name="twitter:description" content="$($p.desc)">
+<meta name="twitter:image" content="https://amplio.ro/assets/og-amplio.jpg">
 <link rel="preload" href="/assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.css">
@@ -158,6 +183,7 @@ $NAV
 $($p.body)
 $($p.extra)
 $FOOTER
+$FAB
 <script src="/assets/app.js"></script>
 </body>
 </html>
@@ -363,7 +389,7 @@ $pages += @{
 # ---- SERVICII PE CANALE (Google Ads, Facebook Ads) ----
 $pages += @{
   path='servicii/google-ads'
-  title='Agenție Google Ads: administrare campanii | AMPLIO'
+  title='Agenție Google Ads București: administrare campanii | AMPLIO'
   desc='Agenție Google Ads pentru firme din România: campanii pe căutări cu intenție de cumpărare, tracking verificat și raport pe cereri. De la 450 EUR/lună.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Google Ads','/servicii/google-ads') ))
   jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Administrare Google Ads","serviceType":"Administrare campanii Google Ads","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"450"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cât buget minim îmi trebuie pentru Google Ads?","acceptedAnswer":{"@type":"Answer","text":"Nu există o sumă fixă: depinde de cât costă un clic în domeniul tău și de câte cereri vrei. Bugetul trebuie să aducă destule clicuri ca să ai date de optimizat; îl calculăm împreună din costul pe clic și din rata de conversie a site-ului."}},{"@type":"Question","name":"În cât timp apar primele cereri?","acceptedAnswer":{"@type":"Answer","text":"De obicei în primele săptămâni după lansare, dacă există cerere pe frazele tale și pagina de destinație e bună. Prima lună servește și ca să aflăm ce funcționează."}},{"@type":"Question","name":"Contul de Google Ads e al meu?","acceptedAnswer":{"@type":"Answer","text":"Da. Contul e pe firma ta, iar bugetul de reclame se plătește din el, direct către Google. Dacă pleci, contul și tot istoricul rămân la tine."}},{"@type":"Question","name":"Preluați și un cont care rulează deja?","acceptedAnswer":{"@type":"Answer","text":"Da. Îl auditam întâi și păstrăm ce funcționează. Nu reconstruim totul de la zero doar ca să avem ce raporta."}},{"@type":"Question","name":"Faceți și paginile de destinație?","acceptedAnswer":{"@type":"Answer","text":"Da, prin serviciul de landing pages și optimizarea conversiei. Un anunț bun care trimite pe o pagină slabă înseamnă bani pierduți."}},{"@type":"Question","name":"Google Ads sau Facebook Ads?","acceptedAnswer":{"@type":"Answer","text":"Google Ads prinde cererea existentă: oameni care caută deja. Facebook și Instagram creează cerere: oameni care încă nu caută. Dacă clienții te caută deja, începem cu Google Ads."}}]}]}'
@@ -815,6 +841,7 @@ $pages += @{
 </section>
 <section>
   <div class="wrap rev">
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-bottom:4px">Alege domeniul tău</h2>
     <div class="svc-grid">
       <a class="svc" href="/solutii/marketing-ecommerce/"><div class="ic">E</div><h3>Magazine online</h3><p>ROAS și venit, nu afișări. Ads + email + CRO pe paginile de produs, cu model de parteneriat.</p><span class="more">Soluția eCommerce &rarr;</span></a>
       <a class="svc" href="/solutii/marketing-clinici/"><div class="ic">C</div><h3>Clinici medicale</h3><p>Calendar plin cu pacienții potriviți: ads local, Google Business și SEO/GEO, raport în programări.</p><span class="more">Soluția pentru clinici &rarr;</span></a>
@@ -1210,7 +1237,7 @@ $pages += @{
       <h2>AI + oameni</h2>
       <p>Folosim inteligența artificială în producție ca să mergem mai repede și să testăm mai mult. Dar strategia, judecata și controlul calității rămân umane și seniore. AI-ul scrie schițe; oamenii decid direcția.</p>
       <div class="key" style="margin-top:30px">
-        <p style="margin:0"><strong>AMPLIO CREATIVE S.R.L.</strong> · București, România · operăm în RO + UE · <a href="mailto:contact@amplio.ro">contact@amplio.ro</a></p>
+        <p style="margin:0"><strong>AMPLIO CREATIVE S.R.L.</strong> · Sediu social: Bd. Dinicu Golescu nr. 7, Sector 1, 010871 București · Nr. Reg. Com. J2026044340009 · CUI 55206491 · operăm în RO + UE · <a href="mailto:contact@amplio.ro">contact@amplio.ro</a> · <a href="tel:+40728151558">0728 151 558</a></p>
       </div>
     </div>
     <div class="rv-block" style="margin-top:56px">
@@ -1247,19 +1274,60 @@ $pages += @{
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Termeni și condiții','/termeni') ))
   <span class="eyebrow">Legal</span><h1>Termeni și condiții</h1></div></section>
 <section><div class="wrap rev"><div class="prose">
-  <p class="meta">Ultima actualizare: octombrie 2026</p>
-  <p>Acest site, amplio.ro, este operat de AMPLIO CREATIVE S.R.L. Prin utilizarea site-ului ești de acord cu termenii de mai jos. Dacă nu ești de acord, te rugăm să nu folosești site-ul.</p>
-  <h2>1. Despre serviciile noastre</h2>
-  <p>AMPLIO oferă servicii de marketing digital pentru firme. Prețurile și pachetele afișate pe site sunt orientative; condițiile finale se stabilesc prin contract individual. Modelele de plată legate de rezultate (fee redus + procent din creșterea vânzărilor) se aplică doar acolo unde sunt agreate în scris, pe baza unui baseline documentat.</p>
-  <h2>2. Conținutul site-ului</h2>
-  <p>Conținutul (texte, logo, design) aparține AMPLIO CREATIVE S.R.L. și nu poate fi reprodus fără acord. Informațiile au caracter informativ și pot fi modificate fără notificare prealabilă.</p>
-  <h2>3. Auditul gratuit</h2>
-  <p>Auditul gratuit de vizibilitate este oferit fără obligații de cumpărare. Ne rezervăm dreptul de a stabili eligibilitatea și termenul de livrare (orientativ, 24 de ore lucrătoare).</p>
-  <h2>4. Limitarea răspunderii</h2>
-  <p>Rezultatele de marketing depind de mulți factori externi. Estimările și exemplele de pe site nu constituie o garanție de rezultat în afara a ceea ce este prevăzut explicit în contract.</p>
-  <h2>5. Contact</h2>
-  <p>Pentru orice întrebare legată de acești termeni: <a href="mailto:contact@amplio.ro">contact@amplio.ro</a>.</p>
-  <p style="margin-top:24px"><em>Acest text este un model general și nu constituie consultanță juridică. Recomandăm revizuirea de către un avocat înainte de publicarea finală.</em></p>
+  <p class="meta">Ultima actualizare: 16 octombrie 2026</p>
+  <p>Acești termeni stabilesc regulile de folosire a site-ului amplio.ro și condițiile în care oferim auditul gratuit și uneltele de pe site. Folosind site-ul, accepți acești termeni. Dacă nu ești de acord cu ei, te rugăm să nu folosești site-ul.</p>
+  <h2>1. Cine suntem</h2>
+  <p>Site-ul amplio.ro este operat de <strong>AMPLIO CREATIVE S.R.L.</strong>, cu sediul social în Bd. Dinicu Golescu nr. 7, Sector 1, 010871 București, înregistrată la Registrul Comerțului cu nr. J2026044340009, cod unic de înregistrare (CUI) 55206491. Ne găsești la <a href="mailto:contact@amplio.ro">contact@amplio.ro</a> și la <a href="tel:+40728151558">0728 151 558</a> (telefon și WhatsApp).</p>
+  <p>În acești termeni, „AMPLIO” și „noi” înseamnă AMPLIO CREATIVE S.R.L., iar „tu” înseamnă persoana care folosește site-ul.</p>
+  <h2>2. Cui ne adresăm</h2>
+  <p>Serviciile AMPLIO sunt destinate firmelor și profesioniștilor. Site-ul poate fi consultat de oricine, dar ofertele, auditul gratuit și contractele se adresează persoanelor care acționează în numele unei afaceri.</p>
+  <h2>3. Folosirea site-ului</h2>
+  <p>Poți folosi site-ul ca să afli informații despre serviciile noastre, să citești articolele, să folosești uneltele gratuite, să ceri un audit sau să ne contactezi. Nu ai voie:</p>
+  <ul>
+    <li>să folosești site-ul în scopuri ilegale sau care încalcă drepturile altor persoane;</li>
+    <li>să încerci să accesezi fără drept zone, sisteme sau date ale site-ului;</li>
+    <li>să perturbi funcționarea site-ului, de exemplu prin trafic automat excesiv;</li>
+    <li>să trimiți prin formulare informații false, conținut ofensator sau programe dăunătoare.</li>
+  </ul>
+  <p>Putem modifica, actualiza sau întrerupe temporar orice parte a site-ului, fără notificare prealabilă.</p>
+  <h2>4. Informațiile de pe site</h2>
+  <p>Descrierile serviciilor, articolele, ghidurile și exemplele de pe site au caracter informativ. Ne străduim ca ele să fie corecte și actuale, dar nu reprezintă consultanță pentru situația ta concretă. Datele publice citate, de exemplu volumele de căutare sau costurile pe clic din Google Keyword Planner, sunt valabile pentru perioada și sursa indicate în articol și se pot schimba în timp.</p>
+  <h2>5. Prețuri, oferte și contracte</h2>
+  <ul>
+    <li>Prețurile afișate pe site sunt prețuri de pornire, cu caracter orientativ, și nu reprezintă o ofertă fermă.</li>
+    <li>Serviciile incluse, prețul final, termenele, indicatorii de performanță (KPI) și condițiile de plată se stabilesc doar prin contract scris și prin anexele lui.</li>
+    <li>Bugetele de reclame, adică sumele plătite platformelor de publicitate (de exemplu Google, Meta sau TikTok), nu sunt incluse în prețul serviciilor și se plătesc separat, direct platformelor.</li>
+    <li>Modelul de parteneriat, cu taxă fixă redusă și procent din creșterea vânzărilor, se aplică doar dacă este agreat în scris, pe baza unui nivel de pornire documentat și semnat de ambele părți.</li>
+    <li>Pilotul de 90 de zile, KPI-urile scrise și clauza de ieșire fără penalități se aplică în condițiile prevăzute în contract.</li>
+  </ul>
+  <h2>6. Auditul gratuit</h2>
+  <ul>
+    <li>Auditul gratuit de vizibilitate este o analiză inițială, fără obligație de cumpărare.</li>
+    <li>Îl trimitem pe email, de regulă în 24 de ore lucrătoare de la primirea unei cereri complete.</li>
+    <li>Ne rezervăm dreptul de a stabili dacă o cerere este eligibilă, de exemplu când datele sunt incomplete sau nu provin de la o afacere reală.</li>
+    <li>Auditul se bazează pe informații publice (site-ul tău, rezultatele Google, răspunsurile motoarelor AI, profilul Google Business) și pe datele pe care ni le trimiți. Concluziile și recomandările sunt orientative.</li>
+    <li>Poți folosi auditul primit în afacerea ta, chiar dacă nu lucrezi cu noi după aceea.</li>
+  </ul>
+  <h2>7. Uneltele gratuite</h2>
+  <p>Scorul de vizibilitate AI și calculatorul de investiție oferă estimări automate, calculate din răspunsurile tale sau din intervalele de preț afișate. Rezultatele nu sunt oferte și nici garanții. Uneltele nu îți cer date de identificare, iar folosirea lor este măsurată statistic, fără să te identificăm, așa cum explicăm în <a href="/cookies/">politica de cookies</a>.</p>
+  <h2>8. Proprietate intelectuală</h2>
+  <p>Textele, articolele, ghidurile, numele și logo-ul AMPLIO, elementele grafice și codul site-ului aparțin AMPLIO CREATIVE S.R.L. sau sunt folosite cu drept de utilizare. Nu pot fi copiate, reproduse sau folosite în scop comercial fără acordul nostru scris. Poți cita fragmente scurte din articole, cu menționarea sursei și link către pagina originală.</p>
+  <p>Numele și mărcile altor companii (de exemplu Google, Meta, Microsoft sau OpenAI) aparțin proprietarilor lor și sunt menționate doar în scop informativ.</p>
+  <h2>9. Recenziile afișate</h2>
+  <p>Recenziile de pe site sunt preluate exact, fără corecturi, din profilul public AMPLIO de pe Google și reprezintă opinia autorilor lor.</p>
+  <h2>10. Linkuri către alte site-uri</h2>
+  <p>Site-ul conține linkuri către site-uri și platforme ale altor companii, de exemplu Google, rețele sociale sau WhatsApp. Nu răspundem pentru conținutul, disponibilitatea sau politicile acestora.</p>
+  <h2>11. Limitarea răspunderii</h2>
+  <p>Rezultatele de marketing depind de factori pe care nu îi controlăm, cum ar fi piața, concurența, bugetele și regulile platformelor de publicitate. În afara obligațiilor asumate expres prin contract, nu garantăm un anumit rezultat, o anumită poziție în Google sau un anumit număr de clienți.</p>
+  <p>În limitele permise de lege, nu răspundem pentru pagubele rezultate din folosirea informațiilor de pe site fără o analiză a situației tale concrete sau din imposibilitatea temporară de a accesa site-ul.</p>
+  <h2>12. Date personale și cookie-uri</h2>
+  <p>Prelucrăm datele personale conform <a href="/confidentialitate/">politicii de confidențialitate</a> și folosim cookie-uri conform <a href="/cookies/">politicii de cookies</a>.</p>
+  <h2>13. Legea aplicabilă și litigii</h2>
+  <p>Acești termeni sunt guvernați de legea română. Orice neînțelegere se rezolvă mai întâi pe cale amiabilă. Dacă nu este posibil, litigiul se soluționează de instanțele competente de la sediul AMPLIO CREATIVE S.R.L. din București.</p>
+  <h2>14. Modificarea termenilor</h2>
+  <p>Putem actualiza acești termeni. Versiunea în vigoare este cea publicată pe această pagină, cu data ultimei actualizări afișată mai sus.</p>
+  <h2>15. Contact</h2>
+  <p>Pentru orice întrebare legată de acești termeni ne scrii la <a href="mailto:contact@amplio.ro">contact@amplio.ro</a> sau ne suni la <a href="tel:+40728151558">0728 151 558</a>.</p>
 </div></div></section>
 "@
 }
@@ -1274,19 +1342,75 @@ $pages += @{
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Confidențialitate','/confidentialitate') ))
   <span class="eyebrow">Legal &middot; GDPR</span><h1>Politică de confidențialitate</h1></div></section>
 <section><div class="wrap rev"><div class="prose">
-  <p class="meta">Ultima actualizare: octombrie 2026</p>
-  <p>Operatorul datelor este AMPLIO CREATIVE S.R.L. Respectăm Regulamentul (UE) 2016/679 (GDPR). Datele tale sunt folosite exclusiv în scopurile descrise mai jos, fără liste de spam.</p>
-  <h2>Ce date colectăm</h2>
-  <p>Când completezi formularul de audit sau ne scrii pe email, colectăm: nume, adresă de email, numele firmei și site-ul, tipul afacerii și mesajul tău. Formularul ajunge la noi prin serviciul FormSubmit (formsubmit.co), care îl transmite pe adresa noastră de email.</p>
-  <h2>Statistici de trafic</h2>
-  <p>Dacă accepți cookies de analiză, folosim Google Analytics 4 și Microsoft Clarity ca să înțelegem cum este folosit site-ul. Temeiul este consimțământul tău, pe care îl poți retrage oricând din <a href="/cookies/">politica de cookies</a>.</p>
-  <h2>De ce le folosim</h2>
-  <p>Pentru a-ți pregăti și trimite auditul de vizibilitate solicitat și pentru a comunica cu tine despre serviciile noastre. Nu vindem și nu cedăm datele tale unor terți în scopuri de marketing.</p>
-  <h2>Cât le păstrăm</h2>
-  <p>Păstrăm datele atât cât este necesar pentru scopul de mai sus sau până când ne ceri ștergerea lor.</p>
-  <h2>Drepturile tale</h2>
-  <p>Ai dreptul de acces, rectificare, ștergere, restricționare și portabilitate a datelor, precum și dreptul de a-ți retrage consimțământul. Le poți exercita scriindu-ne la <a href="mailto:contact@amplio.ro">contact@amplio.ro</a>. Ai de asemenea dreptul de a depune o plângere la ANSPDCP.</p>
-  <p style="margin-top:24px"><em>Acest text este un model general și nu constituie consultanță juridică. Recomandăm revizuirea de către un specialist GDPR.</em></p>
+  <p class="meta">Ultima actualizare: 16 octombrie 2026</p>
+  <p>Această politică explică ce date personale prelucrăm când folosești site-ul amplio.ro sau ne contactezi, de ce le prelucrăm, pe ce temei legal, cât timp le păstrăm și ce drepturi ai. Respectăm Regulamentul (UE) 2016/679 privind protecția datelor (GDPR) și legislația română în domeniu.</p>
+  <h2>1. Cine prelucrează datele</h2>
+  <p>Operatorul datelor este <strong>AMPLIO CREATIVE S.R.L.</strong>, cu sediul social în Bd. Dinicu Golescu nr. 7, Sector 1, 010871 București, înregistrată la Registrul Comerțului cu nr. J2026044340009, CUI 55206491. Pentru orice întrebare despre datele tale ne scrii la <a href="mailto:contact@amplio.ro">contact@amplio.ro</a> sau ne suni la <a href="tel:+40728151558">0728 151 558</a>.</p>
+  <h2>2. Ce date prelucrăm</h2>
+  <ul>
+    <li><strong>Când ceri auditul gratuit:</strong> numele, firma și site-ul, adresa de email, tipul afacerii și, opțional, mesajul tău.</li>
+    <li><strong>Când ne scrii prin formularul de contact:</strong> numele, adresa de email, mesajul și, opțional, telefonul și firma.</li>
+    <li><strong>Când ne scrii pe email sau pe WhatsApp ori ne suni:</strong> datele pe care ni le transmiți, de exemplu numele, adresa de email, numărul de telefon și conținutul mesajului.</li>
+    <li><strong>Când vizitezi site-ul:</strong> date tehnice, precum adresa IP, tipul de browser și de dispozitiv, paginile accesate, data și ora vizitei.</li>
+    <li><strong>Când devii client:</strong> datele persoanelor de contact din firmă și datele necesare pentru contract și facturare.</li>
+  </ul>
+  <p>Nu cerem date sensibile, de exemplu date despre sănătate, și te rugăm să nu le incluzi în mesaje. Site-ul nu se adresează persoanelor sub 16 ani.</p>
+  <h2>3. De ce prelucrăm datele și pe ce temei</h2>
+  <ul>
+    <li><strong>Ca să îți pregătim auditul și să răspundem la mesaje:</strong> demersurile făcute la cererea ta înainte de un eventual contract (art. 6 alin. (1) lit. b) GDPR) și interesul nostru legitim de a răspunde firmelor care ne contactează (art. 6 alin. (1) lit. f) GDPR).</li>
+    <li><strong>Ca să încheiem și să executăm contractele:</strong> executarea contractului (lit. b) și, pentru persoanele de contact ale clienților, interesul legitim (lit. f).</li>
+    <li><strong>Ca să respectăm obligațiile legale,</strong> de exemplu cele financiar-contabile: obligația legală (lit. c).</li>
+    <li><strong>Ca să livrăm site-ul în siguranță și să îl protejăm de abuzuri:</strong> interesul legitim (lit. f).</li>
+    <li><strong>Ca să măsurăm, fără cookie-uri, câte vizite și cereri primește site-ul:</strong> interesul legitim (lit. f), explicat la punctul 4.</li>
+    <li><strong>Pentru statisticile cu cookie-uri și pentru marketing:</strong> consimțământul tău (lit. a), dat din bannerul de cookie-uri. Îl poți retrage oricând.</li>
+    <li><strong>Ca să ne apărăm drepturile în cazul unui litigiu:</strong> interesul legitim (lit. f).</li>
+  </ul>
+  <p>Te putem contacta ulterior în legătură cu cererea ta și cu serviciile noastre, iar tu poți refuza oricând aceste mesaje. Nu vindem și nu închiriem datele tale.</p>
+  <h2>4. Statistici și marketing</h2>
+  <p>Folosim Google Analytics 4 în modul de consimțământ Google (Consent Mode). Până îți dai acordul, Google Analytics nu salvează și nu citește cookie-uri pe dispozitivul tău și primește doar semnale fără identificatori, de exemplu că a fost vizualizată o pagină sau că a fost trimis un formular. Google le folosește pentru statistici agregate și estimări.</p>
+  <p>Dacă accepți cookie-urile de <strong>statistică</strong>, Google Analytics 4 și Microsoft Clarity folosesc cookie-uri ca să înțelegem cum este folosit site-ul. Clarity înregistrează interacțiunea cu pagina, de exemplu clicurile și derularea, fără textul introdus în formulare. Dacă accepți cookie-urile de <strong>marketing</strong>, Google poate măsura cererile venite din reclamele Google Ads și poate folosi datele pentru reclame personalizate (remarketing). Lista completă a cookie-urilor, cu durata lor, este în <a href="/cookies/">politica de cookies</a>.</p>
+  <h2>5. Cui transmitem datele</h2>
+  <p>Lucrăm cu furnizori care prelucrează date în numele nostru sau ca operatori independenți, doar cât este necesar pentru scopurile de mai sus:</p>
+  <ul>
+    <li><strong>FormSubmit</strong> (formsubmit.co): transmite pe adresa noastră de email mesajele trimise prin formularele de pe site;</li>
+    <li><strong>Zoho</strong>: furnizorul nostru de email, cu centre de date în Uniunea Europeană;</li>
+    <li><strong>Cloudflare</strong>: găzduirea, livrarea și securitatea site-ului;</li>
+    <li><strong>Google</strong> (Google Ireland Limited): Google Analytics și, cu acordul tău, Google Ads;</li>
+    <li><strong>Microsoft</strong> (Microsoft Ireland Operations Limited): Microsoft Clarity, cu acordul tău;</li>
+    <li><strong>WhatsApp</strong> (WhatsApp Ireland Limited), ca operator independent, dacă ne scrii pe WhatsApp;</li>
+    <li>contabilul nostru, consultanții juridici și autoritățile publice, atunci când legea o cere.</li>
+  </ul>
+  <h2>6. Transferuri în afara Uniunii Europene</h2>
+  <p>Unii furnizori, de exemplu Google, Microsoft, Cloudflare sau FormSubmit, pot prelucra date și în afara Spațiului Economic European, inclusiv în Statele Unite. În aceste cazuri transferul se face cu garanțiile prevăzute de GDPR: decizia de adecvare a Comisiei Europene pentru companiile certificate în cadrul EU-U.S. Data Privacy Framework sau clauzele contractuale standard aprobate de Comisia Europeană.</p>
+  <h2>7. Cât timp păstrăm datele</h2>
+  <ul>
+    <li>Cererile de audit și mesajele care nu duc la un contract: cel mult 2 ani de la ultima comunicare, apoi le ștergem.</li>
+    <li>Datele din contracte și facturi: pe durata contractului și apoi cât cere legislația financiar-contabilă.</li>
+    <li>Statisticile din Google Analytics: 14 luni.</li>
+    <li>Datele din Microsoft Clarity: pe durata stabilită de Microsoft pentru acest serviciu.</li>
+    <li>Datele necesare pentru apărarea unui drept: pe durata termenului legal de prescripție.</li>
+  </ul>
+  <p>Durata fiecărui cookie este în <a href="/cookies/">politica de cookies</a>.</p>
+  <h2>8. Drepturile tale</h2>
+  <p>Conform GDPR, ai dreptul:</p>
+  <ul>
+    <li>să afli dacă îți prelucrăm datele și să primești o copie a lor (dreptul de acces);</li>
+    <li>să ceri corectarea datelor greșite sau incomplete (dreptul la rectificare);</li>
+    <li>să ceri ștergerea datelor, în condițiile legii (dreptul de a fi uitat);</li>
+    <li>să ceri restricționarea prelucrării;</li>
+    <li>să primești datele într-un format structurat și să le transmiți altui operator (dreptul la portabilitate);</li>
+    <li>să te opui prelucrării bazate pe interesul nostru legitim;</li>
+    <li>să îți retragi oricând consimțământul, fără să fie afectată legalitatea prelucrării de până atunci;</li>
+    <li>să nu faci obiectul unei decizii bazate exclusiv pe prelucrare automată. Nu luăm astfel de decizii.</li>
+  </ul>
+  <p>Îți exerciți drepturile scriindu-ne la <a href="mailto:contact@amplio.ro">contact@amplio.ro</a>. Îți răspundem în cel mult o lună de la primirea cererii. Pentru cererile complexe termenul se poate prelungi cu încă două luni, caz în care te anunțăm.</p>
+  <p>Ai și dreptul de a depune o plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP), B-dul G-ral. Gheorghe Magheru nr. 28-30, Sector 1, 010336 București, <a href="https://www.dataprotection.ro/" target="_blank" rel="noopener">www.dataprotection.ro</a>.</p>
+  <h2>9. Recenziile afișate pe site</h2>
+  <p>Pe site afișăm câteva recenzii publice de pe profilul nostru de pe Google, cu numele publicat de autorii lor. Temeiul este interesul nostru legitim de a arăta părerea clienților. Dacă ești autorul unei recenzii și vrei să o scoatem de pe site, scrie-ne și o eliminăm.</p>
+  <h2>10. Securitatea datelor</h2>
+  <p>Site-ul folosește conexiune criptată (HTTPS) și reguli stricte privind sursele din care se pot încărca scripturi. Accesul la datele tale este limitat la persoanele care au nevoie de ele ca să îți răspundă sau să îți livreze serviciile.</p>
+  <h2>11. Modificarea politicii</h2>
+  <p>Putem actualiza această politică atunci când se schimbă serviciile, furnizorii sau legislația. Versiunea în vigoare este cea publicată pe această pagină, cu data ultimei actualizări afișată mai sus.</p>
 </div></div></section>
 "@
 }
@@ -1301,21 +1425,36 @@ $pages += @{
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Cookies','/cookies') ))
   <span class="eyebrow">Legal</span><h1>Politică de cookies</h1></div></section>
 <section><div class="wrap rev"><div class="prose">
-  <p class="meta">Ultima actualizare: octombrie 2026</p>
-  <p>Cookies sunt fișiere mici stocate de browser. Site-ul amplio.ro funcționează integral fără cookies de urmărire. Cele de analiză se încarcă doar dacă le accepți în bannerul afișat la prima vizită.</p>
-  <h2>Ce folosim</h2>
-  <ul class="flist" style="margin-top:14px">
-    <li><b>Preferința ta (stocare locală în browser):</b> reține dacă ai acceptat sau ai refuzat cookies de analiză, ca să nu îți afișăm bannerul la fiecare vizită.</li>
-    <li><b>Google Analytics 4 (_ga, _ga_*), doar după „Accept”:</b> statistici agregate despre vizite, paginile consultate și acțiunile importante, de exemplu trimiterea formularului de audit. Datele se păstrează 14 luni.</li>
-    <li><b>Microsoft Clarity (_clck, _clsk), doar după „Accept”:</b> hărți de clicuri și de derulare și înregistrări ale interacțiunii cu pagina, ca să vedem unde se blochează vizitatorii. Textul introdus în formulare nu este înregistrat.</li>
+  <p class="meta">Ultima actualizare: 16 octombrie 2026</p>
+  <p>Cookie-urile sunt fișiere mici pe care un site le salvează în browserul tău. Această politică explică ce cookie-uri și tehnologii similare folosește site-ul amplio.ro, de ce, cât timp și cum îți schimbi alegerea. Se aplică Legea nr. 506/2004 și Regulamentul (UE) 2016/679 (GDPR). Operatorul este AMPLIO CREATIVE S.R.L., cu datele complete în <a href="/confidentialitate/">politica de confidențialitate</a>.</p>
+  <h2>Cum funcționează alegerea ta</h2>
+  <p>La prima vizită îți arătăm un banner în care alegi <strong>Accept toate</strong>, <strong>Doar necesare</strong> sau <strong>Setări</strong>, unde pornești separat cookie-urile de statistică și pe cele de marketing. Site-ul funcționează complet și fără ele. Îți cerem din nou acordul după 12 luni.</p>
+  <h2>1. Strict necesare</h2>
+  <p>Nu cer acordul tău, pentru că fără ele site-ul nu poate ține minte alegerea ta și nu poate funcționa în siguranță.</p>
+  <ul>
+    <li><strong>amplio_consent</strong> (stocare locală în browser): reține alegerea ta privind cookie-urile, timp de 12 luni.</li>
+    <li><strong>amplio_lead</strong> (stocare de sesiune): după ce trimiți un formular, ține minte, până închizi fila, că cererea a fost trimisă, ca să o numărăm o singură dată.</li>
+    <li><strong>Cookie-uri de securitate Cloudflare</strong> (de exemplu __cf_bm, 30 de minute): pot fi setate de furnizorul nostru de găzduire, doar când e nevoie, ca să protejeze site-ul de traficul automat abuziv.</li>
   </ul>
-  <p>Nu folosim pixeli de publicitate și nu facem remarketing.</p>
-  <h2>Cum îți schimbi opțiunea</h2>
-  <p>Poți reveni oricând asupra alegerii. Butonul de mai jos șterge cookies de analiză și afișează din nou bannerul.</p>
-  <p><button type="button" class="btn btn-ghost" data-cookie-reset>Schimbă opțiunea</button></p>
-  <p>Poți bloca oricând cookies și din setările browserului. Site-ul rămâne complet funcțional fără ele.</p>
-  <h2>Contact</h2>
-  <p>Întrebări legate de cookies: <a href="mailto:contact@amplio.ro">contact@amplio.ro</a>.</p>
+  <h2>2. Statistică, cu acordul tău</h2>
+  <ul>
+    <li><strong>Google Analytics 4</strong> (Google Ireland Limited): <strong>_ga</strong> și <strong>_ga_*</strong>, 2 ani. Ne arată, agregat, câte vizite are site-ul, ce pagini sunt citite și ce acțiuni importante au loc, de exemplu trimiterea unui formular. Statisticile se păstrează 14 luni.</li>
+    <li><strong>Microsoft Clarity</strong> (Microsoft Ireland Operations Limited): <strong>_clck</strong>, 1 an, și <strong>_clsk</strong>, 1 zi, plus cookie-uri pe domeniul clarity.ms, de exemplu CLID și MUID, 1 an. Ne arată hărți de clicuri și de derulare și înregistrări ale interacțiunii cu pagina. Textul introdus în formulare nu este înregistrat.</li>
+  </ul>
+  <h2>3. Marketing, cu acordul tău</h2>
+  <ul>
+    <li><strong>Google Ads</strong> (Google Ireland Limited): <strong>_gcl_au</strong> și <strong>_gcl_aw</strong>, 90 de zile, plus cookie-uri pe domeniile Google, de exemplu IDE pe doubleclick.net, până la 13 luni. Măsoară cererile venite din reclamele Google Ads și permit afișarea reclamelor AMPLIO persoanelor care au vizitat site-ul (remarketing). Se folosesc doar când rulăm campanii Google Ads.</li>
+  </ul>
+  <h2>4. Măsurarea fără cookie-uri</h2>
+  <p>Google Analytics se încarcă pe toate paginile în modul de consimțământ Google (Consent Mode v2). Până îți dai acordul, nu salvează și nu citește cookie-uri și trimite către Google doar semnale fără identificatori, de exemplu că a fost vizualizată o pagină sau că a fost trimis un formular. Google le folosește pentru statistici agregate și estimări. Temeiul este interesul nostru legitim de a ști câte vizite și cereri primește site-ul.</p>
+  <h2>5. Cum îți schimbi alegerea</h2>
+  <p>Poți reveni oricând asupra alegerii, din butonul de mai jos sau din linkul „Setări cookie-uri” din subsolul fiecărei pagini. Dacă oprești o categorie, ștergem cookie-urile ei din browser.</p>
+  <p><button type="button" class="btn btn-ghost" data-cookie-settings>Schimbă setările</button></p>
+  <p>Poți bloca sau șterge cookie-urile și din setările browserului (Chrome, Firefox, Safari, Edge). Site-ul rămâne funcțional și fără ele.</p>
+  <h2>6. Cookie-urile altor site-uri</h2>
+  <p>Când deschizi linkurile spre Facebook, Instagram, LinkedIn, WhatsApp sau Google, acele site-uri își aplică propriile politici de cookies.</p>
+  <h2>7. Contact</h2>
+  <p>Întrebări despre cookie-uri: <a href="mailto:contact@amplio.ro">contact@amplio.ro</a>.</p>
 </div></div></section>
 "@
 }
@@ -1334,11 +1473,11 @@ $pages += @{
   <h1>Marketing care <span class="g">aduce clienți.</span></h1>
   <p class="lead">Articole practice despre SEO, GEO, ads și creștere, scrise pentru fondatori și firme medii și mici din România. Fără teorie goală.</p>
 </div></section>
-<section><div class="wrap rev"><div class="bloglist">
+<section><div class="wrap rev"><h2 style="font-size:clamp(22px,2.6vw,28px);margin-bottom:20px">Toate articolele</h2><div class="bloglist">
   <a class="bcard" href="/blog/verifica-daca-apari-in-ai/"><div class="cat">Ghid · GEO</div><h3>Cum verifici dacă firma ta apare în ChatGPT și AI</h3><p>Tutorial pas cu pas: află în 10 minute dacă apari în ChatGPT, Perplexity și Google AI Overviews, și ce faci dacă ești invizibil. Fără cont, fără cost.</p><span class="more">Citește tutorialul &rarr;</span></a>
   <a class="bcard" href="/blog/ghid-geo/"><div class="cat">Ghid · GEO</div><h3>Ce este GEO și cum te optimizezi pentru motoarele AI</h3><p>Ghidul complet despre Generative Engine Optimization: cum ajungi să fii citat de ChatGPT, Perplexity și AI Overviews, nu doar listat în Google.</p><span class="more">Citește ghidul &rarr;</span></a>
   <a class="bcard" href="/blog/geo-vs-seo/"><div class="cat">GEO</div><h3>GEO vs SEO: care e diferența și de ce ai nevoie de ambele</h3><p>Nu sunt în competiție, sunt două straturi ale aceleiași strategii. Explicăm clar diferența și de unde începi.</p><span class="more">Citește articolul &rarr;</span></a>
-  <a class="bcard" href="/blog/cum-aparii-in-chatgpt/"><div class="cat">GEO</div><h3>Cum apari în ChatGPT cu firma ta</h3><p>Pași concreți ca afacerea ta să fie recomandată când cineva întreabă un asistent AI „cea mai bună firmă din…”.</p><span class="more">Citește articolul &rarr;</span></a>
+  <a class="bcard" href="/blog/cum-apari-in-chatgpt/"><div class="cat">GEO</div><h3>Cum apari în ChatGPT cu firma ta</h3><p>Pași concreți ca afacerea ta să fie recomandată când cineva întreabă un asistent AI „cea mai bună firmă din…”.</p><span class="more">Citește articolul &rarr;</span></a>
   <a class="bcard" href="/blog/cost-google-ads-romania/"><div class="cat">Performance Ads</div><h3>Cât costă Google Ads în România în 2026</h3><p>Bugete reale, cost-pe-click pe industrii și cum să nu arzi banii în primele luni de campanii.</p><span class="more">Citește articolul &rarr;</span></a>
   <a class="bcard" href="/blog/greseli-buget-google-ads/"><div class="cat">Performance Ads</div><h3>7 greșeli care îți ard bugetul de Google Ads</h3><p>Cele mai frecvente moduri în care firmele pierd bani pe ads, și cum le eviți pe fiecare.</p><span class="more">Citește articolul &rarr;</span></a>
   <a class="bcard" href="/blog/cum-alegi-agentie-marketing/"><div class="cat">Ghid</div><h3>Cum alegi o agenție de marketing (și ce întrebări să pui)</h3><p>Lista de întrebări care separă o agenție care livrează de una care doar raportează afișări. Plus semnalele de alarmă.</p><span class="more">Citește ghidul &rarr;</span></a>
@@ -1358,7 +1497,7 @@ $pages += @{
 $pages += @{
   path='blog/ghid-geo'
   title='Ghid GEO: optimizare pentru motoarele AI (2026) | AMPLIO'
-  desc='Ghid complet despre GEO (Generative Engine Optimization): ce este, cum diferă de SEO și cum îți optimizezi site-ul ca să fii citat de ChatGPT, Perplexity și Google AI Overviews.'
+  desc='Ce este GEO (Generative Engine Optimization), cum diferă de SEO și cum îți optimizezi site-ul ca să fii citat de ChatGPT, Perplexity și AI Overviews.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Ghid GEO','/blog/ghid-geo') ))
   jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Ce este GEO? Ghid de optimizare pentru motoarele AI","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18","dateModified":"2026-10-14"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cât durează până apare un efect?","acceptedAnswer":{"@type":"Answer","text":"De obicei câteva luni. Motoarele AI preiau schimbările cu întârziere, iar sursele externe care te confirmă, recenzii, directoare, articole, se construiesc în timp."}},{"@type":"Question","name":"GEO înlocuiește SEO?","acceptedAnswer":{"@type":"Answer","text":"Nu. Rezumatele AI și asistenții care caută pe internet se bazează pe pagini pe care le găsesc deja. Un SEO bun e fundația, iar GEO se construiește peste el."}},{"@type":"Question","name":"Merge GEO și pentru o firmă mică, locală?","acceptedAnswer":{"@type":"Answer","text":"Da, uneori chiar mai repede: pentru întrebările locale concurența e mai mică, iar o fișă Google completă, recenziile și câteva pagini clare pot face diferența."}}]}]}'
   body=@"
@@ -1435,14 +1574,14 @@ $pages += @{
 
 # ---- BLOG: post 1 ----
 $pages += @{
-  path='blog/cum-aparii-in-chatgpt'
+  path='blog/cum-apari-in-chatgpt'
   title='Cum apari în ChatGPT cu firma ta (ghid 2026) | AMPLIO'
-  desc='Pași concreți ca afacerea ta să fie recomandată de ChatGPT și alte asistente AI: conținut citabil, autoritate, recenzii și prezență în sursele pe care AI le citează.'
-  crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cum apari în ChatGPT','/blog/cum-aparii-in-chatgpt') ))
+  desc='Pași concreți ca firma ta să fie recomandată de ChatGPT și alți asistenți AI: conținut citabil, încredere, recenzii și prezență în sursele citate de AI.'
+  crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cum apari în ChatGPT','/blog/cum-apari-in-chatgpt') ))
   jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum apari în ChatGPT cu firma ta","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
-  $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cum apari în ChatGPT','/blog/cum-aparii-in-chatgpt') ))
+  $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cum apari în ChatGPT','/blog/cum-apari-in-chatgpt') ))
   <span class="eyebrow">GEO</span>
   <h1>Cum apari în ChatGPT <span class="g">cu firma ta</span></h1>
 </div></section>
@@ -1557,8 +1696,8 @@ $pages += @{
 # ---- BLOG: post 3 (tutorial verificare AI) ----
 $pages += @{
   path='blog/verifica-daca-apari-in-ai'
-  title='Cum verifici dacă firma ta apare în ChatGPT și AI (10 min) | AMPLIO'
-  desc='Tutorial pas cu pas: verifică în 10 minute dacă afacerea ta apare în ChatGPT, Perplexity și Google AI Overviews, și ce să faci dacă ești invizibil. Fără cont, fără cost.'
+  title='Cum verifici dacă firma ta apare în ChatGPT și AI | AMPLIO'
+  desc='Tutorial pas cu pas: verifici în 10 minute dacă firma ta apare în ChatGPT, Perplexity și Google AI Overviews și ce faci dacă lipsește. Fără cost.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Verifică vizibilitatea AI','/blog/verifica-daca-apari-in-ai') ))
   jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum verifici dacă firma ta apare în ChatGPT și în căutarea AI","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
@@ -1622,7 +1761,7 @@ $pages += @{
 # ---- BLOG: GEO vs SEO ----
 $pages += @{
   path='blog/geo-vs-seo'
-  title='GEO vs SEO: care e diferența și de ce ai nevoie de ambele | AMPLIO'
+  title='GEO vs SEO: diferența și de ce ai nevoie de ambele | AMPLIO'
   desc='GEO vs SEO explicat simplu: ce face fiecare, prin ce diferă și de ce ai nevoie de amândouă în 2026. Plus de unde începi dacă pornești de la zero.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('GEO vs SEO','/blog/geo-vs-seo') ))
   jsonld='{"@context":"https://schema.org","@type":"Article","headline":"GEO vs SEO: care e diferența și de ce ai nevoie de ambele","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
@@ -1725,8 +1864,8 @@ $pages += @{
 # ---- BLOG: cum alegi o agentie ----
 $pages += @{
   path='blog/cum-alegi-agentie-marketing'
-  title='Cum alegi o agenție de marketing (și ce întrebări să pui) | AMPLIO'
-  desc='Ghid practic pentru a alege o agenție de marketing în România: întrebările pe care să le pui, semnalele de alarmă și cum recunoști o agenție care își asumă rezultatele.'
+  title='Cum alegi o agenție de marketing: ce întrebări pui | AMPLIO'
+  desc='Cum alegi o agenție de marketing în România: întrebările pe care să le pui, semnalele de alarmă și cum recunoști o agenție care își asumă rezultatele.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cum alegi o agenție','/blog/cum-alegi-agentie-marketing') ))
   jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Cum alegi o agenție de marketing","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18","dateModified":"2026-10-14"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cât costă o agenție de marketing?","acceptedAnswer":{"@type":"Answer","text":"Depinde de canale și de volumul de muncă. Ca reper, la AMPLIO serviciile pornesc de la 250-450 € pe lună pe canal, iar externalizarea completă de la 950 € pe lună. Bugetul de reclame se plătește separat, direct către Google sau Meta."}},{"@type":"Question","name":"În cât timp ar trebui să văd rezultate?","acceptedAnswer":{"@type":"Answer","text":"Din reclame, primele cereri apar de obicei în primele săptămâni; din SEO și conținut, după câteva luni. Un pilot de 90 de zile, cu KPI scriși, îți arată dacă direcția e bună."}},{"@type":"Question","name":"E mai bună o agenție mare sau una mică?","acceptedAnswer":{"@type":"Answer","text":"Contează mai puțin mărimea și mai mult cine lucrează efectiv pe contul tău, cât de des vorbiți și dacă își asumă cifre în contract."}}]}]}'
   body=@"
@@ -1939,7 +2078,7 @@ Măsurătorile și proiectul 3D sunt gratuite. Garanție 5 ani pentru mobilier.
 $pages += @{
   path='blog/google-business-profil-local'
   title='Cum apari pe Google Maps cu profilul de business | AMPLIO'
-  desc='Ghid practic pentru afaceri locale: cum îți optimizezi profilul Google Business ca să apari pe Google Maps când localnicii caută „lângă mine”. Pentru clinici, HoReCa și servicii.'
+  desc='Cum îți optimizezi profilul Google Business ca să apari pe Google Maps când localnicii caută „lângă mine”. Ghid pentru clinici, HoReCa și servicii.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Google Business local','/blog/google-business-profil-local') ))
   jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum apari pe Google Maps cu profilul de business","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
@@ -2054,7 +2193,7 @@ $pages += @{
 # ---- BLOG: marketing magazin online ----
 $pages += @{
   path='blog/marketing-magazin-online'
-  title='Marketing pentru magazin online: ghid de creștere a vânzărilor | AMPLIO'
+  title='Marketing pentru magazin online: crește vânzările | AMPLIO'
   desc='Cum crești vânzările unui magazin online: cele trei pârghii (mai mult trafic, conversie mai bună, valoare mai mare per client) și în ce ordine le activezi.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Marketing magazin online','/blog/marketing-magazin-online') ))
   jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Marketing pentru magazin online: ghid de creștere a vânzărilor","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
@@ -2092,8 +2231,8 @@ $pages += @{
 # ---- BLOG: marketing clinica ----
 $pages += @{
   path='blog/marketing-clinica-pacienti'
-  title='Cum își umple o clinică agenda cu pacienții potriviți | AMPLIO'
-  desc='Marketing pentru clinici medicale la standardul actului medical: cum atragi pacienți din zona ta prin Google Business, ads local și SEO/GEO, fără reclame agresive.'
+  title='Cum își umple clinica agenda cu pacienții potriviți | AMPLIO'
+  desc='Marketing pentru clinici la standardul actului medical: cum atragi pacienți din zona ta prin Google Business, ads local și SEO/GEO, fără reclame agresive.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Marketing clinică','/blog/marketing-clinica-pacienti') ))
   jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum își umple o clinică agenda cu pacienții potriviți","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
@@ -2131,7 +2270,7 @@ $pages += @{
 $pages += @{
   path='blog/marketing-b2b-pipeline'
   title='Cum construiești un pipeline B2B previzibil | AMPLIO'
-  desc='Marketing B2B pentru firme de servicii: cum treci dincolo de rețeaua personală de contacte și construiești un motor de lead-uri calificate prin LinkedIn ABM, SEO/GEO și nurture.'
+  desc='Marketing B2B pentru firme de servicii: cum treci dincolo de rețeaua de contacte și construiești un motor de lead-uri prin LinkedIn ABM, SEO/GEO și nurture.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Pipeline B2B','/blog/marketing-b2b-pipeline') ))
   jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum construiești un pipeline B2B previzibil","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
   body=@"
@@ -2209,4 +2348,93 @@ $pages += @{
 # ---------- RUN ----------
 Write-Host "AMPLIO build - $($pages.Count) pagini..."
 foreach ($p in $pages) { Build-Page $p }
+
+# ---------- Dupa generare: data reala a modificarii in sitemap.xml + llms-full.txt ----------
+$POSTBUILD_JS = @'
+// Rulat de build.ps1 dupa generarea paginilor: data reala a modificarii in sitemap.xml si llms-full.txt
+const fs = require('fs'), path = require('path'), cp = require('child_process');
+const root = process.argv[2];
+const azi = new Date().toLocaleDateString('sv-SE');
+function git(args) { try { return cp.execFileSync('git', args, { cwd: root, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim(); } catch (e) { return null; } }
+function fisier(u) { return u === '/' ? 'index.html' : u.replace(/^\/|\/$/g, '') + '/index.html'; }
+function dataModificarii(rel) {
+  const st = git(['status', '--porcelain', '--', rel]);
+  if (st === null || st !== '') return azi;
+  return git(['log', '-1', '--format=%cs', '--', rel]) || azi;
+}
+const smPath = path.join(root, 'sitemap.xml');
+let sm = fs.readFileSync(smPath, 'utf8');
+const urls = [];
+sm = sm.replace(/<url><loc>https:\/\/amplio\.ro(\/[^<]*)<\/loc>(<lastmod>[^<]*<\/lastmod>)?/g, (m, u) => { urls.push(u); return '<url><loc>https://amplio.ro' + u + '</loc><lastmod>' + dataModificarii(fisier(u)) + '</lastmod>'; });
+fs.writeFileSync(smPath, sm);
+
+const ENT = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', rarr: '→', larr: '←', middot: '·', euro: '€', bdquo: '„', rdquo: '”', ldquo: '“', rsquo: '’', lsquo: '‘', ndash: '-', hellip: '…', copy: '©', rsaquo: '›', times: '×' };
+function dec(s) { return s.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e) => e[0] === '#' ? String.fromCodePoint(e[1].toLowerCase() === 'x' ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10)) : (ENT[e] !== undefined ? ENT[e] : m)); }
+function text(s) { return dec(s.replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim(); }
+function md(html) {
+  let t = html.replace(/\r/g, '');
+  t = t.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<svg[\s\S]*?<\/svg>|<form[\s\S]*?<\/form>/g, '');
+  t = t.replace(/<nav class="crumbs"[\s\S]*?<\/nav>/g, '');
+  t = t.replace(/<div class="(grid-bg|hero-cta|ctaband|contact-actions)"[^>]*>[\s\S]*?<\/div>/g, '');
+  t = t.replace(/<div class="rv-block"[\s\S]*?<p class="rv-note">[\s\S]*?<\/p>\s*<\/div>/g, '');
+  t = t.replace(/<h2[^>]*>[^<]*<\/h2>\s*<div class="svc-grid">[\s\S]*?<\/div>/g, '');
+  t = t.replace(/<div class="svc-grid">[\s\S]*?<\/div>/g, '');
+  t = t.replace(/<span class="(eyebrow[^"]*|n)"[^>]*>[\s\S]*?<\/span>/g, '');
+  t = t.replace(/<div class="day">[\s\S]*?<\/div>/g, '');
+  t = t.replace(/<p class="meta">[\s\S]*?<\/p>/g, '');
+  t = t.replace(/<h1[^>]*>[\s\S]*?<\/h1>/g, '');
+  t = t.replace(/<table[^>]*>([\s\S]*?)<\/table>/g, (m, inner) => {
+    const rows = [...inner.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/g)].map(r => [...r[1].matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/g)].map(c => text(c[1]).replace(/\|/g, '/')));
+    if (!rows.length) return '';
+    return '\n\n' + [rows[0], rows[0].map(() => '---'), ...rows.slice(1)].map(r => '| ' + r.join(' | ') + ' |').join('\n') + '\n\n';
+  });
+  t = t.replace(/<summary[^>]*>([\s\S]*?)<\/summary>/g, (m, q) => '\n\n**' + text(q) + '**\n\n');
+  t = t.replace(/<a\s[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g, (m, h, x) => {
+    const tx = text(x); if (!tx) return '';
+    if (/^(mailto:|tel:)/.test(h)) return tx;
+    return '[' + tx + '](' + (h.startsWith('/') ? 'https://amplio.ro' + h : h) + ')';
+  });
+  t = t.replace(/<(b|strong)>([\s\S]*?)<\/\1>/g, (m, g, x) => '**' + text(x) + '**');
+  t = t.replace(/<(i|em)>([\s\S]*?)<\/\1>/g, (m, g, x) => '_' + text(x) + '_');
+  t = t.replace(/<h2[^>]*>([\s\S]*?)<\/h2>/g, (m, x) => '\n\n#### ' + text(x) + '\n\n');
+  t = t.replace(/<h3[^>]*>([\s\S]*?)<\/h3>/g, (m, x) => '\n\n##### ' + text(x) + '\n\n');
+  t = t.replace(/<li[^>]*>([\s\S]*?)<\/li>/g, (m, x) => '\n- ' + x.replace(/\s+/g, ' ').trim());
+  t = t.replace(/<br\s*\/?>/g, '\n');
+  t = t.replace(/<\/(p|div|section|ul|ol|blockquote|figure|details|article)>/g, '\n\n');
+  t = t.replace(/<[^>]+>/g, '');
+  t = dec(t);
+  t = t.split('\n').map(l => l.replace(/[ \t]+/g, ' ').trim()).join('\n');
+  return t.replace(/\n{3,}/g, '\n\n').trim();
+}
+function pagina(u) {
+  const h = fs.readFileSync(path.join(root, fisier(u)), 'utf8');
+  const start = h.indexOf('</nav>', h.indexOf('<nav id="nav">'));
+  const main = h.slice(start + 6, h.indexOf('<footer'));
+  const h1 = (main.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [, ''])[1];
+  return '### ' + text(h1) + '\n\nSursa: https://amplio.ro' + u + '\n\n' + md(main);
+}
+const grupe = [
+  ['Despre AMPLIO', urls.filter(u => u === '/despre/')],
+  ['Servicii', urls.filter(u => /^\/servicii\/[^/]+\/$/.test(u))],
+  ['Soluții pe industrie', urls.filter(u => /^\/solutii\/[^/]+\/$/.test(u))],
+  ['Auditul gratuit și contactul', urls.filter(u => u === '/audit-gratuit/' || u === '/contact/')],
+  ['Ghiduri și articole', urls.filter(u => /^\/blog\/[^/]+\/$/.test(u))],
+];
+const llms = fs.readFileSync(path.join(root, 'llms.txt'), 'utf8').replace(/\r/g, '');
+const rezumat = (llms.match(/^> .*$/m) || [''])[0];
+let out = '# AMPLIO: conținutul complet al site-ului amplio.ro\n\n' + rezumat + '\n\nUltima actualizare: ' + azi + '. Versiunea scurtă: https://amplio.ro/llms.txt\n\n## Date de identificare\n\n- AMPLIO CREATIVE S.R.L., Nr. Reg. Com. J2026044340009, CUI 55206491\n- Sediu social: Bd. Dinicu Golescu nr. 7, Sector 1, 010871 București\n- Email: contact@amplio.ro\n- Telefon și WhatsApp: 0728 151 558\n- Site: https://amplio.ro/\n';
+let n = 0;
+for (const [titlu, lista] of grupe) {
+  if (!lista.length) continue;
+  out += '\n## ' + titlu + '\n';
+  for (const u of lista) { out += '\n' + pagina(u) + '\n'; n++; }
+}
+fs.writeFileSync(path.join(root, 'llms-full.txt'), out);
+console.log('  sitemap.xml: ' + urls.length + ' adrese cu lastmod; llms-full.txt: ' + n + ' pagini, ' + Buffer.byteLength(out) + ' octeti');
+'@
+$postJs = Join-Path ([System.IO.Path]::GetTempPath()) 'amplio-postbuild.js'
+[System.IO.File]::WriteAllText($postJs, $POSTBUILD_JS, (New-Object System.Text.UTF8Encoding($false)))
+& node $postJs $root
+if ($LASTEXITCODE -ne 0) { throw 'Actualizarea sitemap.xml / llms-full.txt a esuat' }
+Remove-Item $postJs -ErrorAction SilentlyContinue
 Write-Host "Gata."

@@ -9,8 +9,8 @@ https://:version.amplio-site.pages.dev/*
   X-Robots-Tag: noindex
 
 /*
-  # Aceeasi politica de continut ca in <meta> din pagini, plus frame-ancestors (care in <meta> e ignorat).
-  Content-Security-Policy: default-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; media-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.clarity.ms; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com; base-uri 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  # Politica de securitate a continutului (CSP), servita doar din acest antet. Sursele Google Ads se folosesc doar cu acordul pentru marketing.
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com https://googleads.g.doubleclick.net https://www.google.com https://www.google.ro https://www.googleadservices.com; media-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.clarity.ms https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com https://*.doubleclick.net https://www.google.com https://www.google.ro https://www.googleadservices.com https://pagead2.googlesyndication.com; frame-src https://td.doubleclick.net https://bid.g.doubleclick.net https://www.googletagmanager.com; base-uri 'self'; form-action 'self' https://formsubmit.co; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
 
   # Site-ul nu poate fi incarcat in iframe pe alt domeniu (protectie clickjacking).
   X-Frame-Options: DENY
@@ -67,4 +67,7 @@ https://:version.amplio-site.pages.dev/*
   Cache-Control: public, max-age=604800
 
 /llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/llms-full.txt
   Content-Type: text/plain; charset=utf-8

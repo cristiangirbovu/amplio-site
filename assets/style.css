@@ -81,8 +81,19 @@ nav.scrolled .wrap{height:62px}
 .navlinks a:not(.navcta)::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:width .28s var(--ease)}
 .navlinks a:not(.navcta):hover{color:var(--off)}
 .navlinks a:not(.navcta):hover::after{width:100%}
-.navcta{background:var(--blue);color:#fff!important;padding:9px 18px;border-radius:10px;font-weight:600;transition:transform .2s,box-shadow .2s}
-.navcta:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(47,107,255,.4)}
+/* Butonul „Audit gratuit” din meniu: aceeași familie cu butoanele mari, la scara meniului */
+.navlinks a.navcta{display:inline-flex;align-items:center;gap:8px;padding:11px 18px 11px 20px;border-radius:12px;
+  background:linear-gradient(180deg,#4479ff 0%,var(--blue) 100%);color:#fff!important;
+  font-size:14px;font-weight:600;letter-spacing:.01em;line-height:1;white-space:nowrap;
+  border:1px solid rgba(127,167,255,.5);
+  box-shadow:0 6px 18px rgba(47,107,255,.30),inset 0 1px 0 rgba(255,255,255,.20);
+  transition:transform 170ms var(--ease-press),box-shadow 240ms var(--ease-out),background 220ms var(--ease-out)}
+.navlinks a.navcta::after{content:"\2192";font-size:14px;line-height:1;transition:transform 220ms var(--ease-out)}
+.navlinks a.navcta:hover{transform:translateY(-2px);background:linear-gradient(180deg,#5185ff 0%,#2a66fa 100%);
+  box-shadow:0 12px 28px rgba(47,107,255,.42),inset 0 1px 0 rgba(255,255,255,.24)}
+.navlinks a.navcta:hover::after{transform:translateX(3px)}
+.navlinks a.navcta:active{transform:translateY(0) scale(.985)}
+.navlinks a.navcta:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 /* Dropdown */
 .has-drop>a{display:inline-flex;align-items:center;gap:5px}
 .has-drop>a::before{content:"▾";font-size:10px;order:2;color:var(--gold)}
@@ -340,7 +351,7 @@ footer{background:var(--navy);border-top:1px solid var(--line);padding:64px 0 40
   .foot-top{grid-template-columns:1fr}
 }
 @media(max-width:520px){.tl{grid-template-columns:1fr}.hero h1{font-size:clamp(30px,9vw,40px)}.hero p.lead{font-size:16px}}
-@media (hover:none){.btn:hover,.navcta:hover,.svc:hover,.tstep:hover,.bcard:hover,.svc:hover .ic{transform:none}}
+@media (hover:none){.btn:hover,.navlinks a.navcta:hover,.svc:hover,.tstep:hover,.bcard:hover,.svc:hover .ic{transform:none}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rev,.hero-inner>*{opacity:1!important;transform:none!important}}
 
 /* ===== Contact: butoane rapide (Email / Suna / WhatsApp) ===== */
@@ -392,3 +403,27 @@ footer{background:var(--navy);border-top:1px solid var(--line);padding:64px 0 40
 .cookie-banner a{color:var(--gold2);text-decoration:underline}
 .cookie-actions{display:flex;gap:10px;flex-wrap:wrap}
 .cookie-actions .btn{flex:1 1 140px;justify-content:center;padding:12px 18px;font-size:14px}
+
+/* ===== Subsol: contact și datele de identificare ale firmei ===== */
+.foot-top p.foot-contact{margin-top:12px}
+.foot-contact a{color:var(--txt-dim);transition:color .2s}
+.foot-contact a:hover{color:var(--off)}
+.foot-bot a{color:inherit;transition:color .2s}
+.foot-bot a:hover{color:var(--off)}
+.foot-legal{margin-top:14px;font-size:12.5px;line-height:1.7;color:var(--txt-dim)}
+
+/* ===== Banner cookie-uri: categorii (Necesare, Statistică, Marketing) ===== */
+.cookie-prefs{display:none;flex-direction:column;gap:12px}
+.cookie-banner.prefs .cookie-prefs{display:flex}
+.cookie-opt{display:flex;gap:11px;align-items:flex-start;font-size:13.5px;line-height:1.5;color:var(--txt-dim);cursor:pointer}
+.cookie-opt input{margin-top:3px;width:17px;height:17px;flex:0 0 auto;accent-color:var(--gold);cursor:pointer}
+.cookie-opt input:disabled{cursor:default}
+.cookie-opt b{display:block;color:var(--off);font-weight:600}
+.cookie-actions .cookie-set{flex:0 1 auto}
+.cookie-banner .cookie-save{display:none}
+.cookie-banner.prefs .cookie-save{display:inline-flex;flex:1 1 100%}
+.cookie-banner.prefs .cookie-set{display:none}
+@media(max-width:600px){body.cb-open .fab{opacity:0;pointer-events:none}}
+@media(max-width:1340px){.foot-bot,.foot-legal{padding-right:84px}}
+@media(max-width:600px){.foot-bot,.foot-legal{padding-right:70px}}
+@media(max-width:600px){.cookie-actions .cookie-set{flex:1 1 100%}}
