@@ -2,7 +2,7 @@
 
 > AMPLIO este agenția de marketing digital a firmelor medii și mici din România, cu deschidere către piața UE. Combină inteligența artificială în producție cu strategie umană senioră și oferă modele de plată legate de rezultate (taxă de bază redusă plus procent din creșterea vânzărilor). Slogan: „Creștere proiectată, nu promisă."
 
-Ultima actualizare: 2026-10-16. Versiunea scurtă: https://amplio.ro/llms.txt
+Ultima actualizare: 2026-10-17. Versiunea scurtă: https://amplio.ro/llms.txt
 
 ## Date de identificare
 
@@ -46,31 +46,147 @@ Folosim inteligența artificială în producție ca să mergem mai repede și s�
 
 Sursa: https://amplio.ro/servicii/performance-ads/
 
-**Reclame care aduc vânzări, nu doar afișări.** Administrăm complet Google Ads, Meta și TikTok: strategie, creație asistată de AI, optimizare săptămânală și raport pe venit real, nu pe impresii. Conturile rămân mereu ale tale.
+**Reclame care aduc vânzări, nu doar afișări.** Alegem canalele după felul în care te caută clienții, punem tracking corect înainte de primul leu cheltuit și mutăm bugetul în fiecare săptămână acolo unde aduce clienți. Conturile rămân ale tale.
 
-#### Bugetul tău de ads, condus de cifre
+#### Bugetul tău de reclame, condus de cifre
 
-Cele mai multe firme cheltuie pe ads fără să știe ce canal aduce vânzări. Noi pornim de la tracking corect și baseline semnat, apoi optimizăm săptămânal pe metrica ce contează: costul pe client nou și venitul generat.
+Cele mai multe firme cheltuie pe reclame fără să știe ce canal aduce clienți. Noi pornim de la măsurarea corectă și de la un nivel de pornire semnat, apoi optimizăm pe ce contează: costul unui client nou și venitul generat.
 
-Creația o producem rapid cu AI, sub control uman, ca să testăm mai multe variante decât o agenție clasică. Iar dacă are sens pentru tine, intrăm pe modelul de parteneriat: fee fix redus + procent doar din creșterea vânzărilor.
+Lucrăm toate canalele plătite ca un singur buget. Google te arată oamenilor care caută deja ce vinzi. Meta, adică Facebook și Instagram, creează cerere și îi aduce înapoi pe cei care au fost pe site. TikTok funcționează pentru magazinele online cu produse care se arată bine în video.
 
-Pentru fiecare canal avem o pagină dedicată: [Google Ads](https://amplio.ro/servicii/google-ads/) și [Facebook și Instagram Ads](https://amplio.ro/servicii/facebook-ads/).
+Pentru detalii pe fiecare canal: [Google Ads](https://amplio.ro/servicii/google-ads/) și [Facebook și Instagram Ads](https://amplio.ro/servicii/facebook-ads/).
 
 ##### Ce primești
 
-- **Strategie de canal:** unde merită bugetul tău (Google, Meta, TikTok)
+- **Strategie de canal:** unde merită bugetul tău
 
-- **Creație AI** cu control uman: mai multe variante, testate constant
+- **Tracking verificat:** GA4, pixel și conversii trimise de pe server
 
-- **Optimizare săptămânală** pe cost/client și ROAS
+- **KPI și nivel de pornire** scrise în contract
 
-- **Tracking corect** verificat cu teste reale înainte de spend
+- **3-5 variante de reclamă** pentru fiecare grup, aprobate de tine
 
-- **Raport lunar pe venit**, nu pe afișări
+- **Optimizare săptămânală** pe costul unui client nou și pe ROAS
 
-- **Conturile rămân ale tale**, transparență 100%
+- **Raport lunar pe venit** și o discuție de 30 de minute
 
-De la 450 €/lună sau % din ad spend
+Configurare 400-700 € o dată, apoi de la 450 €/lună
+
+#### Ce canal, pentru ce afacere
+
+Nu pornim cu toate canalele deodată. Alegem canalul principal după felul în care te caută clienții, iar pe celelalte le testăm cu o parte din buget.
+
+##### Servicii locale și clinici
+
+Google pe căutările din zona ta, plus Meta local pentru remarketing și pentru ofertele de sezon.
+
+##### Servicii B2B
+
+Google pe frazele cu intenție clară și remarketing pe vizitatorii site-ului. Cererile le măsurăm după definiția de lead calificat din contract.
+
+##### Lansări și produse noi
+
+Meta și TikTok ca să creezi cerere, apoi Google pe căutările care apar după campanie.
+
+La lansare, 20-30% din buget merge pe teste: audiențe, mesaje și formate noi. Ce aduce clienți primește bugetul, ce nu aduce oprim.
+
+#### Cât costă
+
+Plătești administrarea către noi și bugetul de reclame direct platformelor. Prețul exact îl primești după auditul gratuit.
+
+| Ce plătești | Preț | Ce include |
+| --- | --- | --- |
+| Configurare, o singură dată | 400-700 € | Auditul conturilor existente, tracking-ul, structura contului și primele campanii |
+| Administrare lunară | de la 450 €/lună | Canalele din plan, optimizare săptămânală, creație și raport lunar |
+| Bugete de reclame de peste 5.000 €/lună | 12-15% din bugetul de reclame | Același serviciu, plătit procentual, cu minimum 450 € pe lună |
+
+Bugetul de reclame nu e inclus: îl plătești direct către Google, Meta sau TikTok, din conturile tale. Dacă are sens pentru tine, lucrăm și pe modelul de parteneriat: taxă fixă redusă plus un procent doar din creșterea vânzărilor peste nivelul de pornire. Costurile pe clic pe domenii sunt în articolul [Cât costă Google Ads în România](https://amplio.ro/blog/cost-google-ads-romania/).
+
+#### Primele 30 de zile
+
+Cum ajungem de la conturile pe care le ai azi la campanii care învață din cifre.
+
+##### Fundația
+
+Acces la conturi, auditul contului existent, tracking corect (GA4, pixel, conversii de pe server), KPI și nivel de pornire semnate.
+
+##### Lansarea
+
+Structura contului pe obiective, audiențe și cuvinte cheie, 3-5 variante de reclamă pe fiecare grup, aprobate de tine, apoi pornirea cu 20-30% buget de test.
+
+##### Optimizarea
+
+Mutăm bugetul spre ce aduce clienți, adăugăm reclame noi, verificăm căutările și excludem ce nu are legătură cu tine.
+
+##### Raportul
+
+Panou de control live, o pagină scrisă cu ce a mers, ce nu și ce facem luna viitoare, plus o discuție de 30 de minute.
+
+Îți răspundem în cel mult o zi lucrătoare, iar o campanie nouă e live în cel mult 5 zile lucrătoare de la brief.
+
+#### Ce vezi în raportul lunar
+
+- Costul unui client nou și venitul atribuit fiecărui canal
+
+- ROAS pentru magazinele online, costul pe cerere pentru servicii
+
+- Ce campanii, audiențe și reclame au primit bugetul
+
+- Ce am oprit și de ce
+
+- Planul pentru luna următoare
+
+Conturile sunt ale tale, cu acces complet: vezi aceleași cifre ca noi, oricând.
+
+##### Reclamele merg mai bine cu o pagină bună
+
+Un anunț bun care trimite pe o pagină slabă înseamnă bani pierduți. De aceea lucrăm reclamele împreună cu pagina de destinație și cu emailul, care îi aduce înapoi pe cei care nu au cumpărat din prima.
+
+[Vezi Landing & CRO](https://amplio.ro/servicii/landing-pages-cro/)
+
+#### Greșelile care ard bugetul
+
+- **Fără tracking corect** nu știi ce canal aduce clienți.
+
+- **Bugetul împărțit egal** pe toate canalele, în loc să urmeze rezultatele.
+
+- **Aceleași reclame luni la rând,** până obosesc publicul.
+
+- **Raport pe afișări și clicuri,** nu pe clienți și venit.
+
+- **Conturi deschise pe numele agenției:** când pleci, rămâi fără istoric.
+
+#### Pentru cine lucrăm
+
+[Magazine onlineVenit și ROAS, cu Google Shopping, Meta și TikTok.Vezi soluția →](https://amplio.ro/solutii/marketing-ecommerce/)
+[Clinici și servicii localeProgramări și cereri din zona ta.Vezi soluția →](https://amplio.ro/solutii/marketing-clinici/)
+[Servicii B2BLead-uri calificate, după o definiție scrisă în contract.Vezi soluția →](https://amplio.ro/solutii/marketing-b2b/)
+
+#### Întrebări frecvente despre Performance Ads
+
+**Cât buget de reclame îmi trebuie?**
+
+Nu există o sumă fixă. Bugetul trebuie să aducă destule clicuri ca să avem date de optimizat și depinde de cât costă un clic în domeniul tău. Îl calculăm împreună la audit, iar o primă estimare o ai în calculatorul de investiție.
+
+**Pot începe cu un singur canal?**
+
+Da, și de obicei așa recomandăm. Pornim cu canalul unde te caută clienții, de regulă Google pentru servicii și Google Shopping sau Meta pentru magazine, și adăugăm alte canale după ce primul aduce rezultate.
+
+**În cât timp apar rezultatele?**
+
+Primele cereri sau vânzări apar de obicei în primele săptămâni după lansare. Prima lună e și o lună de învățare: aflăm ce audiențe, mesaje și pagini funcționează.
+
+**Cine face reclamele?**
+
+Noi, cu ajutorul AI, cu 3-5 variante pentru fiecare grup de reclame. Fiecare variantă e verificată de un om și aprobată de tine înainte să pornească.
+
+**Conturile de reclame sunt ale mele?**
+
+Da. Conturile de Google, Meta și TikTok sunt pe firma ta, iar bugetul se plătește din ele, direct platformelor. Noi primim acces de administrator. Dacă pleci, tot istoricul rămâne la tine.
+
+**Ce se întâmplă dacă reclamele nu aduc rezultate?**
+
+Lucrăm cu un pilot de 90 de zile, cu KPI scriși în contract și clauză de ieșire fără penalități. Dacă cifrele nu vin, nu rămâi blocat într-un contract.
 
 ### Agenție Google Ads: campanii care aduc cereri, nu doar clicuri.
 
@@ -603,53 +719,299 @@ Nu există un termen fix: motoarele AI se bazează pe ce găsesc despre tine pe 
 
 Sursa: https://amplio.ro/servicii/social-media/
 
-**Vocea brandului tău, fără efortul tău.** Calendar lunar, creație cu AI sub control uman, programare și raport. Păstrăm tonul brandului tău și publicăm constant, ca să nu mai depindă totul de inspirația de moment.
+**Vocea brandului tău, fără efortul tău.** Strategie pe trei piloni, calendar lunar, texte și vizualuri pe brandul tău, aprobare într-un singur link, programare și raport. Alegi pachetul S, M sau L, după ritmul de care ai nevoie.
 
 #### Constanța bate inspirația
 
-Problema social media nu e ideea de azi, e ritmul de fiecare săptămână. Noi construim un calendar editorial, producem conținutul și îl programăm, ca prezența ta să fie constantă și coerentă.
+Problema social media nu e ideea de azi, e ritmul de fiecare săptămână. Noi construim calendarul, producem conținutul și îl programăm, ca prezența ta să fie constantă și coerentă.
 
-Creația o accelerăm cu AI, dar fiecare postare trece prin control uman și prin vocea brandului tău. Tu aprobi, noi publicăm și măsurăm.
+Creația o accelerăm cu AI, dar fiecare postare trece prin control uman și prin vocea brandului tău. Aprobi tot calendarul lunii dintr-un singur link, nu postare cu postare.
+
+Rețelele le alegem după public: de obicei Facebook și Instagram, plus LinkedIn pentru firmele B2B.
 
 ##### Ce primești
 
-- **Calendar editorial lunar** aliniat cu obiectivele tale
+- **Strategie pe 3 piloni de conținut,** legată de obiectivele tale
 
-- **Creație AI + control uman:** text și vizual
+- **Calendar pe 30 de zile,** în fiecare lună
 
-- **Programare** pe toate platformele relevante
+- **Texte și vizualuri** pe identitatea brandului tău
 
-- **Raport lunar** pe creștere și engagement
+- **Aprobare într-un singur link,** o dată pe lună
 
-- **Micro-influenceri & UGC** prin rețeaua de parteneri (opțional)
+- **Programare automată** pe rețelele alese
 
-Pachete 350 / 600 / 950 €/lună
+- **Raport lunar** cu interpretare și recomandarea lunii
+
+Configurare 250 € o dată, apoi pachete 350 / 600 / 950 €/lună
+
+#### Pachetele
+
+Toate pachetele includ strategia, calendarul, textele, vizualurile, programarea și raportul. Diferă ritmul și cât preluăm din administrarea zilnică.
+
+| Pachet | S | M | L |
+| --- | --- | --- | --- |
+| Preț lunar | 350 € | 600 € | 950 € |
+| Postări pe lună | 8 | 16 | 24 |
+| Reels (video scurt) | nu | da | da |
+| Comentarii și mesaje | le urmărim și îți semnalăm ce cere răspuns | le urmărim și îți semnalăm ce cere răspuns | răspundem noi, în tonul agreat |
+| Raport lunar | da | da | da |
+
+Configurarea, o singură dată, costă 250 € și cuprinde strategia și identitatea vizuală a feedului. Video-urile mai complexe le producem prin partenerii noștri și sunt incluse în pachetele M și L. Promovarea plătită a postărilor se face separat, prin [Performance Ads](https://amplio.ro/servicii/performance-ads/).
+
+#### Cum lucrăm
+
+O lună de social media înseamnă o singură aprobare din partea ta. Restul e ritmul nostru.
+
+##### Configurarea
+
+O discuție de o oră despre vocea brandului, subiectele de evitat și obiective, analiza concurenților, 3 piloni de conținut și șabloane vizuale pe brandul tău.
+
+##### Producția
+
+Calendarul pe 30 de zile, textele editate de om și vizualurile din șabloane, apoi aprobarea ta într-un singur link și programarea automată.
+
+##### Administrarea
+
+Urmărim comentariile și mesajele, distribuim ce merită și vedem ce se spune despre brandul tău.
+
+##### Raportul
+
+Raport automat, cu interpretarea noastră și recomandarea pentru luna următoare.
+
+#### Ce vezi în raportul lunar
+
+- Creșterea comunității și postările care au mers cel mai bine
+
+- Interacțiuni, distribuiri și salvări, nu doar aprecieri
+
+- Mesajele și cererile venite din social media
+
+- Ce schimbăm luna viitoare
+
+Paginile rămân ale tale; noi lucrăm cu acces de administrator.
+
+##### Organicul construiește încredere, reclamele aduc volum
+
+Postările constante îți construiesc credibilitatea, iar reclamele le duc la oameni noi. Când o postare merge bine organic, o putem promova prin Performance Ads, cu buget separat.
+
+[Vezi Facebook și Instagram Ads](https://amplio.ro/servicii/facebook-ads/)
+
+#### Greșelile pe care le vedem cel mai des
+
+- **Postezi când ai timp,** deci rar și fără plan.
+
+- **Același text pe toate rețelele,** fără adaptare la fiecare.
+
+- **Fără o voce clară a brandului,** fiecare postare sună altfel.
+
+- **Comentarii și mesaje fără răspuns** zile întregi.
+
+- **Aprecieri urmărite** în locul cererilor.
+
+#### Pentru cine lucrăm
+
+[Restaurante și HoReCaPostări care deschid pofta și aduc rezervări directe.Vezi soluția →](https://amplio.ro/solutii/marketing-horeca/)
+[CliniciInformații utile și încredere, la standardul comunicării medicale.Vezi soluția →](https://amplio.ro/solutii/marketing-clinici/)
+[Servicii B2BLinkedIn cu expertiză reală, nu cu postări de umplutură.Vezi soluția →](https://amplio.ro/solutii/marketing-b2b/)
+
+#### Întrebări frecvente despre social media
+
+**Pe ce rețele postați?**
+
+Le alegem după publicul tău. De obicei Facebook și Instagram, plus LinkedIn pentru firmele B2B. Pe fiecare rețea adaptăm formatul și tonul.
+
+**Trebuie să aprob fiecare postare?**
+
+Aprobi tot calendarul lunii dintr-un singur link, o dată pe lună. Poți cere modificări înainte de programare, apoi nu mai trebuie să faci nimic.
+
+**Cine face fotografiile și video-urile?**
+
+Vizualurile le facem noi, pe șabloanele brandului tău. Video-urile mai complexe le producem prin partenerii noștri, în pachetele M și L. Dacă ai fotografii proprii, le folosim cu prioritate.
+
+**Răspundeți și la comentarii și mesaje?**
+
+În pachetul L, da, în tonul agreat la început. În pachetele S și M le urmărim și îți semnalăm ce cere un răspuns din partea ta.
+
+**În cât timp se vede efectul?**
+
+Ritmul constant se vede din prima lună. Creșterea comunității și cererile din social media se construiesc în timp, de regulă în câteva luni de publicare constantă.
+
+**Faceți și reclame pe Facebook și Instagram?**
+
+Da, prin serviciul de Facebook și Instagram Ads, cu buget separat. Social media construiește prezența, iar reclamele aduc oameni noi.
 
 ### Email marketing și automatizări.
 
 Sursa: https://amplio.ro/servicii/email-automatizari/
 
-**Fluxuri care vând în timp ce dormi.** Bun venit, coș abandonat, reactivare: secvențe automate care aduc venit fără efort recurent. În e-commerce, emailul generează tipic 20-30% din venitul total.
+**Fluxuri care vând în timp ce dormi.** Construim o singură dată mesajele automate de bun venit, coș abandonat, după comandă și reactivare, apoi trimitem campaniile lunare. Lucrăm pe contul tău de theMarketer, Klaviyo sau MailerLite și raportăm venitul adus de email, nu doar deschiderile.
 
-#### Cel mai profitabil canal, neglijat de toată lumea
+#### Cel mai ieftin client e cel care te cunoaște deja
 
-Emailul nu are cost pe click și vorbește cu oameni care deja te cunosc. Bine făcut, e cel mai mare ROI din marketing. Noi construim fluxurile o dată și lucrează luni întregi.
+Emailul vorbește cu oameni care au cumpărat deja, au cerut o ofertă sau s-au abonat. Nu plătești pe clic, iar un flux construit bine lucrează luni la rând fără să-l mai atingi.
 
-Conectăm tot la CRM-ul tău, segmentăm și testăm subiecte și oferte, cu raport pe venitul generat de email.
+Cele mai multe firme trimit un newsletter din când în când și se opresc acolo. Rezultatele vin însă din mesajele automate, trimise exact când contează: la o oră după un coș abandonat, a doua zi după prima comandă, după trei luni fără nicio cumpărare.
+
+Merge pentru magazinele online, unde aduce comenzi repetate, și pentru firmele de servicii și B2B, unde ține lead-urile calde până sunt gata să cumpere.
 
 ##### Ce primești
 
-- **Fluxuri automate:** bun venit, coș abandonat, reactivare, post-cumpărare
+- **Fluxuri automate complete**, alese după tipul afacerii tale
 
-- **Segmentare** și personalizare pe comportament
+- **2-4 campanii pe lună**, pe un calendar agreat
 
-- **Integrare CRM** (HubSpot, Klaviyo, Mailchimp etc.)
+- **Segmentare după comportament:** ce a cumpărat, ce a văzut, când
 
 - **Teste A/B** pe subiecte și oferte
 
-- **Raport pe venitul email**, nu pe rata de deschidere
+- **Domeniu autentificat** (SPF, DKIM, DMARC), ca mesajele să nu ajungă în Spam
 
-De la 250 €/lună sau % din venitul email
+- **Raport lunar pe venitul adus de email**, nu pe rata de deschidere
+
+Implementare 500-1.500 € o dată, apoi de la 250 €/lună
+
+#### Fluxurile pe care le construim
+
+Pornim cu fluxurile de bază și le extindem după ce vedem cifrele. Setul diferă pentru magazinele online și pentru firmele de servicii.
+
+##### Pentru magazine online
+
+- **Bun venit:** 2-3 emailuri pentru abonații noi: cine ești, ce te diferențiază și primul motiv să cumpere.
+
+- **Coș abandonat:** un email la o oră și încă unul a doua zi, cu produsele rămase în coș; pe theMarketer, și un SMS.
+
+- **Produs văzut, necumpărat:** un mesaj pentru cine a revenit la un produs și a plecat fără să cumpere.
+
+- **După comandă:** mulțumire, detalii de livrare, cererea de recenzie, apoi produse care se potrivesc.
+
+- **Reaprovizionare:** o reamintire când un produs consumabil se termină de obicei.
+
+- **Reactivare și clienți fideli:** un motiv să revină pentru cine nu a mai cumpărat de mult și beneficii pentru cei mai buni clienți.
+
+##### Pentru servicii și B2B
+
+- **Răspuns la cerere:** confirmare imediată, apoi o revenire dacă oferta rămâne fără răspuns.
+
+- **Lead-uri care nu sunt încă gata:** o serie de emailuri utile, care răspund la întrebările dinaintea deciziei.
+
+- **Client nou:** pașii primelor săptămâni de colaborare, explicați din timp.
+
+- **Contacte vechi:** reactivarea lead-urilor care nu au mai răspuns de câteva luni.
+
+- **Newsletter lunar:** conținut util care te ține în minte, fără presiune de vânzare.
+
+#### Pe ce platforme lucrăm
+
+Contul platformei e pe firma ta și îl plătești direct furnizorului; noi primim acces de administrator. Alegem platforma după afacere.
+
+##### Klaviyo
+
+Pentru magazinele care vând mult și în afara României sau sunt construite pe Shopify, acolo unde contează segmentarea avansată.
+
+##### MailerLite
+
+Pentru firmele de servicii și B2B: newslettere și automatizări clare, la un cost lunar mic.
+
+##### CRM-ul tău
+
+Legăm emailul de HubSpot, Pipedrive sau CRM-ul pe care îl folosești deja, ca fiecare contact să primească mesajul potrivit etapei în care e.
+
+#### Cât costă
+
+Prețul depinde de câte fluxuri construim și de câte campanii trimitem pe lună. Îl primești exact după auditul gratuit.
+
+| Ce plătești | Preț | Ce include |
+| --- | --- | --- |
+| Implementare, o singură dată | 500-1.500 € | Auditul listei, curățenia după regulile GDPR, configurarea platformei și a domeniului, fluxurile de bază scrise și testate |
+| Administrare lunară | 250-500 €/lună | 2-4 campanii pe lună, segmentare, teste A/B, optimizarea fluxurilor, raport pe venit |
+| Variantă legată de rezultat, opțională | 10-15% din venitul adus de email | Se aplică doar peste un prag de bază agreat în contract |
+
+Costul platformei (theMarketer, Klaviyo sau MailerLite) și eventualele SMS-uri se plătesc direct furnizorului, din contul tău.
+
+#### Primele 90 de zile
+
+De la audit la primele fluxuri care lucrează singure, apoi la optimizarea lor pe cifre reale.
+
+##### Auditul
+
+Lista de contacte, istoricul trimiterilor, acordurile de marketing, platforma și datele pe care le ai.
+
+##### Implementarea
+
+Configurăm platforma și domeniul, scriem și testăm fluxurile de bază și le pornim după aprobarea ta.
+
+##### Campaniile
+
+2-4 campanii pe lună pe calendarul agreat, teste A/B pe subiecte și segmentare tot mai fină.
+
+##### Optimizarea
+
+Vedem unde se opresc oamenii în fluxuri, rescriem pașii slabi și adăugăm fluxuri noi, de exemplu pentru clienții fideli.
+
+#### Ce vezi în raportul lunar
+
+- Venitul adus de email, separat pe fluxuri și pe campanii
+
+- Comenzile sau cererile venite din email
+
+- Creșterea listei și dezabonările
+
+- Câte mesaje ajung în Inbox și câte în Spam
+
+- Ce testăm luna viitoare
+
+Platforma e a ta, cu acces complet: vezi aceleași cifre ca noi, oricând.
+
+##### Emailul și reclamele, împreună
+
+Reclamele aduc oameni noi pe site, iar emailul îi transformă în clienți care revin. Fluxurile de coș abandonat și de produs văzut recuperează o parte din vizitele plătite care altfel s-ar pierde.
+
+[Vezi Performance Ads](https://amplio.ro/servicii/performance-ads/)
+
+#### Greșelile care costă cel mai mult
+
+- **Liste cumpărate sau adrese fără acord:** încalcă GDPR și duc mesajele în Spam.
+
+- **Doar newslettere,** fără niciun flux automat.
+
+- **Același mesaj pentru toată lista,** indiferent ce a cumpărat fiecare.
+
+- **Domeniu neautentificat:** fără SPF, DKIM și DMARC, chiar și mesajele bune ajung în Spam.
+
+- **Rata de deschidere urmărită** în locul vânzărilor.
+
+#### Pentru cine lucrăm
+
+[Magazine onlineComenzi repetate de la clienții pe care îi ai deja, cu theMarketer sau Klaviyo legate de magazin.Vezi soluția →](https://amplio.ro/solutii/marketing-ecommerce/)
+[Servicii B2BLead-uri ținute calde până la decizie și oferte urmărite automat.Vezi soluția →](https://amplio.ro/solutii/marketing-b2b/)
+[Clinici și servicii localeReamintiri, cereri de recenzie și mesaje pentru clienții care nu au mai revenit.Vezi soluția →](https://amplio.ro/solutii/marketing-clinici/)
+
+#### Întrebări frecvente despre email marketing
+
+**Ce platformă de email îmi recomandați?**
+
+Pentru magazinele online din România pornim de obicei cu theMarketer, care are email, SMS și notificări push în aceeași platformă și se leagă direct de GoMag, MerchantPro, WooCommerce sau Shopify. Pentru magazinele care vând mult în afara țării folosim Klaviyo, iar pentru firmele de servicii și B2B, MailerLite.
+
+**Îmi trebuie o listă mare ca să merite?**
+
+Nu. Fluxurile automate pornesc din acțiunile oamenilor, de exemplu o comandă, un coș abandonat sau o cerere de ofertă, așa că lucrează și cu liste mici. Lista o creștem pe parcurs, doar cu acord explicit.
+
+**Pot folosi o listă de adrese cumpărată?**
+
+Nu. Adresele fără acord încalcă GDPR și strică reputația domeniului, iar apoi și mesajele către clienții reali ajung în Spam. Lucrăm doar cu contacte care și-au dat acordul.
+
+**Contul platformei de email e al meu?**
+
+Da. Platforma e pe firma ta și o plătești direct furnizorului, iar noi primim acces de administrator. Dacă pleci, lista, fluxurile și tot istoricul rămân la tine.
+
+**Cine scrie mesajele?**
+
+Le scriem noi, cu ajutorul AI, iar fiecare text e verificat de un om înainte să plece. Fluxurile le aprobi tu înainte să pornească.
+
+**În cât timp pornesc fluxurile?**
+
+Fluxurile de bază pornesc de regulă în 2-3 săptămâni de la start, după audit și după aprobarea ta. Campaniile lunare încep din a doua lună.
 
 ### Landing pages și optimizarea conversiei (CRO).
 

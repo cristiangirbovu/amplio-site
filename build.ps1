@@ -334,29 +334,508 @@ $pages = @()
 $pages += @{
   path='servicii/performance-ads'
   title='Agenție performance marketing: Google, Meta, TikTok | AMPLIO'
-  desc='Agenție de performance marketing: Google Ads, Facebook, Instagram și TikTok Ads administrate complet, cu raport pe venit. De la 450 EUR/lună.'
+  desc='Agenție de performance marketing: Google, Meta și TikTok Ads ca un singur buget, cu tracking verificat și raport pe venit. De la 450 €/lună.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Performance Ads','/servicii/performance-ads') ))
-  jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Administrare campanii publicitare (PPC)","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"450"}}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Administrare Performance Ads","serviceType":"Administrare campanii publicitare (PPC)","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"450"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cât buget de reclame îmi trebuie?","acceptedAnswer":{"@type":"Answer","text":"Nu există o sumă fixă. Bugetul trebuie să aducă destule clicuri ca să avem date de optimizat și depinde de cât costă un clic în domeniul tău. Îl calculăm împreună la audit, iar o primă estimare o ai în calculatorul de investiție."}},{"@type":"Question","name":"Pot începe cu un singur canal?","acceptedAnswer":{"@type":"Answer","text":"Da, și de obicei așa recomandăm. Pornim cu canalul unde te caută clienții, de regulă Google pentru servicii și Google Shopping sau Meta pentru magazine, și adăugăm alte canale după ce primul aduce rezultate."}},{"@type":"Question","name":"În cât timp apar rezultatele?","acceptedAnswer":{"@type":"Answer","text":"Primele cereri sau vânzări apar de obicei în primele săptămâni după lansare. Prima lună e și o lună de învățare: aflăm ce audiențe, mesaje și pagini funcționează."}},{"@type":"Question","name":"Cine face reclamele?","acceptedAnswer":{"@type":"Answer","text":"Noi, cu ajutorul AI, cu 3-5 variante pentru fiecare grup de reclame. Fiecare variantă e verificată de un om și aprobată de tine înainte să pornească."}},{"@type":"Question","name":"Conturile de reclame sunt ale mele?","acceptedAnswer":{"@type":"Answer","text":"Da. Conturile de Google, Meta și TikTok sunt pe firma ta, iar bugetul se plătește din ele, direct platformelor. Noi primim acces de administrator. Dacă pleci, tot istoricul rămâne la tine."}},{"@type":"Question","name":"Ce se întâmplă dacă reclamele nu aduc rezultate?","acceptedAnswer":{"@type":"Answer","text":"Lucrăm cu un pilot de 90 de zile, cu KPI scriși în contract și clauză de ieșire fără penalități. Dacă cifrele nu vin, nu rămâi blocat într-un contract."}}]}]}'
   extra=(Articole @( ,@('Cât costă Google Ads în România în 2026','/blog/cost-google-ads-romania/'); ,@('7 greșeli care îți ard bugetul de Google Ads','/blog/greseli-buget-google-ads/'); ,@('Google Ads vs Meta Ads: cu care începi?','/blog/google-ads-vs-meta-ads/') ))
-  body=(SvcBody 'Serviciu &middot; Performance Ads' 'Administrare Google Ads,' 'Meta și TikTok Ads.' '<strong>Reclame care aduc vânzări, nu doar afișări.</strong> Administrăm complet Google Ads, Meta și TikTok: strategie, creație asistată de AI, optimizare săptămânală și raport pe venit real, nu pe impresii. Conturile rămân mereu ale tale.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Performance Ads','/servicii/performance-ads') )) '<h2>Bugetul tău de ads, condus de cifre</h2><p class="lead" style="margin-bottom:18px">Cele mai multe firme cheltuie pe ads fără să știe ce canal aduce vânzări. Noi pornim de la tracking corect și baseline semnat, apoi optimizăm săptămânal pe metrica ce contează: costul pe client nou și venitul generat.</p><p>Creația o producem rapid cu AI, sub control uman, ca să testăm mai multe variante decât o agenție clasică. Iar dacă are sens pentru tine, intrăm pe modelul de parteneriat: fee fix redus + procent doar din creșterea vânzărilor.</p><p style="margin-top:18px">Pentru fiecare canal avem o pagină dedicată: <a href="/servicii/google-ads/" style="color:var(--sky)">Google Ads</a> și <a href="/servicii/facebook-ads/" style="color:var(--sky)">Facebook și Instagram Ads</a>.</p>' @('<b>Strategie de canal:</b> unde merită bugetul tău (Google, Meta, TikTok)','<b>Creație AI</b> cu control uman: mai multe variante, testate constant','<b>Optimizare săptămânală</b> pe cost/client și ROAS','<b>Tracking corect</b> verificat cu teste reale înainte de spend','<b>Raport lunar pe venit</b>, nu pe afișări','<b>Conturile rămân ale tale</b>, transparență 100%') 'De la <strong style="color:var(--off)">450 &euro;/lună</strong> sau % din ad spend' (Related 'Merge mână în mână cu' @( ,@('Landing Pages &amp; CRO','/servicii/landing-pages-cro'); ,@('SEO + GEO','/servicii/seo-geo'); ,@('Email &amp; Automatizări','/servicii/email-automatizari') )))
+  body=@"
+<section class="subhero">
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    $(CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Performance Ads','/servicii/performance-ads') ))
+    <span class="eyebrow">Serviciu &middot; Performance Ads</span>
+    <h1>Administrare Google Ads, <span class="g">Meta și TikTok Ads.</span></h1>
+    <p class="lead"><strong>Reclame care aduc vânzări, nu doar afișări.</strong> Alegem canalele după felul în care te caută clienții, punem tracking corect înainte de primul leu cheltuit și mutăm bugetul în fiecare săptămână acolo unde aduce clienți. Conturile rămân ale tale.</p>
+    <div class="hero-cta" style="margin-top:30px">
+      <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+      <a class="btn btn-ghost" href="/calculator-investitie/">Calculează investiția</a>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="cols2">
+      <div>
+        <h2>Bugetul tău de reclame, condus de cifre</h2>
+        <p class="lead" style="margin-bottom:18px">Cele mai multe firme cheltuie pe reclame fără să știe ce canal aduce clienți. Noi pornim de la măsurarea corectă și de la un nivel de pornire semnat, apoi optimizăm pe ce contează: costul unui client nou și venitul generat.</p>
+        <p style="margin-bottom:18px">Lucrăm toate canalele plătite ca un singur buget. Google te arată oamenilor care caută deja ce vinzi. Meta, adică Facebook și Instagram, creează cerere și îi aduce înapoi pe cei care au fost pe site. TikTok funcționează pentru magazinele online cu produse care se arată bine în video.</p>
+        <p>Pentru detalii pe fiecare canal: <a href="/servicii/google-ads/" style="color:var(--sky)">Google Ads</a> și <a href="/servicii/facebook-ads/" style="color:var(--sky)">Facebook și Instagram Ads</a>.</p>
+      </div>
+      <div class="panelcard">
+        <h3>Ce primești</h3>
+        <ul class="flist">
+          <li><b>Strategie de canal:</b> unde merită bugetul tău</li>
+          <li><b>Tracking verificat:</b> GA4, pixel și conversii trimise de pe server</li>
+          <li><b>KPI și nivel de pornire</b> scrise în contract</li>
+          <li><b>3-5 variante de reclamă</b> pentru fiecare grup, aprobate de tine</li>
+          <li><b>Optimizare săptămânală</b> pe costul unui client nou și pe ROAS</li>
+          <li><b>Raport lunar pe venit</b> și o discuție de 30 de minute</li>
+        </ul>
+        <p class="price" style="margin-top:22px;font-size:15px">Configurare <strong style="color:var(--off)">400-700 &euro;</strong> o dată, apoi de la <strong style="color:var(--off)">450 &euro;/lună</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bg-2">
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Ce canal, pentru ce afacere</h2>
+      <p class="lead">Nu pornim cu toate canalele deodată. Alegem canalul principal după felul în care te caută clienții, iar pe celelalte le testăm cu o parte din buget.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc wide"><h3>Magazine online</h3><p>Google Shopping și Performance Max pentru produsele căutate, Meta pentru oameni noi și pentru remarketing, TikTok când produsele se arată bine în video.</p></div>
+      <div class="svc wide"><h3>Servicii locale și clinici</h3><p>Google pe căutările din zona ta, plus Meta local pentru remarketing și pentru ofertele de sezon.</p></div>
+      <div class="svc wide"><h3>Servicii B2B</h3><p>Google pe frazele cu intenție clară și remarketing pe vizitatorii site-ului. Cererile le măsurăm după definiția de lead calificat din contract.</p></div>
+      <div class="svc wide"><h3>Lansări și produse noi</h3><p>Meta și TikTok ca să creezi cerere, apoi Google pe căutările care apar după campanie.</p></div>
+    </div>
+    <p style="margin-top:26px">La lansare, 20-30% din buget merge pe teste: audiențe, mesaje și formate noi. Ce aduce clienți primește bugetul, ce nu aduce oprim.</p>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Cât costă</h2>
+      <p class="lead">Plătești administrarea către noi și bugetul de reclame direct platformelor. Prețul exact îl primești după auditul gratuit.</p>
+    </div>
+    <table class="cmp">
+      <thead><tr><th>Ce plătești</th><th>Preț</th><th>Ce include</th></tr></thead>
+      <tbody>
+        <tr><td>Configurare, o singură dată</td><td>400-700 &euro;</td><td>Auditul conturilor existente, tracking-ul, structura contului și primele campanii</td></tr>
+        <tr><td>Administrare lunară</td><td>de la 450 &euro;/lună</td><td>Canalele din plan, optimizare săptămânală, creație și raport lunar</td></tr>
+        <tr><td>Bugete de reclame de peste 5.000 &euro;/lună</td><td>12-15% din bugetul de reclame</td><td>Același serviciu, plătit procentual, cu minimum 450 &euro; pe lună</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:22px">Bugetul de reclame nu e inclus: îl plătești direct către Google, Meta sau TikTok, din conturile tale. Dacă are sens pentru tine, lucrăm și pe modelul de parteneriat: taxă fixă redusă plus un procent doar din creșterea vânzărilor peste nivelul de pornire. Costurile pe clic pe domenii sunt în articolul <a href="/blog/cost-google-ads-romania/" style="color:var(--sky)">Cât costă Google Ads în România</a>.</p>
+  </div>
+</section>
+<section class="bg-2">
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Primele 30 de zile</h2>
+      <p class="lead">Cum ajungem de la conturile pe care le ai azi la campanii care învață din cifre.</p>
+    </div>
+    <div class="tl">
+      <div class="tstep"><span class="n">01</span><div class="day">ZILELE 1-7</div><h3>Fundația</h3><p>Acces la conturi, auditul contului existent, tracking corect (GA4, pixel, conversii de pe server), KPI și nivel de pornire semnate.</p></div>
+      <div class="tstep"><span class="n">02</span><div class="day">ZILELE 7-14</div><h3>Lansarea</h3><p>Structura contului pe obiective, audiențe și cuvinte cheie, 3-5 variante de reclamă pe fiecare grup, aprobate de tine, apoi pornirea cu 20-30% buget de test.</p></div>
+      <div class="tstep"><span class="n">03</span><div class="day">SĂPTĂMÂNAL</div><h3>Optimizarea</h3><p>Mutăm bugetul spre ce aduce clienți, adăugăm reclame noi, verificăm căutările și excludem ce nu are legătură cu tine.</p></div>
+      <div class="tstep"><span class="n">04</span><div class="day">LUNAR</div><h3>Raportul</h3><p>Panou de control live, o pagină scrisă cu ce a mers, ce nu și ce facem luna viitoare, plus o discuție de 30 de minute.</p></div>
+    </div>
+    <p style="margin-top:26px">Îți răspundem în cel mult o zi lucrătoare, iar o campanie nouă e live în cel mult 5 zile lucrătoare de la brief.</p>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="cols2">
+      <div>
+        <h2>Ce vezi în raportul lunar</h2>
+        <ul class="flist" style="margin-top:18px">
+          <li>Costul unui client nou și venitul atribuit fiecărui canal</li>
+          <li>ROAS pentru magazinele online, costul pe cerere pentru servicii</li>
+          <li>Ce campanii, audiențe și reclame au primit bugetul</li>
+          <li>Ce am oprit și de ce</li>
+          <li>Planul pentru luna următoare</li>
+        </ul>
+        <p style="margin-top:18px">Conturile sunt ale tale, cu acces complet: vezi aceleași cifre ca noi, oricând.</p>
+      </div>
+      <div class="panelcard" style="align-self:start">
+        <h3>Reclamele merg mai bine cu o pagină bună</h3>
+        <p style="margin-top:10px">Un anunț bun care trimite pe o pagină slabă înseamnă bani pierduți. De aceea lucrăm reclamele împreună cu pagina de destinație și cu emailul, care îi aduce înapoi pe cei care nu au cumpărat din prima.</p>
+        <a class="btn btn-ghost" href="/servicii/landing-pages-cro/" style="margin-top:20px">Vezi Landing &amp; CRO</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bg-2">
+  <div class="wrap rev">
+    <div class="cols2">
+      <div>
+        <h2>Greșelile care ard bugetul</h2>
+        <ul class="flist" style="margin-top:18px">
+          <li><b>Fără tracking corect</b> nu știi ce canal aduce clienți.</li>
+          <li><b>Bugetul împărțit egal</b> pe toate canalele, în loc să urmeze rezultatele.</li>
+          <li><b>Aceleași reclame luni la rând,</b> până obosesc publicul.</li>
+          <li><b>Raport pe afișări și clicuri,</b> nu pe clienți și venit.</li>
+          <li><b>Conturi deschise pe numele agenției:</b> când pleci, rămâi fără istoric.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Pentru cine lucrăm</h2>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px">
+          <a class="svc" href="/solutii/marketing-ecommerce/" style="padding:20px 22px"><h3>Magazine online</h3><p>Venit și ROAS, cu Google Shopping, Meta și TikTok.</p><span class="more">Vezi soluția &rarr;</span></a>
+          <a class="svc" href="/solutii/marketing-clinici/" style="padding:20px 22px"><h3>Clinici și servicii locale</h3><p>Programări și cereri din zona ta.</p><span class="more">Vezi soluția &rarr;</span></a>
+          <a class="svc" href="/solutii/marketing-b2b/" style="padding:20px 22px"><h3>Servicii B2B</h3><p>Lead-uri calificate, după o definiție scrisă în contract.</p><span class="more">Vezi soluția &rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Întrebări frecvente despre Performance Ads</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Cât buget de reclame îmi trebuie?</summary><p>Nu există o sumă fixă. Bugetul trebuie să aducă destule clicuri ca să avem date de optimizat și depinde de cât costă un clic în domeniul tău. Îl calculăm împreună la audit, iar o primă estimare o ai în calculatorul de investiție.</p></details>
+      <details><summary>Pot începe cu un singur canal?</summary><p>Da, și de obicei așa recomandăm. Pornim cu canalul unde te caută clienții, de regulă Google pentru servicii și Google Shopping sau Meta pentru magazine, și adăugăm alte canale după ce primul aduce rezultate.</p></details>
+      <details><summary>În cât timp apar rezultatele?</summary><p>Primele cereri sau vânzări apar de obicei în primele săptămâni după lansare. Prima lună e și o lună de învățare: aflăm ce audiențe, mesaje și pagini funcționează.</p></details>
+      <details><summary>Cine face reclamele?</summary><p>Noi, cu ajutorul AI, cu 3-5 variante pentru fiecare grup de reclame. Fiecare variantă e verificată de un om și aprobată de tine înainte să pornească.</p></details>
+      <details><summary>Conturile de reclame sunt ale mele?</summary><p>Da. Conturile de Google, Meta și TikTok sunt pe firma ta, iar bugetul se plătește din ele, direct platformelor. Noi primim acces de administrator. Dacă pleci, tot istoricul rămâne la tine.</p></details>
+      <details><summary>Ce se întâmplă dacă reclamele nu aduc rezultate?</summary><p>Lucrăm cu un pilot de 90 de zile, cu KPI scriși în contract și clauză de ieșire fără penalități. Dacă cifrele nu vin, nu rămâi blocat într-un contract.</p></details>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="ctaband">
+      <h2>Vrei să vezi unde merită bugetul tău de reclame?</h2>
+      <p class="lead center">Cere auditul gratuit. În 24 de ore primești o analiză personalizată și primii 3 pași, fără obligații.</p>
+      <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+"@
 }
 $pages += @{
   path='servicii/social-media'
   title='Agenție social media: administrare pagini | AMPLIO'
-  desc='Administrare social media pentru firme din România: calendar lunar, creație AI cu control uman, programare și raport. Pachete de la 350 EUR/lună.'
+  desc='Administrare social media pentru firme: pachete S, M și L, cu 8, 16 sau 24 de postări pe lună, aprobare într-un link și raport. De la 350 €/lună.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Social Media','/servicii/social-media') ))
-  jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Administrare social media","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"350"}}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Administrare social media","serviceType":"Administrare social media","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"350"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Pe ce rețele postați?","acceptedAnswer":{"@type":"Answer","text":"Le alegem după publicul tău. De obicei Facebook și Instagram, plus LinkedIn pentru firmele B2B. Pe fiecare rețea adaptăm formatul și tonul."}},{"@type":"Question","name":"Trebuie să aprob fiecare postare?","acceptedAnswer":{"@type":"Answer","text":"Aprobi tot calendarul lunii dintr-un singur link, o dată pe lună. Poți cere modificări înainte de programare, apoi nu mai trebuie să faci nimic."}},{"@type":"Question","name":"Cine face fotografiile și video-urile?","acceptedAnswer":{"@type":"Answer","text":"Vizualurile le facem noi, pe șabloanele brandului tău. Video-urile mai complexe le producem prin partenerii noștri, în pachetele M și L. Dacă ai fotografii proprii, le folosim cu prioritate."}},{"@type":"Question","name":"Răspundeți și la comentarii și mesaje?","acceptedAnswer":{"@type":"Answer","text":"În pachetul L, da, în tonul agreat la început. În pachetele S și M le urmărim și îți semnalăm ce cere un răspuns din partea ta."}},{"@type":"Question","name":"În cât timp se vede efectul?","acceptedAnswer":{"@type":"Answer","text":"Ritmul constant se vede din prima lună. Creșterea comunității și cererile din social media se construiesc în timp, de regulă în câteva luni de publicare constantă."}},{"@type":"Question","name":"Faceți și reclame pe Facebook și Instagram?","acceptedAnswer":{"@type":"Answer","text":"Da, prin serviciul de Facebook și Instagram Ads, cu buget separat. Social media construiește prezența, iar reclamele aduc oameni noi."}}]}]}'
   extra=(Articole @( ,@('Google Ads vs Meta Ads: cu care începi?','/blog/google-ads-vs-meta-ads/'); ,@('Cum alegi o agenție de marketing (și ce întrebări să pui)','/blog/cum-alegi-agentie-marketing/'); ,@('De ce conturile de ads trebuie să rămână ale tale','/blog/conturi-ads-proprietate/') ))
-  body=(SvcBody 'Serviciu &middot; Social Media' 'Administrare social media' 'pentru firme.' '<strong>Vocea brandului tău, fără efortul tău.</strong> Calendar lunar, creație cu AI sub control uman, programare și raport. Păstrăm tonul brandului tău și publicăm constant, ca să nu mai depindă totul de inspirația de moment.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Social Media','/servicii/social-media') )) '<h2>Constanța bate inspirația</h2><p class="lead" style="margin-bottom:18px">Problema social media nu e ideea de azi, e ritmul de fiecare săptămână. Noi construim un calendar editorial, producem conținutul și îl programăm, ca prezența ta să fie constantă și coerentă.</p><p>Creația o accelerăm cu AI, dar fiecare postare trece prin control uman și prin vocea brandului tău. Tu aprobi, noi publicăm și măsurăm.</p>' @('<b>Calendar editorial lunar</b> aliniat cu obiectivele tale','<b>Creație AI + control uman:</b> text și vizual','<b>Programare</b> pe toate platformele relevante','<b>Raport lunar</b> pe creștere și engagement','<b>Micro-influenceri &amp; UGC</b> prin rețeaua de parteneri (opțional)') 'Pachete <strong style="color:var(--off)">350 / 600 / 950 &euro;</strong>/lună' (Related 'Merge mână în mână cu' @( ,@('Performance Ads','/servicii/performance-ads'); ,@('SEO + GEO','/servicii/seo-geo') )))
+  body=@"
+<section class="subhero">
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    $(CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Social Media','/servicii/social-media') ))
+    <span class="eyebrow">Serviciu &middot; Social Media</span>
+    <h1>Administrare social media <span class="g">pentru firme.</span></h1>
+    <p class="lead"><strong>Vocea brandului tău, fără efortul tău.</strong> Strategie pe trei piloni, calendar lunar, texte și vizualuri pe brandul tău, aprobare într-un singur link, programare și raport. Alegi pachetul S, M sau L, după ritmul de care ai nevoie.</p>
+    <div class="hero-cta" style="margin-top:30px">
+      <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+      <a class="btn btn-ghost" href="/calculator-investitie/">Calculează investiția</a>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="cols2">
+      <div>
+        <h2>Constanța bate inspirația</h2>
+        <p class="lead" style="margin-bottom:18px">Problema social media nu e ideea de azi, e ritmul de fiecare săptămână. Noi construim calendarul, producem conținutul și îl programăm, ca prezența ta să fie constantă și coerentă.</p>
+        <p style="margin-bottom:18px">Creația o accelerăm cu AI, dar fiecare postare trece prin control uman și prin vocea brandului tău. Aprobi tot calendarul lunii dintr-un singur link, nu postare cu postare.</p>
+        <p>Rețelele le alegem după public: de obicei Facebook și Instagram, plus LinkedIn pentru firmele B2B.</p>
+      </div>
+      <div class="panelcard">
+        <h3>Ce primești</h3>
+        <ul class="flist">
+          <li><b>Strategie pe 3 piloni de conținut,</b> legată de obiectivele tale</li>
+          <li><b>Calendar pe 30 de zile,</b> în fiecare lună</li>
+          <li><b>Texte și vizualuri</b> pe identitatea brandului tău</li>
+          <li><b>Aprobare într-un singur link,</b> o dată pe lună</li>
+          <li><b>Programare automată</b> pe rețelele alese</li>
+          <li><b>Raport lunar</b> cu interpretare și recomandarea lunii</li>
+        </ul>
+        <p class="price" style="margin-top:22px;font-size:15px">Configurare <strong style="color:var(--off)">250 &euro;</strong> o dată, apoi pachete <strong style="color:var(--off)">350 / 600 / 950 &euro;</strong>/lună</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bg-2">
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Pachetele</h2>
+      <p class="lead">Toate pachetele includ strategia, calendarul, textele, vizualurile, programarea și raportul. Diferă ritmul și cât preluăm din administrarea zilnică.</p>
+    </div>
+    <table class="cmp">
+      <thead><tr><th>Pachet</th><th>S</th><th>M</th><th>L</th></tr></thead>
+      <tbody>
+        <tr><td>Preț lunar</td><td>350 &euro;</td><td>600 &euro;</td><td>950 &euro;</td></tr>
+        <tr><td>Postări pe lună</td><td>8</td><td>16</td><td>24</td></tr>
+        <tr><td>Reels (video scurt)</td><td>nu</td><td>da</td><td>da</td></tr>
+        <tr><td>Comentarii și mesaje</td><td>le urmărim și îți semnalăm ce cere răspuns</td><td>le urmărim și îți semnalăm ce cere răspuns</td><td>răspundem noi, în tonul agreat</td></tr>
+        <tr><td>Raport lunar</td><td>da</td><td>da</td><td>da</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:22px">Configurarea, o singură dată, costă 250 &euro; și cuprinde strategia și identitatea vizuală a feedului. Video-urile mai complexe le producem prin partenerii noștri și sunt incluse în pachetele M și L. Promovarea plătită a postărilor se face separat, prin <a href="/servicii/performance-ads/" style="color:var(--sky)">Performance Ads</a>.</p>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Cum lucrăm</h2>
+      <p class="lead">O lună de social media înseamnă o singură aprobare din partea ta. Restul e ritmul nostru.</p>
+    </div>
+    <div class="tl">
+      <div class="tstep"><span class="n">01</span><div class="day">ZILELE 1-10</div><h3>Configurarea</h3><p>O discuție de o oră despre vocea brandului, subiectele de evitat și obiective, analiza concurenților, 3 piloni de conținut și șabloane vizuale pe brandul tău.</p></div>
+      <div class="tstep"><span class="n">02</span><div class="day">ÎN FIECARE LUNĂ</div><h3>Producția</h3><p>Calendarul pe 30 de zile, textele editate de om și vizualurile din șabloane, apoi aprobarea ta într-un singur link și programarea automată.</p></div>
+      <div class="tstep"><span class="n">03</span><div class="day">ÎN FIECARE ZI</div><h3>Administrarea</h3><p>Urmărim comentariile și mesajele, distribuim ce merită și vedem ce se spune despre brandul tău.</p></div>
+      <div class="tstep"><span class="n">04</span><div class="day">LA FINAL DE LUNĂ</div><h3>Raportul</h3><p>Raport automat, cu interpretarea noastră și recomandarea pentru luna următoare.</p></div>
+    </div>
+  </div>
+</section>
+<section class="bg-2">
+  <div class="wrap rev">
+    <div class="cols2">
+      <div>
+        <h2>Ce vezi în raportul lunar</h2>
+        <ul class="flist" style="margin-top:18px">
+          <li>Creșterea comunității și postările care au mers cel mai bine</li>
+          <li>Interacțiuni, distribuiri și salvări, nu doar aprecieri</li>
+          <li>Mesajele și cererile venite din social media</li>
+          <li>Ce schimbăm luna viitoare</li>
+        </ul>
+        <p style="margin-top:18px">Paginile rămân ale tale; noi lucrăm cu acces de administrator.</p>
+      </div>
+      <div class="panelcard" style="align-self:start">
+        <h3>Organicul construiește încredere, reclamele aduc volum</h3>
+        <p style="margin-top:10px">Postările constante îți construiesc credibilitatea, iar reclamele le duc la oameni noi. Când o postare merge bine organic, o putem promova prin Performance Ads, cu buget separat.</p>
+        <a class="btn btn-ghost" href="/servicii/facebook-ads/" style="margin-top:20px">Vezi Facebook și Instagram Ads</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="cols2">
+      <div>
+        <h2>Greșelile pe care le vedem cel mai des</h2>
+        <ul class="flist" style="margin-top:18px">
+          <li><b>Postezi când ai timp,</b> deci rar și fără plan.</li>
+          <li><b>Același text pe toate rețelele,</b> fără adaptare la fiecare.</li>
+          <li><b>Fără o voce clară a brandului,</b> fiecare postare sună altfel.</li>
+          <li><b>Comentarii și mesaje fără răspuns</b> zile întregi.</li>
+          <li><b>Aprecieri urmărite</b> în locul cererilor.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Pentru cine lucrăm</h2>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px">
+          <a class="svc" href="/solutii/marketing-horeca/" style="padding:20px 22px"><h3>Restaurante și HoReCa</h3><p>Postări care deschid pofta și aduc rezervări directe.</p><span class="more">Vezi soluția &rarr;</span></a>
+          <a class="svc" href="/solutii/marketing-clinici/" style="padding:20px 22px"><h3>Clinici</h3><p>Informații utile și încredere, la standardul comunicării medicale.</p><span class="more">Vezi soluția &rarr;</span></a>
+          <a class="svc" href="/solutii/marketing-b2b/" style="padding:20px 22px"><h3>Servicii B2B</h3><p>LinkedIn cu expertiză reală, nu cu postări de umplutură.</p><span class="more">Vezi soluția &rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Întrebări frecvente despre social media</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Pe ce rețele postați?</summary><p>Le alegem după publicul tău. De obicei Facebook și Instagram, plus LinkedIn pentru firmele B2B. Pe fiecare rețea adaptăm formatul și tonul.</p></details>
+      <details><summary>Trebuie să aprob fiecare postare?</summary><p>Aprobi tot calendarul lunii dintr-un singur link, o dată pe lună. Poți cere modificări înainte de programare, apoi nu mai trebuie să faci nimic.</p></details>
+      <details><summary>Cine face fotografiile și video-urile?</summary><p>Vizualurile le facem noi, pe șabloanele brandului tău. Video-urile mai complexe le producem prin partenerii noștri, în pachetele M și L. Dacă ai fotografii proprii, le folosim cu prioritate.</p></details>
+      <details><summary>Răspundeți și la comentarii și mesaje?</summary><p>În pachetul L, da, în tonul agreat la început. În pachetele S și M le urmărim și îți semnalăm ce cere un răspuns din partea ta.</p></details>
+      <details><summary>În cât timp se vede efectul?</summary><p>Ritmul constant se vede din prima lună. Creșterea comunității și cererile din social media se construiesc în timp, de regulă în câteva luni de publicare constantă.</p></details>
+      <details><summary>Faceți și reclame pe Facebook și Instagram?</summary><p>Da, prin serviciul de Facebook și Instagram Ads, cu buget separat. Social media construiește prezența, iar reclamele aduc oameni noi.</p></details>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="ctaband">
+      <h2>Vrei să vezi cum ar arăta o lună de social media pentru tine?</h2>
+      <p class="lead center">Cere auditul gratuit. În 24 de ore primești o analiză personalizată și primii 3 pași, fără obligații.</p>
+      <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+"@
 }
 $pages += @{
   path='servicii/email-automatizari'
   title='Agenție email marketing și automatizări | AMPLIO'
-  desc='Email marketing și automatizări pentru firme din România: fluxuri de bun venit, coș abandonat și reactivare, legate de CRM. De la 250 EUR/lună.'
+  desc='Email marketing și automatizări pentru magazine online și firme B2B: fluxuri complete pe theMarketer, Klaviyo sau MailerLite. De la 250 €/lună.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Email & Automatizări','/servicii/email-automatizari') ))
-  jsonld='{"@context":"https://schema.org","@type":"Service","serviceType":"Email marketing si automatizari","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"Romania"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"250"}}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Email marketing și automatizări","serviceType":"Email marketing si automatizari","provider":{"@type":"ProfessionalService","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","telephone":"+40728151558"},"areaServed":{"@type":"Country","name":"România"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"250"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ce platformă de email îmi recomandați?","acceptedAnswer":{"@type":"Answer","text":"Pentru magazinele online din România pornim de obicei cu theMarketer, care are email, SMS și notificări push în aceeași platformă și se leagă direct de GoMag, MerchantPro, WooCommerce sau Shopify. Pentru magazinele care vând mult în afara țării folosim Klaviyo, iar pentru firmele de servicii și B2B, MailerLite."}},{"@type":"Question","name":"Îmi trebuie o listă mare ca să merite?","acceptedAnswer":{"@type":"Answer","text":"Nu. Fluxurile automate pornesc din acțiunile oamenilor, de exemplu o comandă, un coș abandonat sau o cerere de ofertă, așa că lucrează și cu liste mici. Lista o creștem pe parcurs, doar cu acord explicit."}},{"@type":"Question","name":"Pot folosi o listă de adrese cumpărată?","acceptedAnswer":{"@type":"Answer","text":"Nu. Adresele fără acord încalcă GDPR și strică reputația domeniului, iar apoi și mesajele către clienții reali ajung în Spam. Lucrăm doar cu contacte care și-au dat acordul."}},{"@type":"Question","name":"Contul platformei de email e al meu?","acceptedAnswer":{"@type":"Answer","text":"Da. Platforma e pe firma ta și o plătești direct furnizorului, iar noi primim acces de administrator. Dacă pleci, lista, fluxurile și tot istoricul rămân la tine."}},{"@type":"Question","name":"Cine scrie mesajele?","acceptedAnswer":{"@type":"Answer","text":"Le scriem noi, cu ajutorul AI, iar fiecare text e verificat de un om înainte să plece. Fluxurile le aprobi tu înainte să pornească."}},{"@type":"Question","name":"În cât timp pornesc fluxurile?","acceptedAnswer":{"@type":"Answer","text":"Fluxurile de bază pornesc de regulă în 2-3 săptămâni de la start, după audit și după aprobarea ta. Campaniile lunare încep din a doua lună."}}]}]}'
   extra=(Articole @( ,@('Marketing pentru magazin online: ghid de creștere a vânzărilor','/blog/marketing-magazin-online/'); ,@('Cum construiești un pipeline B2B previzibil','/blog/marketing-b2b-pipeline/') ))
-  body=(SvcBody 'Serviciu &middot; Email &amp; Automatizări' 'Email marketing' 'și automatizări.' '<strong>Fluxuri care vând în timp ce dormi.</strong> Bun venit, coș abandonat, reactivare: secvențe automate care aduc venit fără efort recurent. În e-commerce, emailul generează tipic 20-30% din venitul total.' (CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Email & Automatizări','/servicii/email-automatizari') )) '<h2>Cel mai profitabil canal, neglijat de toată lumea</h2><p class="lead" style="margin-bottom:18px">Emailul nu are cost pe click și vorbește cu oameni care deja te cunosc. Bine făcut, e cel mai mare ROI din marketing. Noi construim fluxurile o dată și lucrează luni întregi.</p><p>Conectăm tot la CRM-ul tău, segmentăm și testăm subiecte și oferte, cu raport pe venitul generat de email.</p>' @('<b>Fluxuri automate:</b> bun venit, coș abandonat, reactivare, post-cumpărare','<b>Segmentare</b> și personalizare pe comportament','<b>Integrare CRM</b> (HubSpot, Klaviyo, Mailchimp etc.)','<b>Teste A/B</b> pe subiecte și oferte','<b>Raport pe venitul email</b>, nu pe rata de deschidere') 'De la <strong style="color:var(--off)">250 &euro;/lună</strong> sau % din venitul email' (Related 'Merge mână în mână cu' @( ,@('Performance Ads','/servicii/performance-ads'); ,@('Landing Pages &amp; CRO','/servicii/landing-pages-cro') )))
+  body=@"
+<section class="subhero">
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    $(CrumbsHtml @( ,@('Acasă','/'); ,@('Servicii','/servicii'); ,@('Email & Automatizări','/servicii/email-automatizari') ))
+    <span class="eyebrow">Serviciu &middot; Email &amp; Automatizări</span>
+    <h1>Email marketing <span class="g">și automatizări.</span></h1>
+    <p class="lead"><strong>Fluxuri care vând în timp ce dormi.</strong> Construim o singură dată mesajele automate de bun venit, coș abandonat, după comandă și reactivare, apoi trimitem campaniile lunare. Lucrăm pe contul tău de theMarketer, Klaviyo sau MailerLite și raportăm venitul adus de email, nu doar deschiderile.</p>
+    <div class="hero-cta" style="margin-top:30px">
+      <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+      <a class="btn btn-ghost" href="/calculator-investitie/">Calculează investiția</a>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="cols2">
+      <div>
+        <h2>Cel mai ieftin client e cel care te cunoaște deja</h2>
+        <p class="lead" style="margin-bottom:18px">Emailul vorbește cu oameni care au cumpărat deja, au cerut o ofertă sau s-au abonat. Nu plătești pe clic, iar un flux construit bine lucrează luni la rând fără să-l mai atingi.</p>
+        <p style="margin-bottom:18px">Cele mai multe firme trimit un newsletter din când în când și se opresc acolo. Rezultatele vin însă din mesajele automate, trimise exact când contează: la o oră după un coș abandonat, a doua zi după prima comandă, după trei luni fără nicio cumpărare.</p>
+        <p>Merge pentru magazinele online, unde aduce comenzi repetate, și pentru firmele de servicii și B2B, unde ține lead-urile calde până sunt gata să cumpere.</p>
+      </div>
+      <div class="panelcard">
+        <h3>Ce primești</h3>
+        <ul class="flist">
+          <li><b>Fluxuri automate complete</b>, alese după tipul afacerii tale</li>
+          <li><b>2-4 campanii pe lună</b>, pe un calendar agreat</li>
+          <li><b>Segmentare după comportament:</b> ce a cumpărat, ce a văzut, când</li>
+          <li><b>Teste A/B</b> pe subiecte și oferte</li>
+          <li><b>Domeniu autentificat</b> (SPF, DKIM, DMARC), ca mesajele să nu ajungă în Spam</li>
+          <li><b>Raport lunar pe venitul adus de email</b>, nu pe rata de deschidere</li>
+        </ul>
+        <p class="price" style="margin-top:22px;font-size:15px">Implementare <strong style="color:var(--off)">500-1.500 &euro;</strong> o dată, apoi de la <strong style="color:var(--off)">250 &euro;/lună</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bg-2">
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Fluxurile pe care le construim</h2>
+      <p class="lead">Pornim cu fluxurile de bază și le extindem după ce vedem cifrele. Setul diferă pentru magazinele online și pentru firmele de servicii.</p>
+    </div>
+    <div class="cols2">
+      <div>
+        <h3 style="font-family:var(--display);font-weight:700;color:var(--off);font-size:22px">Pentru magazine online</h3>
+        <ul class="flist" style="margin-top:16px">
+          <li><b>Bun venit:</b> 2-3 emailuri pentru abonații noi: cine ești, ce te diferențiază și primul motiv să cumpere.</li>
+          <li><b>Coș abandonat:</b> un email la o oră și încă unul a doua zi, cu produsele rămase în coș; pe theMarketer, și un SMS.</li>
+          <li><b>Produs văzut, necumpărat:</b> un mesaj pentru cine a revenit la un produs și a plecat fără să cumpere.</li>
+          <li><b>După comandă:</b> mulțumire, detalii de livrare, cererea de recenzie, apoi produse care se potrivesc.</li>
+          <li><b>Reaprovizionare:</b> o reamintire când un produs consumabil se termină de obicei.</li>
+          <li><b>Reactivare și clienți fideli:</b> un motiv să revină pentru cine nu a mai cumpărat de mult și beneficii pentru cei mai buni clienți.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-family:var(--display);font-weight:700;color:var(--off);font-size:22px">Pentru servicii și B2B</h3>
+        <ul class="flist" style="margin-top:16px">
+          <li><b>Răspuns la cerere:</b> confirmare imediată, apoi o revenire dacă oferta rămâne fără răspuns.</li>
+          <li><b>Lead-uri care nu sunt încă gata:</b> o serie de emailuri utile, care răspund la întrebările dinaintea deciziei.</li>
+          <li><b>Client nou:</b> pașii primelor săptămâni de colaborare, explicați din timp.</li>
+          <li><b>Contacte vechi:</b> reactivarea lead-urilor care nu au mai răspuns de câteva luni.</li>
+          <li><b>Newsletter lunar:</b> conținut util care te ține în minte, fără presiune de vânzare.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Pe ce platforme lucrăm</h2>
+      <p class="lead">Contul platformei e pe firma ta și îl plătești direct furnizorului; noi primim acces de administrator. Alegem platforma după afacere.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc wide"><h3>theMarketer</h3><p>Prima alegere pentru magazinele online din România: email, SMS și notificări push în aceeași platformă, legătură directă cu GoMag, MerchantPro, WooCommerce sau Shopify, plus recomandări de produse, recenzii și program de fidelizare.</p></div>
+      <div class="svc wide"><h3>Klaviyo</h3><p>Pentru magazinele care vând mult și în afara României sau sunt construite pe Shopify, acolo unde contează segmentarea avansată.</p></div>
+      <div class="svc wide"><h3>MailerLite</h3><p>Pentru firmele de servicii și B2B: newslettere și automatizări clare, la un cost lunar mic.</p></div>
+      <div class="svc wide"><h3>CRM-ul tău</h3><p>Legăm emailul de HubSpot, Pipedrive sau CRM-ul pe care îl folosești deja, ca fiecare contact să primească mesajul potrivit etapei în care e.</p></div>
+    </div>
+  </div>
+</section>
+<section class="bg-2">
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Cât costă</h2>
+      <p class="lead">Prețul depinde de câte fluxuri construim și de câte campanii trimitem pe lună. Îl primești exact după auditul gratuit.</p>
+    </div>
+    <table class="cmp">
+      <thead><tr><th>Ce plătești</th><th>Preț</th><th>Ce include</th></tr></thead>
+      <tbody>
+        <tr><td>Implementare, o singură dată</td><td>500-1.500 &euro;</td><td>Auditul listei, curățenia după regulile GDPR, configurarea platformei și a domeniului, fluxurile de bază scrise și testate</td></tr>
+        <tr><td>Administrare lunară</td><td>250-500 &euro;/lună</td><td>2-4 campanii pe lună, segmentare, teste A/B, optimizarea fluxurilor, raport pe venit</td></tr>
+        <tr><td>Variantă legată de rezultat, opțională</td><td>10-15% din venitul adus de email</td><td>Se aplică doar peste un prag de bază agreat în contract</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:22px">Costul platformei (theMarketer, Klaviyo sau MailerLite) și eventualele SMS-uri se plătesc direct furnizorului, din contul tău.</p>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Primele 90 de zile</h2>
+      <p class="lead">De la audit la primele fluxuri care lucrează singure, apoi la optimizarea lor pe cifre reale.</p>
+    </div>
+    <div class="tl">
+      <div class="tstep"><span class="n">01</span><div class="day">SĂPTĂMÂNA 1</div><h3>Auditul</h3><p>Lista de contacte, istoricul trimiterilor, acordurile de marketing, platforma și datele pe care le ai.</p></div>
+      <div class="tstep"><span class="n">02</span><div class="day">SĂPTĂMÂNILE 2-3</div><h3>Implementarea</h3><p>Configurăm platforma și domeniul, scriem și testăm fluxurile de bază și le pornim după aprobarea ta.</p></div>
+      <div class="tstep"><span class="n">03</span><div class="day">LUNILE 2-3</div><h3>Campaniile</h3><p>2-4 campanii pe lună pe calendarul agreat, teste A/B pe subiecte și segmentare tot mai fină.</p></div>
+      <div class="tstep"><span class="n">04</span><div class="day">LA 90 DE ZILE</div><h3>Optimizarea</h3><p>Vedem unde se opresc oamenii în fluxuri, rescriem pașii slabi și adăugăm fluxuri noi, de exemplu pentru clienții fideli.</p></div>
+    </div>
+  </div>
+</section>
+<section class="bg-2">
+  <div class="wrap rev">
+    <div class="cols2">
+      <div>
+        <h2>Ce vezi în raportul lunar</h2>
+        <ul class="flist" style="margin-top:18px">
+          <li>Venitul adus de email, separat pe fluxuri și pe campanii</li>
+          <li>Comenzile sau cererile venite din email</li>
+          <li>Creșterea listei și dezabonările</li>
+          <li>Câte mesaje ajung în Inbox și câte în Spam</li>
+          <li>Ce testăm luna viitoare</li>
+        </ul>
+        <p style="margin-top:18px">Platforma e a ta, cu acces complet: vezi aceleași cifre ca noi, oricând.</p>
+      </div>
+      <div class="panelcard" style="align-self:start">
+        <h3>Emailul și reclamele, împreună</h3>
+        <p style="margin-top:10px">Reclamele aduc oameni noi pe site, iar emailul îi transformă în clienți care revin. Fluxurile de coș abandonat și de produs văzut recuperează o parte din vizitele plătite care altfel s-ar pierde.</p>
+        <a class="btn btn-ghost" href="/servicii/performance-ads/" style="margin-top:20px">Vezi Performance Ads</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="cols2">
+      <div>
+        <h2>Greșelile care costă cel mai mult</h2>
+        <ul class="flist" style="margin-top:18px">
+          <li><b>Liste cumpărate sau adrese fără acord:</b> încalcă GDPR și duc mesajele în Spam.</li>
+          <li><b>Doar newslettere,</b> fără niciun flux automat.</li>
+          <li><b>Același mesaj pentru toată lista,</b> indiferent ce a cumpărat fiecare.</li>
+          <li><b>Domeniu neautentificat:</b> fără SPF, DKIM și DMARC, chiar și mesajele bune ajung în Spam.</li>
+          <li><b>Rata de deschidere urmărită</b> în locul vânzărilor.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Pentru cine lucrăm</h2>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px">
+          <a class="svc" href="/solutii/marketing-ecommerce/" style="padding:20px 22px"><h3>Magazine online</h3><p>Comenzi repetate de la clienții pe care îi ai deja, cu theMarketer sau Klaviyo legate de magazin.</p><span class="more">Vezi soluția &rarr;</span></a>
+          <a class="svc" href="/solutii/marketing-b2b/" style="padding:20px 22px"><h3>Servicii B2B</h3><p>Lead-uri ținute calde până la decizie și oferte urmărite automat.</p><span class="more">Vezi soluția &rarr;</span></a>
+          <a class="svc" href="/solutii/marketing-clinici/" style="padding:20px 22px"><h3>Clinici și servicii locale</h3><p>Reamintiri, cereri de recenzie și mesaje pentru clienții care nu au mai revenit.</p><span class="more">Vezi soluția &rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="sec-head">
+      <h2>Întrebări frecvente despre email marketing</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Ce platformă de email îmi recomandați?</summary><p>Pentru magazinele online din România pornim de obicei cu theMarketer, care are email, SMS și notificări push în aceeași platformă și se leagă direct de GoMag, MerchantPro, WooCommerce sau Shopify. Pentru magazinele care vând mult în afara țării folosim Klaviyo, iar pentru firmele de servicii și B2B, MailerLite.</p></details>
+      <details><summary>Îmi trebuie o listă mare ca să merite?</summary><p>Nu. Fluxurile automate pornesc din acțiunile oamenilor, de exemplu o comandă, un coș abandonat sau o cerere de ofertă, așa că lucrează și cu liste mici. Lista o creștem pe parcurs, doar cu acord explicit.</p></details>
+      <details><summary>Pot folosi o listă de adrese cumpărată?</summary><p>Nu. Adresele fără acord încalcă GDPR și strică reputația domeniului, iar apoi și mesajele către clienții reali ajung în Spam. Lucrăm doar cu contacte care și-au dat acordul.</p></details>
+      <details><summary>Contul platformei de email e al meu?</summary><p>Da. Platforma e pe firma ta și o plătești direct furnizorului, iar noi primim acces de administrator. Dacă pleci, lista, fluxurile și tot istoricul rămân la tine.</p></details>
+      <details><summary>Cine scrie mesajele?</summary><p>Le scriem noi, cu ajutorul AI, iar fiecare text e verificat de un om înainte să plece. Fluxurile le aprobi tu înainte să pornească.</p></details>
+      <details><summary>În cât timp pornesc fluxurile?</summary><p>Fluxurile de bază pornesc de regulă în 2-3 săptămâni de la start, după audit și după aprobarea ta. Campaniile lunare încep din a doua lună.</p></details>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap rev">
+    <div class="ctaband">
+      <h2>Vrei să vezi ce poate aduce emailul pentru firma ta?</h2>
+      <p class="lead center">Cere auditul gratuit. În 24 de ore primești o analiză personalizată și primii 3 pași, fără obligații.</p>
+      <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+"@
 }
 $pages += @{
   path='servicii/landing-pages-cro'
