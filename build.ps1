@@ -375,7 +375,7 @@ $pages += @{
       </div>
     </div>
     <figure class="svc-visual">
-      <img src="/assets/serviciu-performance-ads.webp" srcset="/assets/serviciu-performance-ads-mic.webp 800w, /assets/serviciu-performance-ads.webp 1600w" sizes="(max-width: 1180px) calc(100vw - 56px), 1124px" width="1600" height="893" loading="lazy" decoding="async" alt="Fluxuri albastre și aurii care se unesc într-un singur curent și urcă într-un grafic de bare de sticlă">
+      <img src="/assets/serviciu-performance-ads.webp" srcset="/assets/serviciu-performance-ads-mic.webp 800w, /assets/serviciu-performance-ads.webp 1600w" sizes="(max-width: 1180px) calc(100vw - 56px), 1124px" width="1600" height="893" loading="lazy" decoding="async" style="height:auto" alt="Fluxuri albastre și aurii care se unesc într-un singur curent și urcă într-un grafic de bare de sticlă">
     </figure>
   </div>
 </section>
@@ -542,7 +542,7 @@ $pages += @{
       </div>
     </div>
     <figure class="svc-visual">
-      <img src="/assets/serviciu-social-media.webp" srcset="/assets/serviciu-social-media-mic.webp 800w, /assets/serviciu-social-media.webp 1600w" sizes="(max-width: 1180px) calc(100vw - 56px), 1124px" width="1600" height="893" loading="lazy" decoding="async" alt="Grilă de plăci de sticlă, câteva aurii și albastre unite de un fir de lumină, ca un calendar de postări">
+      <img src="/assets/serviciu-social-media.webp" srcset="/assets/serviciu-social-media-mic.webp 800w, /assets/serviciu-social-media.webp 1600w" sizes="(max-width: 1180px) calc(100vw - 56px), 1124px" width="1600" height="893" loading="lazy" decoding="async" style="height:auto" alt="Grilă de plăci de sticlă, câteva aurii și albastre unite de un fir de lumină, ca un calendar de postări">
     </figure>
   </div>
 </section>
@@ -694,7 +694,7 @@ $pages += @{
       </div>
     </div>
     <figure class="svc-visual">
-      <img src="/assets/serviciu-email-automatizari.webp" srcset="/assets/serviciu-email-automatizari-mic.webp 800w, /assets/serviciu-email-automatizari.webp 1600w" sizes="(max-width: 1180px) calc(100vw - 56px), 1124px" width="1600" height="893" loading="lazy" decoding="async" alt="Plicuri de sticlă legate prin fire de lumină aurie și albastră care se ramifică, ca fluxurile automate de email">
+      <img src="/assets/serviciu-email-automatizari.webp" srcset="/assets/serviciu-email-automatizari-mic.webp 800w, /assets/serviciu-email-automatizari.webp 1600w" sizes="(max-width: 1180px) calc(100vw - 56px), 1124px" width="1600" height="893" loading="lazy" decoding="async" style="height:auto" alt="Plicuri de sticlă legate prin fire de lumină aurie și albastră care se ramifică, ca fluxurile automate de email">
     </figure>
   </div>
 </section>
