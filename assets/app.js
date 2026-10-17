@@ -11,9 +11,10 @@
     if(b)b.classList.toggle('x');
   };
 
-  // Reveal on scroll
+  // Reveal on scroll. Fara prag procentual: un bloc foarte lung (articolele) nu ajunge niciodata la 12% vizibil
+  // pe un ecran de telefon si ar ramane invizibil; apare cand marginea lui de sus intra in primele 90% din ecran.
   if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:0,rootMargin:'0px 0px -10% 0px'});
     document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
   } else {
     document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in')});

@@ -2077,7 +2077,7 @@ $pages += @{
   <span class="eyebrow">GEO</span>
   <h1>Cum apari în ChatGPT <span class="g">cu firma ta</span></h1>
 </div></section>
-<section><div class="wrap rev"><article class="prose">
+<section><div class="wrap"><article class="prose">
   <p class="meta">Actualizat: octombrie 2026 &middot; ~8 min de citit</p>
   <p>Tot mai mulți oameni nu mai caută „dentist Cluj” în Google, ci îl întreabă direct pe ChatGPT: „ce clinică stomatologică bună îmi recomanzi în Cluj?”. Primesc un răspuns cu două-trei nume și, de multe ori, cu linkuri spre sursele folosite. Dacă firma ta nu e printre ele, clientul nici nu află că exiști.</p>
   <div class="pescurt"><p><strong>Pe scurt:</strong> Ca firma ta să apară în ChatGPT, ai nevoie de cinci lucruri: robotul de căutare al OpenAI (OAI-SearchBot) are voie să-ți citească site-ul, site-ul e bine indexat în Google și în Bing, paginile răspund direct la întrebările clienților, alte surse credibile confirmă aceleași date despre tine și verifici lunar rezultatul. Nimic din toate acestea nu se cumpără, se construiește.</p></div>
@@ -2275,7 +2275,7 @@ $pages += @{
   <span class="eyebrow">Ghid &middot; GEO</span>
   <h1>Cum verifici dacă firma ta apare <span class="g">în ChatGPT și în căutarea AI</span></h1>
 </div></section>
-<section><div class="wrap rev"><article class="prose">
+<section><div class="wrap"><article class="prose">
   <p class="meta">Actualizat: octombrie 2026 &middot; ~8 min de citit &middot; verificarea durează 30-45 de minute</p>
   <p>Când cineva întreabă un asistent AI „ce firmă îmi recomanzi pentru X în orașul meu?”, primește de obicei două-trei nume. Întrebarea nu e doar dacă ești printre ele, ci dacă știi. Cele mai multe firme nu au verificat niciodată.</p>
   <p>Poți afla singur, fără unelte plătite, într-o după-amiază. Mai jos e metoda pe care o folosim și în audituri, pas cu pas.</p>
@@ -2383,7 +2383,7 @@ $pages += @{
   <span class="eyebrow">Ghid &middot; GEO</span>
   <h1>GEO vs SEO: care e diferența <span class="g">și de ce ai nevoie de ambele</span></h1>
 </div></section>
-<section><div class="wrap rev"><article class="prose">
+<section><div class="wrap"><article class="prose">
   <p class="meta">Actualizat: octombrie 2026 &middot; ~8 min de citit</p>
   <p>Întrebarea vine des: „Acum că oamenii întreabă AI-ul, mai am nevoie de SEO sau trec pe GEO?”. Răspunsul scurt e că ai nevoie de amândouă, pentru că pornesc din aceeași fundație. Diferă însă rezultatul pe care îl urmărești, semnalele care contează și felul în care măsori.</p>
   <div class="pescurt"><p><strong>Pe scurt:</strong> SEO te ajută să apari cât mai sus în rezultatele Google și să primești click-uri. GEO te ajută să fii citat sau recomandat în răspunsurile generate de AI: ChatGPT, Perplexity, Copilot, rezumatele AI și Modul AI din Google. GEO nu înlocuiește SEO: fără pagini indexate și de încredere, nu ai ce să fie citat.</p></div>
@@ -2484,7 +2484,7 @@ $pages += @{
   <span class="eyebrow">Performance Ads</span>
   <h1>7 greșeli care <span class="g">îți ard bugetul de Google Ads</span></h1>
 </div></section>
-<section><div class="wrap rev"><article class="prose">
+<section><div class="wrap"><article class="prose">
   <p class="meta">Actualizat: octombrie 2026 &middot; ~9 min de citit</p>
   <p>Cele mai multe firme nu au o problemă de buget la Google Ads, au o problemă de risipă. Aceiași bani, cheltuiți pe căutările potrivite și măsurați corect, aduc de obicei mai mulți clienți. Mai jos sunt cele 7 greșeli pe care le vedem cel mai des în conturi, cum le recunoști și cum le repari.</p>
   <div class="pescurt"><p><strong>Pe scurt:</strong> Cele mai scumpe greșeli sunt cheltuiala fără măsurare corectă, setările implicite lăsate neverificate, potrivirea largă fără cuvinte cheie negative, paginile de destinație slabe, recomandările aplicate automat, urmărirea metricilor greșite și anunțurile netestate. Niciuna nu cere buget în plus, doar disciplină săptămânală.</p></div>
@@ -2893,7 +2893,7 @@ $pages += @{
   <span class="eyebrow">Performance Ads</span>
   <h1>Google Ads vs Meta Ads: <span class="g">cu care începi?</span></h1>
 </div></section>
-<section><div class="wrap rev"><article class="prose">
+<section><div class="wrap"><article class="prose">
   <p class="meta">Actualizat: octombrie 2026 &middot; ~8 min de citit</p>
   <p>Nu e o întrecere în care unul câștigă. Google Ads și Meta Ads (Facebook și Instagram) rezolvă probleme diferite. Întrebarea corectă nu e „care e mai bun”, ci „care se potrivește obiectivului meu de acum și bugetului pe care îl am”.</p>
   <div class="pescurt"><p><strong>Pe scurt:</strong> Google Ads prinde cererea care există deja: apari când cineva caută ce vinzi. Meta Ads creează cerere: ajungi la oameni care nu te caută încă, pe baza intereselor și a comportamentului. Dacă clienții te caută deja, începe cu Google. Dacă produsul se vinde prin imagine sau trebuie întâi descoperit, începe cu Meta. Cu buget mic, un singur canal făcut bine bate două canale făcute pe jumătate.</p></div>
