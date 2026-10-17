@@ -374,6 +374,9 @@ $pages += @{
         <p class="price" style="margin-top:22px;font-size:15px">Configurare <strong style="color:var(--off)">400-700 &euro;</strong> o dată, apoi de la <strong style="color:var(--off)">450 &euro;/lună</strong></p>
       </div>
     </div>
+    <figure class="svc-visual">
+      <img src="/assets/serviciu-performance-ads.webp" srcset="/assets/serviciu-performance-ads-mic.webp 800w, /assets/serviciu-performance-ads.webp 1600w" sizes="(max-width: 1180px) calc(100vw - 56px), 1124px" width="1600" height="893" loading="lazy" decoding="async" alt="Fluxuri albastre și aurii care se unesc într-un singur curent și urcă într-un grafic de bare de sticlă">
+    </figure>
   </div>
 </section>
 <section class="bg-2">
@@ -535,9 +538,12 @@ $pages += @{
           <li><b>Programare automată</b> pe rețelele alese</li>
           <li><b>Raport lunar</b> cu interpretare și recomandarea lunii</li>
         </ul>
-        <p class="price" style="margin-top:22px;font-size:15px">Configurare <strong style="color:var(--off)">250 &euro;</strong> o dată, apoi pachete <strong style="color:var(--off)">350 / 600 / 950 &euro;</strong>/lună</p>
+        <p class="price" style="margin-top:22px;font-size:15px">Configurare <strong style="color:var(--off)">250 &euro;</strong> o dată, apoi pachete <strong style="color:var(--off);white-space:nowrap">350 / 600 / 950 &euro;</strong>/lună</p>
       </div>
     </div>
+    <figure class="svc-visual">
+      <img src="/assets/serviciu-social-media.webp" srcset="/assets/serviciu-social-media-mic.webp 800w, /assets/serviciu-social-media.webp 1600w" sizes="(max-width: 1180px) calc(100vw - 56px), 1124px" width="1600" height="893" loading="lazy" decoding="async" alt="Grilă de plăci de sticlă, câteva aurii și albastre unite de un fir de lumină, ca un calendar de postări">
+    </figure>
   </div>
 </section>
 <section class="bg-2">
@@ -687,6 +693,9 @@ $pages += @{
         <p class="price" style="margin-top:22px;font-size:15px">Implementare <strong style="color:var(--off)">500-1.500 &euro;</strong> o dată, apoi de la <strong style="color:var(--off)">250 &euro;/lună</strong></p>
       </div>
     </div>
+    <figure class="svc-visual">
+      <img src="/assets/serviciu-email-automatizari.webp" srcset="/assets/serviciu-email-automatizari-mic.webp 800w, /assets/serviciu-email-automatizari.webp 1600w" sizes="(max-width: 1180px) calc(100vw - 56px), 1124px" width="1600" height="893" loading="lazy" decoding="async" alt="Plicuri de sticlă legate prin fire de lumină aurie și albastră care se ramifică, ca fluxurile automate de email">
+    </figure>
   </div>
 </section>
 <section class="bg-2">
