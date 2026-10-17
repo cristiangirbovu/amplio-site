@@ -431,3 +431,9 @@ footer{background:var(--navy);border-top:1px solid var(--line);padding:64px 0 40
 .svc-visual{margin:56px 0 0;border-radius:20px;overflow:hidden;border:1px solid var(--line2);background:var(--navy2);box-shadow:0 24px 60px rgba(0,0,0,.35)}
 .svc-visual img{display:block;width:100%;height:auto}
 @media(max-width:860px){.svc-visual{margin-top:36px;border-radius:16px}}
+/* Articolele extinse (17.10.2026): caseta „Pe scurt”, pozele din text și sursele */
+.prose .pescurt{border-left:3px solid var(--gold);background:rgba(201,162,39,.06);border-radius:0 12px 12px 0;padding:16px 20px}
+.prose .pescurt p{margin:0;color:var(--off)}
+.prose figure.art-visual{margin:30px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line2);background:var(--navy2)}
+.prose figure.art-visual img{display:block;width:100%;height:auto}
+.prose .surse li{font-size:14.5px;line-height:1.6}

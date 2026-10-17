@@ -139,11 +139,13 @@ $FAB = @'
 # ---------- Wrapper HTML ----------
 function Build-Page($p) {
   $canonical = "https://amplio.ro/$($p.path)/"
+  $ogImg = if ($p.ogimg) { "https://amplio.ro$($p.ogimg)" } else { "https://amplio.ro/assets/og-amplio.jpg" }
+  $ogAlt = if ($p.ogalt) { $p.ogalt } else { "AMPLIO, agenție de marketing digital" }
   $jsonld = ""
   if ($p.jsonld) {
     $ld = $p.jsonld
     if ($ld -like '*"@type":"Service",*' -and $ld -notlike '*"url":"https://amplio.ro/s*') { $ld = $ld.Replace('"@type":"Service",', '"@type":"Service","url":"' + $canonical + '",') }
-    if ($ld -like '*"@type":"Article",*' -and $ld -notlike '*"mainEntityOfPage"*') { $ld = $ld.Replace('"@type":"Article",', '"@type":"Article","mainEntityOfPage":"' + $canonical + '","image":"https://amplio.ro/assets/og-amplio.jpg",') }
+    if ($ld -like '*"@type":"Article",*' -and $ld -notlike '*"mainEntityOfPage"*') { $ld = $ld.Replace('"@type":"Article",', '"@type":"Article","mainEntityOfPage":"' + $canonical + '","image":"' + $ogImg + '",') }
     $jsonld = "<script type=""application/ld+json"">$ld</script>"
   }
   $html = @"
@@ -162,16 +164,16 @@ function Build-Page($p) {
 <meta property="og:url" content="$canonical">
 <meta property="og:title" content="$($p.title)">
 <meta property="og:description" content="$($p.desc)">
-<meta property="og:image" content="https://amplio.ro/assets/og-amplio.jpg">
+<meta property="og:image" content="$ogImg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AMPLIO, agenție de marketing digital">
+<meta property="og:image:alt" content="$ogAlt">
 <meta property="og:site_name" content="AMPLIO">
 <meta property="og:locale" content="ro_RO">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="$($p.title)">
 <meta name="twitter:description" content="$($p.desc)">
-<meta name="twitter:image" content="https://amplio.ro/assets/og-amplio.jpg">
+<meta name="twitter:image" content="$ogImg">
 <link rel="preload" href="/assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.css">
@@ -1962,7 +1964,7 @@ $pages += @{
   <p class="lead">Articole practice despre SEO, GEO, ads și creștere, scrise pentru fondatori și firme medii și mici din România. Fără teorie goală.</p>
 </div></section>
 <section><div class="wrap rev"><h2 style="font-size:clamp(22px,2.6vw,28px);margin-bottom:20px">Toate articolele</h2><div class="bloglist">
-  <a class="bcard" href="/blog/verifica-daca-apari-in-ai/"><div class="cat">Ghid · GEO</div><h3>Cum verifici dacă firma ta apare în ChatGPT și AI</h3><p>Tutorial pas cu pas: află în 10 minute dacă apari în ChatGPT, Perplexity și Google AI Overviews, și ce faci dacă ești invizibil. Fără cont, fără cost.</p><span class="more">Citește tutorialul &rarr;</span></a>
+  <a class="bcard" href="/blog/verifica-daca-apari-in-ai/"><div class="cat">Ghid · GEO</div><h3>Cum verifici dacă firma ta apare în ChatGPT și AI</h3><p>Tutorial pas cu pas: cum afli în 30-45 de minute dacă apari în ChatGPT, Perplexity, Copilot și în răspunsurile AI din Google, și ce faci după test. Fără unelte plătite.</p><span class="more">Citește tutorialul &rarr;</span></a>
   <a class="bcard" href="/blog/ghid-geo/"><div class="cat">Ghid · GEO</div><h3>Ce este GEO și cum te optimizezi pentru motoarele AI</h3><p>Ghidul complet despre Generative Engine Optimization: cum ajungi să fii citat de ChatGPT, Perplexity și AI Overviews, nu doar listat în Google.</p><span class="more">Citește ghidul &rarr;</span></a>
   <a class="bcard" href="/blog/geo-vs-seo/"><div class="cat">GEO</div><h3>GEO vs SEO: care e diferența și de ce ai nevoie de ambele</h3><p>Nu sunt în competiție, sunt două straturi ale aceleiași strategii. Explicăm clar diferența și de unde începi.</p><span class="more">Citește articolul &rarr;</span></a>
   <a class="bcard" href="/blog/cum-apari-in-chatgpt/"><div class="cat">GEO</div><h3>Cum apari în ChatGPT cu firma ta</h3><p>Pași concreți ca afacerea ta să fie recomandată când cineva întreabă un asistent AI „cea mai bună firmă din…”.</p><span class="more">Citește articolul &rarr;</span></a>
@@ -2063,10 +2065,12 @@ $pages += @{
 # ---- BLOG: post 1 ----
 $pages += @{
   path='blog/cum-apari-in-chatgpt'
-  title='Cum apari în ChatGPT cu firma ta (ghid 2026) | AMPLIO'
-  desc='Pași concreți ca firma ta să fie recomandată de ChatGPT și alți asistenți AI: conținut citabil, încredere, recenzii și prezență în sursele citate de AI.'
+  title='Cum apari în ChatGPT cu firma ta: ghid practic | AMPLIO'
+  desc='Cum ajunge firma ta să fie recomandată de ChatGPT: accesul robotului de căutare, indexarea în Google și Bing, pagini clare, surse externe și măsurare.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cum apari în ChatGPT','/blog/cum-apari-in-chatgpt') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum apari în ChatGPT cu firma ta","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Cum apari în ChatGPT cu firma ta","description":"Cum ajunge firma ta să fie recomandată de ChatGPT: accesul robotului de căutare, indexarea în Google și Bing, pagini clare, surse externe și măsurare.","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18","dateModified":"2026-10-17"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cât durează până apar în ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"Accesul robotului se aplică în aproximativ 24 de ore după ce îl permiți. Recomandările depind însă de cât de bine ești descris pe internet, iar asta durează de obicei câteva luni. Firmele cu o nișă clară și o zonă precisă văd de multe ori efecte mai repede."}},{"@type":"Question","name":"Dacă blochez GPTBot, dispar din ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"Nu. GPTBot e robotul pentru antrenare. Căutarea din ChatGPT folosește OAI-SearchBot, iar cele două se setează separat în robots.txt."}},{"@type":"Question","name":"Pot plăti ca să fiu recomandat de ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"Nu. OpenAI testează reclame în ChatGPT din februarie 2026, deocamdată în câteva țări, iar reclamele apar separat și sunt marcate. Recomandările din răspuns nu se cumpără."}},{"@type":"Question","name":"Funcționează la fel pentru Perplexity, Gemini și Copilot?","acceptedAnswer":{"@type":"Answer","text":"În mare, da. Fiecare are propriul robot și propriile surse, dar toate preferă site-uri accesibile, bine indexate, cu răspunsuri clare și confirmate de alte surse. Copilot se bazează pe Bing, iar rezumatele AI din Google, pe indexul Google."}}]}]}'
+  ogimg='/assets/og-cum-apari-in-chatgpt.jpg'
+  ogalt='Un balon de dialog din sticlă, legat prin fire de lumină de mai multe plăci mici, ca sursele din care ChatGPT construiește o recomandare'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Cum apari în ChatGPT','/blog/cum-apari-in-chatgpt') ))
@@ -2074,18 +2078,93 @@ $pages += @{
   <h1>Cum apari în ChatGPT <span class="g">cu firma ta</span></h1>
 </div></section>
 <section><div class="wrap rev"><article class="prose">
-  <p class="meta">Actualizat: iunie 2026 &middot; ~4 min de citit</p>
-  <p>Tot mai mulți clienți nu mai caută pe Google, ci întreabă direct ChatGPT: „care e cea mai bună firmă de X din orașul meu?”. Iată cum crești șansa ca firma ta să fie numele recomandat.</p>
-  <h2>1. Fii prezent acolo unde AI „citește”</h2>
-  <p>Modelele AI își formează „părerea” din surse publice: site-ul tău, directoare, recenzii, articole, foruri. Dacă ești absent din aceste surse, AI-ul nu are de unde să te cunoască. Asigură-te că ai prezență consistentă (nume, descriere, servicii) în directoarele relevante din nișa ta.</p>
-  <h2>2. Scrie conținut care răspunde la întrebări</h2>
-  <p>AI-ul preferă conținut clar, structurat, care răspunde direct la o întrebare. Pagini de tip „ce este…”, „cât costă…”, „cum alegi…” sunt exact ce extrage un model când construiește un răspuns.</p>
-  <h2>3. Construiește dovezi de încredere</h2>
-  <p>Recenzii reale, studii de caz, date concrete și o identitate clară (cine ești, unde ești) cresc probabilitatea să fii recomandat. AI-ul evită să recomande surse pe care nu le poate „verifica”.</p>
-  <h2>4. Adaugă date structurate</h2>
-  <p>Schema markup (date structurate) ajută atât Google, cât și modelele AI să înțeleagă ce reprezintă firma și paginile tale. E un semnal tehnic care merită implementat.</p>
-  <p>Vrei tot tabloul? Citește <a href="/blog/ghid-geo/">ghidul complet despre GEO</a> sau vezi serviciile de <a href="/servicii/seo-geo/">SEO</a> și <a href="/servicii/geo/">optimizare GEO</a>.</p>
-  <div class="key" style="margin-top:30px"><p style="margin:0"><strong>Curios cum apari acum?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a>, îți arătăm cum te văd Google și ChatGPT față de 3 competitori.</p></div>
+  <p class="meta">Actualizat: octombrie 2026 &middot; ~8 min de citit</p>
+  <p>Tot mai mulți oameni nu mai caută „dentist Cluj” în Google, ci îl întreabă direct pe ChatGPT: „ce clinică stomatologică bună îmi recomanzi în Cluj?”. Primesc un răspuns cu două-trei nume și, de multe ori, cu linkuri spre sursele folosite. Dacă firma ta nu e printre ele, clientul nici nu află că exiști.</p>
+  <div class="pescurt"><p><strong>Pe scurt:</strong> Ca firma ta să apară în ChatGPT, ai nevoie de cinci lucruri: robotul de căutare al OpenAI (OAI-SearchBot) are voie să-ți citească site-ul, site-ul e bine indexat în Google și în Bing, paginile răspund direct la întrebările clienților, alte surse credibile confirmă aceleași date despre tine și verifici lunar rezultatul. Nimic din toate acestea nu se cumpără, se construiește.</p></div>
+  <figure class="art-visual"><img src="/assets/blog-chatgpt-1.webp" srcset="/assets/blog-chatgpt-1-mic.webp 800w, /assets/blog-chatgpt-1.webp 1600w" sizes="(max-width: 816px) calc(100vw - 56px), 760px" width="1600" height="893" loading="eager" decoding="async" style="height:auto" alt="Un balon de dialog din sticlă, legat prin fire de lumină de mai multe plăci mici, ca sursele din care ChatGPT construiește o recomandare"></figure>
+  <h2>Cum decide ChatGPT ce firme recomandă</h2>
+  <p>ChatGPT răspunde în două feluri. Uneori din ce a învățat la antrenare, adică din texte publice adunate până la o anumită dată. Alteori caută pe internet în timp real, mai ales când întrebarea cere informații actuale sau locale, și atunci afișează și sursele din care a luat răspunsul.</p>
+  <p>Pentru o firmă, al doilea caz contează cel mai mult: când cineva cere o recomandare, ChatGPT caută, citește câteva pagini și sintetizează. OpenAI folosește pentru asta propriul robot de căutare, dar și furnizori externi de căutare. Vizibilitatea în ChatGPT începe deci cu lucruri foarte concrete: site-ul tău să poată fi citit și să existe pe internet suficiente informații clare despre tine.</p>
+  <h2>Pasul 1. Lasă robotul ChatGPT să-ți citească site-ul</h2>
+  <p>OpenAI folosește mai mulți roboți, cu roluri diferite. Doi te interesează direct:</p>
+  <ul>
+    <li><strong>OAI-SearchBot</strong> găsește și citește site-uri pentru căutarea din ChatGPT. Dacă îl blochezi, paginile tale nu apar în răspunsurile cu căutare; cel mult apare un link simplu.</li>
+    <li><strong>GPTBot</strong> adună texte pentru antrenarea modelelor. Dacă îl blochezi, conținutul tău nu mai e folosit la antrenare, dar asta nu te scoate din căutarea ChatGPT.</li>
+  </ul>
+  <p>Cei doi sunt independenți, deci poți permite căutarea și refuza antrenarea. Regula se scrie în fișierul robots.txt din rădăcina site-ului, de exemplu:</p>
+  <pre><code>User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Disallow: /</code></pre>
+  <p>Al doilea bloc e opțional; îl pui doar dacă nu vrei ca textele tale să fie folosite la antrenare. După o modificare, OpenAI spune că schimbarea se aplică în aproximativ 24 de ore.</p>
+  <p>Verifică și protecțiile de deasupra site-ului. Din iulie 2025, Cloudflare blochează implicit roboții AI cunoscuți pe domeniile noi și îi întreabă pe proprietari, la configurare, dacă le permit accesul. Dacă site-ul tău trece prin Cloudflare sau printr-un alt firewall, asigură-te că OAI-SearchBot nu e oprit acolo, chiar dacă robots.txt îl lasă.</p>
+  <figure class="art-visual"><img src="/assets/blog-chatgpt-2.webp" srcset="/assets/blog-chatgpt-2-mic.webp 800w, /assets/blog-chatgpt-2.webp 1600w" sizes="(max-width: 816px) calc(100vw - 56px), 760px" width="1600" height="893" loading="lazy" decoding="async" style="height:auto" alt="Două porți din sticlă, una deschisă prin care trece o rază de lumină albastră și una închisă, ca accesul permis sau blocat pentru roboții AI"></figure>
+  <h2>Pasul 2. Fii bine indexat în Google și în Bing</h2>
+  <p>Un asistent AI care caută pe internet găsește mai ușor ce e deja indexat de motoarele de căutare. Google spune explicit că pentru rezumatele AI din căutare nu există cerințe speciale: pagina trebuie doar să fie indexată și eligibilă să apară cu un fragment de text.</p>
+  <ul>
+    <li><strong>Google Search Console:</strong> trimite harta site-ului (sitemap.xml) și urmărește raportul de indexare.</li>
+    <li><strong>Bing Webmaster Tools:</strong> adaugă site-ul și aici. Bing alimentează Copilot, iar din februarie 2026 are un raport separat, AI Performance, care arată de câte ori paginile tale sunt citate în răspunsurile Copilot, în rezumatele AI din Bing și la unii parteneri.</li>
+    <li><strong>IndexNow:</strong> un protocol gratuit prin care anunți imediat Bing și alte motoare că ai pagini noi sau modificate.</li>
+  </ul>
+  <p>Multe firme mici folosesc Search Console, dar n-au deschis niciodată Bing Webmaster Tools. E una dintre cele mai ieftine îmbunătățiri pentru vizibilitatea în AI.</p>
+  <h2>Pasul 3. Scrie pagini care răspund direct</h2>
+  <p>Când construiește un răspuns, un model AI caută fragmente clare, ușor de citat. O pagină care începe cu trei paragrafe despre „pasiunea și experiența noastră” e greu de folosit. O pagină care spune direct ce faci, pentru cine, unde, cât costă și cum lucrezi e ușor de folosit.</p>
+  <p>Ce ajută concret:</p>
+  <ul>
+    <li>răspunsul principal în primele rânduri ale paginii, nu la final;</li>
+    <li>subtitluri formulate ca întrebările clienților: „Cât costă…?”, „Cât durează…?”, „Ce include…?”;</li>
+    <li>liste și tabele pentru prețuri, pași și comparații;</li>
+    <li>cifre concrete, cu sursa lor, și data ultimei actualizări;</li>
+    <li>câte o pagină pentru fiecare serviciu important și informații clare despre zonele în care lucrezi;</li>
+    <li>întrebări frecvente reale, cu răspunsuri scurte.</li>
+  </ul>
+  <p>Există și o confirmare academică. În studiul care a definit termenul GEO (Generative Engine Optimization, prezentat la conferința KDD 2024), cercetătorii au arătat că adăugarea de surse, citate și statistici într-un text îi poate crește vizibilitatea în răspunsurile motoarelor generative cu până la 40%. Efectul diferă de la un domeniu la altul, dar direcția e clară: conținutul verificabil e preferat.</p>
+  <h2>Pasul 4. Fă-te confirmat de alte surse</h2>
+  <p>Un asistent AI e mai sigur pe o firmă pe care o găsește descrisă la fel în mai multe locuri. Dacă site-ul spune un lucru, profilul Google altul, iar un director are un telefon vechi, informația devine nesigură și e mai ușor de ocolit.</p>
+  <ul>
+    <li><strong>Profilul de companie Google</strong> complet: categorie, servicii, program, poze, răspunsuri la recenzii. Pașii sunt în <a href="/blog/google-business-profil-local/">ghidul despre Google Maps</a>.</li>
+    <li><strong>Directoare relevante</strong> pentru domeniul tău, cu același nume, aceeași adresă și același telefon peste tot.</li>
+    <li><strong>Recenzii reale</strong>, pe Google și pe platformele din nișa ta. Recenziile cumpărate sunt ușor de recunoscut și te expun și legal.</li>
+    <li><strong>Mențiuni în articole:</strong> interviuri, presă locală, ghiduri ale asociațiilor profesionale, parteneriate.</li>
+    <li><strong>Rețele sociale active</strong>, cu aceeași descriere și cu linkul spre site.</li>
+  </ul>
+  <figure class="art-visual"><img src="/assets/blog-chatgpt-3.webp" srcset="/assets/blog-chatgpt-3-mic.webp 800w, /assets/blog-chatgpt-3.webp 1600w" sizes="(max-width: 816px) calc(100vw - 56px), 760px" width="1600" height="893" loading="lazy" decoding="async" style="height:auto" alt="Cinci plăci de sticlă cu semne de confirmare aurii, legate de un cub central, ca sursele externe care confirmă aceleași date despre o firmă"></figure>
+  <h2>Pasul 5. Ajută motoarele să înțeleagă cine ești</h2>
+  <p>Datele structurate (schema.org) descriu pentru motoare, într-un format standard, cine este firma, unde se află, ce servicii are și ce întrebări frecvente primește. Google spune că nu e nevoie de marcaje speciale pentru AI, deci nu le vedea ca pe o scurtătură. Sunt însă o bază bună: informația devine clară și coerentă pentru orice sistem care îți citește site-ul.</p>
+  <p>La fel, un fișier llms.txt poate ajuta unii asistenți, dar nu e obligatoriu, iar Google precizează că nu are nevoie de fișiere speciale pentru AI. Detaliile sunt în <a href="/blog/ce-este-llms-txt/">articolul despre llms.txt</a>.</p>
+  <h2>Cum măsori dacă apari</h2>
+  <ul>
+    <li><strong>Test manual lunar:</strong> aceleași 10-20 de întrebări, puse în ChatGPT, Perplexity, Copilot și Google. Metoda e în <a href="/blog/verifica-daca-apari-in-ai/">ghidul de verificare</a>.</li>
+    <li><strong>Google Analytics:</strong> ChatGPT adaugă automat parametrul utm_source=chatgpt.com la linkurile spre site-uri, deci vezi separat vizitele venite din ChatGPT.</li>
+    <li><strong>Bing Webmaster Tools:</strong> raportul AI Performance arată citările și paginile citate.</li>
+    <li><strong>Search Console:</strong> Google raportează vizitele din funcțiile AI în raportul de performanță, la tipul Web.</li>
+  </ul>
+  <h2>Ce nu funcționează</h2>
+  <ul>
+    <li>Promisiunile de tipul „te punem pe primul loc în ChatGPT”. Nimeni nu controlează răspunsurile unui model.</li>
+    <li>Textele scrise pentru roboți, pline de cuvinte cheie. Un model AI preferă textul clar, nu repetițiile.</li>
+    <li>Să plătești pentru recomandare. OpenAI testează din februarie 2026 reclame în ChatGPT, în câteva țări, dar spune că ele apar separat, sunt marcate și nu influențează răspunsurile.</li>
+    <li>Să schimbi totul într-o săptămână și să aștepți rezultate a doua zi. Sursele externe și încrederea se construiesc în luni, nu în zile.</li>
+  </ul>
+  <h2>Întrebări frecvente</h2>
+  <div class="faq" style="margin-top:10px">
+    <details><summary>Cât durează până apar în ChatGPT?</summary><p>Accesul robotului se aplică în aproximativ 24 de ore după ce îl permiți. Recomandările depind însă de cât de bine ești descris pe internet, iar asta durează de obicei câteva luni. Firmele cu o nișă clară și o zonă precisă văd de multe ori efecte mai repede.</p></details>
+    <details><summary>Dacă blochez GPTBot, dispar din ChatGPT?</summary><p>Nu. GPTBot e robotul pentru antrenare. Căutarea din ChatGPT folosește OAI-SearchBot, iar cele două se setează separat în robots.txt.</p></details>
+    <details><summary>Pot plăti ca să fiu recomandat de ChatGPT?</summary><p>Nu. OpenAI testează reclame în ChatGPT din februarie 2026, deocamdată în câteva țări, iar reclamele apar separat și sunt marcate. Recomandările din răspuns nu se cumpără.</p></details>
+    <details><summary>Funcționează la fel pentru Perplexity, Gemini și Copilot?</summary><p>În mare, da. Fiecare are propriul robot și propriile surse, dar toate preferă site-uri accesibile, bine indexate, cu răspunsuri clare și confirmate de alte surse. Copilot se bazează pe Bing, iar rezumatele AI din Google, pe indexul Google.</p></details>
+  </div>
+  <div class="key" style="margin-top:30px"><p style="margin:0">Vrei să afli cum te văd acum ChatGPT și Google? În <a href="/audit-gratuit/">auditul gratuit</a> punem întrebările clienților tăi în motoarele AI și îți spunem primii trei pași, în 24 de ore. Serviciul complet: <a href="/servicii/geo/">optimizare GEO</a>.</p></div>
+  <h2>Surse</h2>
+  <ul class="surse">
+    <li><a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener">OpenAI, „Overview of OpenAI Crawlers”</a></li>
+    <li><a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener">OpenAI, „Publishers and Developers FAQ”</a></li>
+    <li><a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener">Google Search Central, „AI features and your website”</a></li>
+    <li><a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener">Aggarwal și alții, „GEO: Generative Engine Optimization”, KDD 2024</a></li>
+    <li><a href="https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview" target="_blank" rel="noopener">Bing Webmaster Blog, „Introducing AI Performance in Bing Webmaster Tools Public Preview”, februarie 2026</a></li>
+    <li><a href="https://www.technologyreview.com/2025/07/01/1119498/cloudflare-will-now-by-default-block-ai-bots-from-crawling-its-clients-websites/" target="_blank" rel="noopener">MIT Technology Review, „Cloudflare will now, by default, block AI bots from crawling its clients’ websites”, 1 iulie 2025</a></li>
+    <li><a href="https://openai.com/index/testing-ads-in-chatgpt/" target="_blank" rel="noopener">OpenAI, „Testing ads in ChatGPT”</a></li>
+  </ul>
 </article></div></section>
 "@
 }
@@ -2185,9 +2264,11 @@ $pages += @{
 $pages += @{
   path='blog/verifica-daca-apari-in-ai'
   title='Cum verifici dacă firma ta apare în ChatGPT și AI | AMPLIO'
-  desc='Tutorial pas cu pas: verifici în 10 minute dacă firma ta apare în ChatGPT, Perplexity și Google AI Overviews și ce faci dacă lipsește. Fără cost.'
+  desc='Testul de 30-45 de minute: ce întrebări pui în ChatGPT, Perplexity, Google și Copilot, cum notezi rezultatele și ce unelte gratuite arată citările AI.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Verifică vizibilitatea AI','/blog/verifica-daca-apari-in-ai') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Cum verifici dacă firma ta apare în ChatGPT și în căutarea AI","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Cum verifici dacă firma ta apare în ChatGPT și în căutarea AI","description":"Testul de 30-45 de minute: ce întrebări pui în ChatGPT, Perplexity, Google și Copilot, cum notezi rezultatele și ce unelte gratuite arată citările AI.","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18","dateModified":"2026-10-17"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"De ce primesc alt răspuns de fiecare dată?","acceptedAnswer":{"@type":"Answer","text":"Modelele AI scriu răspunsul de la zero la fiecare întrebare și pot folosi surse diferite. De aceea notezi mai multe rulări și urmărești tendința, nu un singur răspuns."}},{"@type":"Question","name":"Contează dacă sunt conectat la cont?","acceptedAnswer":{"@type":"Answer","text":"Da. Istoricul, memoria și locația pot schimba răspunsul. Pentru test folosește un chat temporar sau o fereastră privată."}},{"@type":"Question","name":"Ce fac dacă ChatGPT spune lucruri greșite despre firma mea?","acceptedAnswer":{"@type":"Answer","text":"Corectează sursa: site-ul, profilul Google și directoarele în care datele sunt vechi. Asistenții preiau informația din aceste surse, deci schimbarea se vede după ce ele sunt actualizate și recitite."}},{"@type":"Question","name":"Cât de des ar trebui să verific?","acceptedAnswer":{"@type":"Answer","text":"O dată pe lună e suficient pentru o firmă mică. Mai des are sens doar după schimbări mari pe site sau după o campanie de presă."}}]}]}'
+  ogimg='/assets/og-verifica-daca-apari-in-ai.jpg'
+  ogalt='O lupă din sticlă deasupra unei grile de plăci, sub care o singură placă strălucește auriu, ca firma găsită într-un răspuns AI'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Verifică vizibilitatea AI','/blog/verifica-daca-apari-in-ai') ))
@@ -2195,54 +2276,95 @@ $pages += @{
   <h1>Cum verifici dacă firma ta apare <span class="g">în ChatGPT și în căutarea AI</span></h1>
 </div></section>
 <section><div class="wrap rev"><article class="prose">
-  <p class="meta">Actualizat: iunie 2026 &middot; ~5 min de citit &middot; verificarea durează 10 minute</p>
-  <p>Jumătate dintre clienții tăi nu mai încep căutarea pe Google. Întreabă direct ChatGPT, Perplexity sau citesc răspunsul generat de AI din capul paginii Google. Întrebarea reală nu e <em>dacă</em> apari acolo, ci dacă <strong>știi</strong> dacă apari. Majoritatea firmelor nu au verificat niciodată.</p>
-  <p>Vestea bună: poți afla singur, acum, în zece minute, fără niciun instrument plătit. Iată exact cum.</p>
-
-  <h2>De ce contează verificarea asta</h2>
-  <p>Când un motor AI răspunde la &bdquo;care e cea mai bună firmă de X din orașul meu?", numește două-trei nume. Acelea primesc clientul. Restul nici nu există în conversație. Dacă nu te-ai verificat niciodată, probabil ești în &bdquo;restul" fără să știi, în timp ce concurența ta apare.</p>
-
-  <h2>Pasul 1, Scrie întrebările pe care le pune clientul tău</h2>
-  <p>Nu te căuta pe tine după nume (acolo apari oricum). Caută așa cum caută un client care <em>nu te cunoaște încă</em>. Notează 5 întrebări reale. Exemple pe industrie:</p>
-  <ul class="flist" style="margin-top:14px">
-    <li><b>Clinică:</b> &bdquo;cea mai bună clinică stomatologică din [oraș]"</li>
-    <li><b>eCommerce:</b> &bdquo;de unde cumpăr [produsul tău] online în România"</li>
-    <li><b>Servicii B2B:</b> &bdquo;ce firmă mă poate ajuta cu [serviciul tău]"</li>
-    <li><b>HoReCa:</b> &bdquo;unde mănânc bine în [zonă / oraș]"</li>
-    <li><b>Imobiliare:</b> &bdquo;proiecte rezidențiale noi în [zonă]"</li>
+  <p class="meta">Actualizat: octombrie 2026 &middot; ~8 min de citit &middot; verificarea durează 30-45 de minute</p>
+  <p>Când cineva întreabă un asistent AI „ce firmă îmi recomanzi pentru X în orașul meu?”, primește de obicei două-trei nume. Întrebarea nu e doar dacă ești printre ele, ci dacă știi. Cele mai multe firme nu au verificat niciodată.</p>
+  <p>Poți afla singur, fără unelte plătite, într-o după-amiază. Mai jos e metoda pe care o folosim și în audituri, pas cu pas.</p>
+  <div class="pescurt"><p><strong>Pe scurt:</strong> Alegi 10-20 de întrebări pe care le-ar pune un client care nu te cunoaște, le pui în ChatGPT, Perplexity, Google (rezumatul AI și Modul AI) și Copilot și notezi într-un tabel dacă apari, cum apari și cine apare în locul tău. Repeți lunar, cu aceleași întrebări, și completezi cu datele gratuite din Bing Webmaster Tools și Google Analytics.</p></div>
+  <figure class="art-visual"><img src="/assets/blog-verificare-ai-1.webp" srcset="/assets/blog-verificare-ai-1-mic.webp 800w, /assets/blog-verificare-ai-1.webp 1600w" sizes="(max-width: 816px) calc(100vw - 56px), 760px" width="1600" height="893" loading="eager" decoding="async" style="height:auto" alt="O lupă din sticlă deasupra unei grile de plăci, sub care o singură placă strălucește auriu, ca firma găsită într-un răspuns AI"></figure>
+  <h2>Înainte să începi: evită rezultatele personalizate</h2>
+  <ul>
+    <li>Folosește o fereastră privată sau un cont fără istoric. Asistenții țin cont de conversațiile anterioare și de preferințele tale.</li>
+    <li>În ChatGPT, folosește un chat temporar, care nu folosește memoria contului.</li>
+    <li>Nu te căuta după nume, acolo apari aproape sigur. Testul real e cel în care clientul nu te cunoaște încă.</li>
+    <li>Notează data, platforma și dacă răspunsul a folosit căutarea pe internet, adică dacă apar surse.</li>
   </ul>
-
-  <h2>Pasul 2, Întreabă ChatGPT</h2>
-  <p>Pune fiecare întrebare în ChatGPT, exact cum ar face-o clientul. Notează: apari în răspuns? Ești recomandat clar, menționat în treacăt, sau lipsești complet? Reformulează ușor întrebarea și repetă, răspunsurile variază.</p>
-
-  <h2>Pasul 3, Verifică în Perplexity (aici vezi sursele)</h2>
-  <p>Perplexity arată sursele din care își ia răspunsul. E cel mai util test: vezi nu doar <em>dacă</em> apari, ci <strong>din ce surse</strong> te-ar putea cita un AI (și din ce surse o citează pe concurența ta). Acolo se decide vizibilitatea.</p>
-
-  <h2>Pasul 4, Verifică Google AI Overviews</h2>
-  <p>Caută pe Google aceleași întrebări și uită-te la răspunsul generat de AI din capul paginii (AI Overviews), nu doar la linkurile clasice. E tot mai des primul lucru pe care îl vede clientul, și de multe ori singurul.</p>
-
-  <h2>Pasul 5, Compară-te cu 3 competitori</h2>
-  <p>Rulează aceleași întrebări și notează cine apare. Dacă numele concurenței revine și al tău nu, ai răspunsul. Asta e cota de piață pe care o cedezi acum, în tăcere.</p>
-
+  <h2>Pasul 1. Scrie întrebările clientului</h2>
+  <p>Ai nevoie de 10-20 de întrebări, de patru tipuri:</p>
+  <ul>
+    <li><strong>Recomandare:</strong> „cea mai bună clinică stomatologică din Cluj”, „firmă de contabilitate pentru magazine online”.</li>
+    <li><strong>Comparație:</strong> „ce e mai bine pentru [problema ta], X sau Y?”.</li>
+    <li><strong>Preț:</strong> „cât costă [serviciul tău] în București?”.</li>
+    <li><strong>Problemă:</strong> „cum rezolv [problema pe care o rezolvi tu]?”.</li>
+  </ul>
+  <p>Exemple pe domenii, ca punct de plecare:</p>
+  <ul>
+    <li>Clinică: „cea mai bună clinică stomatologică din [oraș]”, „cât costă un implant dentar în [oraș]”.</li>
+    <li>Magazin online: „de unde cumpăr [produsul tău] online în România”.</li>
+    <li>Servicii B2B: „ce firmă mă poate ajuta cu [serviciul tău]”.</li>
+    <li>HoReCa: „unde mănânc bine în [zonă sau oraș]”.</li>
+    <li>Imobiliare: „proiecte rezidențiale noi în [zonă]”.</li>
+  </ul>
+  <h2>Pasul 2. Întreabă ChatGPT</h2>
+  <p>Pune fiecare întrebare exact cum ar scrie-o clientul. Notează dacă apari, dacă ești recomandat clar sau doar menționat și ce surse afișează ChatGPT sub răspuns. Reformulează ușor întrebarea și repet-o: răspunsurile variază de la o rulare la alta.</p>
+  <p>Uită-te atent la surse. Dacă ChatGPT citează un director, un articol sau site-ul unui concurent, acolo trebuie să fii și tu. Dacă răspunsul nu are deloc surse, ChatGPT a răspuns din ce a învățat la antrenare; notează asta separat, pentru că îți arată ce știe modelul despre domeniul tău, nu ce găsește acum pe internet.</p>
+  <h2>Pasul 3. Verifică în Perplexity</h2>
+  <p>Perplexity afișează sursele foarte vizibil, numerotate. E cel mai bun test ca să înțelegi de unde își iau asistenții informația. Notează sursele care apar des: ele devin lista ta de priorități. Dacă aceleași două-trei site-uri apar la mai multe întrebări, ele sunt sursele de încredere ale nișei tale, de exemplu un director, un portal de specialitate sau o platformă de recenzii.</p>
+  <h2>Pasul 4. Verifică Google: rezumatul AI și Modul AI</h2>
+  <p>Caută aceleași întrebări în Google. Uită-te la rezumatul generat de AI din capul paginii, dacă apare, și încearcă și Modul AI, disponibil în limba română din octombrie 2025. Notează dacă site-ul tău e printre linkurile citate.</p>
+  <h2>Pasul 5. Verifică în Copilot și în Gemini</h2>
+  <p>Copilot se bazează pe Bing, deci îți arată cum te vede Bing. Gemini îți arată perspectiva Google. Dacă apari într-unul și lipsești din celălalt, ai o pistă: probabil ești bine indexat doar într-unul dintre motoare.</p>
+  <figure class="art-visual"><img src="/assets/blog-verificare-ai-2.webp" srcset="/assets/blog-verificare-ai-2-mic.webp 800w, /assets/blog-verificare-ai-2.webp 1600w" sizes="(max-width: 816px) calc(100vw - 56px), 760px" width="1600" height="893" loading="lazy" decoding="async" style="height:auto" alt="O tabletă din sticlă cu rânduri de puncte albastre, aurii și gri, ca tabelul în care notezi rezultatele testului"></figure>
+  <h2>Pasul 6. Notează totul într-un tabel</h2>
+  <table class="cmp">
+    <thead><tr><th>Întrebare</th><th>Platformă</th><th>Apari? (2/1/0)</th><th>Cum apari</th><th>Surse citate</th><th>Cine apare în locul tău</th></tr></thead>
+    <tbody>
+      <tr><td>cea mai bună clinică stomatologică din Cluj</td><td data-label="Platformă">ChatGPT</td><td data-label="Apari? (2/1/0)">1</td><td data-label="Cum apari">menționat al treilea</td><td data-label="Surse citate">un director, un articol</td><td data-label="Cine apare în locul tău">clinicile A și B</td></tr>
+    </tbody>
+  </table>
+  <p>Scorul e simplu: 2 puncte dacă ești recomandat clar, 1 punct dacă ești doar menționat, 0 dacă lipsești. Împarte totalul la punctajul maxim și obții un procent pe care îl urmărești lună de lună. De exemplu, 15 întrebări puse pe 4 platforme înseamnă 60 de răspunsuri și cel mult 120 de puncte; dacă strângi 18, scorul tău e 15%.</p>
+  <h2>Pasul 7. Adaugă datele care nu depind de teste</h2>
+  <ul>
+    <li><strong>Bing Webmaster Tools, raportul AI Performance:</strong> de câte ori paginile tale au fost citate în Copilot, în rezumatele AI din Bing și la unii parteneri, și care pagini. E gratuit; ai nevoie doar de site verificat.</li>
+    <li><strong>Google Analytics:</strong> ChatGPT adaugă automat utm_source=chatgpt.com la linkurile spre site-uri. Urmărește și vizitele din perplexity.ai, copilot.microsoft.com și gemini.google.com.</li>
+    <li><strong>Search Console:</strong> Google include vizitele din rezumatele AI și din Modul AI în raportul de performanță, la tipul Web.</li>
+  </ul>
+  <h2>Pasul 8. Compară-te cu trei concurenți</h2>
+  <p>Pentru aceleași întrebări, notează cine apare în locul tău. Dacă două-trei nume se repetă, ai găsit concurenții care ocupă acum spațiul din răspunsurile AI. Uită-te la sursele lor: directoare, articole, recenzii. Acolo ai de lucru.</p>
+  <figure class="art-visual"><img src="/assets/blog-verificare-ai-3.webp" srcset="/assets/blog-verificare-ai-3-mic.webp 800w, /assets/blog-verificare-ai-3.webp 1600w" sizes="(max-width: 816px) calc(100vw - 56px), 760px" width="1600" height="893" loading="lazy" decoding="async" style="height:auto" alt="Patru coloane de sticlă de înălțimi diferite, una aurie, ca o comparație a vizibilității în AI față de trei concurenți"></figure>
   <h2>Cum interpretezi rezultatele</h2>
-  <ul class="flist" style="margin-top:14px">
-    <li><b>Apari recomandat:</b> ești înaintea pieței. Acum contează să consolidezi și să scalezi.</li>
-    <li><b>Apari vag sau inconstant:</b> ai o bază, dar pierzi în detalii, surse insuficiente, conținut nestructurat. Cele mai rapide câștiguri sunt aici.</li>
-    <li><b>Ești invizibil:</b> AI-ul nu are de unde să te cunoască. E urgent, dar reparabil, și cum majoritatea concurenței e în aceeași situație, ai timp să o iei înainte.</li>
+  <p>Noi folosim pragurile acestea ca reper:</p>
+  <ul>
+    <li><strong>Peste 50%:</strong> apari constant. Consolidează: actualizează paginile citate și extinde-te pe întrebări noi.</li>
+    <li><strong>Între 10% și 50%:</strong> ai o bază, dar pierzi la detalii. De obicei lipsesc pagini pentru anumite întrebări sau surse externe. Aici sunt cele mai rapide câștiguri.</li>
+    <li><strong>Sub 10%:</strong> asistenții nu au de unde să te cunoască. E urgent, dar reparabil; începe cu pașii din ghidul <a href="/blog/cum-apari-in-chatgpt/">cum apari în ChatGPT</a>.</li>
   </ul>
-
-  <h2>Ce faci mai departe</h2>
-  <p>Verificarea îți arată <em>unde</em> ești. Pasul următor e <em>de ce</em> și <em>ce repari întâi</em>. Despre asta e <a href="/blog/ghid-geo/">ghidul nostru complet de GEO</a>, iar dacă vrei direct răspunsul pe cazul tău, îl primești prin <a href="/servicii/seo-geo/">serviciul de SEO + GEO</a>.</p>
-  <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Vrei să sărim peste verificarea manuală?</strong> În <a href="/audit-gratuit/">auditul gratuit</a> facem noi analiza: cum apari azi în Google și în AI, față de 3 competitori, plus primii 3 pași. În 24 de ore, fără obligații.</p>
+  <h2>Ce faci după test: primele trei acțiuni</h2>
+  <ol>
+    <li><strong>Repari sursele.</strong> Ia lista surselor citate des, mai ales a celor în care apar concurenții și tu nu. Dacă e un director, înscrie-te sau corectează-ți datele. Dacă e un articol, vezi dacă poți contribui cu o informație utilă sau cu opinia unui specialist.</li>
+    <li><strong>Completezi paginile lipsă.</strong> Pentru fiecare întrebare la care nu apari, verifică dacă ai pe site o pagină care răspunde direct. Dacă nu ai, ea e prima pe listă.</li>
+    <li><strong>Verifici accesul tehnic.</strong> Robotul OAI-SearchBot trebuie să aibă voie în robots.txt și în protecțiile site-ului, iar site-ul trebuie verificat atât în Bing Webmaster Tools, cât și în Google Search Console.</li>
+  </ol>
+  <p>După câteva luni de lucru pe acești pași, testul lunar îți arată dacă scorul crește și pe ce întrebări.</p>
+  <h2>Cât de des repeți testul</h2>
+  <p>Lunar, cu aceleași întrebări, pe aceleași platforme. Răspunsurile AI variază de la o zi la alta, deci contează tendința pe mai multe luni, nu un test izolat. Întrebările noi le ții pe o listă separată, ca să poți compara corect.</p>
+  <h2>Ai doar un minut? Începe cu scorul de vizibilitate</h2>
+  <p><a href="/scor-vizibilitate-ai/">Testul de vizibilitate AI</a> de pe site are 6 întrebări și îți dă în 60 de secunde un scor pentru zonele care decid dacă o firmă e găsită și aleasă online. Nu înlocuiește verificarea de mai sus, dar îți arată de unde să începi.</p>
+  <h2>Întrebări frecvente</h2>
+  <div class="faq" style="margin-top:10px">
+    <details><summary>De ce primesc alt răspuns de fiecare dată?</summary><p>Modelele AI scriu răspunsul de la zero la fiecare întrebare și pot folosi surse diferite. De aceea notezi mai multe rulări și urmărești tendința, nu un singur răspuns.</p></details>
+    <details><summary>Contează dacă sunt conectat la cont?</summary><p>Da. Istoricul, memoria și locația pot schimba răspunsul. Pentru test folosește un chat temporar sau o fereastră privată.</p></details>
+    <details><summary>Ce fac dacă ChatGPT spune lucruri greșite despre firma mea?</summary><p>Corectează sursa: site-ul, profilul Google și directoarele în care datele sunt vechi. Asistenții preiau informația din aceste surse, deci schimbarea se vede după ce ele sunt actualizate și recitite.</p></details>
+    <details><summary>Cât de des ar trebui să verific?</summary><p>O dată pe lună e suficient pentru o firmă mică. Mai des are sens doar după schimbări mari pe site sau după o campanie de presă.</p></details>
   </div>
-</article>
-  <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
-    <h2>Află cum te vede AI-ul, gratuit.</h2>
-    <p class="lead center">Îți trimitem analiza de vizibilitate în Google și în motoarele AI, comparativ cu concurența.</p>
-    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
-  </div>
-</div></section>
+  <div class="key" style="margin-top:30px"><p style="margin:0">Vrei să sari peste verificarea manuală? În <a href="/audit-gratuit/">auditul gratuit</a> facem noi testul pe întrebările clienților tăi, în Google și în AI, față de 3 concurenți, plus primii 3 pași. Răspunsul vine în 24 de ore. Serviciul complet: <a href="/servicii/seo-geo/">SEO + GEO</a>.</p></div>
+  <h2>Surse</h2>
+  <ul class="surse">
+    <li><a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener">OpenAI, „Publishers and Developers FAQ”</a></li>
+    <li><a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener">Google Search Central, „AI features and your website”</a></li>
+    <li><a href="https://blog.google/intl/ro-ro/produse/cautarile-google-in-modul-ai-disponibile-in-romania/" target="_blank" rel="noopener">Google România, „Căutările Google în Modul AI, disponibile în România”, 8 octombrie 2025</a></li>
+    <li><a href="https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview" target="_blank" rel="noopener">Bing Webmaster Blog, „Introducing AI Performance in Bing Webmaster Tools Public Preview”, februarie 2026</a></li>
+  </ul>
+</article></div></section>
 "@
 }
 
@@ -2250,9 +2372,11 @@ $pages += @{
 $pages += @{
   path='blog/geo-vs-seo'
   title='GEO vs SEO: diferența și de ce ai nevoie de ambele | AMPLIO'
-  desc='GEO vs SEO explicat simplu: ce face fiecare, prin ce diferă și de ce ai nevoie de amândouă în 2026. Plus de unde începi dacă pornești de la zero.'
+  desc='Ce face SEO, ce face GEO și unde se suprapun: cum te găsesc oamenii în Google și cum te recomandă ChatGPT, Perplexity și rezumatele AI. Explicat simplu.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('GEO vs SEO','/blog/geo-vs-seo') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"GEO vs SEO: care e diferența și de ce ai nevoie de ambele","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"GEO vs SEO: care e diferența și de ce ai nevoie de ambele","description":"Ce face SEO, ce face GEO și unde se suprapun: cum te găsesc oamenii în Google și cum te recomandă ChatGPT, Perplexity și rezumatele AI. Explicat simplu.","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18","dateModified":"2026-10-17"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"GEO înlocuiește SEO?","acceptedAnswer":{"@type":"Answer","text":"Nu. Rezumatele AI și asistenții care caută pe internet folosesc pagini pe care le găsesc indexate. SEO e fundația, iar GEO se construiește peste ea."}},{"@type":"Question","name":"Am nevoie de buget separat pentru GEO?","acceptedAnswer":{"@type":"Answer","text":"De obicei nu de un buget separat, ci de o altă împărțire a muncii: o parte din efort merge spre conținut ușor de citat și spre mențiuni externe, nu doar spre poziții în Google."}},{"@type":"Question","name":"Cât durează până văd rezultate?","acceptedAnswer":{"@type":"Answer","text":"În ambele cazuri vorbim de luni, nu de săptămâni. În GEO, primele apariții pot veni mai repede pe întrebări de nișă, dar consolidarea durează, pentru că sursele externe se construiesc în timp."}},{"@type":"Question","name":"Ce măsor concret în GEO?","acceptedAnswer":{"@type":"Answer","text":"De câte ori apari în răspunsurile la un set fix de întrebări, ce surse sunt citate, câte citări ai în raportul AI Performance din Bing și câte vizite vin din chatgpt.com, perplexity.ai sau copilot.microsoft.com în Analytics."}}]}]}'
+  ogimg='/assets/og-geo-vs-seo.jpg'
+  ogalt='Două discuri de sticlă care se suprapun, unul albastru și unul auriu, ca zona comună dintre SEO și GEO'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('GEO vs SEO','/blog/geo-vs-seo') ))
@@ -2260,39 +2384,88 @@ $pages += @{
   <h1>GEO vs SEO: care e diferența <span class="g">și de ce ai nevoie de ambele</span></h1>
 </div></section>
 <section><div class="wrap rev"><article class="prose">
-  <p class="meta">Actualizat: iunie 2026 &middot; ~5 min de citit</p>
-  <p>Întrebarea apare des: &bdquo;acum că există AI, mai am nevoie de SEO sau trec pe GEO?". Răspunsul scurt: ai nevoie de amândouă. Nu sunt în competiție, sunt două straturi ale aceleiași strategii de vizibilitate. Iată diferența, fără jargon.</p>
-
-  <h2>Ce face SEO</h2>
-  <p>SEO (Search Engine Optimization) te ajută să urci în <strong>lista de rezultate</strong> Google: cele 10 linkuri albastre. Optimizezi pentru un algoritm care decide ce pagini afișează și în ce ordine. Câștigi când utilizatorul dă click pe rezultatul tău.</p>
-
-  <h2>Ce face GEO</h2>
-  <p>GEO (Generative Engine Optimization) te ajută să fii <strong>citat și recomandat în răspunsul</strong> pe care îl generează un AI, ChatGPT, Perplexity, Google AI Overviews. Aici nu mai e o listă de 10 opțiuni, ci un singur răspuns. Câștigi când AI-ul te numește pe tine.</p>
-
-  <h2>Diferența pe scurt</h2>
-  <ul class="flist" style="margin-top:14px">
-    <li><b>SEO</b> = vizibilitate într-o listă de linkuri. Utilizatorul alege.</li>
-    <li><b>GEO</b> = vizibilitate într-un răspuns sintetizat. AI-ul alege pentru utilizator.</li>
-    <li><b>SEO</b> răsplătește cuvinte cheie, linkuri, viteză tehnică.</li>
-    <li><b>GEO</b> răsplătește conținut clar și structurat, autoritate și prezență în surse credibile.</li>
+  <p class="meta">Actualizat: octombrie 2026 &middot; ~8 min de citit</p>
+  <p>Întrebarea vine des: „Acum că oamenii întreabă AI-ul, mai am nevoie de SEO sau trec pe GEO?”. Răspunsul scurt e că ai nevoie de amândouă, pentru că pornesc din aceeași fundație. Diferă însă rezultatul pe care îl urmărești, semnalele care contează și felul în care măsori.</p>
+  <div class="pescurt"><p><strong>Pe scurt:</strong> SEO te ajută să apari cât mai sus în rezultatele Google și să primești click-uri. GEO te ajută să fii citat sau recomandat în răspunsurile generate de AI: ChatGPT, Perplexity, Copilot, rezumatele AI și Modul AI din Google. GEO nu înlocuiește SEO: fără pagini indexate și de încredere, nu ai ce să fie citat.</p></div>
+  <figure class="art-visual"><img src="/assets/blog-geo-seo-1.webp" srcset="/assets/blog-geo-seo-1-mic.webp 800w, /assets/blog-geo-seo-1.webp 1600w" sizes="(max-width: 816px) calc(100vw - 56px), 760px" width="1600" height="893" loading="eager" decoding="async" style="height:auto" alt="Două discuri de sticlă care se suprapun, unul albastru și unul auriu, ca zona comună dintre SEO și GEO"></figure>
+  <h2>Ce este SEO</h2>
+  <p>SEO (Search Engine Optimization) înseamnă să faci un site ușor de găsit, de înțeles și de ales în motoarele de căutare. Lucrezi pe trei planuri: tehnic (viteză, indexare, structură), conținut (pagini care răspund la ce caută oamenii) și autoritate (linkuri și mențiuni de pe alte site-uri). Rezultatul se vede în poziția ta în listă și în click-urile pe care le primești.</p>
+  <h2>Ce este GEO</h2>
+  <p>GEO (Generative Engine Optimization) e un termen propus în 2023 de cercetători de la Princeton și de la alte universități, într-un studiu prezentat apoi la conferința KDD 2024. Desemnează optimizarea pentru motoarele care nu mai dau o listă de linkuri, ci un răspuns scris, sintetizat din mai multe surse.</p>
+  <p>În România, subiectul a devenit practic în ultimul an. Pe lângă ChatGPT și Perplexity, Google a lansat în octombrie 2025 Modul AI și în limba română, așa că un client poate primi o recomandare completă fără să mai vadă lista clasică de rezultate. În GEO câștigi când AI-ul te numește, te citează ca sursă sau pune linkul tău în răspuns.</p>
+  <h2>Diferența, punct cu punct</h2>
+  <table class="cmp">
+    <thead><tr><th></th><th>SEO</th><th>GEO</th></tr></thead>
+    <tbody>
+      <tr><td>Unde apari</td><td data-label="SEO">în lista de rezultate Google și Bing</td><td data-label="GEO">în răspunsul scris de ChatGPT, Perplexity, Copilot sau rezumatele AI Google</td></tr>
+      <tr><td>Cine alege</td><td data-label="SEO">omul, dintre zece rezultate</td><td data-label="GEO">asistentul AI, care numește de obicei câteva surse</td></tr>
+      <tr><td>Ce câștigi</td><td data-label="SEO">un click spre site</td><td data-label="GEO">o mențiune, o recomandare sau un link citat</td></tr>
+      <tr><td>Ce contează mai mult</td><td data-label="SEO">relevanță, linkuri, experiența paginii</td><td data-label="GEO">răspunsuri clare, date verificabile, aceleași informații despre tine în mai multe surse</td></tr>
+      <tr><td>Cine îți citește site-ul</td><td data-label="SEO">Googlebot, Bingbot</td><td data-label="GEO">aceiași, plus roboții AI, de exemplu OAI-SearchBot</td></tr>
+      <tr><td>Cum măsori</td><td data-label="SEO">Search Console: afișări, click-uri, poziții</td><td data-label="GEO">teste lunare, citări în Bing Webmaster Tools, vizite din chatgpt.com în Analytics</td></tr>
+    </tbody>
+  </table>
+  <figure class="art-visual"><img src="/assets/blog-geo-seo-2.webp" srcset="/assets/blog-geo-seo-2-mic.webp 800w, /assets/blog-geo-seo-2.webp 1600w" sizes="(max-width: 816px) calc(100vw - 56px), 760px" width="1600" height="893" loading="lazy" decoding="async" style="height:auto" alt="Un teanc vertical de plăci subțiri albastre lângă un singur panou auriu, ca lista de rezultate față de un singur răspuns AI"></figure>
+  <h2>Un exemplu: aceeași nevoie, două rezultate</h2>
+  <p>Să luăm, ca exemplu ipotetic, o clinică stomatologică din Cluj. Un pacient caută în Google „implant dentar Cluj” și vede zece rezultate: clinici, directoare, poate un articol despre prețuri. Clinica primește click-uri dacă e printre primele poziții și dacă titlul și descrierea o scot în evidență. Asta e SEO.</p>
+  <p>Același pacient îl întreabă pe ChatGPT: „ce clinică îmi recomanzi pentru un implant în Cluj și cam cât costă?”. Primește două-trei nume, un interval de preț și câteva surse. Clinica apare doar dacă asistentul găsește despre ea informații clare și confirmate: o pagină cu prețuri orientative și pașii tratamentului, recenzii, prezență în directoarele medicale. Asta e GEO.</p>
+  <p>Pagina despre implanturi e aceeași în ambele cazuri. Diferă ce e în jurul ei: în SEO contează mai ales poziția paginii, în GEO contează și ce spun alte surse despre clinică.</p>
+  <h2>Unde se suprapun</h2>
+  <p>Mai mult decât pare. Google spune explicit că pentru a apărea în rezumatele AI și în Modul AI nu există cerințe speciale: pagina trebuie să fie indexată și eligibilă pentru un fragment în rezultate. Cu alte cuvinte, bunele practici SEO sunt condiția de bază și pentru vizibilitatea în AI-ul Google.</p>
+  <p>Și asistenții care caută pe internet, cum e ChatGPT, se sprijină pe ce găsesc indexat. Un site lent, cu pagini blocate sau duplicate, pierde în ambele lumi. Fundația comună:</p>
+  <ul>
+    <li>pagini indexate, rapide, fără erori tehnice;</li>
+    <li>conținut util, scris pentru oameni și actualizat;</li>
+    <li>structură clară: titluri, subtitluri, liste, date structurate;</li>
+    <li>o identitate coerentă a firmei: același nume, aceeași adresă, aceleași servicii peste tot.</li>
   </ul>
-
-  <h2>De ce ai nevoie de ambele</h2>
-  <p>Mulți clienți încă încep pe Google clasic, deci SEO rămâne esențial. Dar o parte tot mai mare întreabă direct AI-ul, fără să mai vadă vreodată lista de linkuri, deci GEO devine obligatoriu. Dacă lucrezi doar SEO, ești invizibil exact în canalul care crește cel mai repede.</p>
-  <blockquote>Vestea bună: SEO și GEO împart aceeași fundație, conținut clar, structurat și demn de încredere. O strategie bună le hrănește pe amândouă în paralel.</blockquote>
-
-  <h2>De unde începi dacă pornești de la zero</h2>
-  <p>Întâi măsoară unde ești în ambele lumi (vezi tutorialul: <a href="/blog/verifica-daca-apari-in-ai/">cum verifici dacă apari în AI</a>). Apoi repară fundația tehnică SEO și, în paralel, structurează conținutul ca să fie citabil de AI. Tot tabloul e în <a href="/blog/ghid-geo/">ghidul complet de GEO</a>.</p>
-  <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Le facem pe amândouă, împreună.</strong> Vezi serviciul de <a href="/servicii/seo-geo/">SEO + GEO</a> sau cere <a href="/audit-gratuit/">auditul gratuit</a> ca să afli unde stai acum în Google și în AI.</p>
+  <h2>Unde diferă</h2>
+  <h3>1. Răspunsul contează mai mult decât poziția</h3>
+  <p>În SEO, locul patru încă aduce click-uri. Într-un răspuns AI, fie ești printre cele două-trei nume, fie nu exiști. De aceea paginile au nevoie de fragmente ușor de citat: o definiție clară, un preț orientativ, un pas concret.</p>
+  <h3>2. Contează ce spun alții despre tine</h3>
+  <p>Linkurile rămân importante în SEO. Pentru GEO contează și mențiunile fără link: directoare, recenzii, articole, profiluri pe platformele din nișa ta. Un model AI e mai sigur pe o firmă descrisă la fel în mai multe surse.</p>
+  <h3>3. Datele verificabile câștigă</h3>
+  <p>Studiul care a introdus termenul GEO a arătat că adăugarea de surse, citate și statistici poate crește vizibilitatea unui text în răspunsurile generative cu până la 40%, cu diferențe între domenii. Afirmațiile vagi, de tipul „suntem cei mai buni”, nu au ce să ofere unui model care caută dovezi.</p>
+  <h3>4. Contează și alți roboți și alte motoare</h3>
+  <p>Bing contează pentru AI mai mult decât ai crede după cota lui din căutarea clasică: alimentează Copilot, iar Bing Webmaster Tools are din februarie 2026 un raport separat cu citările din răspunsurile AI. Pentru ChatGPT, robotul OAI-SearchBot trebuie lăsat să citească site-ul. Detaliile sunt în ghidul <a href="/blog/cum-apari-in-chatgpt/">cum apari în ChatGPT</a>.</p>
+  <h3>5. Măsurarea e mai puțin precisă</h3>
+  <p>Search Console îți dă afișări, click-uri și poziții. Pentru AI combini teste manuale lunare, raportul de citări din Bing și vizitele din chatgpt.com sau perplexity.ai din Google Analytics. Google include vizitele din funcțiile AI în raportul de performanță obișnuit, la tipul Web.</p>
+  <h2>Cum le combini în practică</h2>
+  <ol>
+    <li>Repari fundația tehnică: indexare, viteză, pagini duplicate, harta site-ului trimisă în Google și în Bing.</li>
+    <li>Verifici accesul roboților: robots.txt și protecțiile site-ului (Cloudflare, firewall) nu trebuie să blocheze roboții de căutare AI.</li>
+    <li>Construiești pagini pe întrebările reale ale clienților: servicii, prețuri, comparații, întrebări frecvente.</li>
+    <li>Scrii fiecare pagină cu răspunsul la început și cu date verificabile.</li>
+    <li>Aliniezi datele firmei peste tot: site, profilul Google, directoare, rețele sociale.</li>
+    <li>Construiești mențiuni: recenzii reale, articole, parteneriate, prezență în publicațiile din nișă.</li>
+    <li>Măsori lunar ambele lumi: Search Console pentru SEO, testele și citările pentru GEO.</li>
+  </ol>
+  <p>Ordinea contează. Pașii 1-4 aduc rezultate în SEO și pregătesc terenul pentru AI, iar pașii 5-6 cântăresc mai mult pentru recomandările AI.</p>
+  <figure class="art-visual"><img src="/assets/blog-geo-seo-3.webp" srcset="/assets/blog-geo-seo-3-mic.webp 800w, /assets/blog-geo-seo-3.webp 1600w" sizes="(max-width: 816px) calc(100vw - 56px), 760px" width="1600" height="893" loading="lazy" decoding="async" style="height:auto" alt="O fundație din blocuri de sticlă din care se ridică două turnuri, unul albastru și unul auriu, ca SEO și GEO construite pe aceeași bază"></figure>
+  <h2>Greșeli frecvente</h2>
+  <ul>
+    <li>Să tratezi GEO ca pe un înlocuitor al SEO. Fără pagini indexate și de încredere, nu ai ce să fie citat.</li>
+    <li>Să ignori Bing pentru că „nu-l folosește nimeni”. Copilot îl folosește.</li>
+    <li>Să crezi că un fișier special, de exemplu llms.txt, rezolvă vizibilitatea în AI. Google spune că nu are nevoie de astfel de fișiere.</li>
+    <li>Să scrii pentru algoritm în loc de om. Ambele sisteme răsplătesc textul clar și util.</li>
+  </ul>
+  <h2>Întrebări frecvente</h2>
+  <div class="faq" style="margin-top:10px">
+    <details><summary>GEO înlocuiește SEO?</summary><p>Nu. Rezumatele AI și asistenții care caută pe internet folosesc pagini pe care le găsesc indexate. SEO e fundația, iar GEO se construiește peste ea.</p></details>
+    <details><summary>Am nevoie de buget separat pentru GEO?</summary><p>De obicei nu de un buget separat, ci de o altă împărțire a muncii: o parte din efort merge spre conținut ușor de citat și spre mențiuni externe, nu doar spre poziții în Google.</p></details>
+    <details><summary>Cât durează până văd rezultate?</summary><p>În ambele cazuri vorbim de luni, nu de săptămâni. În GEO, primele apariții pot veni mai repede pe întrebări de nișă, dar consolidarea durează, pentru că sursele externe se construiesc în timp.</p></details>
+    <details><summary>Ce măsor concret în GEO?</summary><p>De câte ori apari în răspunsurile la un set fix de întrebări, ce surse sunt citate, câte citări ai în raportul AI Performance din Bing și câte vizite vin din chatgpt.com, perplexity.ai sau copilot.microsoft.com în Analytics.</p></details>
   </div>
-</article>
-  <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
-    <h2>Acoperă ambele canale, nu doar unul.</h2>
-    <p class="lead center">Auditul gratuit îți arată cum apari azi în Google și în motoarele AI.</p>
-    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
-  </div>
-</div></section>
+  <div class="key" style="margin-top:30px"><p style="margin:0">Le lucrăm pe amândouă împreună, în serviciul <a href="/servicii/seo-geo/">SEO + GEO</a>. Dacă vrei să știi unde ești acum în Google și în AI, cere <a href="/audit-gratuit/">auditul gratuit</a>: primești analiza în 24 de ore. Pentru tot tabloul, citește <a href="/blog/ghid-geo/">ghidul complet de GEO</a>.</p></div>
+  <h2>Surse</h2>
+  <ul class="surse">
+    <li><a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener">Aggarwal și alții, „GEO: Generative Engine Optimization”, KDD 2024</a></li>
+    <li><a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener">Google Search Central, „AI features and your website”</a></li>
+    <li><a href="https://blog.google/intl/ro-ro/produse/cautarile-google-in-modul-ai-disponibile-in-romania/" target="_blank" rel="noopener">Google România, „Căutările Google în Modul AI, disponibile în România”, 8 octombrie 2025</a></li>
+    <li><a href="https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview" target="_blank" rel="noopener">Bing Webmaster Blog, „Introducing AI Performance in Bing Webmaster Tools Public Preview”, februarie 2026</a></li>
+    <li><a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener">OpenAI, „Overview of OpenAI Crawlers”</a></li>
+  </ul>
+</article></div></section>
 "@
 }
 
@@ -2300,9 +2473,11 @@ $pages += @{
 $pages += @{
   path='blog/greseli-buget-google-ads'
   title='7 greșeli care îți ard bugetul de Google Ads | AMPLIO'
-  desc='Cele mai frecvente 7 greșeli prin care firmele pierd bani pe Google Ads și Meta Ads, și cum le eviți pe fiecare. Ghid practic pentru firme din România.'
+  desc='Greșelile care consumă bugetul de Google Ads fără clienți: măsurare, setări implicite, cuvinte cheie negative, pagini slabe. Cum le recunoști și le repari.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Greșeli buget ads','/blog/greseli-buget-google-ads') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"7 greșeli care îți ard bugetul de Google Ads","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"7 greșeli care îți ard bugetul de Google Ads","description":"Greșelile care consumă bugetul de Google Ads fără clienți: măsurare, setări implicite, cuvinte cheie negative, pagini slabe. Cum le recunoști și le repari.","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18","dateModified":"2026-10-17"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ce buget minim are sens pentru Google Ads?","acceptedAnswer":{"@type":"Answer","text":"Depinde de costul pe click din domeniul tău. Cifre pentru România găsești în articolul cât costă Google Ads în România. Regula practică: bugetul trebuie să permită suficiente click-uri pe lună ca să apară primele conversii."}},{"@type":"Question","name":"Merită Performance Max pentru o firmă mică?","acceptedAnswer":{"@type":"Answer","text":"Poate merge bine pentru magazinele online cu feed de produse și conversii măsurate corect. Fără măsurare și fără date, e greu de controlat. De obicei pornim cu campanii de căutare și adăugăm Performance Max după ce avem conversii."}},{"@type":"Question","name":"Cât de des trebuie optimizat contul?","acceptedAnswer":{"@type":"Answer","text":"Săptămânal în primele luni: termeni de căutare, buget, anunțuri. După ce contul se stabilizează, verificările săptămânale rămân, iar schimbările mari se fac lunar, pe baza datelor."}},{"@type":"Question","name":"Pot face totul singur?","acceptedAnswer":{"@type":"Answer","text":"Da, dacă ai timp în fiecare săptămână pentru cont. Greșelile de mai sus nu cer unelte speciale, doar disciplină. Un audit extern ajută când nu ești sigur ce măsori sau unde se duc banii."}}]}]}'
+  ogimg='/assets/og-greseli-buget-google-ads.jpg'
+  ogalt='O pâlnie de sticlă prin care se scurg și se pierd monede aurii, ca bugetul de reclame consumat de greșeli'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Greșeli buget ads','/blog/greseli-buget-google-ads') ))
@@ -2310,42 +2485,107 @@ $pages += @{
   <h1>7 greșeli care <span class="g">îți ard bugetul de Google Ads</span></h1>
 </div></section>
 <section><div class="wrap rev"><article class="prose">
-  <p class="meta">Actualizat: iunie 2026 &middot; ~6 min de citit</p>
-  <p>Cele mai multe firme nu au o problemă de buget la ads, au o problemă de risipă. Aceiași bani, cheltuiți corect, aduc de câteva ori mai mult. Iată cele 7 greșeli pe care le vedem cel mai des și cum le repari.</p>
-
+  <p class="meta">Actualizat: octombrie 2026 &middot; ~9 min de citit</p>
+  <p>Cele mai multe firme nu au o problemă de buget la Google Ads, au o problemă de risipă. Aceiași bani, cheltuiți pe căutările potrivite și măsurați corect, aduc de obicei mai mulți clienți. Mai jos sunt cele 7 greșeli pe care le vedem cel mai des în conturi, cum le recunoști și cum le repari.</p>
+  <div class="pescurt"><p><strong>Pe scurt:</strong> Cele mai scumpe greșeli sunt cheltuiala fără măsurare corectă, setările implicite lăsate neverificate, potrivirea largă fără cuvinte cheie negative, paginile de destinație slabe, recomandările aplicate automat, urmărirea metricilor greșite și anunțurile netestate. Niciuna nu cere buget în plus, doar disciplină săptămânală.</p></div>
+  <figure class="art-visual"><img src="/assets/blog-greseli-ads-1.webp" srcset="/assets/blog-greseli-ads-1-mic.webp 800w, /assets/blog-greseli-ads-1.webp 1600w" sizes="(max-width: 816px) calc(100vw - 56px), 760px" width="1600" height="893" loading="eager" decoding="async" style="height:auto" alt="O pâlnie de sticlă prin care se scurg și se pierd monede aurii, ca bugetul de reclame consumat de greșeli"></figure>
   <h2>1. Cheltui înainte să măsori</h2>
-  <p>Fără tracking corect al conversiilor, nu știi ce campanie aduce clienți și ce campanie doar arde bani. Regula noastră: niciun euro pe media până nu e verificat tracking-ul cu teste reale.</p>
-
-  <h2>2. Trimiți traficul pe o pagină slabă</h2>
-  <p>Un ad bun care duce spre o pagină care nu convertește e bani pierduți. Pagina de destinație face jumătate din rezultat. Vezi <a href="/servicii/landing-pages-cro/">landing pages și CRO</a>.</p>
-
-  <h2>3. Targetezi prea larg</h2>
-  <p>&bdquo;Toată România, toți, 18-65" pare că maximizează reach-ul, dar risipește bugetul pe oameni care nu cumpără. Mai bine focusat și profitabil decât larg și inutil.</p>
-
-  <h2>4. Lași campaniile pe pilot automat</h2>
-  <p>Campaniile neoptimizate se degradează în timp: cresc costurile, scade calitatea traficului. Au nevoie de mână de om săptămânal, ajustări de licitație, cuvinte cheie negative, creație nouă.</p>
-
-  <h2>5. Ignori cuvintele cheie negative</h2>
-  <p>Fără o listă de cuvinte cheie negative, plătești pentru căutări care nu au legătură cu oferta ta. E una dintre cele mai rapide reparații cu impact imediat pe cost.</p>
-
-  <h2>6. Optimizezi pe metrici greșite</h2>
-  <p>Click-uri ieftine și multe afișări sună bine, dar nu plătesc salarii. Singura metrică ce contează e costul pe client nou și venitul generat. Restul sunt indicatori, nu obiective.</p>
-
-  <h2>7. Nu testezi creația</h2>
-  <p>O singură variantă de ad înseamnă că nu vei ști niciodată dacă altceva mergea mai bine. Cu AI poți produce rapid mai multe variante și lași datele să decidă câștigătorul.</p>
-
-  <h2>Concluzia</h2>
-  <p>Niciuna dintre aceste greșeli nu cere buget în plus, doar disciplină și atenție săptămânală. Despre asta e <a href="/servicii/google-ads/">serviciul nostru de Google Ads</a>: tracking, focus, optimizare săptămânală, raport pe venit.</p>
-  <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Suspectezi că arzi bani pe ads?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a>, ne uităm la contul tău și îți spunem unde pierzi, fără obligații.</p>
+  <p>Fără măsurarea conversiilor nu știi ce campanie aduce clienți și ce campanie doar consumă bani. Iar fără conversii, licitarea automată a Google nu are după ce să se optimizeze.</p>
+  <p><strong>Cum o recunoști:</strong> coloana „Conversii” e goală sau arată mult mai puțin decât cererile pe care le primești; nu știi câte apeluri au venit din reclame.</p>
+  <p><strong>Cum o repari:</strong></p>
+  <ul>
+    <li>definește ce înseamnă o conversie pentru tine: formular trimis, apel, comandă, mesaj pe WhatsApp;</li>
+    <li>fă un test real pentru fiecare acțiune și verifică să apară în cont;</li>
+    <li>în UE, cookie-urile de reclamă se folosesc doar cu acordul vizitatorului, iar Google primește acest acord prin Consent Mode; dacă e configurat greșit, pierzi conversii din rapoarte;</li>
+    <li>abia apoi pornești bugetul.</li>
+  </ul>
+  <p>Regula noastră: niciun leu pe reclame până nu e verificată măsurarea cu teste reale.</p>
+  <h2>2. Lași setările implicite neverificate</h2>
+  <p>La crearea unei campanii, Google propune setări care măresc acoperirea. Nu sunt greșite în sine, dar nu se potrivesc oricărei afaceri.</p>
+  <ul>
+    <li><strong>Locația:</strong> opțiunea implicită și recomandată de Google este „Prezență sau interes”, care arată reclamele oamenilor din zona aleasă, dar și celor care doar s-au arătat interesați de ea. Pentru un serviciu local, cum e o clinică sau un service auto, „Prezență” (oameni aflați sau prezenți regulat în zonă) e de obicei mai potrivită.</li>
+    <li><strong>Rețelele:</strong> verifică dacă în campania de căutare sunt bifate rețeaua de parteneri de căutare și rețeaua de display. Display-ul aduce mult trafic ieftin, dar de alt tip decât căutarea; dacă îl vrei, fă-i o campanie separată.</li>
+    <li><strong>Programul:</strong> dacă nu poți răspunde la telefon noaptea, ia în calcul să reduci sau să oprești reclamele în orele în care nu poți prelua clientul.</li>
+  </ul>
+  <figure class="art-visual"><img src="/assets/blog-greseli-ads-2.webp" srcset="/assets/blog-greseli-ads-2-mic.webp 800w, /assets/blog-greseli-ads-2.webp 1600w" sizes="(max-width: 816px) calc(100vw - 56px), 760px" width="1600" height="893" loading="lazy" decoding="async" style="height:auto" alt="Un panou de control din sticlă cu comutatoare albastre și unul auriu, ca setările de campanie care trebuie verificate"></figure>
+  <h2>3. Folosești potrivirea largă fără cuvinte cheie negative</h2>
+  <p>În Google Ads, potrivirea largă e tipul implicit pentru orice cuvânt cheie, iar reclama ta poate apărea la căutări înrudite, uneori surprinzător de departe de ce vinzi. Google recomandă potrivirea largă împreună cu licitarea inteligentă (Smart Bidding), care învață din conversii. Fără conversii măsurate și fără o listă de cuvinte cheie negative, plătești pentru căutări care nu au legătură cu oferta ta.</p>
+  <p><strong>Cum o recunoști:</strong> în raportul „Termeni de căutare” găsești căutări despre joburi, cursuri, „gratuit”, produse pe care nu le ai sau orașe în care nu lucrezi.</p>
+  <p><strong>Cum o repari:</strong></p>
+  <ul>
+    <li>citește raportul de termeni de căutare săptămânal, mai ales în primele luni;</li>
+    <li>construiește o listă de cuvinte cheie negative, de exemplu gratuit, job, angajare, curs, second hand, după caz;</li>
+    <li>la bugete mici sau fără istoric de conversii, pornește cu potrivirea expresie și exactă, iar potrivirea largă las-o pentru când ai date.</li>
+  </ul>
+  <p>Ultimul punct e recomandarea noastră pentru conturile mici, nu o regulă Google.</p>
+  <h2>4. Trimiți traficul pe o pagină slabă</h2>
+  <p>Un anunț bun care duce pe o pagină confuză e bani pierduți. Pagina trebuie să continue exact promisiunea din anunț. Verifică:</p>
+  <ul>
+    <li>aceeași ofertă și aceleași cuvinte ca în anunț;</li>
+    <li>o singură acțiune principală, vizibilă pe telefon fără derulare;</li>
+    <li>numărul de telefon ca link pe care se poate apăsa;</li>
+    <li>încărcare rapidă pe mobil;</li>
+    <li>dovezi: recenzii, prețuri orientative, răspunsuri la întrebările frecvente.</li>
+  </ul>
+  <p>Despre asta e serviciul de <a href="/servicii/landing-pages-cro/">landing pages și CRO</a>.</p>
+  <h2>5. Lași contul pe pilot automat</h2>
+  <p>Campaniile neatinse se degradează: apar căutări noi, concurența își schimbă licitările, anunțurile obosesc. În plus, Google poate aplica automat anumite recomandări, dacă ai activat această opțiune în cont.</p>
+  <p><strong>Cum o repari:</strong></p>
+  <ul>
+    <li>verifică în secțiunea „Recomandări” ce tipuri se aplică automat și păstrează doar ce înțelegi și vrei; istoricul îți arată ce s-a aplicat deja;</li>
+    <li>stabilește o rutină săptămânală: termeni de căutare, buget pe campanii, anunțuri noi, cuvinte cheie negative;</li>
+    <li>notează fiecare schimbare, ca să știi ce a produs un efect.</li>
+  </ul>
+  <h2>6. Urmărești metricile greșite</h2>
+  <p>Click-urile ieftine și afișările multe arată bine în raport, dar nu plătesc salarii. Ce contează: costul pe client nou și venitul generat.</p>
+  <table class="cmp">
+    <thead><tr><th>Metrica</th><th>Ce îți spune</th><th>Capcana</th></tr></thead>
+    <tbody>
+      <tr><td>Rata de click (CTR)</td><td data-label="Ce îți spune">cât de atractiv e anunțul</td><td data-label="Capcana">un anunț vag poate atrage click-uri fără clienți</td></tr>
+      <tr><td>Costul pe click</td><td data-label="Ce îți spune">cât plătești pentru o vizită</td><td data-label="Capcana">click-urile ieftine vin des din căutări irelevante</td></tr>
+      <tr><td>Conversii</td><td data-label="Ce îți spune">câte acțiuni utile au loc</td><td data-label="Capcana">contează doar dacă măsurarea e corectă</td></tr>
+      <tr><td>Costul pe conversie</td><td data-label="Ce îți spune">cât te costă o cerere</td><td data-label="Capcana">o cerere nu e încă un client</td></tr>
+      <tr><td>Venitul sau ROAS</td><td data-label="Ce îți spune">cât aduce fiecare leu investit</td><td data-label="Capcana">are nevoie de valori reale de vânzare</td></tr>
+    </tbody>
+  </table>
+  <p>Dacă vinzi prin telefon sau prin ofertă, leagă cererile din reclame de vânzările reale, chiar și într-un simplu tabel lunar. Altfel optimizezi pe formulare, nu pe clienți.</p>
+  <h2>7. Nu testezi anunțurile</h2>
+  <p>Un anunț responsiv de căutare acceptă până la 15 titluri și 4 descrieri, iar Google le combină în funcție de căutare. Dacă scrii doar trei titluri aproape identice, sistemul nu are ce testa.</p>
+  <ul>
+    <li>scrie titluri pe unghiuri diferite: preț, rapiditate, garanție, zonă, experiență;</li>
+    <li>fixează un titlu pe o poziție doar când e obligatoriu, de exemplu pentru o mențiune legală, pentru că fiecare fixare reduce combinațiile;</li>
+    <li>înlocuiește lunar titlurile cu rezultate slabe.</li>
+  </ul>
+  <figure class="art-visual"><img src="/assets/blog-greseli-ads-3.webp" srcset="/assets/blog-greseli-ads-3-mic.webp 800w, /assets/blog-greseli-ads-3.webp 1600w" sizes="(max-width: 816px) calc(100vw - 56px), 760px" width="1600" height="893" loading="lazy" decoding="async" style="height:auto" alt="Un filtru de sticlă prin care trec doar câteva particule aurii din multe albastre, ca o campanie care plătește doar pentru căutările potrivite"></figure>
+  <h2>Verificarea de 30 de minute</h2>
+  <p>Dacă ai acces la cont, poți face singur o primă verificare:</p>
+  <ol>
+    <li>Conversiile apar și seamănă cu realitatea din ultimele 30 de zile?</li>
+    <li>Locația e setată pe zona în care chiar lucrezi sau livrezi?</li>
+    <li>Campaniile de căutare au bifate display-ul și partenerii de căutare fără să știi?</li>
+    <li>Raportul de termeni de căutare conține căutări irelevante?</li>
+    <li>Există o listă de cuvinte cheie negative?</li>
+    <li>Ce recomandări se aplică automat?</li>
+    <li>Fiecare grup de anunțuri are cel puțin un anunț cu 10 sau mai multe titluri diferite?</li>
+  </ol>
+  <p>Fiecare „nu știu” sau „da, din păcate” e un loc pe unde se pierd bani.</p>
+  <h2>Întrebări frecvente</h2>
+  <div class="faq" style="margin-top:10px">
+    <details><summary>Ce buget minim are sens pentru Google Ads?</summary><p>Depinde de costul pe click din domeniul tău. Cifre pentru România găsești în articolul <a href="/blog/cost-google-ads-romania/">cât costă Google Ads în România</a>. Regula practică: bugetul trebuie să permită suficiente click-uri pe lună ca să apară primele conversii.</p></details>
+    <details><summary>Merită Performance Max pentru o firmă mică?</summary><p>Poate merge bine pentru magazinele online cu feed de produse și conversii măsurate corect. Fără măsurare și fără date, e greu de controlat. De obicei pornim cu campanii de căutare și adăugăm Performance Max după ce avem conversii.</p></details>
+    <details><summary>Cât de des trebuie optimizat contul?</summary><p>Săptămânal în primele luni: termeni de căutare, buget, anunțuri. După ce contul se stabilizează, verificările săptămânale rămân, iar schimbările mari se fac lunar, pe baza datelor.</p></details>
+    <details><summary>Pot face totul singur?</summary><p>Da, dacă ai timp în fiecare săptămână pentru cont. Greșelile de mai sus nu cer unelte speciale, doar disciplină. Un audit extern ajută când nu ești sigur ce măsori sau unde se duc banii.</p></details>
   </div>
-</article>
-  <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
-    <h2>Oprește risipa din contul tău de ads.</h2>
-    <p class="lead center">Analizăm gratuit unde se duc banii și ce ai repara primul.</p>
-    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
-  </div>
-</div></section>
+  <div class="key" style="margin-top:30px"><p style="margin:0">Suspectezi că arzi bani pe reclame? Cere <a href="/audit-gratuit/">auditul gratuit</a>: ne uităm la contul tău și îți spunem unde pierzi, în 24 de ore. Serviciul complet: <a href="/servicii/google-ads/">administrare Google Ads</a>.</p></div>
+  <h2>Surse</h2>
+  <ul class="surse">
+    <li><a href="https://support.google.com/google-ads/answer/7478529" target="_blank" rel="noopener">Google Ads Help, „About broad match”</a></li>
+    <li><a href="https://support.google.com/google-ads/answer/1722038" target="_blank" rel="noopener">Google Ads Help, „About advanced location options”</a></li>
+    <li><a href="https://support.google.com/google-ads/answer/7684791" target="_blank" rel="noopener">Google Ads Help, „About responsive search ads”</a></li>
+    <li><a href="https://support.google.com/google-ads/answer/10279006" target="_blank" rel="noopener">Google Ads Help, „About auto-apply recommendations”</a></li>
+    <li><a href="https://support.google.com/google-ads/answer/10000067" target="_blank" rel="noopener">Google Ads Help, „About consent mode”</a></li>
+  </ul>
+</article></div></section>
 "@
 }
 
@@ -2641,10 +2881,12 @@ $pages += @{
 # ---- BLOG: Google Ads vs Meta Ads ----
 $pages += @{
   path='blog/google-ads-vs-meta-ads'
-  title='Google Ads vs Meta Ads: cu care începi? | AMPLIO'
-  desc='Google Ads vs Meta Ads explicat pentru firme: ce problemă rezolvă fiecare, când funcționează mai bine și cum alegi în funcție de afacerea și obiectivul tău.'
+  title='Google Ads vs Meta Ads: cu care începi în 2026? | AMPLIO'
+  desc='Google Ads prinde cererea care există deja, Meta Ads creează cerere. Cum alegi canalul după tipul afacerii, buget și timpul până la rezultate.'
   crumbsJson=(Crumbs @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Google Ads vs Meta Ads','/blog/google-ads-vs-meta-ads') ))
-  jsonld='{"@context":"https://schema.org","@type":"Article","headline":"Google Ads vs Meta Ads: cu care începi","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18"}'
+  jsonld='{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Google Ads vs Meta Ads: cu care începi?","description":"Google Ads prinde cererea care există deja, Meta Ads creează cerere. Cum alegi canalul după tipul afacerii, buget și timpul până la rezultate.","author":{"@type":"Organization","name":"AMPLIO"},"publisher":{"@type":"Organization","@id":"https://amplio.ro/#organization","name":"AMPLIO","url":"https://amplio.ro/","logo":{"@type":"ImageObject","url":"https://amplio.ro/assets/amplio-logo-512.png"}},"inLanguage":"ro","datePublished":"2026-06-18","dateModified":"2026-10-17"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Care e mai ieftin, Google sau Meta?","acceptedAnswer":{"@type":"Answer","text":"Prețul pe click nu e o comparație corectă: pe Meta plătești de obicei afișări, pe Google click-uri, iar intenția diferă. Compară costul pe client nou, pe aceeași perioadă."}},{"@type":"Question","name":"Pot începe cu un buget mic?","acceptedAnswer":{"@type":"Answer","text":"Da, dacă îl concentrezi pe un singur canal și pe o singură ofertă. Cu buget mic, căutările foarte precise pe Google sunt de obicei mai previzibile; pe Meta ai nevoie de răbdare cu faza de învățare."}},{"@type":"Question","name":"Am nevoie de site ca să fac reclame pe Meta?","acceptedAnswer":{"@type":"Answer","text":"Nu neapărat. Meta are formulare care se completează direct în aplicație, utile pentru cereri de ofertă. Pentru vânzări online și pentru Google Ads ai nevoie însă de o pagină de destinație bună."}},{"@type":"Question","name":"Unde intră TikTok?","acceptedAnswer":{"@type":"Answer","text":"Funcționează ca Meta: creează cerere, prin video scurt. Merge bine pentru produsele care arată bine în video și pentru un public mai tânăr. De obicei îl adaugi după ce Google sau Meta sunt stabile."}},{"@type":"Question","name":"În cât timp văd rezultate?","acceptedAnswer":{"@type":"Answer","text":"Pe Google, primele cereri pot veni din primele zile, dacă există căutări. Pe Meta, primele 1-2 săptămâni sunt de obicei de învățare. Pentru concluzii solide, judecă orice canal după cel puțin 4-6 săptămâni de date."}}]}]}'
+  ogimg='/assets/og-google-ads-vs-meta-ads.jpg'
+  ogalt='Două drumuri de sticlă, unul drept și unul ca o panglică plină de plăci, care duc spre același cub auriu, ca Google și Meta care aduc clienți pe căi diferite'
   body=@"
 <section class="subhero"><div class="grid-bg"></div><div class="wrap">
   $(CrumbsHtml @( ,@('Acasă','/'); ,@('Blog','/blog'); ,@('Google Ads vs Meta Ads','/blog/google-ads-vs-meta-ads') ))
@@ -2652,29 +2894,90 @@ $pages += @{
   <h1>Google Ads vs Meta Ads: <span class="g">cu care începi?</span></h1>
 </div></section>
 <section><div class="wrap rev"><article class="prose">
-  <p class="meta">Actualizat: iunie 2026 &middot; ~5 min de citit</p>
-  <p>Nu e o întrecere în care unul câștigă. Google Ads și Meta Ads rezolvă probleme diferite. Întrebarea corectă nu e &bdquo;care e mai bun", ci &bdquo;care se potrivește obiectivului meu acum".</p>
-  <h2>Google Ads prinde cererea existentă</h2>
-  <p>Oamenii caută activ ceva: &bdquo;dentist Cluj", &bdquo;firmă mutări". Apari fix în acel moment de intenție. E ideal când clienții știu deja că au nevoie de ce oferi și caută un furnizor. Conversie de obicei mai rapidă, dar click mai scump.</p>
-  <h2>Meta Ads creează cererea</h2>
-  <p>Pe Facebook și Instagram, oamenii nu caută, navighează. Tu îi întrerupi cu o ofertă relevantă, pe baza intereselor și comportamentului. E ideal pentru produse vizuale, pentru a construi notorietate și pentru a ajunge la oameni care nu te caută încă.</p>
-  <h2>Cum alegi</h2>
-  <ul class="flist" style="margin-top:14px">
-    <li><b>Clienții te caută deja?</b> (servicii, urgențe, B2B) &rarr; începe cu Google Ads.</li>
-    <li><b>Produs vizual sau cerere de creat?</b> (modă, food, lifestyle, lansări) &rarr; începe cu Meta.</li>
-    <li><b>Buget mic la început?</b> &rarr; un singur canal, bine făcut, bate două canale făcute pe jumătate.</li>
+  <p class="meta">Actualizat: octombrie 2026 &middot; ~8 min de citit</p>
+  <p>Nu e o întrecere în care unul câștigă. Google Ads și Meta Ads (Facebook și Instagram) rezolvă probleme diferite. Întrebarea corectă nu e „care e mai bun”, ci „care se potrivește obiectivului meu de acum și bugetului pe care îl am”.</p>
+  <div class="pescurt"><p><strong>Pe scurt:</strong> Google Ads prinde cererea care există deja: apari când cineva caută ce vinzi. Meta Ads creează cerere: ajungi la oameni care nu te caută încă, pe baza intereselor și a comportamentului. Dacă clienții te caută deja, începe cu Google. Dacă produsul se vinde prin imagine sau trebuie întâi descoperit, începe cu Meta. Cu buget mic, un singur canal făcut bine bate două canale făcute pe jumătate.</p></div>
+  <figure class="art-visual"><img src="/assets/blog-google-vs-meta-1.webp" srcset="/assets/blog-google-vs-meta-1-mic.webp 800w, /assets/blog-google-vs-meta-1.webp 1600w" sizes="(max-width: 816px) calc(100vw - 56px), 760px" width="1600" height="893" loading="eager" decoding="async" style="height:auto" alt="Două drumuri de sticlă, unul drept și unul ca o panglică plină de plăci, care duc spre același cub auriu, ca Google și Meta care aduc clienți pe căi diferite"></figure>
+  <h2>Diferența de fond: intenție și atenție</h2>
+  <p>Pe Google, omul are o întrebare: „dentist Cluj”, „firmă de mutări București”, „cât costă o centrală”. Reclama ta apare exact în momentul în care caută. Conversia vine de obicei mai repede, dar click-ul e mai scump, pentru că plătești pentru o intenție clară.</p>
+  <p>Pe Facebook și Instagram, oamenii nu caută, ci derulează. Tu îi întrerupi cu o imagine sau un video relevant, pe baza intereselor, a vârstei, a zonei și a comportamentului. E potrivit pentru produse vizuale, pentru oferte noi și pentru a ajunge la oameni care nu știu încă de tine.</p>
+  <h2>Comparația pe scurt</h2>
+  <table class="cmp">
+    <thead><tr><th></th><th>Google Ads (căutare)</th><th>Meta Ads</th></tr></thead>
+    <tbody>
+      <tr><td>Când apare reclama</td><td data-label="Google Ads (căutare)">când omul caută ceva</td><td data-label="Meta Ads">când omul derulează feed-ul sau poveștile</td></tr>
+      <tr><td>Intenția</td><td data-label="Google Ads (căutare)">ridicată, omul are deja o nevoie</td><td data-label="Meta Ads">variabilă, trebuie trezită</td></tr>
+      <tr><td>Formatul</td><td data-label="Google Ads (căutare)">text, plus telefon, adresă și linkuri suplimentare</td><td data-label="Meta Ads">imagine, video, carusel</td></tr>
+      <tr><td>Plata</td><td data-label="Google Ads (căutare)">de obicei pe click</td><td data-label="Meta Ads">de obicei pe afișări, cu optimizare pe rezultatul ales</td></tr>
+      <tr><td>Primele date</td><td data-label="Google Ads (căutare)">din primele zile, dacă există căutări</td><td data-label="Meta Ads">după faza de învățare, de obicei în jur de 50 de rezultate pe săptămână pentru un set de reclame</td></tr>
+      <tr><td>Potrivit pentru</td><td data-label="Google Ads (căutare)">servicii căutate, urgențe, B2B, produse cunoscute</td><td data-label="Meta Ads">produse vizuale, lansări, oferte, remarketing</td></tr>
+    </tbody>
+  </table>
+  <figure class="art-visual"><img src="/assets/blog-google-vs-meta-2.webp" srcset="/assets/blog-google-vs-meta-2-mic.webp 800w, /assets/blog-google-vs-meta-2.webp 1600w" sizes="(max-width: 816px) calc(100vw - 56px), 760px" width="1600" height="893" loading="lazy" decoding="async" style="height:auto" alt="O săgeată de sticlă îndreptată spre o țintă aurie lângă un nor de plăci care se aprind albastru, ca intenția de căutare față de atenția din feed"></figure>
+  <h2>Cum alegi după tipul afacerii</h2>
+  <ul>
+    <li><strong>Servicii locale și urgențe</strong> (instalatori, service auto, clinici): Google întâi. Oamenii caută activ, iar apelul vine repede.</li>
+    <li><strong>Servicii B2B</strong> (contabilitate, consultanță, producție la comandă): Google pe căutările cu intenție clară, apoi remarketing.</li>
+    <li><strong>Magazin online cu produse vizuale</strong> (modă, decor, cosmetice): Meta pentru descoperire, Google Shopping pentru cei care caută deja produsul.</li>
+    <li><strong>Lansări și produse noi, pe care nu le caută nimeni încă:</strong> Meta întâi, ca să creezi cererea; Google când apar căutările.</li>
+    <li><strong>Restaurante și HoReCa:</strong> Meta pentru zona ta și pentru evenimente, plus profilul de companie Google pentru „unde mâncăm”.</li>
+    <li><strong>Imobiliare:</strong> Meta pentru audiențe largi și formulare, Google pentru căutările după proiect și zonă.</li>
   </ul>
-  <p>Pe termen lung, cele două se completează: Meta creează cererea, Google o culege. Așa le combinăm în <a href="/servicii/performance-ads/">Performance Ads</a>. Înainte de a porni, evită <a href="/blog/greseli-buget-google-ads/">cele 7 greșeli care ard bugetul</a>.</p>
-  <div class="key" style="margin-top:30px">
-    <p style="margin:0"><strong>Nu știi cu care să începi?</strong> Cere <a href="/audit-gratuit/">auditul gratuit</a>, îți recomandăm canalul potrivit pentru afacerea ta.</p>
+  <h2>Bugetul minim realist</h2>
+  <p>Meta spune că un set de reclame iese din faza de învățare, de obicei, după aproximativ 50 de rezultate în săptămâna de după ultima modificare importantă. Dacă un rezultat, de exemplu un formular completat, te costă 40 de lei, ai nevoie de aproximativ 2.000 de lei pe săptămână pe un singur set ca să ieși repede din învățare. Cu buget mai mic, setul rămâne cu învățare limitată și rezultatele sunt mai instabile. Nu înseamnă că nu merge, ci că ai nevoie de răbdare și de mai puține seturi.</p>
+  <p>Pe Google, bugetul depinde de costul pe click din domeniul tău și de câte click-uri îți trebuie până la o vânzare. Cifre pentru România găsești în articolul <a href="/blog/cost-google-ads-romania/">cât costă Google Ads în România</a>.</p>
+  <p>În ambele cazuri regula e aceeași: concentrează bugetul. Mai bine o campanie cu destui bani ca să învețe decât cinci campanii înfometate.</p>
+  <h2>Când le folosești pe amândouă</h2>
+  <p>Pe termen lung, cele două se completează: Meta creează cererea, Google o culege. Cineva vede reclama ta pe Instagram, nu cumpără, dar peste o săptămână te caută pe Google după nume sau după produs. Dacă măsori doar ultimul click, Google pare să facă toată treaba, iar Meta pare inutil.</p>
+  <p>O combinație simplă pentru început: Google pe căutări, plus o campanie mică de remarketing pe Meta pentru cei care au vizitat site-ul și nu au cerut ofertă. Bugetul de remarketing rămâne mic, pentru că publicul e mic, iar oamenii aceia te cunosc deja.</p>
+  <p>Semne că e momentul pentru al doilea canal:</p>
+  <ul>
+    <li>primul canal e stabil și profitabil de cel puțin 2-3 luni;</li>
+    <li>bugetul permite al doilea canal fără să-l înfometeze pe primul;</li>
+    <li>măsurarea e pusă pe ambele: pixelul și conversiile Meta, conversiile Google, același cont de Analytics.</li>
+  </ul>
+  <figure class="art-visual"><img src="/assets/blog-google-vs-meta-3.webp" srcset="/assets/blog-google-vs-meta-3-mic.webp 800w, /assets/blog-google-vs-meta-3.webp 1600w" sizes="(max-width: 816px) calc(100vw - 56px), 760px" width="1600" height="893" loading="lazy" decoding="async" style="height:auto" alt="O panglică de lumină albastră care intră într-o pâlnie de sticlă și iese ca un fir auriu, ca cererea creată pe Meta și culeasă pe Google"></figure>
+  <h2>Ce îți trebuie înainte să pornești</h2>
+  <p>Pe <strong>Google Ads</strong>:</p>
+  <ul>
+    <li>măsurarea conversiilor, testată: formular, apel, comandă;</li>
+    <li>o pagină de destinație care continuă exact promisiunea anunțului;</li>
+    <li>o listă scurtă de cuvinte cheie cu intenție clară și o listă de cuvinte cheie negative;</li>
+    <li>locația și programul setate după zona și orele în care chiar lucrezi.</li>
+  </ul>
+  <p>Pe <strong>Meta Ads</strong>:</p>
+  <ul>
+    <li>pixelul Meta instalat și evenimentele verificate; dacă vinzi online, ia în calcul și API-ul de conversii al Meta, care trimite evenimentele direct de pe server;</li>
+    <li>3-5 variante de reclamă, cu imagini sau video diferite, pentru că pe Meta creația face o mare parte din rezultat;</li>
+    <li>o ofertă clară, ușor de înțeles în două secunde de derulare;</li>
+    <li>o pagină de destinație rapidă pe telefon sau un formular direct în Meta, dacă vrei cereri de ofertă.</li>
+  </ul>
+  <h2>Cum compari corect cele două canale</h2>
+  <p>Folosește același cont de Analytics și parametri UTM pe toate linkurile din reclame, ca să vezi traficul fiecărui canal pe aceeași bază. Compară costul pe client nou, nu costul pe click, și uită-te și la efectele indirecte: dacă după o campanie pe Meta cresc căutările după numele firmei în Google, Meta și-a făcut treaba, chiar dacă vânzarea a venit dintr-un click pe Google.</p>
+  <h2>Greșeli frecvente la început</h2>
+  <ul>
+    <li>Butonul „Promovează postarea” în loc de o campanie construită pe un obiectiv clar. E comod, dar rareori optimizează pentru clienți.</li>
+    <li>Campanii Meta optimizate pe click-uri sau aprecieri când tu vrei cereri de ofertă.</li>
+    <li>Campanii Google de căutare cu rețeaua de display inclusă fără să știi.</li>
+    <li>Lipsa măsurării: fără conversii, ambele platforme licitează pe ghicite. Detalii în <a href="/blog/greseli-buget-google-ads/">cele 7 greșeli care ard bugetul de Google Ads</a>.</li>
+    <li>Modificări zilnice: la Meta, fiecare modificare importantă repornește faza de învățare.</li>
+  </ul>
+  <h2>Întrebări frecvente</h2>
+  <div class="faq" style="margin-top:10px">
+    <details><summary>Care e mai ieftin, Google sau Meta?</summary><p>Prețul pe click nu e o comparație corectă: pe Meta plătești de obicei afișări, pe Google click-uri, iar intenția diferă. Compară costul pe client nou, pe aceeași perioadă.</p></details>
+    <details><summary>Pot începe cu un buget mic?</summary><p>Da, dacă îl concentrezi pe un singur canal și pe o singură ofertă. Cu buget mic, căutările foarte precise pe Google sunt de obicei mai previzibile; pe Meta ai nevoie de răbdare cu faza de învățare.</p></details>
+    <details><summary>Am nevoie de site ca să fac reclame pe Meta?</summary><p>Nu neapărat. Meta are formulare care se completează direct în aplicație, utile pentru cereri de ofertă. Pentru vânzări online și pentru Google Ads ai nevoie însă de o pagină de destinație bună.</p></details>
+    <details><summary>Unde intră TikTok?</summary><p>Funcționează ca Meta: creează cerere, prin video scurt. Merge bine pentru produsele care arată bine în video și pentru un public mai tânăr. De obicei îl adaugi după ce Google sau Meta sunt stabile.</p></details>
+    <details><summary>În cât timp văd rezultate?</summary><p>Pe Google, primele cereri pot veni din primele zile, dacă există căutări. Pe Meta, primele 1-2 săptămâni sunt de obicei de învățare. Pentru concluzii solide, judecă orice canal după cel puțin 4-6 săptămâni de date.</p></details>
   </div>
-</article>
-  <div class="ctaband" style="margin-top:40px;max-width:760px;margin-inline:auto">
-    <h2>Pune bugetul unde aduce vânzări.</h2>
-    <p class="lead center">Îți spunem gratuit ce canal ți se potrivește și de ce.</p>
-    <a class="btn btn-primary" href="/audit-gratuit/">Cere auditul gratuit <span class="ar">&rarr;</span></a>
-  </div>
-</div></section>
+  <div class="key" style="margin-top:30px"><p style="margin:0">Nu știi cu care să începi? Cere <a href="/audit-gratuit/">auditul gratuit</a>: îți recomandăm canalul potrivit pentru afacerea ta, în 24 de ore. Le gestionăm împreună în <a href="/servicii/performance-ads/">Performance Ads</a>, cu detalii pe <a href="/servicii/google-ads/">Google Ads</a> și pe <a href="/servicii/facebook-ads/">Facebook și Instagram Ads</a>.</p></div>
+  <h2>Surse</h2>
+  <ul class="surse">
+    <li><a href="https://www.facebook.com/business/help/112167992830700" target="_blank" rel="noopener">Meta Business Help Center, „About the learning phase”</a></li>
+    <li><a href="https://support.google.com/google-ads/answer/7478529" target="_blank" rel="noopener">Google Ads Help, „About broad match”</a></li>
+    <li><a href="https://support.google.com/google-ads/answer/1722038" target="_blank" rel="noopener">Google Ads Help, „About advanced location options”</a></li>
+  </ul>
+</article></div></section>
 "@
 }
 
