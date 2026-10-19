@@ -2,7 +2,7 @@
 
 > AMPLIO este agenția de marketing digital a firmelor medii și mici din România, cu deschidere către piața UE. Combină inteligența artificială în producție cu strategie umană senioră și oferă modele de plată legate de rezultate (taxă de bază redusă plus procent din creșterea vânzărilor). Slogan: „Creștere proiectată, nu promisă."
 
-Ultima actualizare: 2026-10-17. Versiunea scurtă: https://amplio.ro/llms.txt
+Ultima actualizare: 2026-10-19. Versiunea scurtă: https://amplio.ro/llms.txt
 
 ## Date de identificare
 
@@ -2723,7 +2723,7 @@ Nu toate companiile AI au confirmat public că îl folosesc. De aceea nu ne baz�
 
 **Pot opri motoarele AI să-mi folosească site-ul?**
 
-Da, din robots.txt: fiecare companie AI are roboții ei, de exemplu GPTBot la OpenAI sau Google-Extended la Google. Atenție însă: dacă blochezi roboții care alimentează căutarea AI, scad și șansele să fii recomandat.
+Da, din robots.txt: fiecare companie AI are roboții ei. La OpenAI, GPTBot adună texte pentru antrenarea modelelor, iar OAI-SearchBot citește site-uri pentru căutarea din ChatGPT, deci poți bloca antrenarea și lăsa căutarea. La Google, Google-Extended controlează folosirea textelor pentru modelele Gemini și nu afectează apariția în Google. Atenție însă: dacă blochezi roboții de căutare, scad șansele să fii recomandat.
 
 **Unde văd un fișier real?**
 
